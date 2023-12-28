@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack5模块联邦源码探究 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.7a83015a.js" as="script"><link rel="preload" href="/assets/js/2.e3d1a7c6.js" as="script"><link rel="preload" href="/assets/js/54.2dc79a16.js" as="script"><link rel="prefetch" href="/assets/js/10.aef9bd11.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.c2306509.js"><link rel="prefetch" href="/assets/js/13.ff60f0a5.js"><link rel="prefetch" href="/assets/js/14.93612c46.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.a185ebdb.js"><link rel="prefetch" href="/assets/js/17.36876f42.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.15052abe.js"><link rel="prefetch" href="/assets/js/20.5505ca52.js"><link rel="prefetch" href="/assets/js/21.6a0c23a4.js"><link rel="prefetch" href="/assets/js/22.4976d908.js"><link rel="prefetch" href="/assets/js/23.620692f7.js"><link rel="prefetch" href="/assets/js/24.a163242c.js"><link rel="prefetch" href="/assets/js/25.71a7e21e.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.37d1aa0a.js"><link rel="prefetch" href="/assets/js/28.e4d02993.js"><link rel="prefetch" href="/assets/js/29.ffc1c948.js"><link rel="prefetch" href="/assets/js/3.ef665163.js"><link rel="prefetch" href="/assets/js/30.b9aaf746.js"><link rel="prefetch" href="/assets/js/31.c8b9ec2d.js"><link rel="prefetch" href="/assets/js/32.6dfcebb9.js"><link rel="prefetch" href="/assets/js/33.dd732fda.js"><link rel="prefetch" href="/assets/js/34.96584558.js"><link rel="prefetch" href="/assets/js/35.1d9247e3.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4e8cf89f.js"><link rel="prefetch" href="/assets/js/38.d0b119e9.js"><link rel="prefetch" href="/assets/js/39.16ac274f.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.13678b1e.js"><link rel="prefetch" href="/assets/js/41.0cacbd3e.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.0cc23495.js"><link rel="prefetch" href="/assets/js/44.096e01ed.js"><link rel="prefetch" href="/assets/js/45.3c97d007.js"><link rel="prefetch" href="/assets/js/46.4627b176.js"><link rel="prefetch" href="/assets/js/47.34eda8e2.js"><link rel="prefetch" href="/assets/js/48.07c0f130.js"><link rel="prefetch" href="/assets/js/49.aeb2487a.js"><link rel="prefetch" href="/assets/js/5.3c771272.js"><link rel="prefetch" href="/assets/js/50.15974162.js"><link rel="prefetch" href="/assets/js/51.0c00e42d.js"><link rel="prefetch" href="/assets/js/52.e0878cbe.js"><link rel="prefetch" href="/assets/js/53.a94c8a61.js"><link rel="prefetch" href="/assets/js/55.10770be9.js"><link rel="prefetch" href="/assets/js/56.f750b616.js"><link rel="prefetch" href="/assets/js/57.ac7f908b.js"><link rel="prefetch" href="/assets/js/58.97246a8c.js"><link rel="prefetch" href="/assets/js/59.e4daa779.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.bc3b16e1.js"><link rel="prefetch" href="/assets/js/61.20d650fa.js"><link rel="prefetch" href="/assets/js/62.d35b7e24.js"><link rel="prefetch" href="/assets/js/63.6efc990d.js"><link rel="prefetch" href="/assets/js/64.c5f2f895.js"><link rel="prefetch" href="/assets/js/65.91adfc5a.js"><link rel="prefetch" href="/assets/js/66.69f5739b.js"><link rel="prefetch" href="/assets/js/67.64be6ab1.js"><link rel="prefetch" href="/assets/js/68.bdb87df4.js"><link rel="prefetch" href="/assets/js/69.c4799a19.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.80d444f8.js"><link rel="prefetch" href="/assets/js/71.65236f30.js"><link rel="prefetch" href="/assets/js/72.9e820154.js"><link rel="prefetch" href="/assets/js/73.296db2ea.js"><link rel="prefetch" href="/assets/js/74.3bbc4f3d.js"><link rel="prefetch" href="/assets/js/75.1329faca.js"><link rel="prefetch" href="/assets/js/76.f0b15012.js"><link rel="prefetch" href="/assets/js/77.93f1e34a.js"><link rel="prefetch" href="/assets/js/78.2a22ca5c.js"><link rel="prefetch" href="/assets/js/79.59a941f8.js"><link rel="prefetch" href="/assets/js/8.e463464b.js"><link rel="prefetch" href="/assets/js/80.445aa37d.js"><link rel="prefetch" href="/assets/js/81.51ceb22d.js"><link rel="prefetch" href="/assets/js/82.2790027b.js"><link rel="prefetch" href="/assets/js/83.514138d4.js"><link rel="prefetch" href="/assets/js/84.48a5a106.js"><link rel="prefetch" href="/assets/js/85.da465661.js"><link rel="prefetch" href="/assets/js/86.aeab8f3c.js"><link rel="prefetch" href="/assets/js/9.4d12ff45.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="active sidebar-link">webpack5模块联邦源码探究</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/federation20210119.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/federation20210119.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/tech/front/federation20210119.html#源码解析" class="sidebar-link">源码解析</a></li><li class="sidebar-sub-header"><a href="/tech/front/federation20210119.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/federation20210119.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack5模块联邦源码探究"><a href="#webpack5模块联邦源码探究" class="header-anchor">#</a> webpack5模块联邦源码探究</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>虽然webpack5已经发布了一段时间了，但一直都没有研究过，最近正好在做微前端相关的调研，恰好看到了webpack5的模块联邦与微前端的相关方案，便想着探究下模块联邦的相关源码。（ps：关于微前端，稍微说一句，个人觉得在选取微前端方案的时候可有结合现有资源以及形态进行相关取舍，从共享能力、隔离机制、数据方案、路由鉴权等不同维度综合考量，个人使用最小的迁移成本，渐进式的过渡，才是最优的选择。）</p> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <p><img src="/tech/front/federation20210119/federation01.png" alt="图片"></p> <ul><li>container
+<ul><li>ModuleFederationPlugin.js (核心，重点分析)</li> <li>options.js (用户输入的option)</li> <li>ContainerEntryDependency.js</li> <li>ContainerEntryModule.js</li> <li>ContainerEntryModuleFactory.js</li> <li>ContainerExposedDependency.js</li> <li>ContainerPlugin.js (核心，重点分析)</li> <li>ContainerReferencePlugin.js (核心，重点分析)</li> <li>FallbackDependency.js</li> <li>FallbackItemDependency.js</li> <li>FallbackModule.js</li> <li>FallbackModuleFactory.js</li> <li>RemoteModule.js</li> <li>RemoteRuntimeModule.js</li> <li>RemoteToExternalDependency.js</li></ul></li> <li>sharing
+<ul><li>SharePlugin.js (核心，重点分析)</li> <li>ShareRuntimeModule.js</li> <li>utils.js</li> <li>resolveMatchedConfigs.js</li> <li>ConsumeSharedFallbackDependency.js</li> <li>ConsumeSharedModule.js</li> <li>ConsumeSharedPlugin.js</li> <li>ConsumeSharedRuntimeModule.js</li> <li>ProvideForSharedDependency.js</li> <li>ProvideSharedModule.js</li> <li>ProvideSharedModuleFactory.js</li> <li>ProvideSharedPlugin.js</li></ul></li> <li>Module.js (webpack的module)</li> <li>ModuleGraph.js (module图的依赖)</li></ul> <h2 id="源码解析"><a href="#源码解析" class="header-anchor">#</a> 源码解析</h2> <p>整体webpack5的模块联邦 Module Federation是基于ModuleFedreationPlugin.js的，其最后是以webapck插件的形式接入webpack中，其内部主要设计ContainerPlugin用于解析Container的配置信息，ContainerReferencePlugin用于两个或多个不同Container的调用关系的判断，SharePlugin是共享机制的实现，通过ProviderModule和ConsumerModule进行模块的消费和提供</p> <h3 id="module"><a href="#module" class="header-anchor">#</a> Module</h3> <p>Webpack的module整合了不同的模块，抹平了不同的差异，模块联邦正是基于webpack的模块实现的依赖共享及传递</p> <div class="language- extra-class"><pre class="language-text"><code>class Module extends DependenciesBlock {
+    constructor(type, context = null, layer = null) {
+        super();
+        // 模块的类型
+		this.type = type;
+        // 模块的上下文
+		this.context = context;
+        // 层数
+		this.layer = layer;
+		this.needId = true;
+        // 模块的id
+		this.debugId = debugId++;
+    }
+    // webpack6中将被移除
+    get id() {}
+    set id(value) {}
+    // 模块的hash，Module图中依赖关系的唯一判定
+    get hash() {}
+    get renderedHash() {}
+    // 获取文件
+    get profile() {}
+    set profile(value) {}
+    // 模块的入口顺序值 webpack模块加载的穿针引线机制
+    get index() {}
+    set index(value) {}
+    // 模块的出口信息值 webpack模块加载的穿针引线机制
+    get index2() {}
+    set index2(value) {}
+    // 图的深度
+    get depth() {}
+    set depth(value) {}
+    // chunk相关
+    addChunk(chunk) {}
+    removeChunk(chunk) {}
+    isInChunk(chunk) {}
+    getChunks() {}
+    getNumberOfChunks() {}
+    get chunksIterable() {}
+    // 序列化和反序列化上下文
+    serialize(context) {}
+    deserialize(context) {}
+}
+</code></pre></div><h3 id="containerplugin"><a href="#containerplugin" class="header-anchor">#</a> ContainerPlugin</h3> <p><img src="/tech/front/federation20210119/federation02.png" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>class ContainerPlugin {
+	constructor(options) {}
+
+	apply(compiler) {
+		compiler.hooks.make.tapAsync(PLUGIN_NAME, (compilation, callback) =&gt; {
+			const dep = new ContainerEntryDependency(name, exposes, shareScope);
+			dep.loc = { name };
+			compilation.addEntry(
+				compilation.options.context,
+				dep,
+				{
+					name,
+					filename,
+					library
+				},
+				error =&gt; {
+					if (error) return callback(error);
+					callback();
+				}
+			);
+		});
+
+		compiler.hooks.thisCompilation.tap(
+			PLUGIN_NAME,
+			(compilation, { normalModuleFactory }) =&gt; {
+				compilation.dependencyFactories.set(
+					ContainerEntryDependency,
+					new ContainerEntryModuleFactory()
+				);
+
+				compilation.dependencyFactories.set(
+					ContainerExposedDependency,
+					normalModuleFactory
+				);
+			}
+		);
+	}
+}
+</code></pre></div><p>ContainerPlugin的核心是实现容器的模块的加载与导出，从而在模块外侧进行一层的包装为了对模块进行传递与依赖分析</p> <h3 id="containerreferenceplugin"><a href="#containerreferenceplugin" class="header-anchor">#</a> ContainerReferencePlugin</h3> <p><img src="/tech/front/federation20210119/federation03.png" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>class ContainerReferencePlugin {
+	constructor(options) {}
+
+	apply(compiler) {
+		const { _remotes: remotes, _remoteType: remoteType } = this;
+
+		const remoteExternals = {};
+
+		new ExternalsPlugin(remoteType, remoteExternals).apply(compiler);
+
+		compiler.hooks.compilation.tap(
+			&quot;ContainerReferencePlugin&quot;,
+			(compilation, { normalModuleFactory }) =&gt; {
+				compilation.dependencyFactories.set(
+					RemoteToExternalDependency,
+					normalModuleFactory
+				);
+
+				compilation.dependencyFactories.set(
+					FallbackItemDependency,
+					normalModuleFactory
+				);
+
+				compilation.dependencyFactories.set(
+					FallbackDependency,
+					new FallbackModuleFactory()
+				);
+
+				normalModuleFactory.hooks.factorize.tap(
+					&quot;ContainerReferencePlugin&quot;,
+					data =&gt; {
+						if (!data.request.includes(&quot;!&quot;)) {
+							for (const [key, config] of remotes) {
+								if (
+									data.request.startsWith(`${key}`) &amp;&amp;
+									(data.request.length === key.length ||
+										data.request.charCodeAt(key.length) === slashCode)
+								) {
+									return new RemoteModule(
+										data.request,
+										config.external.map((external, i) =&gt;
+											external.startsWith(&quot;internal &quot;)
+												? external.slice(9)
+												: `webpack/container/reference/${key}${
+														i ? `/fallback-${i}` : &quot;&quot;
+												  }`
+										),
+										`.${data.request.slice(key.length)}`,
+										config.shareScope
+									);
+								}
+							}
+						}
+					}
+				);
+
+				compilation.hooks.runtimeRequirementInTree
+					.for(RuntimeGlobals.ensureChunkHandlers)
+					.tap(&quot;ContainerReferencePlugin&quot;, (chunk, set) =&gt; {
+						set.add(RuntimeGlobals.module);
+						set.add(RuntimeGlobals.moduleFactoriesAddOnly);
+						set.add(RuntimeGlobals.hasOwnProperty);
+						set.add(RuntimeGlobals.initializeSharing);
+						set.add(RuntimeGlobals.shareScopeMap);
+						compilation.addRuntimeModule(chunk, new RemoteRuntimeModule());
+					});
+			}
+		);
+	}
+}
+</code></pre></div><p>ContainerReferencePlugin核心是为了实现模块的通信与传递，通过调用反馈的机制实现模块间的传递</p> <h3 id="sharing"><a href="#sharing" class="header-anchor">#</a> sharing</h3> <p><img src="/tech/front/federation20210119/federation04.png" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>class SharePlugin {
+	constructor(options) {
+		const sharedOptions = parseOptions(
+			options.shared,
+			(item, key) =&gt; {
+				if (typeof item !== &quot;string&quot;)
+					throw new Error(&quot;Unexpected array in shared&quot;);
+				/** @type {SharedConfig} */
+				const config =
+					item === key || !isRequiredVersion(item)
+						? {
+								import: item
+						  }
+						: {
+								import: key,
+								requiredVersion: item
+						  };
+				return config;
+			},
+			item =&gt; item
+		);
+
+		const consumes = sharedOptions.map(([key, options]) =&gt; ({
+			[key]: {
+				import: options.import,
+				shareKey: options.shareKey || key,
+				shareScope: options.shareScope,
+				requiredVersion: options.requiredVersion,
+				strictVersion: options.strictVersion,
+				singleton: options.singleton,
+				packageName: options.packageName,
+				eager: options.eager
+			}
+		}));
+
+		const provides = sharedOptions
+			.filter(([, options]) =&gt; options.import !== false)
+			.map(([key, options]) =&gt; ({
+				[options.import || key]: {
+					shareKey: options.shareKey || key,
+					shareScope: options.shareScope,
+					version: options.version,
+					eager: options.eager
+				}
+			}));
+		this._shareScope = options.shareScope;
+		this._consumes = consumes;
+		this._provides = provides;
+	}
+
+	apply(compiler) {
+		new ConsumeSharedPlugin({
+			shareScope: this._shareScope,
+			consumes: this._consumes
+		}).apply(compiler);
+		new ProvideSharedPlugin({
+			shareScope: this._shareScope,
+			provides: this._provides
+		}).apply(compiler);
+	}
+}
+</code></pre></div><p>sharing的整个模块都在实现共享的功能，其利用Provider进行提供，Consumer进行消费的机制，将共享的数据隔离在特定的shareScope中，通过resolveMatchedConfigs实现了对provider依赖及consumer依赖的过滤，从而对共有依赖只进行一遍请求</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p><img src="/tech/front/federation20210119/federation05.png" alt="图片"></p> <p><img src="/tech/front/federation20210119/federation06.png" alt="图片"></p> <p>webpack5的模块联邦是在通过自定义Container容器来实现对每个不同module的处理，Container Reference作为host去调度容器，各个容器以异步方式exposed modules；对于共享部分，对于provider提供的请求内容，每个module都有一个对应的runtime机制，其在分析完模块之间的调用关系及依赖关系之后，才会调用consumer中的运行时进行加载，而且shared的代码无需自己手动打包。webapck5的模块联邦可以实现微前端应用的模块间的相互调用，并且其共享与隔离平衡也把控的较好，对于想研究模块联邦实现微前端的同学可以参考这篇文章<a href="https://mp.weixin.qq.com/s/l0-uCLFRcBBrs4yTiAvryg" target="_blank" rel="noopener noreferrer">【第2154期】EMP微前端解决方案<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，随着webpack5的推广及各大脚手架的跟进，相信webpack5的模块联邦方案会是未来微前端方案的主流。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://github.com/webpack/webpack" target="_blank" rel="noopener noreferrer">webpack官方仓库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.towavephone.com/module-federation-principle-research/" target="_blank" rel="noopener noreferrer">Module federation 原理研究<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/b5Gl_1yX1enktU9oulO9zg" target="_blank" rel="noopener noreferrer">精读《Webpack5 新特性 - 模块联邦》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://indepth.dev/posts/1173/webpack-5-module-federation-a-game-changer-in-javascript-architecture#its-important-to-note-these-are-special-entry-points-they-are-only-a-few-kb-in-size-containing-a-special-webpack-runtime-that-can-interface-with-the-host-it-is-not-a-standard-entry-point--7/" target="_blank" rel="noopener noreferrer">Webpack 5 Module Federation: A game-changer in JavaScript architecture<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/summary2020.html" class="prev">
+        从2020看2021前端发展趋势
+      </a></span> <span class="next"><a href="/tech/front/topology20210122.html">
+        动态渲染拓扑图方案探究
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.7a83015a.js" defer></script><script src="/assets/js/2.e3d1a7c6.js" defer></script><script src="/assets/js/54.2dc79a16.js" defer></script>
+  </body>
+</html>
