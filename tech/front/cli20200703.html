@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vee-cli脚手架实践(下) | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/53.52dd242c.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="active sidebar-link">vee-cli脚手架实践(下)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/cli20200703.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/cli20200703.html#模板编译" class="sidebar-link">模板编译</a></li><li class="sidebar-sub-header"><a href="/tech/front/cli20200703.html#发包" class="sidebar-link">发包</a></li><li class="sidebar-sub-header"><a href="/tech/front/cli20200703.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/cli20200703.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vee-cli脚手架实践-下"><a href="#vee-cli脚手架实践-下" class="header-anchor">#</a> vee-cli脚手架实践(下)</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>书接上回 <a href="https://vleedesigntheory.github.io/tech/front/cli20200702.html" target="_blank" rel="noopener noreferrer">vee-cli脚手架实践(中)<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>上回主要介绍了create.js脚本的模板选择与拉取，本篇旨在讲述选择对应模板后编译以及最后的npm发包</p> <h2 id="模板编译"><a href="#模板编译" class="header-anchor">#</a> 模板编译</h2> <h3 id="依赖包"><a href="#依赖包" class="header-anchor">#</a> 依赖包</h3> <p><img src="/tech/front/cli20200703/cli01.jpeg" alt="图片"></p> <p>[包目录结构]</p> <ul><li>metalsmith (用于遍历文件夹，判断是否需要进行模板渲染)</li> <li>consolidate (统一所有的模板引擎)</li></ul> <p>[目录描述] 对于有模板引擎渲染的仓库，一般会有一个ask.js，</p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = [
+    {
+      type: 'confirm',
+      name: 'private',
+      message: 'ths resgistery is private?',
+    },
+    {
+      type: 'input',
+      name: 'author',
+      message: 'author?',
+    },
+    {
+      type: 'input',
+      name: 'description',
+      message: 'description?',
+    },
+    {
+      type: 'input',
+      name: 'license',
+      message: 'license?',
+    },
+  ]
+</code></pre></div><p>与用户进行命令行交互后，将对应的内容动态注入到模板中，这里常用的模板引擎有ejs、handlebars等，consolidate将这里用到的引擎进行了统一，可以自由选择</p> <h3 id="逻辑代码"><a href="#逻辑代码" class="header-anchor">#</a> 逻辑代码</h3> <div class="language- extra-class"><pre class="language-text"><code>// 判断是否存在ask.js文件
+if(!fs.existsSync(path.join(result, 'ask.js'))) {
+    // 直接下载
+    await ncpPro(result, path.resolve(projectName));
+} else {
+    // 模板渲染后再拷贝
+    await new Promise((resolve,reject) =&gt; {
+      MetalSmith(__dirname)
+        .source(result)
+        .destination(path.resolve(projectName))
+        .use(async (files, metal, done) =&gt; {
+            const a = require(path.join(result, 'ask.js'));
+            const r = await Inquirer.prompt(a);
+            const m = metal.metadata();
+            Object.assign(m, r);
+            delete files['ask.js'];
+            done()
+        })
+        .use((files, metal, done) =&gt; {
+            const meta = metal.metadata();
+            Object.keys(files).forEach(async (file) =&gt; {
+                let c = files[file].contents.toString();
+                // 只有js和json文件才去做处理
+                if(file.includes('js') || file.includes('json')) {
+                    // 判断是否是模板 可用正则匹配
+                    if(c.includes('&lt;%')) {
+                        c = await renderPro(c, meta);
+                        files[file].contents = Buffer.from(c);
+                    }
+                }
+            })
+            done()
+        })
+        .build((err) =&gt; {
+            if(err) {
+                reject()
+            } else {
+                resolve()
+            }
+        })
+    })
+}
+</code></pre></div><p>这里主要是对之前直接down仓库内容复制做了扩展，判断是否需要进行模板编译，也就是用户是否需要再次输入内容，动态的注入到拉取的模板中，这里还可以选择更多的其他配置，但大致原理基本一致，具体详细的可以参看<a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener noreferrer">vue-cli源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，其中对其他部分也做了更为详尽的扩展</p> <h3 id="相关包源码分析"><a href="#相关包源码分析" class="header-anchor">#</a> 相关包源码分析</h3> <h4 id="metalsmith"><a href="#metalsmith" class="header-anchor">#</a> metalsmith</h4> <div class="language- extra-class"><pre class="language-text"><code>var assert = require('assert')
+var clone = require('clone')
+var fs = require('co-fs-extra')
+var matter = require('gray-matter')
+var Mode = require('stat-mode')
+var path = require('path')
+var readdir = require('recursive-readdir')
+var rm = require('rimraf')
+var thunkify = require('thunkify')
+var unyield = require('unyield')
+var utf8 = require('is-utf8')
+var Ware = require('ware')
+
+readdir = thunkify(readdir)
+rm = thunkify(rm)
+
+
+var isBoolean = function(b) {return typeof b === 'boolean'}
+var isNumber  = function(n) {return typeof n === 'number' &amp;&amp; !Number.isNaN(n)}
+var isObject  = function(o) {return o !== null &amp;&amp; typeof o === 'object'}
+var isString  = function(s) {return typeof s === 'string'}
+
+module.exports = Metalsmith
+
+
+function Metalsmith(directory){
+  if (!(this instanceof Metalsmith)) return new Metalsmith(directory)
+  assert(directory, 'You must pass a working directory path.')
+  this.plugins = []
+  this.ignores = []
+  this.directory(directory)
+  this.metadata({})
+  this.source('src')
+  this.destination('build')
+  this.concurrency(Infinity)
+  this.clean(true)
+  this.frontmatter(true)
+}
+
+Metalsmith.prototype.use = function(plugin){
+  this.plugins.push(plugin)
+  return this
+}
+
+
+Metalsmith.prototype.directory = function(directory){
+  if (!arguments.length) return path.resolve(this._directory)
+  assert(isString(directory), 'You must pass a directory path string.')
+  this._directory = directory
+  return this
+}
+
+
+Metalsmith.prototype.metadata = function(metadata){
+  if (!arguments.length) return this._metadata
+  assert(isObject(metadata), 'You must pass a metadata object.')
+  this._metadata = clone(metadata)
+  return this
+}
+
+
+Metalsmith.prototype.source = function(path){
+  if (!arguments.length) return this.path(this._source)
+  assert(isString(path), 'You must pass a source path string.')
+  this._source = path
+  return this
+}
+
+Metalsmith.prototype.destination = function(path){
+  if (!arguments.length) return this.path(this._destination)
+  assert(isString(path), 'You must pass a destination path string.')
+  this._destination = path
+  return this
+}
+
+Metalsmith.prototype.concurrency = function(max){
+  if (!arguments.length) return this._concurrency
+  assert(isNumber(max), 'You must pass a number for concurrency.')
+  this._concurrency = max
+  return this
+}
+
+Metalsmith.prototype.clean = function(clean){
+  if (!arguments.length) return this._clean
+  assert(isBoolean(clean), 'You must pass a boolean.')
+  this._clean = clean
+  return this
+}
+
+Metalsmith.prototype.frontmatter = function(frontmatter){
+  if (!arguments.length) return this._frontmatter
+  assert(isBoolean(frontmatter), 'You must pass a boolean.')
+  this._frontmatter = frontmatter
+  return this
+}
+
+Metalsmith.prototype.ignore = function(files){
+  if (!arguments.length) return this.ignores.slice()
+  this.ignores = this.ignores.concat(files)
+  return this
+}
+
+Metalsmith.prototype.path = function(){
+  var paths = [].slice.call(arguments)
+  paths.unshift(this.directory())
+  return path.resolve.apply(path, paths)
+}
+
+Metalsmith.prototype.build = unyield(function*(){
+  var clean = this.clean()
+  var dest = this.destination()
+  if (clean) yield rm(path.join(dest, '*'), { glob: { dot: true } })
+
+  var files = yield this.process()
+  yield this.write(files)
+  return files
+})
+
+Metalsmith.prototype.process = unyield(function*(){
+  var files = yield this.read()
+  files = yield this.run(files)
+  return files
+})
+
+Metalsmith.prototype.run = unyield(function*(files, plugins){
+  var ware = new Ware(plugins || this.plugins)
+  var run = thunkify(ware.run.bind(ware))
+  var res = yield run(files, this)
+  return res[0]
+})
+
+Metalsmith.prototype.read = unyield(function*(dir){
+  dir = dir || this.source()
+  var read = this.readFile.bind(this)
+  var concurrency = this.concurrency()
+  var ignores = this.ignores || null
+  var paths = yield readdir(dir, ignores)
+  var files = []
+  var complete = 0
+  var batch
+
+  while (complete &lt; paths.length) {
+    batch = paths.slice(complete, complete + concurrency)
+    batch = yield batch.map(read)
+    files = files.concat(batch)
+    complete += concurrency
+  }
+
+  return paths.reduce(memoizer, {})
+
+  function memoizer(memo, file, i) {
+    file = path.relative(dir, file)
+    memo[file] = files[i]
+    return memo
+  }
+})
+
+Metalsmith.prototype.readFile = unyield(function*(file){
+  var src = this.source()
+  var ret = {}
+
+  if (!path.isAbsolute(file)) file = path.resolve(src, file)
+
+  try {
+    var frontmatter = this.frontmatter()
+    var stats = yield fs.stat(file)
+    var buffer = yield fs.readFile(file)
+    var parsed
+
+    if (frontmatter &amp;&amp; utf8(buffer)) {
+      try {
+        parsed = matter(buffer.toString())
+      } catch (e) {
+        var err = new Error('Invalid frontmatter in the file at: ' + file)
+        err.code = 'invalid_frontmatter'
+        throw err
+      }
+      ret = parsed.data
+      ret.contents = (Buffer.hasOwnProperty('from'))
+        ? Buffer.from(parsed.content) 
+        : new Buffer(parsed.content)
+    } else {
+      ret.contents = buffer
+    }
+
+    ret.mode = Mode(stats).toOctal()
+    ret.stats = stats
+  } catch (e) {
+    if (e.code == 'invalid_frontmatter') throw e
+    e.message = 'Failed to read the file at: ' + file + '\n\n' + e.message
+    e.code = 'failed_read'
+    throw e
+  }
+
+  return ret
+})
+
+Metalsmith.prototype.write = unyield(function*(files, dir){
+  dir = dir || this.destination()
+  var write = this.writeFile.bind(this)
+  var concurrency = this.concurrency()
+  var keys = Object.keys(files)
+  var complete = 0
+  var batch
+
+  while (complete &lt; keys.length) {
+    batch = keys.slice(complete, complete + concurrency)
+    yield batch.map(writer)
+    complete += concurrency
+  }
+
+  function writer(key){
+    var file = path.resolve(dir, key)
+    return write(file, files[key])
+  }
+})
+
+Metalsmith.prototype.writeFile = unyield(function*(file, data){
+  var dest = this.destination()
+  if (!path.isAbsolute(file)) file = path.resolve(dest, file)
+
+  try {
+    yield fs.outputFile(file, data.contents)
+    if (data.mode) yield fs.chmod(file, data.mode)
+  } catch (e) {
+    e.message = 'Failed to write the file at: ' + file + '\n\n' + e.message
+    throw e
+  }
+})
+</code></pre></div><p>metalsmith用的是挂在原型上的写法，通过插件的链式传递方法进行数据的透传，属于原型设计模式的应用，对于js来说原型模式是天生存在的，因而对于希望通过链式传递且写法且变量不多的小型库而言，这种方式不失为一种好的方法，对链式调用有兴趣的同学可以研究下<a href="https://github.com/jquery/jquery" target="_blank" rel="noopener noreferrer">jQuery源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>及<a href="https://github.com/koajs/koa" target="_blank" rel="noopener noreferrer">koa源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，虽然大型库组织不是一种模式的展现，但是其中小部分还是有异曲同工的地方的，对于链式调用的实现方法也可以有一个横向的扩展和对比</p> <h4 id="consolidate"><a href="#consolidate" class="header-anchor">#</a> consolidate</h4> <p>consolidate主要是对不同模板引擎的选择分发，这里挑选了最核心的几个功能函数</p> <div class="language- extra-class"><pre class="language-text"><code>function cache(options, compiled) {
+    
+  if (compiled &amp;&amp; options.filename &amp;&amp; options.cache) {
+    delete readCache[options.filename];
+    cacheStore[options.filename] = compiled;
+    return compiled;
+  }
+
+  if (options.filename &amp;&amp; options.cache) {
+    return cacheStore[options.filename];
+  }
+
+  return compiled;
+}
+
+function read(path, options, cb) {
+  var str = readCache[path];
+  var cached = options.cache &amp;&amp; str &amp;&amp; typeof str === 'string';
+
+  if (cached) return cb(null, str);
+
+  fs.readFile(path, 'utf8', function(err, str) {
+    if (err) return cb(err);
+    str = str.replace(/^\uFEFF/, '');
+    if (options.cache) readCache[path] = str;
+    cb(null, str);
+  });
+}
+
+function readPartials(path, options, cb) {
+  if (!options.partials) return cb();
+  var keys = Object.keys(options.partials);
+  var partials = {};
+
+  function next(index) {
+    if (index === keys.length) return cb(null, partials);
+    var key = keys[index];
+    var partialPath = options.partials[key];
+
+    if (partialPath === undefined || partialPath === null || partialPath === false) {
+      return next(++index);
+    }
+
+    var file;
+    if (isAbsolute(partialPath)) {
+      if (extname(partialPath) !== '') {
+        file = partialPath;
+      } else {
+        file = join(partialPath + extname(path));
+      }
+    } else {
+      file = join(dirname(path), partialPath + extname(path));
+    }
+
+    read(file, options, function(err, str) {
+      if (err) return cb(err);
+      partials[key] = str;
+      next(++index);
+    });
+  }
+
+  next(0);
+}
+
+function fromStringRenderer(name) {
+  return function(path, options, cb) {
+    options.filename = path;
+
+    return promisify(cb, function(cb) {
+      readPartials(path, options, function(err, partials) {
+        var extend = (requires.extend || (requires.extend = require('util')._extend));
+        var opts = extend({}, options);
+        opts.partials = partials;
+        if (err) return cb(err);
+        if (cache(opts)) {
+          exports[name].render('', opts, cb);
+        } else {
+          read(path, opts, function(err, str) {
+            if (err) return cb(err);
+            exports[name].render(str, opts, cb);
+          });
+        }
+      });
+    });
+  };
+}
+</code></pre></div><p>consolidate这个库也是tj大佬写的，其主要思路是通过读取[read]对应文件里的字符[readPartials]获取到需要的字符后对字符进行查找对应名称[fromStringRenderer]的渲染，其中读取过程做了[cache]优化，剩下的就是对对应的模板渲染引擎的分发，从而做到了汇聚分发的效果，整体思路还是很明确的，另外多说一句，tj大佬似乎对类生成器函数处理有种蜜汁喜爱，各种库都有它的影子，对生成器方式处理感兴趣的同学，可以参考<a href="https://github.com/we452366/co" target="_blank" rel="noopener noreferrer">co库源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="发包"><a href="#发包" class="header-anchor">#</a> 发包</h2> <h3 id="连接npm"><a href="#连接npm" class="header-anchor">#</a> 连接npm</h3> <p><img src="/tech/front/cli20200703/cli02.jpeg" alt="图片"></p> <p>连接npm源(如果没有nrm，需要<code>npm i nrm -g</code>) =&gt; 填写npm官网的个人用户信息</p> <h3 id="发布到npm"><a href="#发布到npm" class="header-anchor">#</a> 发布到npm</h3> <p><img src="/tech/front/cli20200703/cli03.png" alt="图片"></p> <p>对于整个npm发包等感兴趣的同学，可以参考<a href="https://docs.npmjs.com/cli-documentation/" target="_blank" rel="noopener noreferrer">npm文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，也可以参考这篇文章<a href="https://segmentfault.com/a/1190000015939001" target="_blank" rel="noopener noreferrer">npm包的发布与删除<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="验证"><a href="#验证" class="header-anchor">#</a> 验证</h3> <p><img src="/tech/front/cli20200703/cli04.png" alt="图片"></p> <p>搜索npmjs官网上，可以查找到，<code>npm unlink</code>后或换一台机器，可以<code>npm i vee-cli</code>进行包下载，这样一个脚手架的发包就完成了</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>脚手架是前端工程化领域的基本项，个人认为掌握前端脚手架的开发是十分重要的，这三篇内容
+<a href="https://vleedesigntheory.github.io/tech/front/cli20200701.html" target="_blank" rel="noopener noreferrer">vee-cli脚手架实践(上)<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <a href="https://vleedesigntheory.github.io/tech/front/cli20200702.html" target="_blank" rel="noopener noreferrer">vee-cli脚手架实践(中)<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <a href="https://vleedesigntheory.github.io/tech/front/cli20200703.html" target="_blank" rel="noopener noreferrer">vee-cli脚手架实践(下)<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+旨在提供一个大概思路及样板，目前只包含了</p> <blockquote><p>1、命令行；2、模板拉取；</p></blockquote> <p>，其相对于成熟的脚手架如vue-cli、create-react-app、@angular/cli等来说，还有很多很多工作要做，包括</p> <blockquote><p>3、本地服务；4、打包构建；5、集成部署；6、周边其他</p></blockquote> <p>等都还需要完善，想要在工程化领域有所建树的同学，不妨在这几个方面多下下功夫</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p><a href="https://github.com/we452366/vee-cli" target="_blank" rel="noopener noreferrer">vee-cli源代码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a><br></p></div> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="noopener noreferrer">metalsmith.js源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/tj/consolidate.js" target="_blank" rel="noopener noreferrer">consolidate.js源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/we452366/co" target="_blank" rel="noopener noreferrer">co.js源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/jquery/jquery" target="_blank" rel="noopener noreferrer">jquery.js源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/koajs/koa" target="_blank" rel="noopener noreferrer">koa.js源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://segmentfault.com/q/1010000018137835/" target="_blank" rel="noopener noreferrer">npm包可以修改名字吗？<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://segmentfault.com/a/1190000017867834" target="_blank" rel="noopener noreferrer">用Angular脚手架搭建项目<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/27d111a50a06?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener noreferrer">React（脚手架）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://www.ruanyifeng.com/blog/2015/05/co.html" target="_blank" rel="noopener noreferrer">co 函数库的含义和用法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.zhihu.com/question/32524504" target="_blank" rel="noopener noreferrer">有哪些好用的前端模板引擎？<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/cli20200702.html" class="prev">
+        vee-cli脚手架实践(中)
+      </a></span> <span class="next"><a href="/tech/front/hooks20200826.html">
+        React Hooks在SD-WAN项目中实践
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/53.52dd242c.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vee-cli脚手架实践(上) | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/51.eb1ceda0.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="active sidebar-link">vee-cli脚手架实践(上)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/cli20200701.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/cli20200701.html#命令行" class="sidebar-link">命令行</a></li><li class="sidebar-sub-header"><a href="/tech/front/cli20200701.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/cli20200701.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vee-cli脚手架实践-上"><a href="#vee-cli脚手架实践-上" class="header-anchor">#</a> vee-cli脚手架实践(上)</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>随着前端的发展，工程化已经成为每一个前端都应该重视和熟悉的方面，而作为工程化之一的脚手架更是在日常开发中起到了十分重要的作用，而能够根据业务和项目需要为自己的前端团队打造个性化的属于自己团队的脚手架也会成为工程师项目简历中的一道亮点，本文主要是借鉴vue-cli脚手架的源码，练习自己搭建脚手架过程中遇到的问题及自己的思考。(ps: 一款成熟的脚手架通常要包括以下功能：1、命令行；2、模板拉取；3、本地服务；4、打包构建；5、集成部署；6、周边其他，本文主要是对脚手架大致的功能进行一定的探究，手写一版粗浅的脚手架，后续如果有项目实践，会持续更新分享。)</p> <h2 id="命令行"><a href="#命令行" class="header-anchor">#</a> 命令行</h2> <h3 id="大框架结构"><a href="#大框架结构" class="header-anchor">#</a> 大框架结构</h3> <p><img src="/tech/front/cli20200701/cli01.jpeg" alt="图片"></p> <p>[目录结构]</p> <ul><li>bin
+<ul><li>www (全局命令执行入口连接，用npm link进行连接)</li></ul></li> <li>src
+<ul><li>main.js (入口文件，对命令进行分发)</li> <li>create.js (创建的命令，所有创建的逻辑在此文件中书写)</li> <li>config.js (配置的命令，所有的配置的命令在此文件中书写)</li> <li>constants.js (常量文件，所有常量配置在此文件中)</li></ul></li> <li>package.json</li></ul> <p>[目录描述] bin下的www脚本获取全局的执行环境，可引入入口文件，我们在此将其导入到main.js中，所有的命令都可在main.js进行分发，为了更好的使用，可以将不同命令分到不同的js文件下，这里用到了commander的包对命令进行分发，具体业务可在对应文件中进行后续扩展</p> <h3 id="命令配置"><a href="#命令配置" class="header-anchor">#</a> 命令配置</h3> <h4 id="入口"><a href="#入口" class="header-anchor">#</a> 入口</h4> <p><img src="/tech/front/cli20200701/cli02.jpeg" alt="图片"></p> <p>bin目录下的可执行脚本www，</p> <blockquote><p>#! /usr/bin/env node</p></blockquote> <p>package.json中配置：</p> <blockquote><p>&quot;bin&quot;: {
+&quot;vee-cli&quot;: &quot;./bin/www&quot;
+},</p></blockquote> <p>其可对全局下的命令进行分发，由<code>npm link</code>进行连接，如果权限不够可能需要使用sudo等，具体的爬坑可以参考这篇文章<a href="https://www.cnblogs.com/leaf526/p/3622212.html" target="_blank" rel="noopener noreferrer">npm link没有效果的问题<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，在入口文件中可先打印一个命令&quot;hello vee&quot;进行测试，如图所示。</p> <h4 id="命令"><a href="#命令" class="header-anchor">#</a> 命令</h4> <p><img src="/tech/front/cli20200701/cli03.jpeg" alt="图片"></p> <p>完成测试后，就是命令分发的主要逻辑了，这里主要用到了commander的包，源码部分在下节中解读，mapAction主要是映射命令的行为，其中主要是alias、description、examples，然后就是每个行为的显示执行了，这里有一个关键代码是<code>require(path.resolve(__dirname,action))(...process.argv.slice(3))</code>获取对应的文件名来进行解析，这样就可以把各个功能抽离到对应文件里去做具体的逻辑</p> <div class="language- extra-class"><pre class="language-text"><code>const program = require('commander');
+const { version } = require('./constants');
+const path = require('path');
+
+const mapAction = {
+    create: {
+        alias: 'c', 
+        description: 'create a project', 
+        examples: [
+            'vee-cli create &lt;project-name&gt;'
+        ],
+    },
+    config: {
+        alias: 'conf',
+        description: 'config project variable',
+        examples: [
+            'vee-cli config set &lt;k&gt; &lt;v&gt;',
+            'vee-cli config get &lt;k&gt;',
+        ],
+    },
+    '*': { 
+        alias: '',
+        description: 'command not found',
+        examples: [],
+    }
+}
+
+//可以使用Reflect，好处是可以遍历Symbol
+Object.keys(mapAction).forEach((action) =&gt; {
+    program.command(action) 
+        .alias(mapAction[action].alias) 
+        .description(mapAction[action].description) 
+        .action(() =&gt; {
+            if (action === '*') { 
+                console.log(mapAction[action].description)
+            } else {
+                console.log(action);
+                require(path.resolve(__dirname,action))(...process.argv.slice(3))
+            }
+        })
+});
+
+program.on('--help',()=&gt;{
+    console.log('\r\nExamples:');
+    Object.keys(mapAction).forEach((action)=&gt;{
+        mapAction[action].examples.forEach(example=&gt;{
+            console.log('   '+example)
+        })
+    })
+});
+
+program.version(version).parse(process.argv);
+</code></pre></div><h3 id="相关包源码分析"><a href="#相关包源码分析" class="header-anchor">#</a> 相关包源码分析</h3> <p><img src="/tech/front/cli20200701/cli04.png" alt="图片"></p> <p>commander是tj大佬写的，包主要依赖着event、child_process、fs、path、Error五个node核心模块，其中EventEmitter的实现更是前端面试中常见的笔试题，具体请看<a href="https://vleedesigntheory.github.io/interview/interview-program.html" target="_blank" rel="noopener noreferrer">编程题-方法库-实现EventEmitter<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，因此搭建脚手架，node是基础！</p> <p><img src="/tech/front/cli20200701/cli05.jpeg" alt="图片"></p> <ul><li>依赖</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const EventEmitter = require('events').EventEmitter; // 事件触发与事件监听器功能的封装
+const spawn = require('child_process').spawn; // 利用给定的命令以及参数执行一个新的进程
+const path = require('path'); // 路径模块
+const fs = require('fs'); // 文件模块
+</code></pre></div><ul><li>Option类</li></ul> <div class="language- extra-class"><pre class="language-text"><code>class Option {
+  constructor(flags, description) {
+    this.flags = flags;
+    this.required = flags.indexOf('&lt;') &gt;= 0; 
+    this.optional = flags.indexOf('[') &gt;= 0; 
+    this.mandatory = false; 
+    this.negate = flags.indexOf('-no-') !== -1;
+    const flagParts = flags.split(/[ ,|]+/);
+    if (flagParts.length &gt; 1 &amp;&amp; !/^[[&lt;]/.test(flagParts[1])) this.short = flagParts.shift();
+    this.long = flagParts.shift();
+    this.description = description || '';
+    this.defaultValue = undefined;
+  }
+
+  name() {
+    return this.long.replace(/^--/, '');
+  };
+
+ 
+  attributeName() {
+    return camelcase(this.name().replace(/^no-/, ''));
+  };
+
+  is(arg) {
+    return this.short === arg || this.long === arg;
+  };
+}
+</code></pre></div><ul><li>CommandError类</li></ul> <div class="language- extra-class"><pre class="language-text"><code>class CommanderError extends Error {
+  constructor(exitCode, code, message) {
+    super(message);
+    // properly capture stack trace in Node.js
+    Error.captureStackTrace(this, this.constructor);
+    this.name = this.constructor.name;
+    this.code = code;
+    this.exitCode = exitCode;
+    this.nestedError = undefined;
+  }
+}
+</code></pre></div><ul><li>Command类</li></ul> <div class="language- extra-class"><pre class="language-text"><code>class Command extends EventEmitter {
+
+  constructor(name) {
+    super();
+    this.commands = [];
+    this.options = [];
+    this.parent = null;
+    this._allowUnknownOption = false;
+    this._args = [];
+    this.rawArgs = null;
+    this._scriptPath = null;
+    this._name = name || '';
+    this._optionValues = {};
+    this._storeOptionsAsProperties = true; 
+    this._passCommandToAction = true;
+    this._actionResults = [];
+    this._actionHandler = null;
+    this._executableHandler = false;
+    this._executableFile = null; 
+    this._defaultCommandName = null;
+    this._exitCallback = null;
+    this._aliases = [];
+
+    this._hidden = false;
+    this._helpFlags = '-h, --help';
+    this._helpDescription = 'display help for command';
+    this._helpShortFlag = '-h';
+    this._helpLongFlag = '--help';
+    this._hasImplicitHelpCommand = undefined; 
+    this._helpCommandName = 'help';
+    this._helpCommandnameAndArgs = 'help [command]';
+    this._helpCommandDescription = 'display help for command';
+  }
+
+  command(nameAndArgs, actionOptsOrExecDesc, execOpts) {
+    let desc = actionOptsOrExecDesc;
+    let opts = execOpts;
+    if (typeof desc === 'object' &amp;&amp; desc !== null) {
+      opts = desc;
+      desc = null;
+    }
+    opts = opts || {};
+    const args = nameAndArgs.split(/ +/);
+    const cmd = this.createCommand(args.shift());
+
+    if (desc) {
+      cmd.description(desc);
+      cmd._executableHandler = true;
+    }
+    if (opts.isDefault) this._defaultCommandName = cmd._name;
+
+    cmd._hidden = !!(opts.noHelp || opts.hidden);
+    cmd._helpFlags = this._helpFlags;
+    cmd._helpDescription = this._helpDescription;
+    cmd._helpShortFlag = this._helpShortFlag;
+    cmd._helpLongFlag = this._helpLongFlag;
+    cmd._helpCommandName = this._helpCommandName;
+    cmd._helpCommandnameAndArgs = this._helpCommandnameAndArgs;
+    cmd._helpCommandDescription = this._helpCommandDescription;
+    cmd._exitCallback = this._exitCallback;
+    cmd._storeOptionsAsProperties = this._storeOptionsAsProperties;
+    cmd._passCommandToAction = this._passCommandToAction;
+
+    cmd._executableFile = opts.executableFile || null; 
+    this.commands.push(cmd);
+    cmd._parseExpectedArgs(args);
+    cmd.parent = this;
+
+    if (desc) return this;
+    return cmd;
+  };
+
+
+  createCommand(name) {
+    return new Command(name);
+  };
+
+  addCommand(cmd, opts) {
+    if (!cmd._name) throw new Error('Command passed to .addCommand() must have a name');
+
+    function checkExplicitNames(commandArray) {
+      commandArray.forEach((cmd) =&gt; {
+        if (cmd._executableHandler &amp;&amp; !cmd._executableFile) {
+          throw new Error(`Must specify executableFile for deeply nested executable: ${cmd.name()}`);
+        }
+        checkExplicitNames(cmd.commands);
+      });
+    }
+    checkExplicitNames(cmd.commands);
+
+    opts = opts || {};
+    if (opts.isDefault) this._defaultCommandName = cmd._name;
+    if (opts.noHelp || opts.hidden) cmd._hidden = true; 
+    this.commands.push(cmd);
+    cmd.parent = this;
+    return this;
+  };
+
+  arguments(desc) {
+    return this._parseExpectedArgs(desc.split(/ +/));
+  };
+
+  addHelpCommand(enableOrNameAndArgs, description) {
+    if (enableOrNameAndArgs === false) {
+      this._hasImplicitHelpCommand = false;
+    } else {
+      this._hasImplicitHelpCommand = true;
+      if (typeof enableOrNameAndArgs === 'string') {
+        this._helpCommandName = enableOrNameAndArgs.split(' ')[0];
+        this._helpCommandnameAndArgs = enableOrNameAndArgs;
+      }
+      this._helpCommandDescription = description || this._helpCommandDescription;
+    }
+    return this;
+  };
+
+  _lazyHasImplicitHelpCommand() {
+    if (this._hasImplicitHelpCommand === undefined) {
+      this._hasImplicitHelpCommand = this.commands.length &amp;&amp; !this._actionHandler &amp;&amp; !this._findCommand('help');
+    }
+    return this._hasImplicitHelpCommand;
+  };
+
+  _parseExpectedArgs(args) {
+    if (!args.length) return;
+    args.forEach((arg) =&gt; {
+      const argDetails = {
+        required: false,
+        name: '',
+        variadic: false
+      };
+
+      switch (arg[0]) {
+        case '&lt;':
+          argDetails.required = true;
+          argDetails.name = arg.slice(1, -1);
+          break;
+        case '[':
+          argDetails.name = arg.slice(1, -1);
+          break;
+      }
+
+      if (argDetails.name.length &gt; 3 &amp;&amp; argDetails.name.slice(-3) === '...') {
+        argDetails.variadic = true;
+        argDetails.name = argDetails.name.slice(0, -3);
+      }
+      if (argDetails.name) {
+        this._args.push(argDetails);
+      }
+    });
+    this._args.forEach((arg, i) =&gt; {
+      if (arg.variadic &amp;&amp; i &lt; this._args.length - 1) {
+        throw new Error(`only the last argument can be variadic '${arg.name}'`);
+      }
+    });
+    return this;
+  };
+
+  exitOverride(fn) {
+    if (fn) {
+      this._exitCallback = fn;
+    } else {
+      this._exitCallback = (err) =&gt; {
+        if (err.code !== 'commander.executeSubCommandAsync') {
+          throw err;
+        } else {
+        }
+      };
+    }
+    return this;
+  };
+
+  _exit(exitCode, code, message) {
+    if (this._exitCallback) {
+      this._exitCallback(new CommanderError(exitCode, code, message));
+    }
+    process.exit(exitCode);
+  };
+
+  action(fn) {
+    const listener = (args) =&gt; {
+      const expectedArgsCount = this._args.length;
+      const actionArgs = args.slice(0, expectedArgsCount);
+      if (this._passCommandToAction) {
+        actionArgs[expectedArgsCount] = this;
+      } else {
+        actionArgs[expectedArgsCount] = this.opts();
+      }
+      if (args.length &gt; expectedArgsCount) {
+        actionArgs.push(args.slice(expectedArgsCount));
+      }
+
+      const actionResult = fn.apply(this, actionArgs);
+      let rootCommand = this;
+      while (rootCommand.parent) {
+        rootCommand = rootCommand.parent;
+      }
+      rootCommand._actionResults.push(actionResult);
+    };
+    this._actionHandler = listener;
+    return this;
+  };
+
+  _optionEx(config, flags, description, fn, defaultValue) {
+    const option = new Option(flags, description);
+    const oname = option.name();
+    const name = option.attributeName();
+    option.mandatory = !!config.mandatory;
+
+    if (typeof fn !== 'function') {
+      if (fn instanceof RegExp) {
+        const regex = fn;
+        fn = (val, def) =&gt; {
+          const m = regex.exec(val);
+          return m ? m[0] : def;
+        };
+      } else {
+        defaultValue = fn;
+        fn = null;
+      }
+    }
+
+    if (option.negate || option.optional || option.required || typeof defaultValue === 'boolean') {
+      if (option.negate) {
+        const positiveLongFlag = option.long.replace(/^--no-/, '--');
+        defaultValue = this._findOption(positiveLongFlag) ? this._getOptionValue(name) : true;
+      }
+      if (defaultValue !== undefined) {
+        this._setOptionValue(name, defaultValue);
+        option.defaultValue = defaultValue;
+      }
+    }
+
+    this.options.push(option);
+
+    this.on('option:' + oname, (val) =&gt; {
+      if (val !== null &amp;&amp; fn) {
+        val = fn(val, this._getOptionValue(name) === undefined ? defaultValue : this._getOptionValue(name));
+      }
+
+      if (typeof this._getOptionValue(name) === 'boolean' || typeof this._getOptionValue(name) === 'undefined') {
+        if (val == null) {
+          this._setOptionValue(name, option.negate
+            ? false
+            : defaultValue || true);
+        } else {
+          this._setOptionValue(name, val);
+        }
+      } else if (val !== null) {
+        this._setOptionValue(name, option.negate ? false : val);
+      }
+    });
+
+    return this;
+  };
+
+  option(flags, description, fn, defaultValue) {
+    return this._optionEx({}, flags, description, fn, defaultValue);
+  };
+
+  requiredOption(flags, description, fn, defaultValue) {
+    return this._optionEx({ mandatory: true }, flags, description, fn, defaultValue);
+  };
+
+  allowUnknownOption(arg) {
+    this._allowUnknownOption = (arg === undefined) || arg;
+    return this;
+  };
+
+  storeOptionsAsProperties(value) {
+    this._storeOptionsAsProperties = (value === undefined) || value;
+    if (this.options.length) {
+      throw new Error('call .storeOptionsAsProperties() before adding options');
+    }
+    return this;
+  };
+
+  passCommandToAction(value) {
+    this._passCommandToAction = (value === undefined) || value;
+    return this;
+  };
+
+  _setOptionValue(key, value) {
+    if (this._storeOptionsAsProperties) {
+      this[key] = value;
+    } else {
+      this._optionValues[key] = value;
+    }
+  };
+
+  _getOptionValue(key) {
+    if (this._storeOptionsAsProperties) {
+      return this[key];
+    }
+    return this._optionValues[key];
+  };
+
+  parse(argv, parseOptions) {
+    if (argv !== undefined &amp;&amp; !Array.isArray(argv)) {
+      throw new Error('first parameter to parse must be array or undefined');
+    }
+    parseOptions = parseOptions || {};
+
+    if (argv === undefined) {
+      argv = process.argv;
+      if (process.versions &amp;&amp; process.versions.electron) {
+        parseOptions.from = 'electron';
+      }
+    }
+    this.rawArgs = argv.slice();
+
+    let userArgs;
+    switch (parseOptions.from) {
+      case undefined:
+      case 'node':
+        this._scriptPath = argv[1];
+        userArgs = argv.slice(2);
+        break;
+      case 'electron':
+        if (process.defaultApp) {
+          this._scriptPath = argv[1];
+          userArgs = argv.slice(2);
+        } else {
+          userArgs = argv.slice(1);
+        }
+        break;
+      case 'user':
+        userArgs = argv.slice(0);
+        break;
+      default:
+        throw new Error(`unexpected parse option { from: '${parseOptions.from}' }`);
+    }
+    if (!this._scriptPath &amp;&amp; process.mainModule) {
+      this._scriptPath = process.mainModule.filename;
+    }
+
+    this._name = this._name || (this._scriptPath &amp;&amp; path.basename(this._scriptPath, path.extname(this._scriptPath)));
+
+    this._parseCommand([], userArgs);
+
+    return this;
+  };
+
+  parseAsync(argv, parseOptions) {
+    this.parse(argv, parseOptions);
+    return Promise.all(this._actionResults).then(() =&gt; this);
+  };
+
+  _executeSubCommand(subcommand, args) {
+    args = args.slice();
+    let launchWithNode = false;
+    const sourceExt = ['.js', '.ts', '.mjs'];
+
+    this._checkForMissingMandatoryOptions();
+
+    const scriptPath = this._scriptPath;
+
+    let baseDir;
+    try {
+      const resolvedLink = fs.realpathSync(scriptPath);
+      baseDir = path.dirname(resolvedLink);
+    } catch (e) {
+      baseDir = '.'; 
+    }
+
+    let bin = path.basename(scriptPath, path.extname(scriptPath)) + '-' + subcommand._name;
+    if (subcommand._executableFile) {
+      bin = subcommand._executableFile;
+    }
+
+    const localBin = path.join(baseDir, bin);
+    if (fs.existsSync(localBin)) {
+      bin = localBin;
+    } else {
+      sourceExt.forEach((ext) =&gt; {
+        if (fs.existsSync(`${localBin}${ext}`)) {
+          bin = `${localBin}${ext}`;
+        }
+      });
+    }
+    launchWithNode = sourceExt.includes(path.extname(bin));
+
+    let proc;
+    if (process.platform !== 'win32') {
+      if (launchWithNode) {
+        args.unshift(bin);
+        args = incrementNodeInspectorPort(process.execArgv).concat(args);
+
+        proc = spawn(process.argv[0], args, { stdio: 'inherit' });
+      } else {
+        proc = spawn(bin, args, { stdio: 'inherit' });
+      }
+    } else {
+      args.unshift(bin);
+      args = incrementNodeInspectorPort(process.execArgv).concat(args);
+      proc = spawn(process.execPath, args, { stdio: 'inherit' });
+    }
+
+    const signals = ['SIGUSR1', 'SIGUSR2', 'SIGTERM', 'SIGINT', 'SIGHUP'];
+    signals.forEach((signal) =&gt; {
+      process.on(signal, () =&gt; {
+        if (proc.killed === false &amp;&amp; proc.exitCode === null) {
+          proc.kill(signal);
+        }
+      });
+    });
+
+    const exitCallback = this._exitCallback;
+    if (!exitCallback) {
+      proc.on('close', process.exit.bind(process));
+    } else {
+      proc.on('close', () =&gt; {
+        exitCallback(new CommanderError(process.exitCode || 0, 'commander.executeSubCommandAsync', '(close)'));
+      });
+    }
+    proc.on('error', (err) =&gt; {
+      if (err.code === 'ENOENT') {
+        const executableMissing = `'${bin}' does not exist
+ - if '${subcommand._name}' is not meant to be an executable command, remove description parameter from '.command()' and use '.description()' instead
+ - if the default executable name is not suitable, use the executableFile option to supply a custom name`;
+        throw new Error(executableMissing);
+      } else if (err.code === 'EACCES') {
+        throw new Error(`'${bin}' not executable`);
+      }
+      if (!exitCallback) {
+        process.exit(1);
+      } else {
+        const wrappedError = new CommanderError(1, 'commander.executeSubCommandAsync', '(error)');
+        wrappedError.nestedError = err;
+        exitCallback(wrappedError);
+      }
+    });
+
+    this.runningCommand = proc;
+  };
+
+  _dispatchSubcommand(commandName, operands, unknown) {
+    const subCommand = this._findCommand(commandName);
+    if (!subCommand) this._helpAndError();
+
+    if (subCommand._executableHandler) {
+      this._executeSubCommand(subCommand, operands.concat(unknown));
+    } else {
+      subCommand._parseCommand(operands, unknown);
+    }
+  };
+
+  _parseCommand(operands, unknown) {
+    const parsed = this.parseOptions(unknown);
+    operands = operands.concat(parsed.operands);
+    unknown = parsed.unknown;
+    this.args = operands.concat(unknown);
+
+    if (operands &amp;&amp; this._findCommand(operands[0])) {
+      this._dispatchSubcommand(operands[0], operands.slice(1), unknown);
+    } else if (this._lazyHasImplicitHelpCommand() &amp;&amp; operands[0] === this._helpCommandName) {
+      if (operands.length === 1) {
+        this.help();
+      } else {
+        this._dispatchSubcommand(operands[1], [], [this._helpLongFlag]);
+      }
+    } else if (this._defaultCommandName) {
+      outputHelpIfRequested(this, unknown); 
+      this._dispatchSubcommand(this._defaultCommandName, operands, unknown);
+    } else {
+      if (this.commands.length &amp;&amp; this.args.length === 0 &amp;&amp; !this._actionHandler &amp;&amp; !this._defaultCommandName) {
+        this._helpAndError();
+      }
+
+      outputHelpIfRequested(this, parsed.unknown);
+      this._checkForMissingMandatoryOptions();
+      if (parsed.unknown.length &gt; 0) {
+        this.unknownOption(parsed.unknown[0]);
+      }
+
+      if (this._actionHandler) {
+        const args = this.args.slice();
+        this._args.forEach((arg, i) =&gt; {
+          if (arg.required &amp;&amp; args[i] == null) {
+            this.missingArgument(arg.name);
+          } else if (arg.variadic) {
+            args[i] = args.splice(i);
+          }
+        });
+
+        this._actionHandler(args);
+        this.emit('command:' + this.name(), operands, unknown);
+      } else if (operands.length) {
+        if (this._findCommand('*')) {
+          this._dispatchSubcommand('*', operands, unknown);
+        } else if (this.listenerCount('command:*')) {
+          this.emit('command:*', operands, unknown);
+        } else if (this.commands.length) {
+          this.unknownCommand();
+        }
+      } else if (this.commands.length) {
+        this._helpAndError();
+      } else {
+      }
+    }
+  };
+
+  _findCommand(name) {
+    if (!name) return undefined;
+    return this.commands.find(cmd =&gt; cmd._name === name || cmd._aliases.includes(name));
+  };
+
+  _findOption(arg) {
+    return this.options.find(option =&gt; option.is(arg));
+  };
+
+  _checkForMissingMandatoryOptions() {
+    for (let cmd = this; cmd; cmd = cmd.parent) {
+      cmd.options.forEach((anOption) =&gt; {
+        if (anOption.mandatory &amp;&amp; (cmd._getOptionValue(anOption.attributeName()) === undefined)) {
+          cmd.missingMandatoryOptionValue(anOption);
+        }
+      });
+    }
+  };
+
+  parseOptions(argv) {
+    const operands = []; 
+    const unknown = []; 
+    let dest = operands;
+    const args = argv.slice();
+
+    function maybeOption(arg) {
+      return arg.length &gt; 1 &amp;&amp; arg[0] === '-';
+    }
+
+    while (args.length) {
+      const arg = args.shift();
+
+      if (arg === '--') {
+        if (dest === unknown) dest.push(arg);
+        dest.push(...args);
+        break;
+      }
+
+      if (maybeOption(arg)) {
+        const option = this._findOption(arg);
+        if (option) {
+          if (option.required) {
+            const value = args.shift();
+            if (value === undefined) this.optionMissingArgument(option);
+            this.emit(`option:${option.name()}`, value);
+          } else if (option.optional) {
+            let value = null;
+            if (args.length &gt; 0 &amp;&amp; !maybeOption(args[0])) {
+              value = args.shift();
+            }
+            this.emit(`option:${option.name()}`, value);
+          } else { 
+            this.emit(`option:${option.name()}`);
+          }
+          continue;
+        }
+      }
+
+      if (arg.length &gt; 2 &amp;&amp; arg[0] === '-' &amp;&amp; arg[1] !== '-') {
+        const option = this._findOption(`-${arg[1]}`);
+        if (option) {
+          if (option.required || option.optional) {
+            this.emit(`option:${option.name()}`, arg.slice(2));
+          } else {
+            this.emit(`option:${option.name()}`);
+            args.unshift(`-${arg.slice(2)}`);
+          }
+          continue;
+        }
+      }
+
+      if (/^--[^=]+=/.test(arg)) {
+        const index = arg.indexOf('=');
+        const option = this._findOption(arg.slice(0, index));
+        if (option &amp;&amp; (option.required || option.optional)) {
+          this.emit(`option:${option.name()}`, arg.slice(index + 1));
+          continue;
+        }
+      }
+
+      if (arg.length &gt; 1 &amp;&amp; arg[0] === '-') {
+        dest = unknown;
+      }
+
+      dest.push(arg);
+    }
+
+    return { operands, unknown };
+  };
+
+  opts() {
+    if (this._storeOptionsAsProperties) {
+      const result = {};
+      const len = this.options.length;
+
+      for (let i = 0; i &lt; len; i++) {
+        const key = this.options[i].attributeName();
+        result[key] = key === this._versionOptionName ? this._version : this[key];
+      }
+      return result;
+    }
+
+    return this._optionValues;
+  };
+
+  missingArgument(name) {
+    const message = `error: missing required argument '${name}'`;
+    console.error(message);
+    this._exit(1, 'commander.missingArgument', message);
+  };
+
+  optionMissingArgument(option, flag) {
+    let message;
+    if (flag) {
+      message = `error: option '${option.flags}' argument missing, got '${flag}'`;
+    } else {
+      message = `error: option '${option.flags}' argument missing`;
+    }
+    console.error(message);
+    this._exit(1, 'commander.optionMissingArgument', message);
+  };
+
+  missingMandatoryOptionValue(option) {
+    const message = `error: required option '${option.flags}' not specified`;
+    console.error(message);
+    this._exit(1, 'commander.missingMandatoryOptionValue', message);
+  };
+
+  unknownOption(flag) {
+    if (this._allowUnknownOption) return;
+    const message = `error: unknown option '${flag}'`;
+    console.error(message);
+    this._exit(1, 'commander.unknownOption', message);
+  };
+
+  unknownCommand() {
+    const partCommands = [this.name()];
+    for (let parentCmd = this.parent; parentCmd; parentCmd = parentCmd.parent) {
+      partCommands.unshift(parentCmd.name());
+    }
+    const fullCommand = partCommands.join(' ');
+    const message = `error: unknown command '${this.args[0]}'. See '${fullCommand} ${this._helpLongFlag}'.`;
+    console.error(message);
+    this._exit(1, 'commander.unknownCommand', message);
+  };
+
+  version(str, flags, description) {
+    if (str === undefined) return this._version;
+    this._version = str;
+    flags = flags || '-V, --version';
+    description = description || 'output the version number';
+    const versionOption = new Option(flags, description);
+    this._versionOptionName = versionOption.long.substr(2) || 'version';
+    this.options.push(versionOption);
+    this.on('option:' + this._versionOptionName, () =&gt; {
+      process.stdout.write(str + '\n');
+      this._exit(0, 'commander.version', str);
+    });
+    return this;
+  };
+
+  description(str, argsDescription) {
+    if (str === undefined &amp;&amp; argsDescription === undefined) return this._description;
+    this._description = str;
+    this._argsDescription = argsDescription;
+    return this;
+  };
+
+  alias(alias) {
+    if (alias === undefined) return this._aliases[0];
+    let command = this;
+    if (this.commands.length !== 0 &amp;&amp; this.commands[this.commands.length - 1]._executableHandler) {
+      command = this.commands[this.commands.length - 1];
+    }
+
+    if (alias === command._name) throw new Error('Command alias can\'t be the same as its name');
+
+    command._aliases.push(alias);
+    return this;
+  };
+
+  aliases(aliases) {
+    if (aliases === undefined) return this._aliases;
+
+    aliases.forEach((alias) =&gt; this.alias(alias));
+    return this;
+  };
+
+  usage(str) {
+    if (str === undefined) {
+      if (this._usage) return this._usage;
+
+      const args = this._args.map((arg) =&gt; {
+        return humanReadableArgName(arg);
+      });
+      return '[options]' +
+        (this.commands.length ? ' [command]' : '') +
+        (this._args.length ? ' ' + args.join(' ') : '');
+    }
+
+    this._usage = str;
+    return this;
+  };
+
+  name(str) {
+    if (str === undefined) return this._name;
+    this._name = str;
+    return this;
+  };
+
+  prepareCommands() {
+    const commandDetails = this.commands.filter((cmd) =&gt; {
+      return !cmd._hidden;
+    }).map((cmd) =&gt; {
+      const args = cmd._args.map((arg) =&gt; {
+        return humanReadableArgName(arg);
+      }).join(' ');
+
+      return [
+        cmd._name +
+          (cmd._aliases[0] ? '|' + cmd._aliases[0] : '') +
+          (cmd.options.length ? ' [options]' : '') +
+          (args ? ' ' + args : ''),
+        cmd._description
+      ];
+    });
+
+    if (this._lazyHasImplicitHelpCommand()) {
+      commandDetails.push([this._helpCommandnameAndArgs, this._helpCommandDescription]);
+    }
+    return commandDetails;
+  };
+
+  largestCommandLength() {
+    const commands = this.prepareCommands();
+    return commands.reduce((max, command) =&gt; {
+      return Math.max(max, command[0].length);
+    }, 0);
+  };
+
+  largestOptionLength() {
+    const options = [].slice.call(this.options);
+    options.push({
+      flags: this._helpFlags
+    });
+
+    return options.reduce((max, option) =&gt; {
+      return Math.max(max, option.flags.length);
+    }, 0);
+  };
+
+  largestArgLength() {
+    return this._args.reduce((max, arg) =&gt; {
+      return Math.max(max, arg.name.length);
+    }, 0);
+  };
+
+  padWidth() {
+    let width = this.largestOptionLength();
+    if (this._argsDescription &amp;&amp; this._args.length) {
+      if (this.largestArgLength() &gt; width) {
+        width = this.largestArgLength();
+      }
+    }
+
+    if (this.commands &amp;&amp; this.commands.length) {
+      if (this.largestCommandLength() &gt; width) {
+        width = this.largestCommandLength();
+      }
+    }
+
+    return width;
+  };
+
+  optionHelp() {
+    const width = this.padWidth();
+    const columns = process.stdout.columns || 80;
+    const descriptionWidth = columns - width - 4;
+    function padOptionDetails(flags, description) {
+      return pad(flags, width) + '  ' + optionalWrap(description, descriptionWidth, width + 2);
+    };
+
+    const help = this.options.map((option) =&gt; {
+      const fullDesc = option.description +
+        ((!option.negate &amp;&amp; option.defaultValue !== undefined) ? ' (default: ' + JSON.stringify(option.defaultValue) + ')' : '');
+      return padOptionDetails(option.flags, fullDesc);
+    });
+
+    const showShortHelpFlag = this._helpShortFlag &amp;&amp; !this._findOption(this._helpShortFlag);
+    const showLongHelpFlag = !this._findOption(this._helpLongFlag);
+    if (showShortHelpFlag || showLongHelpFlag) {
+      let helpFlags = this._helpFlags;
+      if (!showShortHelpFlag) {
+        helpFlags = this._helpLongFlag;
+      } else if (!showLongHelpFlag) {
+        helpFlags = this._helpShortFlag;
+      }
+      help.push(padOptionDetails(helpFlags, this._helpDescription));
+    }
+
+    return help.join('\n');
+  };
+
+  commandHelp() {
+    if (!this.commands.length &amp;&amp; !this._lazyHasImplicitHelpCommand()) return '';
+
+    const commands = this.prepareCommands();
+    const width = this.padWidth();
+
+    const columns = process.stdout.columns || 80;
+    const descriptionWidth = columns - width - 4;
+
+    return [
+      'Commands:',
+      commands.map((cmd) =&gt; {
+        const desc = cmd[1] ? '  ' + cmd[1] : '';
+        return (desc ? pad(cmd[0], width) : cmd[0]) + optionalWrap(desc, descriptionWidth, width + 2);
+      }).join('\n').replace(/^/gm, '  '),
+      ''
+    ].join('\n');
+  };
+
+  helpInformation() {
+    let desc = [];
+    if (this._description) {
+      desc = [
+        this._description,
+        ''
+      ];
+
+      const argsDescription = this._argsDescription;
+      if (argsDescription &amp;&amp; this._args.length) {
+        const width = this.padWidth();
+        const columns = process.stdout.columns || 80;
+        const descriptionWidth = columns - width - 5;
+        desc.push('Arguments:');
+        desc.push('');
+        this._args.forEach((arg) =&gt; {
+          desc.push('  ' + pad(arg.name, width) + '  ' + wrap(argsDescription[arg.name], descriptionWidth, width + 4));
+        });
+        desc.push('');
+      }
+    }
+
+    let cmdName = this._name;
+    if (this._aliases[0]) {
+      cmdName = cmdName + '|' + this._aliases[0];
+    }
+    let parentCmdNames = '';
+    for (let parentCmd = this.parent; parentCmd; parentCmd = parentCmd.parent) {
+      parentCmdNames = parentCmd.name() + ' ' + parentCmdNames;
+    }
+    const usage = [
+      'Usage: ' + parentCmdNames + cmdName + ' ' + this.usage(),
+      ''
+    ];
+
+    let cmds = [];
+    const commandHelp = this.commandHelp();
+    if (commandHelp) cmds = [commandHelp];
+
+    const options = [
+      'Options:',
+      '' + this.optionHelp().replace(/^/gm, '  '),
+      ''
+    ];
+
+    return usage
+      .concat(desc)
+      .concat(options)
+      .concat(cmds)
+      .join('\n');
+  };
+
+  outputHelp(cb) {
+    if (!cb) {
+      cb = (passthru) =&gt; {
+        return passthru;
+      };
+    }
+    const cbOutput = cb(this.helpInformation());
+    if (typeof cbOutput !== 'string' &amp;&amp; !Buffer.isBuffer(cbOutput)) {
+      throw new Error('outputHelp callback must return a string or a Buffer');
+    }
+    process.stdout.write(cbOutput);
+    this.emit(this._helpLongFlag);
+  };
+
+  helpOption(flags, description) {
+    this._helpFlags = flags || this._helpFlags;
+    this._helpDescription = description || this._helpDescription;
+
+    const splitFlags = this._helpFlags.split(/[ ,|]+/);
+
+    this._helpShortFlag = undefined;
+    if (splitFlags.length &gt; 1) this._helpShortFlag = splitFlags.shift();
+
+    this._helpLongFlag = splitFlags.shift();
+
+    return this;
+  };
+
+  help(cb) {
+    this.outputHelp(cb);
+    this._exit(process.exitCode || 0, 'commander.help', '(outputHelp)');
+  };
+
+  _helpAndError() {
+    this.outputHelp();
+    this._exit(1, 'commander.help', '(outputHelp)');
+  };
+};
+</code></pre></div><ul><li>导出及函数方法</li></ul> <div class="language- extra-class"><pre class="language-text"><code>exports = module.exports = new Command();
+exports.program = exports; 
+exports.Command = Command;
+exports.Option = Option;
+exports.CommanderError = CommanderError;
+
+function camelcase(flag) {
+  return flag.split('-').reduce((str, word) =&gt; {
+    return str + word[0].toUpperCase() + word.slice(1);
+  });
+}
+
+function pad(str, width) {
+  const len = Math.max(0, width - str.length);
+  return str + Array(len + 1).join(' ');
+}
+
+function wrap(str, width, indent) {
+  const regex = new RegExp('.{1,' + (width - 1) + '}([\\s\u200B]|$)|[^\\s\u200B]+?([\\s\u200B]|$)', 'g');
+  const lines = str.match(regex) || [];
+  return lines.map((line, i) =&gt; {
+    if (line.slice(-1) === '\n') {
+      line = line.slice(0, line.length - 1);
+    }
+    return ((i &gt; 0 &amp;&amp; indent) ? Array(indent + 1).join(' ') : '') + line.trimRight();
+  }).join('\n');
+}
+
+function optionalWrap(str, width, indent) {
+  if (str.match(/[\n]\s+/)) return str;
+  const minWidth = 40;
+  if (width &lt; minWidth) return str;
+  return wrap(str, width, indent);
+}
+
+function outputHelpIfRequested(cmd, args) {
+  const helpOption = args.find(arg =&gt; arg === cmd._helpLongFlag || arg === cmd._helpShortFlag);
+  if (helpOption) {
+    cmd.outputHelp();
+    cmd._exit(0, 'commander.helpDisplayed', '(outputHelp)');
+  }
+}
+
+function humanReadableArgName(arg) {
+  const nameOutput = arg.name + (arg.variadic === true ? '...' : '');
+  return arg.required
+    ? '&lt;' + nameOutput + '&gt;'
+    : '[' + nameOutput + ']';
+}
+
+function incrementNodeInspectorPort(args) {
+  return args.map((arg) =&gt; {
+    let result = arg;
+    if (arg.indexOf('--inspect') === 0) {
+      let debugOption;
+      let debugHost = '127.0.0.1';
+      let debugPort = '9229';
+      let match;
+      if ((match = arg.match(/^(--inspect(-brk)?)$/)) !== null) {
+        debugOption = match[1];
+      } else if ((match = arg.match(/^(--inspect(-brk|-port)?)=([^:]+)$/)) !== null) {
+        debugOption = match[1];
+        if (/^\d+$/.test(match[3])) {
+          debugPort = match[3];
+        } else {
+          debugHost = match[3];
+        }
+      } else if ((match = arg.match(/^(--inspect(-brk|-port)?)=([^:]+):(\d+)$/)) !== null) {
+        debugOption = match[1];
+        debugHost = match[3];
+        debugPort = match[4];
+      }
+
+      if (debugOption &amp;&amp; debugPort !== '0') {
+        result = `${debugOption}=${debugHost}:${parseInt(debugPort) + 1}`;
+      }
+    }
+    return result;
+  });
+}
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>本篇主要描述的是自主搭建脚手架的基本配置以及基本命令的配置上，具体的各种命令配置后事如何，且听下回分解</p> <p>未完待续...</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://cli.vuejs.org/zh/" target="_blank" rel="noopener noreferrer">vue-cli官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/tj/commander.js" target="_blank" rel="noopener noreferrer">commander.js源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/schifred/article/details/84810273" target="_blank" rel="noopener noreferrer">commander源码解读<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/soulwyb/article/details/86767220" target="_blank" rel="noopener noreferrer">Node.js中spawn与exec的异同比较<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/tick20200625.html" class="prev">
+        nextTick在项目中的实践
+      </a></span> <span class="next"><a href="/tech/front/cli20200702.html">
+        vee-cli脚手架实践(中)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/51.eb1ceda0.js" defer></script>
+  </body>
+</html>

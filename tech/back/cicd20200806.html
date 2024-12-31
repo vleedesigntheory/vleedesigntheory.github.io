@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端自动化集成部署交付实践 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/35.fe1e331d.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>后端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/back/cicd20200806.html" class="active sidebar-link">前端自动化集成部署交付实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#ci-cd" class="sidebar-link">CI/CD</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#docker" class="sidebar-link">Docker</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#jenkins" class="sidebar-link">Jenkins</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#gitlab" class="sidebar-link">Gitlab</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#nginx" class="sidebar-link">Nginx</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#nexus" class="sidebar-link">Nexus</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#ansible" class="sidebar-link">Ansible</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#实践" class="sidebar-link">实践</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#参考" class="sidebar-link">参考</a></li><li class="sidebar-sub-header"><a href="/tech/back/cicd20200806.html#感谢" class="sidebar-link">感谢</a></li></ul></li><li><a href="/tech/back/ng20201030.html" class="sidebar-link">NG全家桶全栈项目实践总结</a></li><li><a href="/tech/back/flexiwan20201219.html" class="sidebar-link">flexiwan项目踩坑实践（后端篇）</a></li><li><a href="/tech/back/dns20210708.html" class="sidebar-link">前端静态服务踩坑实践</a></li><li><a href="/tech/back/gateway20211120.html" class="sidebar-link">前端网关踩坑实践</a></li><li><a href="/tech/back/deploy20220116.html" class="sidebar-link">前端部署脚手架专网项目实践</a></li><li><a href="/tech/back/imagepic20220129.html" class="sidebar-link">前端图床搭建实践（后端篇）</a></li><li><a href="/tech/back/log20220718.html" class="sidebar-link">前端日志采集方案浅析</a></li><li><a href="/tech/back/piper20220914.html" class="sidebar-link">前端设计走查平台实践（后端篇）</a></li><li><a href="/tech/back/node20241216.html" class="sidebar-link">Node.js的Web服务在Nacos中的实践</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="前端自动化集成部署交付实践"><a href="#前端自动化集成部署交付实践" class="header-anchor">#</a> 前端自动化集成部署交付实践</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>随着前后端分离应用模式的推广，前端项目可独立部署维护上线，不再仅仅将前端开发后打包的文件直接丢到一个文件目录下就完事大吉了，现在对前端来说也需要了解运维的相关知识，本文旨在介绍一些相关的运维概念以及一些前端运维的实践。</p> <h2 id="ci-cd"><a href="#ci-cd" class="header-anchor">#</a> CI/CD</h2> <p><img src="/tech/back/cicd/cicd.png" alt="cicd"></p> <h3 id="持续集成"><a href="#持续集成" class="header-anchor">#</a> 持续集成</h3> <blockquote><p>continuous integration 持续集成是一种软件实践，流程为：开发 =&gt; 打包 =&gt; 集成 =&gt; 测试</p></blockquote> <h3 id="持续交付"><a href="#持续交付" class="header-anchor">#</a> 持续交付</h3> <blockquote><p>continuous delivery 持续交付是一种软件工程手法，流程为：测试 =&gt; 发布</p></blockquote> <h3 id="持续部署"><a href="#持续部署" class="header-anchor">#</a> 持续部署</h3> <blockquote><p>continous deployment 持续部署是在持续交付的管道中发布版本给最终用户的一种软件工程流程，流程为：发布 =&gt; 部署上线</p></blockquote> <p>持续集成、持续交付、持续部署是发布流程的不同阶段</p> <h2 id="docker"><a href="#docker" class="header-anchor">#</a> Docker</h2> <p><img src="/tech/back/cicd/docker.png" alt="docker"></p> <h3 id="容器-镜像"><a href="#容器-镜像" class="header-anchor">#</a> 容器 + 镜像</h3> <blockquote><p>docker 是一个开源的应用容器引擎。开发者可以打包自己的应用到容器里面，然后迁移到其他机器的 docker 应用中；开发者可以快速制作一个自己自定义的镜像，快速分享，也可以上传到镜像库进行存取和管理；容器之间相互隔离不冲突，硬件资源共享。</p></blockquote> <h3 id="docker-in-docker"><a href="#docker-in-docker" class="header-anchor">#</a> Docker in Docker</h3> <blockquote><p>容器内仅部署 docker 命令行工具（作为客户端），实际执行交由宿主机内的 docker-engine（服务器）</p></blockquote> <h2 id="jenkins"><a href="#jenkins" class="header-anchor">#</a> Jenkins</h2> <p><img src="/tech/back/cicd/jenkins.png" alt="jenkins"></p> <h3 id="概念"><a href="#概念" class="header-anchor">#</a> 概念</h3> <blockquote><p>Jenkins 是一个基于Java语言开发的CI持续构建工具，主要用于持续、自动的构建/测试软件项目。它可以执行你预先设定好的设置和脚本，也可以和 Git工具做集成，实现自动触发和定时触发器构建。</p></blockquote> <h2 id="gitlab"><a href="#gitlab" class="header-anchor">#</a> Gitlab</h2> <p><img src="/tech/back/cicd/gitlab.png" alt="gitlab"></p> <h3 id="概念-2"><a href="#概念-2" class="header-anchor">#</a> 概念</h3> <blockquote><p>gitlab既是一种服务，也是一种软件。既可以在gitlab.com上去租用服务，也可以下载gitlab阮籍你自己搭建服务</p></blockquote> <h2 id="nginx"><a href="#nginx" class="header-anchor">#</a> Nginx</h2> <p><img src="/tech/back/cicd/nginx.png" alt="nginx"></p> <h3 id="概念-3"><a href="#概念-3" class="header-anchor">#</a> 概念</h3> <blockquote><p>Nginx采用C进行编写，处理静态文件，索引文件以及自动索引;打开文件描述符缓冲。无缓存的反向代理加速，简单的负载均衡和容错。FastCGI，简单的负载均衡和容错。模块化的结构。</p></blockquote> <p>Nginx是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务</p> <h2 id="nexus"><a href="#nexus" class="header-anchor">#</a> Nexus</h2> <p><img src="/tech/back/cicd/nexus.png" alt="nexus"></p> <h3 id="概念-4"><a href="#概念-4" class="header-anchor">#</a> 概念</h3> <blockquote><p>制品仓库: 构建过程的输出物，包括软件包，测试报告，应用配置文件等可在服务器上直接 运行或可查看二进制形式的文件，通常称之为二进制软件制品。具有版本管理，历史管理，权限校验等功能。</p></blockquote> <p>Nexus可在自己的局域网内搭建自己的远程仓库服务器，称为私服，私服服务器即是公司内部的maven远程仓库，私服还充当一个代理服务器，可从互联网中央仓库自动下载</p> <ul><li><p>proxy 本地仓库，通常我们会部署自己的构件到这一类型的仓库。比如公司的第二方库</p></li> <li><p>hosted 代理仓库，它们被用来代理远程的公共仓库，如maven中央仓库</p></li> <li><p>group 仓库组，用来合并多个hosted/proxy仓库，当你的项目希望在多个repository使用资源时就不需要多次引用了，只需要引用一个group即可</p></li></ul> <h2 id="ansible"><a href="#ansible" class="header-anchor">#</a> Ansible</h2> <p><img src="/tech/back/cicd/ansible.png" alt="ansible"></p> <h3 id="概念-5"><a href="#概念-5" class="header-anchor">#</a> 概念</h3> <blockquote><p>ansible是基于Python开发的自动化运维工具。其优势在于可以批量操作，基本原理是通过ansible的核心进行通过ssh传输的通信进行相关的分发处理，进行user与host的通信</p></blockquote> <h3 id="modules"><a href="#modules" class="header-anchor">#</a> Modules</h3> <p><code>执行命令的功能模块，Ansible2.3版本为止，共有1039个模块。还可以自定义模块</code></p> <h3 id="inventory"><a href="#inventory" class="header-anchor">#</a> Inventory</h3> <p><code>管理主机的清单，默认是/etc/ansible/hosts文件</code></p> <h3 id="playbook"><a href="#playbook" class="header-anchor">#</a> Playbook</h3> <p><code>任务剧本（又称任务集），编排定义Ansible任务集的配置文件，由Ansible顺序依次执行，yaml格式</code></p> <h3 id="plugins"><a href="#plugins" class="header-anchor">#</a> Plugins</h3> <p><code>插件，模块功能的补充，常有连接类型插件，循环插件，变量插件，过滤插件，插件功能用的较少</code></p> <h3 id="api"><a href="#api" class="header-anchor">#</a> API</h3> <p><code>提供给第三方程序调用的应用程序编程接口</code></p> <h2 id="实践"><a href="#实践" class="header-anchor">#</a> 实践</h2> <p>操作环境： linux/centos7</p> <p>操作内容： 一台 gitlab + jenkins + ansible 服务器推送多台 nginx 服务器</p> <h3 id="docker-2"><a href="#docker-2" class="header-anchor">#</a> docker</h3> <ol><li>安装依赖</li></ol> <div class="language- extra-class"><pre class="language-text"><code>yum install -y yum-utils device-mapper-persistent-data lvm2
+</code></pre></div><ol start="2"><li>使用阿里云源安装</li></ol> <div class="language- extra-class"><pre class="language-text"><code>sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+yum install docker-ce
+</code></pre></div><ol start="3"><li>启动docker</li></ol> <div class="language- extra-class"><pre class="language-text"><code>systemctl start docker
+
+systemctl enable docker
+</code></pre></div><ol start="4"><li>可配置阿里云容器镜像加速器</li></ol> <p><a href="https://cr.console.aliyun.com/" target="_blank" rel="noopener noreferrer">阿里云容器镜像服务<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="gitlab-jenkins-ansible"><a href="#gitlab-jenkins-ansible" class="header-anchor">#</a> gitlab + jenkins + ansible</h3> <h4 id="安装jenkins"><a href="#安装jenkins" class="header-anchor">#</a> 安装jenkins</h4> <ol><li>安装防火墙</li></ol> <div class="language- extra-class"><pre class="language-text"><code>yum install firewalld systemd -y
+service firewalld start
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;xxx.xx.x.x/16&quot; accept&quot;
+systemctl reload firewalld
+</code></pre></div><ol start="2"><li>编写Dockerfile</li></ol> <div class="language- extra-class"><pre class="language-text"><code>FROM jenkins/jenkins
+USER root
+# 清除了基础镜像设置的源，切换成阿里云源
+RUN echo '' &gt; /etc/apt/sources.list.d/jessie-backports.list \
+  &amp;&amp; echo &quot;deb http://mirrors.aliyun.com/debian jessie main contrib non-free&quot; &gt; /etc/apt/sources.list \
+  &amp;&amp; echo &quot;deb http://mirrors.aliyun.com/debian jessie-updates main contrib non-free&quot; &gt;&gt; /etc/apt/sources.list \
+  &amp;&amp; echo &quot;deb http://mirrors.aliyun.com/debian-security jessie/updates main contrib non-free&quot; &gt;&gt; /etc/apt/sources.list
+# 更新源并安装缺少的包
+RUN apt-get update &amp;&amp; apt-get install -y libltdl7
+ARG dockerGid=999
+
+RUN echo &quot;docker:x:${dockerGid}:jenkins&quot; &gt;&gt; /etc/group
+</code></pre></div><ol start="3"><li>构建jenkins镜像</li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker build -t local/jenkins .
+</code></pre></div><ol start="4"><li>启动镜像</li></ol> <p>新建/home/jenkins/目录，将jenkins目录外挂到宿主机内</p> <div class="language- extra-class"><pre class="language-text"><code>mkdir /home/jenkins
+
+chown -R 1000 /home/jenkins/
+</code></pre></div><p>镜像创建容器并启动</p> <div class="language- extra-class"><pre class="language-text"><code>docker run -itd --name jenkins -p 8080:8080 -p 50000:50000 \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /usr/bin/docker:/usr/bin/docker \
+-v /home/jenkins:/var/jenkins_home \
+--restart always \
+--user root local/jenkins
+</code></pre></div><ol start="5"><li>启动jenkins</li></ol> <p>释放8080和50000端口</p> <div class="language- extra-class"><pre class="language-text"><code>firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-port=50000/tcp --permanent
+
+systemctl reload firewalld
+</code></pre></div><ol start="6"><li>初始化jenkins配置</li></ol> <blockquote><p>修改密码 =&gt; 下载插件 =&gt; 重启容器</p></blockquote> <p>初始化jenkins后会有一个初始密码，可通过<code>docker exec -it jenkins /bin/bash</code>进入容器后查看<code>cat /var/jenkins_home/secrets/initialAdminPassword</code></p> <ol start="7"><li>配置公钥私钥</li></ol> <p>进入jenkins容器，通过ssh-keygen生成公钥私钥</p> <div class="language- extra-class"><pre class="language-text"><code>docker exec -it jenkins /bin/bash
+ssh-keygen -t rsa
+</code></pre></div><p>进入~/.ssh查看id_rsa和id_rsa.pub，为jenkins配置</p> <blockquote><p>系统管理 =&gt; 安全 =&gt; Manage Credentials =&gt; 全局 =&gt; 添加凭据 =&gt; 选择SSH Username with private key</p></blockquote> <p><img src="/tech/back/cicd/cicd01.png" alt="cicd01"></p> <p><img src="/tech/back/cicd/cicd02.png" alt="cicd02"></p> <p><img src="/tech/back/cicd/cicd03.png" alt="cicd03"></p> <ol start="8"><li>配置node环境</li></ol> <blockquote><p>系统管理 =&gt; 全局工具配置 =&gt; NodeJS</p></blockquote> <p><img src="/tech/back/cicd/cicd04.png" alt="cicd04"></p> <ol start="9"><li>新建任务</li></ol> <blockquote><p>首页 =&gt; 左侧导航 =&gt; 新建任务 =&gt; 源码管理 + 构建环境 + 构建</p></blockquote> <p><img src="/tech/back/cicd/cicd05.png" alt="cicd05"></p> <p><img src="/tech/back/cicd/cicd06.png" alt="cicd06"></p> <p>构建这里选择执行shell，可将命令写入其中，这里镜像名称通常为jenkins服务器地址，后边加时间戳可以避免重名</p> <div class="language- extra-class"><pre class="language-text"><code>set -e
+timestamp=`date '+%Y%m%d%H%M%S'`
+
+node -v
+npm -v
+
+rm -rf node_modules package-lock.json
+
+npm install
+
+npm run build
+
+(docker ps | grep ansible) &amp;&amp; (docker rm -f ansible)
+
+# 编译docker镜像
+docker build -t xxx.xx.xx.xxx:8082/fe/nginx-fe-$timestamp .
+
+# 推送docker镜像到制品库
+docker push xxx.xx.xx.xxx:8082/fe/nginx-fe-$timestamp
+
+docker run -id --name ansible ansible:t1
+
+docker exec -i ansible ansible-playbook --syntax-check /root/playbook.yml
+
+docker exec -i ansible ansible-playbook -e &quot;timestamp=$timestamp&quot; /root/playbook.yml
+
+docker rm -f ansible
+</code></pre></div><ol start="10"><li>登录制品库</li></ol> <p>修改daemon.json</p> <div class="language- extra-class"><pre class="language-text"><code>vi /etc/docker/daemon.json
+
+{
+    &quot;insecure-registries&quot;: [
+        &quot;xxx.xx.xx.xxx:8082&quot;,
+        &quot;xxx.xx.xx.xxx:8081&quot;
+    ]
+}
+</code></pre></div><p>重启docker</p> <div class="language- extra-class"><pre class="language-text"><code>systemctl daemon-reload
+systemctl restart docker
+</code></pre></div><p>docker login登录</p> <div class="language- extra-class"><pre class="language-text"><code>docker exec -it jenkins /bin/bash
+
+docker login 服务器ip:端口
+exit
+</code></pre></div><h4 id="安装gitlab"><a href="#安装gitlab" class="header-anchor">#</a> 安装gitlab</h4> <ol><li>拉取gitlab镜像</li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker pull gitlab/gitlab-ce
+</code></pre></div><ol start="2"><li>创建gitlab容器</li></ol> <p>创建gitlab工作目录</p> <div class="language- extra-class"><pre class="language-text"><code>mkdir /home/gitlab
+</code></pre></div><p>启动gitlab容器</p> <div class="language- extra-class"><pre class="language-text"><code>docker run -itd -p 443:443 \
+-p 8899:8899 \
+-p 333:333 \
+--name gitlab \
+--restart always \
+-v /home/gitlab/config:/etc/gitlab \
+-v /home/gitlab/logs:/var/log/gitlab \
+-v /home/gitlab/data:/var/opt/gitlab \
+gitlab/gitlab-ce
+</code></pre></div><ol start="3"><li>修改防火墙</li></ol> <div class="language- extra-class"><pre class="language-text"><code>firewall-cmd --zone=public --add-port=333/tcp --permanent
+firewall-cmd --zone=public --add-port=8899/tcp --permanent
+
+systemctl reload firewalld
+</code></pre></div><ol start="4"><li>修改gitlab配置文件</li></ol> <p>修改配置文件</p> <div class="language- extra-class"><pre class="language-text"><code>vi /home/gitlab/config/gitlab.rb
+
+exteranl_url 'http://外部访问域名/地址:端口'
+gitlab_rails['gitlab_ssh_host'] = 'SSH外部访问域名/地址'
+gitlab_rails['gitlab_shell_ssh_port'] = SSH端口
+</code></pre></div><p>修改ssh端口</p> <div class="language- extra-class"><pre class="language-text"><code>docker exec -it gitlab /bin/bash
+
+vi /assets/sshd_config
+vi /etc/ssh/sshd_config
+</code></pre></div><p>重启gitlab</p> <div class="language- extra-class"><pre class="language-text"><code>docker restart gitlab
+</code></pre></div><ol start="5"><li>启动gitlab</li></ol> <blockquote><p>宿主机:端口 =&gt; 修改密码</p></blockquote> <p>修改gitlab密码</p> <div class="language- extra-class"><pre class="language-text"><code>docker exec -it gitlab /bin/bash
+
+gitlab-rails console production
+
+user = Uer.where(id:1).first
+user.password = &quot;xxxxx&quot;
+user.password_confirmation = &quot;xxxxx&quot;
+
+user.save!
+
+quit
+</code></pre></div><ol start="6"><li>配置jenkins的公钥</li></ol> <blockquote><p>登录gitlab =&gt; 点击头像 =&gt; 设置 =&gt; SSH密钥</p></blockquote> <p>将jenkins中查到的<code>~/.ssh/id_rsa.pub</code>添加到gitlab的ssh密钥中</p> <p><img src="/tech/back/cicd/cicd07.png" alt="cicd07"></p> <ol start="7"><li>在前端项目根目录下添加Dockerfile</li></ol> <div class="language- extra-class"><pre class="language-text"><code>FROM nginx:1.15-alpine
+COPY dist /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
+</code></pre></div><ol start="8"><li>新建仓库 + 配置webhook</li></ol> <p>新建仓库后，配置webhook，可通过git相关命令进行自动化部署，可参考这篇文章<a href="https://www.jianshu.com/p/00bc0323e83f" target="_blank" rel="noopener noreferrer">[后端]gitlab之webhook自动部署<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，github的webhook配置可参考这篇<a href="https://blog.csdn.net/qq_21768483/article/details/80177920" target="_blank" rel="noopener noreferrer">Jenkins与Github集成 webhook配置<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h4 id="安装nexus"><a href="#安装nexus" class="header-anchor">#</a> 安装nexus</h4> <ol><li>拉取nexus镜像</li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker pull sonatype/nexus3
+</code></pre></div><ol start="2"><li>创建nexus容器</li></ol> <p>创建nexus工作目录</p> <div class="language- extra-class"><pre class="language-text"><code>mkdir /home/nexus &amp;&amp; chown -R 200 /home/nexus
+</code></pre></div><p>启动容器</p> <div class="language- extra-class"><pre class="language-text"><code>docker run -d -p 8081:8081 -P 8082:8082 \
+--name nexus \
+-v /home/nexus:/nexus-data \
+--restart always \
+sonatype/nexus3
+</code></pre></div><ol start="3"><li>修改防火墙</li></ol> <div class="language- extra-class"><pre class="language-text"><code>firewall-cmd --zone=public --add-port=8081/tcp --permanent
+firewall-cmd --zone=public --add-port=8082/tcp --permanent
+</code></pre></div><ol start="4"><li>启动nexus</li></ol> <p>查看日志</p> <div class="language- extra-class"><pre class="language-text"><code>docker logs -f nexus
+</code></pre></div><ol start="5"><li>修改配置</li></ol> <blockquote><p>进入nexus =&gt; 修改密码</p></blockquote> <p><img src="/tech/back/cicd/cicd08.png" alt="cicd08"></p> <p><img src="/tech/back/cicd/cicd09.png" alt="cicd09"></p> <ol start="6"><li>创建私服</li></ol> <blockquote><p>齿轮图标 =&gt; Repositories =&gt; Create repository =&gt; 填写表单</p></blockquote> <p><img src="/tech/back/cicd/cicd10.png" alt="cicd10"></p> <p><img src="/tech/back/cicd/cicd11.png" alt="cicd11"></p> <h4 id="安装ansible"><a href="#安装ansible" class="header-anchor">#</a> 安装ansible</h4> <ol><li>创建ansible工作目录</li></ol> <div class="language- extra-class"><pre class="language-text"><code>mkdir /home/ansible-file &amp;&amp; cd /home/ansible-file
+
+mkdir ssh
+touch Dockerfile
+touch hosts
+touch playbook.yml
+</code></pre></div><ol start="2"><li>将配置的公钥私钥放入ssh文件夹下</li></ol> <div class="language- extra-class"><pre class="language-text"><code>cp -r ~/.ssh/* /home/ansible-file/ssh/
+</code></pre></div><ol start="3"><li>编辑Dockerfile</li></ol> <div class="language- extra-class"><pre class="language-text"><code>FROM centos:7
+RUN yum -y install wget curl vim openssh-clients
+RUN wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+RUN yum clean all
+RUN yum makecache
+
+COPY ssh /root/.ssh/
+
+RUN chmod 755 ~/.ssh/
+RUN chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+RUN yum -y install ansible
+
+COPY hosts /etc/ansible/
+
+RUN sed -i 's/^#host_key_checking = False/host_key_checking = False/' /etc/ansible/ansible.cfg
+RUN ansible --version
+
+COPY playbook.yml /root/
+</code></pre></div><ol start="4"><li>编辑hosts 多台服务器ip</li></ol> <div class="language- extra-class"><pre class="language-text"><code>[fe-servers]
+xxx.xx.xx.xxx
+xxx.xx.xx.xxx
+xxx.xx.xx.xxx
+</code></pre></div><ol start="5"><li>编辑playbook</li></ol> <div class="language- extra-class"><pre class="language-text"><code>---
+- hosts: all
+  remote_user: root
+  vars: 
+    timestamp: 20200806165833
+  tasks:
+    - name: docker pull new images
+      shell: 'chdir=~ docker pull xxx.xx.xx.xxx:8082/fe/nginx-fe-{{timestamp}}
+    - name: docker rmf
+      shell: 'chdir=~ docker ps | grep xxx &amp;&amp; docker rm -f xxx'
+      ignore_errors: true
+    - name: docker run
+      shell: 'chdir=~ docker run -p 80:80 -itd --name xxx xxx.xx.xx.xxx:8082/fe/nginx-fe-{{timestamp}}'
+</code></pre></div><h3 id="nginx-2"><a href="#nginx-2" class="header-anchor">#</a> nginx</h3> <ol><li>拉取nginx镜像</li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker pull nginx
+</code></pre></div><ol start="2"><li>创建nginx容器</li></ol> <p>创建nginx工作目录</p> <div class="language- extra-class"><pre class="language-text"><code>mkdir /home/nginx
+</code></pre></div><p>启动容器</p> <div class="language- extra-class"><pre class="language-text"><code>docker run -itd -p 80:80 --name xxx \
+-v /home/nginx/html:/usr/share/nginx/html \
+-v /home/nginx/logs:/var/log/nginx \
+--restart always \
+nginx
+</code></pre></div><ol start="3"><li>公钥私钥</li></ol> <p>使用ssh-keygen创建公钥私钥</p> <div class="language- extra-class"><pre class="language-text"><code>ssh-keygen -t rsa
+</code></pre></div><p>在.ssh文件夹下创建authorized_keys，将jenkins的公钥放入其中</p> <div class="language- extra-class"><pre class="language-text"><code>cd .ssh/
+touch authorized_keys
+
+vi authorized_keys
+</code></pre></div><ol start="4"><li>登录制品库</li></ol> <p>修改daemon.json</p> <div class="language- extra-class"><pre class="language-text"><code>vi /etc/docker/daemon.json
+
+{
+    &quot;insecure-registries&quot;: [
+        &quot;xxx.xx.xx.xxx:8082&quot;,
+        &quot;xxx.xx.xx.xxx:8081&quot;
+    ]
+}
+</code></pre></div><p>重启docker</p> <div class="language- extra-class"><pre class="language-text"><code>systemctl daemon-reload
+systemctl restart docker
+</code></pre></div><p>docker login登录</p> <div class="language- extra-class"><pre class="language-text"><code>docker exec -it nginx /bin/bash
+
+docker login 服务器ip:端口
+exit
+</code></pre></div><h3 id="结果"><a href="#结果" class="header-anchor">#</a> 结果</h3> <p><img src="/tech/back/cicd/example.png" alt="example"></p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>前端自动化部署可在内部开发及后续上线工程中进行运维控制，对前端来说也是越来越重要的能力，整体流程：</p> <blockquote><p>前端git提交 =&gt; gitlab/github更新 =&gt; 触发webhook命令 =&gt; jenkins构建 =&gt; nexus制品库生成 =&gt; ansible分发 =&gt; 多台nginx交付</p></blockquote> <p>对于gitlab来说还有不同stage进行的不同阶段的cicd全流程服务，具体可根据团队的需求进行个性化的定制，如果后期项目庞大，比如采用了微前端架构对不同框架如angular、react、vue进行不同层次部署交付，可配合k8s(ps: 感兴趣的同学，可参看这篇文章<a href=""></a>)等进行更为严格的开发上线流程控制。</p> <p>总之，在大前端的趋势下，前端延伸的方向也更为多样，对于我们的要求也会越来越多，工程化、智能化、可视化等等，要在某一领域有所建树，我们都还要不断努力才行，加油！与君共勉！</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://www.jianshu.com/p/00bc0323e83f" target="_blank" rel="noopener noreferrer">[后端]gitlab之webhook自动部署<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/qq_21768483/article/details/80177920" target="_blank" rel="noopener noreferrer">Jenkins与Github集成 webhook配置<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/sunju/articles/12882348.html" target="_blank" rel="noopener noreferrer">k8s部署Vue前端<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.51mimu.com/html/news/840.html" target="_blank" rel="noopener noreferrer">云前端新物种-微前端体系<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h2 id="感谢"><a href="#感谢" class="header-anchor">#</a> 感谢</h2> <p>在此，特别感谢码云前端王圣松大佬的分享，此为其个人历程分享<a href="https://juejin.im/post/6844904144025681934" target="_blank" rel="noopener noreferrer">一位00后前端2年经验的成长历程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，感兴趣的同学可以关注一波</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/tech/back/ng20201030.html">
+        NG全家桶全栈项目实践总结
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/35.fe1e331d.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>基础视频平台树组件踩坑实践 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/86.cbdc4406.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="active sidebar-link">基础视频平台树组件踩坑实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/tree20200531.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/tree20200531.html#问题目录" class="sidebar-link">问题目录</a></li><li class="sidebar-sub-header"><a href="/tech/front/tree20200531.html#踩坑案例" class="sidebar-link">踩坑案例</a></li><li class="sidebar-sub-header"><a href="/tech/front/tree20200531.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="基础视频平台树组件踩坑实践"><a href="#基础视频平台树组件踩坑实践" class="header-anchor">#</a> 基础视频平台树组件踩坑实践</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>树组件是项目中最常见的一种组件，其综合了数据结构的处理、拖拽、点击等前端常见面试题的综合，以下是本次实现过程中遇到的问题汇总</p> <p><img src="/tech/front/tree20200531/tree01.jpeg" alt="图片"></p> <h2 id="问题目录"><a href="#问题目录" class="header-anchor">#</a> 问题目录</h2> <ul><li>json数据处理</li> <li>$set分析</li> <li>深拷贝</li></ul> <h2 id="踩坑案例"><a href="#踩坑案例" class="header-anchor">#</a> 踩坑案例</h2> <h3 id="json数据处理"><a href="#json数据处理" class="header-anchor">#</a> json数据处理</h3> <p>[bug描述] 项目中树组件数据所需为三级结构，前两级结构数据与第三级结构数据是不同的接口，商讨过后，决定二级结构后获取三级结构数据，将三级结构数据中的字段获取塞入原数据中，在数据量较大时层级较多时会产生较大延时，影响体验</p> <p>[bug分析] 大数据量多层级性能较差，需优化</p> <p>[解决方案] 抽象成两个json数据的映射关系处理</p> <p>接口1中获取的数据json1如下：</p> <div class="language- extra-class"><pre class="language-text"><code>    [
+        {
+            &quot;name&quot;: &quot;组1&quot;,
+            &quot;id&quot;: &quot;g100001&quot;,
+            &quot;type&quot;: &quot;group&quot;,
+            &quot;children&quot;: [
+                {
+                    &quot;name&quot;: &quot;摄像机&quot;,
+                    &quot;id&quot;: &quot;d100001&quot;,
+                    &quot;type&quot;: &quot;device&quot;,   
+                },
+                {
+                    &quot;name&quot;: &quot;NVR&quot;,
+                    &quot;id&quot;: &quot;d100002&quot;,
+                    &quot;type&quot;: &quot;device&quot;,   
+                },
+                {
+                    &quot;name&quot;: &quot;摄像机&quot;,
+                    &quot;id&quot;: &quot;d100003&quot;,
+                    &quot;type&quot;: &quot;device&quot;,   
+                }
+            ]
+        }
+    ]
+</code></pre></div><p>接口二中获取的数据json2如下：</p> <div class="language- extra-class"><pre class="language-text"><code>    [
+        {
+            &quot;ID&quot;: &quot;10001&quot;,
+            &quot;DeviceID&quot;: &quot;10000101001&quot;
+        },
+        {
+            &quot;ID&quot;: &quot;10002&quot;,
+            &quot;DeviceID&quot;: &quot;10000101002&quot;
+        },
+        {
+            &quot;ID&quot;: &quot;10003&quot;,
+            &quot;DeviceID&quot;: &quot;10000101003&quot;
+        }
+    ]
+</code></pre></div><p>最终要将json1中的类型为device的id对应获取到的json2数据组合成最终的数据json如下：</p> <div class="language- extra-class"><pre class="language-text"><code>    [
+        {
+            &quot;name&quot;: &quot;组1&quot;,
+            &quot;id&quot;: &quot;g100001&quot;,
+            &quot;type&quot;: &quot;group&quot;,
+            &quot;children&quot;: [
+                {
+                    &quot;name&quot;: &quot;摄像机&quot;,
+                    &quot;id&quot;: &quot;d100001&quot;,
+                    &quot;type&quot;: &quot;device&quot;, 
+                    ”children&quot;: [
+                        {
+                            &quot;name&quot;: ID,
+                            &quot;id&quot;: DeviceID,
+                            &quot;type&quot;: &quot;channel&quot;
+                        },
+                        {
+                            &quot;name&quot;: ID,
+                            &quot;id&quot;: DeviceID,
+                            &quot;type&quot;: &quot;channel&quot;
+                        },
+                        {
+                            &quot;name&quot;: ID,
+                            &quot;id&quot;: DeviceID,
+                            &quot;type&quot;: &quot;channel&quot;
+                        }
+                    ]   
+                }
+            ]
+        }
+    ]
+</code></pre></div><p>抽象转化 =&gt; [
+{
+&quot;children&quot;:[
+{...}
+],
+&quot;字段1&quot;:&quot;&quot;,
+&quot;字段2&quot;:&quot;&quot;
+}
+]</p> <p>对于多个json数据的映射组合，常见的方法有：1、硬解；2、转AST；3、动态规划</p> <p>硬解在本场景下时空复杂度还可控制，倘若出现多层结构的深度递归去解会出现爆栈和性能损耗；转ast可以将所有类似结构进行通解，但是需要去写解释执行器也会占据时间和空间，另外ast更适合数据结构变化非常大的，比如像jsx这种要转换成js就需要ast的引入，本场景多层级结构类似；动态规划是对深度递归的一种优化，将每一个问题转化为子问题，从子问题反推，上边的抽象转化是最小子问题，只需将最小子问题进行反向推导，就可以减少内存使用，提升效率</p> <p><img src="/tech/front/tree20200531/tree02.jpeg" alt="图片"></p> <h3 id="set使用及对watcher的理解"><a href="#set使用及对watcher的理解" class="header-anchor">#</a> $set使用及对Watcher的理解</h3> <p>[bug描述] 由于三层数据是由另外一个接口获取的，其获取后需要重新塞入元数据中，然而再次塞入后却没有被监听到，在视图上没有显示</p> <p>[bug分析] 没有defineReactive，也就无法被dep收集，Watcher就无法监听</p> <p>[解决方案] 使用$set方法</p> <p>Vue中的双向数据绑定是通过defineReactive方法实现，其基本是Object.defineProperty的使用</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * Define a reactive property on an Object.
+ */
+export function defineReactive (
+  obj: Object,
+  key: string,
+  val: any,
+  customSetter?: ?Function,
+  shallow?: boolean
+) {
+  const dep = new Dep()
+
+  const property = Object.getOwnPropertyDescriptor(obj, key)
+  if (property &amp;&amp; property.configurable === false) {
+    return
+  }
+
+  // cater for pre-defined getter/setters
+  const getter = property &amp;&amp; property.get
+  const setter = property &amp;&amp; property.set
+  if ((!getter || setter) &amp;&amp; arguments.length === 2) {
+    val = obj[key]
+  }
+
+  let childOb = !shallow &amp;&amp; observe(val)
+  Object.defineProperty(obj, key, {
+    enumerable: true,
+    configurable: true,
+    get: function reactiveGetter () {
+      const value = getter ? getter.call(obj) : val
+      if (Dep.target) {
+        dep.depend()
+        if (childOb) {
+          childOb.dep.depend()
+          if (Array.isArray(value)) {
+            dependArray(value)
+          }
+        }
+      }
+      return value
+    },
+    set: function reactiveSetter (newVal) {
+      const value = getter ? getter.call(obj) : val
+      /* eslint-disable no-self-compare */
+      if (newVal === value || (newVal !== newVal &amp;&amp; value !== value)) {
+        return
+      }
+      /* eslint-enable no-self-compare */
+      if (process.env.NODE_ENV !== 'production' &amp;&amp; customSetter) {
+        customSetter()
+      }
+      // #7981: for accessor properties without setter
+      if (getter &amp;&amp; !setter) return
+      if (setter) {
+        setter.call(obj, newVal)
+      } else {
+        val = newVal
+      }
+      childOb = !shallow &amp;&amp; observe(newVal)
+      dep.notify()
+    }
+  })
+}
+</code></pre></div><p>对于一般对象的属性新增，defineReactive是不能获取到的，因而需要使用$set方法</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * Set a property on an object. Adds the new property and
+ * triggers change notification if the property doesn't
+ * already exist.
+ */
+export function set (target: Array&lt;any&gt; | Object, key: any, val: any): any {
+  if (process.env.NODE_ENV !== 'production' &amp;&amp;
+    (isUndef(target) || isPrimitive(target))
+  ) {
+    warn(`Cannot set reactive property on undefined, null, or primitive value: ${(target: any)}`)
+  }
+  if (Array.isArray(target) &amp;&amp; isValidArrayIndex(key)) {
+    target.length = Math.max(target.length, key)
+    target.splice(key, 1, val)
+    return val
+  }
+  if (key in target &amp;&amp; !(key in Object.prototype)) {
+    target[key] = val
+    return val
+  }
+  const ob = (target: any).__ob__
+  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {
+    process.env.NODE_ENV !== 'production' &amp;&amp; warn(
+      'Avoid adding reactive properties to a Vue instance or its root $data ' +
+      'at runtime - declare it upfront in the data option.'
+    )
+    return val
+  }
+  if (!ob) {
+    target[key] = val
+    return val
+  }
+  defineReactive(ob.value, key, val)
+  ob.dep.notify()
+  return val
+}
+</code></pre></div><p>只有在defineReactive中才能被dep收集到，才能通过Watcher进行监听</p> <h3 id="深拷贝导致的数据不能及时更新"><a href="#深拷贝导致的数据不能及时更新" class="header-anchor">#</a> 深拷贝导致的数据不能及时更新</h3> <p>[bug描述] 树组件重命名后，新的名字未能及时响应到页面上，却在第二轮渲染到了页面上</p> <p>[bug分析] lodash深拷贝和点击发送事件的回调发生时间未知，因而在defineReactive中的值获取到的时间也是未定的，通常点击事件的回调会阻塞js线程，因而在点击后虽然defineReactive改变了，传到子组件中的数据由于有深拷贝也需要时间响应，然而响应完后，页面已经完成，因此在这一个时间周期中，响应后的数据被放到了下一次的渲染中，当再次点击后才会显示</p> <p>[解决方案] 去除深拷贝，点击后的数据直接传到子组件中，不需要深拷贝执行</p> <p>Vue 的父组件和子组件生命周期钩子函数执行顺序可以归类为以下 4 部分：</p> <ul><li><p>加载渲染过程：
+父 beforeCreate -&gt; 父 created -&gt; 父 beforeMount -&gt; 子 beforeCreate -&gt; 子 created -&gt; 子 beforeMount -&gt; 子 mounted -&gt; 父 mounted</p></li> <li><p>子组件更新过程：
+父 beforeUpdate -&gt; 子 beforeUpdate -&gt; 子 updated -&gt; 父 updated</p></li> <li><p>父组件更新过程：
+父 beforeUpdate -&gt; 父 updated</p></li> <li><p>销毁过程：
+父 beforeDestroy -&gt; 子 beforeDestroy -&gt; 子 destroyed -&gt; 父 destroyed</p></li></ul> <p><img src="/tech/front/tree20200531/tree03.jpeg" alt="图片"></p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>树组件是一个比较复杂的组件，同时也是前端基本功的一个很好的测试案例，反复琢磨树组件的基础功能实现会发现面试中常见题目都有体现，其实面试中的常见题目都是日常工作中的抽象化的考察，除了个别的完全不靠谱的题目，大部分题目还是在日常开发中有很好的体现的，比如本次踩坑实践中就有：1、算法考察：动态规划；2、Object基础api考察；3、深拷贝浅拷贝问题；4、EventLoop问题；5、Vue源码...所以，对前端基本功的打磨和修炼才能使自己的前端能力有一个较大的提升，共勉！！！</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/locales.html" class="prev">
+        阿里飞冰(ice)框架下国际化实践
+      </a></span> <span class="next"><a href="/tech/front/range20200613.html">
+        基于el-slider自定义range组件封装实践
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/86.cbdc4406.js" defer></script>
+  </body>
+</html>

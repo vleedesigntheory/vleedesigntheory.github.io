@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>nextTick在项目中的实践 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/84.4edeeb08.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="active sidebar-link">nextTick在项目中的实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/tick20200625.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/tick20200625.html#踩坑目录" class="sidebar-link">踩坑目录</a></li><li class="sidebar-sub-header"><a href="/tech/front/tick20200625.html#踩坑案例" class="sidebar-link">踩坑案例</a></li><li class="sidebar-sub-header"><a href="/tech/front/tick20200625.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/tick20200625.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nexttick在项目中的实践"><a href="#nexttick在项目中的实践" class="header-anchor">#</a> nextTick在项目中的实践</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>在项目中经常需要在视图层立即显示数据，而有时候由于异步数据传递的原因，在页面上并不会立即显示页面，这时候就需要使用Vue提供的nextTick这个方法，其主要原因是Vue的数据视图是异步更新的，用官方的解释就是：</p> <blockquote><p>Vue 实现响应式并不是数据发生变化之后 DOM 立即变化，而是按一定的策略进行 DOM 的更新。</p></blockquote> <p>其中说到的事件循环也是前端面试中常问到的一个点，本文不做具体展开，有兴趣的同学可参考这篇文章 <a href="https://juejin.im/post/5c3d8956e51d4511dc72c200?utm_source=wechat&amp;from=timeline" target="_blank" rel="noopener noreferrer">一次弄懂Event Loop（彻底解决此类面试问题）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><img src="/tech/front/tick20200625/tick01.png" alt="图片"></p> <h2 id="踩坑目录"><a href="#踩坑目录" class="header-anchor">#</a> 踩坑目录</h2> <ul><li>模板案例数据在视图上显示</li> <li>兄弟组件间异步数据传递</li> <li>$nextTick源码实现解析</li></ul> <h2 id="踩坑案例"><a href="#踩坑案例" class="header-anchor">#</a> 踩坑案例</h2> <h3 id="模板案例数据在视图上显示"><a href="#模板案例数据在视图上显示" class="header-anchor">#</a> 模板案例数据在视图上显示</h3> <p><img src="/tech/front/tick20200625/tick02.jpeg" alt="图片"></p> <p>[bug描述] 页面上点击重置后将模板视图渲染会一个固定数据下的视图</p> <p>[bug分析] 点击后需要立即显示在页面上，这是典型的nextTick需要应用的场景</p> <p>[解决方案]</p> <p>此处还有一个坑就是对于数组类型的监听是基于一个地址的，因而如果需要Vue的Watcher能够监视到就需要符合数组监听的那几种方法，这里直接新建，相当于每次的地址都会发生变化，因而可以监听到</p> <div class="language- extra-class"><pre class="language-text"><code>    async resetTemplate() {
+      this.template = [];
+      await this.$nextTick(function() {
+          this.template = [
+          {
+            week: '1',
+            starttime: '00:00:00',
+            endtime: '00:00:00'
+          },
+          {
+            week: '2',
+            starttime: '00:00:00',
+            endtime: '00:00:00'
+          },
+          {
+            week: '3',
+            starttime: '00:00:00',
+            endtime: '00:00:00'
+          },
+          {
+            week: '4',
+            starttime: '00:00:00',
+            endtime: '00:00:00'
+          },
+          {
+            week: '5',
+            starttime: '00:00:00',
+            endtime: '00:00:00'
+          },
+          {
+            week: '6',
+            starttime: '00:00:00',
+            endtime: '00:00:00'
+          },
+          {
+            week: '7',
+            starttime: '00:00:00',
+            endtime: '00:00:00'
+          }
+        ];
+      });
+    }
+</code></pre></div><h3 id="兄弟组件间异步数据传递"><a href="#兄弟组件间异步数据传递" class="header-anchor">#</a> 兄弟组件间异步数据传递</h3> <p><img src="/tech/front/tick20200625/tick03.jpeg" alt="图片"></p> <p>[bug描述] 页面修改弹窗中的输入框字段需要复写进对应字段，利用Props传递数据进去后并不会直接修改数据</p> <p>[bug分析] 此场景下数据是通过子组件emit给父组件，父组件获取数据后通过props传递给弹窗，在v-model中获取数据是异步的</p> <p>[解决方案]</p> <p>这是比较不常见的一种使用$nextTick去处理v-model异步数据传递的方法(ps: 关于emit/on的发布订阅相关的介绍，有兴趣的同学可以看一下这篇文章 <a href="https://blog.csdn.net/qq_42778001/article/details/96692000" target="_blank" rel="noopener noreferrer">vue发布订阅者模式$emit、$on<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)，利用的是父组件的数据延迟到下一个tick去给子组件传递，子组件在对应页面上及时渲染的方法，除了这种方法还有其他方法，具体可参考这篇文章 <a href="https://www.cnblogs.com/goloving/p/9114389.html" target="_blank" rel="noopener noreferrer">详解vue父组件传递props异步数据到子组件的问题<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language- extra-class"><pre class="language-text"><code>    edit(data) {
+      this.isManu = true;
+      let [content,pos] = data;
+      this.manuPos = pos;
+      this.form = content;
+      this.$nextTick(function(){
+        this.$refs.deviceEdit.form.deviceid = content.deviceId;
+        this.$refs.deviceEdit.form.devicename = content.deviceName;
+        this.$refs.deviceEdit.form.devicebrand = content.deviceBrand;
+        this.$refs.deviceEdit.form.devicegroup = content.deviceGroup;
+        this.$refs.deviceEdit.form.mediatrans = content.mediaTrans;
+        this.$refs.deviceEdit.form.cloudstorage = content.cloudStorage;
+        this.$refs.deviceEdit.form.longitude = content.longitude;
+        this.$refs.deviceEdit.form.latitude = content.latitude;
+        this.$refs.deviceEdit.form.altitude = content.altitude;
+      })
+    },
+</code></pre></div><h3 id="nexttick源码实现解析"><a href="#nexttick源码实现解析" class="header-anchor">#</a> $nextTick源码实现解析</h3> <p><img src="/tech/front/tick20200625/tick04.png" alt="图片"></p> <p>2.5之前的版本：</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * Defer a task to execute it asynchronously.
+ */
+export const nextTick = (function () {
+  const callbacks = []
+  let pending = false
+  let timerFunc
+
+  function nextTickHandler () {
+    pending = false
+    const copies = callbacks.slice(0)
+    callbacks.length = 0
+    for (let i = 0; i &lt; copies.length; i++) {
+      copies[i]()
+    }
+  }
+
+  // the nextTick behavior leverages the microtask queue, which can be accessed
+  // via either native Promise.then or MutationObserver.
+  // MutationObserver has wider support, however it is seriously bugged in
+  // UIWebView in iOS &gt;= 9.3.3 when triggered in touch event handlers. It
+  // completely stops working after triggering a few times... so, if native
+  // Promise is available, we will use it:
+  /* istanbul ignore if */
+  if (typeof Promise !== 'undefined' &amp;&amp; isNative(Promise)) {
+    var p = Promise.resolve()
+    var logError = err =&gt; { console.error(err) }
+    timerFunc = () =&gt; {
+      p.then(nextTickHandler).catch(logError)
+      // in problematic UIWebViews, Promise.then doesn't completely break, but
+      // it can get stuck in a weird state where callbacks are pushed into the
+      // microtask queue but the queue isn't being flushed, until the browser
+      // needs to do some other work, e.g. handle a timer. Therefore we can
+      // &quot;force&quot; the microtask queue to be flushed by adding an empty timer.
+      if (isIOS) setTimeout(noop)
+    }
+  } else if (!isIE &amp;&amp; typeof MutationObserver !== 'undefined' &amp;&amp; (
+    isNative(MutationObserver) ||
+    // PhantomJS and iOS 7.x
+    MutationObserver.toString() === '[object MutationObserverConstructor]'
+  )) {
+    // use MutationObserver where native Promise is not available,
+    // e.g. PhantomJS, iOS7, Android 4.4
+    var counter = 1
+    var observer = new MutationObserver(nextTickHandler)
+    var textNode = document.createTextNode(String(counter))
+    observer.observe(textNode, {
+      characterData: true
+    })
+    timerFunc = () =&gt; {
+      counter = (counter + 1) % 2
+      textNode.data = String(counter)
+    }
+  } else {
+    // fallback to setTimeout
+    /* istanbul ignore next */
+    timerFunc = () =&gt; {
+      setTimeout(nextTickHandler, 0)
+    }
+  }
+
+  return function queueNextTick (cb?: Function, ctx?: Object) {
+    let _resolve
+    callbacks.push(() =&gt; {
+      if (cb) {
+        try {
+          cb.call(ctx)
+        } catch (e) {
+          handleError(e, ctx, 'nextTick')
+        }
+      } else if (_resolve) {
+        _resolve(ctx)
+      }
+    })
+    if (!pending) {
+      pending = true
+      timerFunc()
+    }
+    if (!cb &amp;&amp; typeof Promise !== 'undefined') {
+      return new Promise((resolve, reject) =&gt; {
+        _resolve = resolve
+      })
+    }
+  }
+})()
+</code></pre></div><p><img src="/tech/front/tick20200625/tick05.png" alt="图片"></p> <p>2.5之后的版本</p> <div class="language- extra-class"><pre class="language-text"><code>/* @flow */
+/* globals MutationObserver */
+
+import { noop } from 'shared/util'
+import { handleError } from './error'
+import { isIE, isIOS, isNative } from './env'
+
+export let isUsingMicroTask = false
+
+const callbacks = []
+let pending = false
+
+function flushCallbacks () {
+  pending = false
+  const copies = callbacks.slice(0)
+  callbacks.length = 0
+  for (let i = 0; i &lt; copies.length; i++) {
+    copies[i]()
+  }
+}
+
+// Here we have async deferring wrappers using microtasks.
+// In 2.5 we used (macro) tasks (in combination with microtasks).
+// However, it has subtle problems when state is changed right before repaint
+// (e.g. #6813, out-in transitions).
+// Also, using (macro) tasks in event handler would cause some weird behaviors
+// that cannot be circumvented (e.g. #7109, #7153, #7546, #7834, #8109).
+// So we now use microtasks everywhere, again.
+// A major drawback of this tradeoff is that there are some scenarios
+// where microtasks have too high a priority and fire in between supposedly
+// sequential events (e.g. #4521, #6690, which have workarounds)
+// or even between bubbling of the same event (#6566).
+let timerFunc
+
+// The nextTick behavior leverages the microtask queue, which can be accessed
+// via either native Promise.then or MutationObserver.
+// MutationObserver has wider support, however it is seriously bugged in
+// UIWebView in iOS &gt;= 9.3.3 when triggered in touch event handlers. It
+// completely stops working after triggering a few times... so, if native
+// Promise is available, we will use it:
+/* istanbul ignore next, $flow-disable-line */
+if (typeof Promise !== 'undefined' &amp;&amp; isNative(Promise)) {
+  const p = Promise.resolve()
+  timerFunc = () =&gt; {
+    p.then(flushCallbacks)
+    // In problematic UIWebViews, Promise.then doesn't completely break, but
+    // it can get stuck in a weird state where callbacks are pushed into the
+    // microtask queue but the queue isn't being flushed, until the browser
+    // needs to do some other work, e.g. handle a timer. Therefore we can
+    // &quot;force&quot; the microtask queue to be flushed by adding an empty timer.
+    if (isIOS) setTimeout(noop)
+  }
+  isUsingMicroTask = true
+} else if (!isIE &amp;&amp; typeof MutationObserver !== 'undefined' &amp;&amp; (
+  isNative(MutationObserver) ||
+  // PhantomJS and iOS 7.x
+  MutationObserver.toString() === '[object MutationObserverConstructor]'
+)) {
+  // Use MutationObserver where native Promise is not available,
+  // e.g. PhantomJS, iOS7, Android 4.4
+  // (#6466 MutationObserver is unreliable in IE11)
+  let counter = 1
+  const observer = new MutationObserver(flushCallbacks)
+  const textNode = document.createTextNode(String(counter))
+  observer.observe(textNode, {
+    characterData: true
+  })
+  timerFunc = () =&gt; {
+    counter = (counter + 1) % 2
+    textNode.data = String(counter)
+  }
+  isUsingMicroTask = true
+} else if (typeof setImmediate !== 'undefined' &amp;&amp; isNative(setImmediate)) {
+  // Fallback to setImmediate.
+  // Technically it leverages the (macro) task queue,
+  // but it is still a better choice than setTimeout.
+  timerFunc = () =&gt; {
+    setImmediate(flushCallbacks)
+  }
+} else {
+  // Fallback to setTimeout.
+  timerFunc = () =&gt; {
+    setTimeout(flushCallbacks, 0)
+  }
+}
+
+export function nextTick (cb?: Function, ctx?: Object) {
+  let _resolve
+  callbacks.push(() =&gt; {
+    if (cb) {
+      try {
+        cb.call(ctx)
+      } catch (e) {
+        handleError(e, ctx, 'nextTick')
+      }
+    } else if (_resolve) {
+      _resolve(ctx)
+    }
+  })
+  if (!pending) {
+    pending = true
+    timerFunc()
+  }
+  // $flow-disable-line
+  if (!cb &amp;&amp; typeof Promise !== 'undefined') {
+    return new Promise(resolve =&gt; {
+      _resolve = resolve
+    })
+  }
+}
+</code></pre></div><p>不同版本主要在于timeFunc的异步函数使用优先顺序不同，2.5之后也有些许不同，但主要在于要不要暴露微任务函数和宏任务函数的问题(ps:上边的2.5之后的版本是2.6.11)</p> <blockquote><p>2.5之前版本： Promise =&gt; MutationObserver =&gt; setTimeout</p></blockquote> <blockquote><p>2.5之后版本： setImmediate =&gt; MessageChannel =&gt; Promise =&gt; setTimeout</p></blockquote> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p><img src="/tech/front/tick20200625/tick06.png" alt="图片"></p> <p>js的异步执行机制是前端同学必须掌握的知识，其中nextTick就是其中一个很典型的代表，node中也有nextTick相关的方法，面试中也常常问到相关方法的实现，深刻理解js的基础方法和特性，对前端开发中避坑还是很有用处的，每每出现问题几乎在所有的面试题中都有相关知识的展现，打好基础永远是一个工程师上升的坚实的基础！</p> <div class="language- extra-class"><pre class="language-text"><code>let callbacks = []
+let pending = false
+
+function nextTick (cb) {
+    callbacks.push(cb)
+
+    if (!pending) {
+        pending = true
+        setTimeout(flushCallback, 0)
+    }
+}
+
+function flushCallback () {
+    pending = false
+    let copies = callbacks.slice()
+    callbacks.length = 0
+    copies.forEach(copy =&gt; {
+        copy()
+    })
+}
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://segmentfault.com/a/1190000012861862" target="_blank" rel="noopener noreferrer">Vue.nextTick 的原理和用途<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/a7550c0e164f" target="_blank" rel="noopener noreferrer">简单理解Vue中的nextTick<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/83218117" target="_blank" rel="noopener noreferrer">nextTick源码解析<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://juejin.im/post/5ae3f0956fb9a07ac90cf43e" target="_blank" rel="noopener noreferrer">Vue nextTick 机制<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://juejin.im/post/5c03500e6fb9a049d37ed754?utm_source=gold_browser_extension" target="_blank" rel="noopener noreferrer">Vue源码解析之nextTick<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/8057f7c9950b" target="_blank" rel="noopener noreferrer">浅析Node的nextTick<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/ca7ddc76d24d" target="_blank" rel="noopener noreferrer">Nodejs的nextTick和setTimeout<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/jin-zhe/p/9985436.html" target="_blank" rel="noopener noreferrer">Vue.js中this.$nextTick()的使用<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/qq_42778001/article/details/96692000" target="_blank" rel="noopener noreferrer">vue发布订阅者模式$emit、$on<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/goloving/p/9114389.html" target="_blank" rel="noopener noreferrer">详解vue父组件传递props异步数据到子组件的问题<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://juejin.im/post/5c3d8956e51d4511dc72c200?utm_source=wechat&amp;from=timeline" target="_blank" rel="noopener noreferrer">一次弄懂Event Loop（彻底解决此类面试问题）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/hot20200620.html" class="prev">
+        Vue脚手架热更新技术探秘
+      </a></span> <span class="next"><a href="/tech/front/cli20200701.html">
+        vee-cli脚手架实践(上)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/84.4edeeb08.js" defer></script>
+  </body>
+</html>

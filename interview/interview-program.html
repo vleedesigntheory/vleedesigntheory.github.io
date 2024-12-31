@@ -1,0 +1,4153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>编程题 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/29.f6af6fbb.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link router-link-active">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link router-link-active">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/interview/" class="sidebar-heading clickable router-link-active open"><span>面试</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/interview/interview-program.html" class="active sidebar-link">编程题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/interview/interview-program.html#方法库部分" class="sidebar-link">方法库部分</a></li><li class="sidebar-sub-header"><a href="/interview/interview-program.html#原理部分" class="sidebar-link">原理部分</a></li><li class="sidebar-sub-header"><a href="/interview/interview-program.html#算法部分" class="sidebar-link">算法部分</a></li><li class="sidebar-sub-header"><a href="/interview/interview-program.html#综合部分" class="sidebar-link">综合部分</a></li></ul></li><li><a href="/interview/string20210807.html" class="sidebar-link">算法题(字符串篇)</a></li><li><a href="/interview/array20210808.html" class="sidebar-link">算法题(数组篇)</a></li><li><a href="/interview/tree20210809.html" class="sidebar-link">算法题(树篇)</a></li><li><a href="/interview/linklist20210810.html" class="sidebar-link">算法题(链表篇)</a></li><li><a href="/interview/dp20210811.html" class="sidebar-link">算法题(动态规划篇)</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="编程题"><a href="#编程题" class="header-anchor">#</a> 编程题</h1> <h2 id="方法库部分"><a href="#方法库部分" class="header-anchor">#</a> 方法库部分</h2> <h3 id="实现防抖函数-debounce"><a href="#实现防抖函数-debounce" class="header-anchor">#</a> 实现防抖函数(debounce)</h3> <div class="language- extra-class"><pre class="language-text"><code>    const debounce = (fn, delay) =&gt; {
+        let timer = null;
+        return (...args) =&gt; {
+            clearTimeout(timer);
+            timer = setTimeout(() =&gt; {
+                fn.apply(this, args);
+            }, delay);
+        };
+    };
+</code></pre></div><p>underscore版本:</p> <div class="language- extra-class"><pre class="language-text"><code>    _.debounce = function(func, wait, immediate) {
+        var timeout, result;
+
+        var later = function(context, args) {
+        timeout = null;
+        if (args) result = func.apply(context, args);
+        };
+
+        var debounced = restArguments(function(args) {
+        if (timeout) clearTimeout(timeout);
+        if (immediate) {
+            var callNow = !timeout;
+            timeout = setTimeout(later, wait);
+            if (callNow) result = func.apply(this, args);
+        } else {
+            timeout = _.delay(later, wait, this, args);
+        }
+
+        return result;
+        });
+
+        debounced.cancel = function() {
+        clearTimeout(timeout);
+        timeout = null;
+        };
+
+        return debounced;
+    };
+</code></pre></div><p>lodash版本</p> <div class="language- extra-class"><pre class="language-text"><code>    import isObject from './isObject.js'
+    import root from './.internal/root.js'
+    function debounce(func, wait, options) {
+        let lastArgs,
+            lastThis,
+            maxWait,
+            result,
+            timerId,
+            lastCallTime
+
+        let lastInvokeTime = 0
+        let leading = false
+        let maxing = false
+        let trailing = true
+
+        const useRAF = (!wait &amp;&amp; wait !== 0 &amp;&amp; typeof root.requestAnimationFrame === 'function')
+
+        if (typeof func !== 'function') {
+            throw new TypeError('Expected a function')
+        }
+        wait = +wait || 0
+        if (isObject(options)) {
+            leading = !!options.leading
+            maxing = 'maxWait' in options
+            maxWait = maxing ? Math.max(+options.maxWait || 0, wait) : maxWait
+            trailing = 'trailing' in options ? !!options.trailing : trailing
+        }
+
+        function invokeFunc(time) {
+            const args = lastArgs
+            const thisArg = lastThis
+
+            lastArgs = lastThis = undefined
+            lastInvokeTime = time
+            result = func.apply(thisArg, args)
+            return result
+        }
+
+        function startTimer(pendingFunc, wait) {
+            if (useRAF) {
+            root.cancelAnimationFrame(timerId)
+            return root.requestAnimationFrame(pendingFunc)
+            }
+            return setTimeout(pendingFunc, wait)
+        }
+
+        function cancelTimer(id) {
+            if (useRAF) {
+            return root.cancelAnimationFrame(id)
+            }
+            clearTimeout(id)
+        }
+
+        function leadingEdge(time) {
+            lastInvokeTime = time
+            timerId = startTimer(timerExpired, wait)
+            return leading ? invokeFunc(time) : result
+        }
+
+        function remainingWait(time) {
+            const timeSinceLastCall = time - lastCallTime
+            const timeSinceLastInvoke = time - lastInvokeTime
+            const timeWaiting = wait - timeSinceLastCall
+
+            return maxing
+            ? Math.min(timeWaiting, maxWait - timeSinceLastInvoke)
+            : timeWaiting
+        }
+
+        function shouldInvoke(time) {
+            const timeSinceLastCall = time - lastCallTime
+            const timeSinceLastInvoke = time - lastInvokeTime
+
+            return (lastCallTime === undefined || (timeSinceLastCall &gt;= wait) ||
+            (timeSinceLastCall &lt; 0) || (maxing &amp;&amp; timeSinceLastInvoke &gt;= maxWait))
+        }
+
+        function timerExpired() {
+            const time = Date.now()
+            if (shouldInvoke(time)) {
+            return trailingEdge(time)
+            }
+            timerId = startTimer(timerExpired, remainingWait(time))
+        }
+
+        function trailingEdge(time) {
+            timerId = undefined
+
+            if (trailing &amp;&amp; lastArgs) {
+            return invokeFunc(time)
+            }
+            lastArgs = lastThis = undefined
+            return result
+        }
+
+        function cancel() {
+            if (timerId !== undefined) {
+            cancelTimer(timerId)
+            }
+            lastInvokeTime = 0
+            lastArgs = lastCallTime = lastThis = timerId = undefined
+        }
+
+        function flush() {
+            return timerId === undefined ? result : trailingEdge(Date.now())
+        }
+
+        function pending() {
+            return timerId !== undefined
+        }
+
+        function debounced(...args) {
+            const time = Date.now()
+            const isInvoking = shouldInvoke(time)
+
+            lastArgs = args
+            lastThis = this
+            lastCallTime = time
+
+            if (isInvoking) {
+            if (timerId === undefined) {
+                return leadingEdge(lastCallTime)
+            }
+            if (maxing) {
+                timerId = startTimer(timerExpired, wait)
+                return invokeFunc(lastCallTime)
+            }
+            }
+            if (timerId === undefined) {
+            timerId = startTimer(timerExpired, wait)
+            }
+            return result
+        }
+        debounced.cancel = cancel
+        debounced.flush = flush
+        debounced.pending = pending
+        return debounced
+    }
+
+    export default debounce    
+</code></pre></div><h3 id="实现节流函数-throttle"><a href="#实现节流函数-throttle" class="header-anchor">#</a> 实现节流函数(throttle)</h3> <div class="language- extra-class"><pre class="language-text"><code>    const throttle = (fn, delay = 500) =&gt; {
+        let flag = true;
+        return (...args) =&gt; {
+            if (!flag) return;
+            flag = false;
+            setTimeout(() =&gt; {
+                fn.apply(this, args);
+                flag = true;
+            }, delay);
+        };
+    };
+</code></pre></div><p>underscore版本:</p> <div class="language- extra-class"><pre class="language-text"><code>    _.throttle = function(func, wait, options) {
+        var timeout, context, args, result;
+        var previous = 0;
+        if (!options) options = {};
+
+        var later = function() {
+        previous = options.leading === false ? 0 : _.now();
+        timeout = null;
+        result = func.apply(context, args);
+        if (!timeout) context = args = null;
+        };
+
+        var throttled = function() {
+        var now = _.now();
+        if (!previous &amp;&amp; options.leading === false) previous = now;
+        var remaining = wait - (now - previous);
+        context = this;
+        args = arguments;
+        if (remaining &lt;= 0 || remaining &gt; wait) {
+            if (timeout) {
+            clearTimeout(timeout);
+            timeout = null;
+            }
+            previous = now;
+            result = func.apply(context, args);
+            if (!timeout) context = args = null;
+        } else if (!timeout &amp;&amp; options.trailing !== false) {
+            timeout = setTimeout(later, remaining);
+        }
+        return result;
+        };
+
+        throttled.cancel = function() {
+        clearTimeout(timeout);
+        previous = 0;
+        timeout = context = args = null;
+        };
+
+        return throttled;
+    };
+</code></pre></div><p>lodash版本:</p> <div class="language- extra-class"><pre class="language-text"><code>    import debounce from './debounce.js'
+    import isObject from './isObject.js'
+    function throttle(func, wait, options) {
+        let leading = true
+        let trailing = true
+
+        if (typeof func !== 'function') {
+            throw new TypeError('Expected a function')
+        }
+        if (isObject(options)) {
+            leading = 'leading' in options ? !!options.leading : leading
+            trailing = 'trailing' in options ? !!options.trailing : trailing
+        }
+        return debounce(func, wait, {
+            leading,
+            trailing,
+            'maxWait': wait
+        })
+    }
+
+    export default throttle
+</code></pre></div><h3 id="实现lazy-load懒加载"><a href="#实现lazy-load懒加载" class="header-anchor">#</a> 实现lazy-load懒加载</h3> <div class="language- extra-class"><pre class="language-text"><code>    let imgs=document.querySelectorAll('img');
+    let clientHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    function lazyLoad(){
+        let scrollTop=window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        for(let i=0;i&lt;imgs.length;i++){
+            let x=clientHeight + scrollTop-imgs[i].offsetTop;
+            if(x&gt;0 &amp;&amp; x&lt;clientHeight+imgs[i].height){
+                imgs[i].src=imgs[i].getAttribute('data')
+            }
+        }
+    }
+</code></pre></div><h3 id="实现拖拽"><a href="#实现拖拽" class="header-anchor">#</a> 实现拖拽</h3> <div class="language- extra-class"><pre class="language-text"><code>    window.onload=function(){
+        let drag=document.getElementById('box');
+        drag.onmousedown=function(e){
+            let e = e || window.event;
+            let diffX=e.clientX-drag.offsetLeft;
+            let diffY=e.clientY-drag.offsetTop;
+            drag.onmousemove=function(e){
+                let left=e.clientX-diffX;
+                let top=e.clientY-diffY;
+                if(left&lt;0){
+                    left=0;
+                }else if(left&gt;window.innerWidth-drag.offsetWidth){
+                    left=window.innerWidth-drag.offsetWidth;
+                }
+                if(top&lt;0){
+                    top=0;
+                }else if(top&gt;window.innerHeight-drag.offsetHeight){
+                    top=window.innerHeight-drag.offsetHeight
+                }
+                drag.style.left=left+'px';
+                drag.style.top=top+'px';
+            }
+            drag.onmouseup=function(e){
+                this.onmousemove=null;
+                this.onmouseup=null;
+            }
+        }
+    }
+</code></pre></div><h3 id="实现基于promise的ajax函数"><a href="#实现基于promise的ajax函数" class="header-anchor">#</a> 实现基于Promise的ajax函数</h3> <div class="language- extra-class"><pre class="language-text"><code>    function ajax(url,method,fn,type){
+        return new Promise((resolve,reject)=&gt;{
+                var xhr=new XMLHttpRequest();
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4){
+                        if(xhr.status==200){
+                            //var result=xhr.responseText;
+                            //fn(result);
+                            resolve(JSON.parse(xhr.responseText).count);
+                        }	
+                    }
+                };
+
+                xhr.open(method,url+&quot;?&quot;+type,true);
+
+                if(method==&quot;post&quot;){
+                    xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;);
+                }
+
+                if(method==&quot;get&quot;){
+                    xhr.send(null);
+                }else if(method==&quot;post&quot;){
+                    xhr.send(type);
+                }
+
+            }
+        )	
+    }
+</code></pre></div><h3 id="实现一个浅克隆"><a href="#实现一个浅克隆" class="header-anchor">#</a> 实现一个浅克隆</h3> <div class="language- extra-class"><pre class="language-text"><code>    function clone(obj){
+        let newObj={};
+        for(let key in obj){
+            newObj[key]=obj[key];
+        }
+        return newObj;
+    }
+</code></pre></div><h3 id="实现一个深克隆-deepclone"><a href="#实现一个深克隆-deepclone" class="header-anchor">#</a> 实现一个深克隆(deepclone)</h3> <p>简版：</p> <div class="language- extra-class"><pre class="language-text"><code>    function clone(obj){
+        if(obj===null){
+            return null
+        };
+        if({}.toString.call(obj)==='[object Array]'){
+            let newArr=[];
+            newArr=obj.slice();
+            return newArr;
+        };
+        let newObj={};
+        for(let key in obj){
+            if(typeof obj[key]!=='object'){
+                newObj[key]=obj[key];
+            }else{
+                newObj[key]=clone(obj[key]);
+            }
+        }
+    }
+</code></pre></div><p>完整版：</p> <div class="language- extra-class"><pre class="language-text"><code>    const clone = parent =&gt; {
+        const isType = (obj, type) =&gt; {
+            if (typeof obj !== &quot;object&quot;) return false;
+            const typeString = Object.prototype.toString.call(obj);
+            let flag;
+            switch (type) {
+                case &quot;Array&quot;:
+                    flag = typeString === &quot;[object Array]&quot;;
+                    break;
+                case &quot;Date&quot;:
+                    flag = typeString === &quot;[object Date]&quot;;
+                    break;
+                case &quot;RegExp&quot;:
+                    flag = typeString === &quot;[object RegExp]&quot;;
+                    break;
+                default:
+                    flag = false;
+            }
+            return flag;
+        };
+
+        const getRegExp = re =&gt; {
+            var flags = &quot;&quot;;
+            if (re.global) flags += &quot;g&quot;;
+            if (re.ignoreCase) flags += &quot;i&quot;;
+            if (re.multiline) flags += &quot;m&quot;;
+            return flags;
+        };
+
+        const parents = [];
+        const children = [];
+
+        const _clone = parent =&gt; {
+            if (parent === null) return null;
+            if (typeof parent !== &quot;object&quot;) return parent;
+
+            let child, proto;
+
+            if (isType(parent, &quot;Array&quot;)) {
+                child = [];
+            } else if (isType(parent, &quot;RegExp&quot;)) {
+                child = new RegExp(parent.source, getRegExp(parent));
+                if (parent.lastIndex) child.lastIndex = parent.lastIndex;
+            } else if (isType(parent, &quot;Date&quot;)) {
+                child = new Date(parent.getTime());
+            } else {
+                proto = Object.getPrototypeOf(parent);
+                child = Object.create(proto);
+            }
+
+            const index = parents.indexOf(parent);
+
+            if (index != -1) {
+                return children[index];
+            }
+            parents.push(parent);
+            children.push(child);
+
+            for (let i in parent) {
+                child[i] = _clone(parent[i]);
+            }
+            return child;
+        };
+
+        return _clone(parent);
+    };
+</code></pre></div><h3 id="实现一个深冻结"><a href="#实现一个深冻结" class="header-anchor">#</a> 实现一个深冻结</h3> <div class="language- extra-class"><pre class="language-text"><code>    function deepFreeze(object){
+        let propNames=Object.getOwnPropertyNames(object);
+        for(let name of propNames){
+            let value=object[name];
+            object[name]=value &amp;&amp; typeof value === 'object' ?
+                deepFreeze(value) : value;
+        }
+        return Object.freeze(object);
+    }
+</code></pre></div><h3 id="实现一个深比较"><a href="#实现一个深比较" class="header-anchor">#</a> 实现一个深比较</h3> <div class="language- extra-class"><pre class="language-text"><code>    function deepCompare(a,b){
+        if(a===null || typeof a!=='object' || b===null || typeof b!=='object'){
+            return a===b
+        }
+        const propsA=Object.getOwnPropertyDescriptors(a);
+        const propsB=Object.getOwnPropertyDescriptors(b);
+        if(Object.keys(propsA).length!==Object.keys(propsB).length){
+            return false
+        }
+        return Object.keys(propsA).every(
+            key=&gt;deepCompare(a[key],b[key])
+        )
+    }
+</code></pre></div><h3 id="解析url-params为对象"><a href="#解析url-params为对象" class="header-anchor">#</a> 解析URL Params为对象</h3> <p>简版</p> <div class="language- extra-class"><pre class="language-text"><code>    function parseQueryString(url){
+        let search=url.split('?')[1];
+        let strs=search.split('&amp;');
+        let params={};
+        for(let str of strs){
+            let arr=str.split('=');
+            params[arr[0]]=isNaN(arr[1])?arr[1]:Number(arr[1]);
+        }
+        return params;
+    }
+</code></pre></div><p>完整版</p> <div class="language- extra-class"><pre class="language-text"><code>    function parseParam(url) {
+        const paramsStr = /.+\?(.+)$/.exec(url)[1]; 
+        const paramsArr = paramsStr.split('&amp;'); 
+        let paramsObj = {};
+        paramsArr.forEach(param =&gt; {
+            if (/=/.test(param)) { 
+                let [key, val] = param.split('='); 
+                val = decodeURIComponent(val); 
+                val = /^\d+$/.test(val) ? parseFloat(val) : val; 
+
+                if (paramsObj.hasOwnProperty(key)) { 
+                    paramsObj[key] = [].concat(paramsObj[key], val);
+                } else { 
+                    paramsObj[key] = val;
+                }
+            } else { 
+                paramsObj[param] = true;
+            }
+        })
+        return paramsObj;
+    }
+</code></pre></div><p>考虑深度集合</p> <div class="language- extra-class"><pre class="language-text"><code>function parse(str){
+    return str.split('&amp;').reduce((o,kv)=&gt;{
+        const [key,value]=kv.split('=');
+        if(!value){
+            return o
+        }
+        deep_set(o,key.split(/[\[\]]/g).filter(x=&gt;x),value);
+        return o
+    },{})
+}
+function deep_set(o,path,value){
+    let i=0;
+    for(;i&lt;path.length-1;i++){
+        if(o[path[i]]===undefined){
+            if(path[i+1].match(/^\d+$/)){
+                o[path[i]]=[]
+            }else{
+                o[path[i]]={}
+            }
+        }
+        o=o[path[i]]
+    }
+    o[path[i]]=decodeURIComponent(value)
+}
+</code></pre></div><h3 id="为普通对象添加迭代属性"><a href="#为普通对象添加迭代属性" class="header-anchor">#</a> 为普通对象添加迭代属性</h3> <div class="language- extra-class"><pre class="language-text"><code>    let obj={};
+    Object.defineProperty(obj,Symbol.iterator,{
+        enumerable:false,
+        writable:false,
+        configurable:true,
+        value:function(){
+            let o=this;
+            let idx=0;
+            let ks=Object.keys(o);
+            return {
+                next:function(){
+                    return {
+                        value:o[ks[idx++]],
+                        done:(idx&gt;ks.length)
+                    }
+                }
+            }
+        }
+    })   
+</code></pre></div><h3 id="输出字符串中字符的个数"><a href="#输出字符串中字符的个数" class="header-anchor">#</a> 输出字符串中字符的个数</h3> <p>推荐</p> <div class="language- extra-class"><pre class="language-text"><code>    let str='helloworld';
+    let dict={};
+    for(let i=0;i&lt;str.length;i++){
+        if(dict[str[i]]===undefined){
+            dict[str[i]]=1;
+        }else{
+            dict[str[i]]+=1;
+        }
+    }
+</code></pre></div><h3 id="编写一个方法-求一个字符串的字节长度"><a href="#编写一个方法-求一个字符串的字节长度" class="header-anchor">#</a> 编写一个方法 求一个字符串的字节长度</h3> <div class="language- extra-class"><pre class="language-text"><code>    function GetBytes(str){
+        var len = str.length;
+        var bytes = len;
+        for(var i=0; i&lt;len; i++){
+            if (str.charCodeAt(i) &gt; 255) bytes++;
+        }
+        return bytes;
+    }
+</code></pre></div><h3 id="查找字符串中出现最多的字符和个数"><a href="#查找字符串中出现最多的字符和个数" class="header-anchor">#</a> 查找字符串中出现最多的字符和个数</h3> <div class="language- extra-class"><pre class="language-text"><code>    let str = &quot;abcabcabcbbccccc&quot;;
+    let num = 0;
+    let char = '';
+
+    str = str.split('').sort().join('');
+
+    let re = /(\w)\1+/g;
+    str.replace(re,($0,$1) =&gt; {
+        if(num &lt; $0.length){
+            num = $0.length;
+            char = $1;        
+        }
+    });
+    console.log(`字符最多的是${char}，出现了${num}次`);
+</code></pre></div><h3 id="字符串查找"><a href="#字符串查找" class="header-anchor">#</a> 字符串查找</h3> <div class="language- extra-class"><pre class="language-text"><code>    a='34';b='1234567'; // 返回 2
+    a='35';b='1234567'; // 返回 -1
+    a='355';b='12354355'; // 返回 5
+    isContain(a,b);
+    function isContain(a, b) {
+        for (let i in b) {
+            if (a[0] === b[i]) {
+                let tmp = true;
+                for (let j in a) {
+                    if (a[j] !== b[~~i + ~~j]) {
+                    tmp = false;
+                    }
+                }
+                if (tmp) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+</code></pre></div><h3 id="实现字符串翻转"><a href="#实现字符串翻转" class="header-anchor">#</a> 实现字符串翻转</h3> <div class="language- extra-class"><pre class="language-text"><code>    var arr=str.split('');
+    var newArr=[];
+    for(var i=0;i&lt;arr.length;i++){
+        newArr[i]=arr[arr.length-i-1];
+    }
+    var newStr=newArr.join('')
+    console.log(str0);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var newStr='';
+    for(var i=0;i&lt;str.length;i++){
+        newStr+=str.charAt(str.length-i-1);
+    }
+    console.log(newStr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var newStr=str.split(&quot;&quot;).reverse().join(&quot;&quot;);
+    console.log(newStr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var arr=str.split('');
+    var obj=Array.from(new Set([...arr]));
+    var newStr='';
+    for(i of obj){
+        newStr+=obj[arr.length-i];
+    }
+    console.log(newStr)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var arr=str.split('');
+    var newArr=[];
+    while(arr.length&gt;0){
+        newArr.push(arr.pop())
+    };
+    var newStr=newArr.join(&quot;&quot;);
+    console.log(newStr)
+</code></pre></div><h3 id="实现字符串的散列函数"><a href="#实现字符串的散列函数" class="header-anchor">#</a> 实现字符串的散列函数</h3> <div class="language- extra-class"><pre class="language-text"><code>    function h_str(str,M){
+        return [...str].reduce((hash,c)=&gt;{
+            hash=(31*hash+c.charCodeAt(0))%M
+            return hash
+        },0)
+    }
+</code></pre></div><h3 id="实现数组去重"><a href="#实现数组去重" class="header-anchor">#</a> 实现数组去重</h3> <p>推荐</p> <div class="language- extra-class"><pre class="language-text"><code>    let dict={},
+        result=[],
+        j=0;
+
+    for(let i=0;i&lt;arr.length;i++){
+        dict[arr[i]]=1;
+    }
+
+    for(result[j++] in dict);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var newArr=Array.from(new Set(arr));
+    console.log(newArr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    for(var i=0;i&lt;arr.length;i++){
+        for(j=i+1;j&lt;arr.length;j++){
+            if(arr[i]==arr[j]){
+                arr.splice(j,1);
+                j--;
+            }
+        }
+    }
+    console.log(arr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var newArr=[];
+    for(var i=0;i&lt;arr.length;i++){
+        if(newArr.indexOf(arr[i])===-1){
+            newArr.push(arr[i])
+        }
+    }
+    console.log(newArr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var arr=arr.sort();
+    var newArr=[arr[0]];
+    for(var i=1;i&lt;arr.length;i++){
+        if(arr[i]!==arr[i-1]){
+            newArr.push(arr[i])
+        }
+    }
+    console.log(newArr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var newArr=[];
+    var obj={};
+    for(var i=0;i&lt;arr.length;i++){
+        if(!obj[arr[i]]){
+            newArr.push(arr[i]);
+            obj[arr[i]]=1
+        }else{
+            obj[arr[i]]++
+        }
+    }
+    console.log(newArr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var newArr=[];
+    for(var i=0;i&lt;arr.length;i++){
+        if(!newArr.includes(arr[i])){//检测数组是否有某个值
+            newArr.push(arr[i]);
+        }
+    }
+    console.log(newArr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var obj={};
+    var newArr=arr.filter((item,index,arr)=&gt;{
+        return obj.hasOwnProperty(typeof item+item)?false:(obj[typeof item+item]=true)
+    })
+    console.log(arrM6);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    arr.sort(function(a,b){
+        return a-b;
+    })
+    function loop(index){
+        if(index&gt;=1){
+            if(arr[index]===arr[index-1]){
+                arr.splice(index,1);
+            }
+            loop(index-1)
+        }
+    }
+    loop(arr.length-1);
+    console.log(arr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var map=new Map();
+    var newArr=[];
+    for(var i=0;i&lt;arr.length;i++){
+        if(map.has(arr[i])){
+            map.set(arr[i],true);
+        }else{
+            map.set(arr[i],false);
+            newArr.push(arr[i]);
+        }
+    }
+    console.log(newArr);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    arr=arr.reduce((prev,cur)=&gt;prev.includes(cur)?prev:[...prev,cur],[]);
+    console.log(arr);
+    ```
+
+    ```
+    var newArr=[...new Set(arr)];
+    console.log(newArr);
+</code></pre></div><h3 id="实现合成函数compose"><a href="#实现合成函数compose" class="header-anchor">#</a> 实现合成函数compose</h3> <div class="language- extra-class"><pre class="language-text"><code>    const compose =(...args)=&gt;args.reduce((prev,current)=&gt;(...values)=&gt;prev(current(...values)));
+</code></pre></div><h3 id="实现旋转数组"><a href="#实现旋转数组" class="header-anchor">#</a> 实现旋转数组</h3> <div class="language- extra-class"><pre class="language-text"><code>function rotate(nums, k) {
+    for (let i = 0;i &lt; k; i++) {
+    nums.unshift(nums.pop());
+  }
+};
+</code></pre></div><h3 id="实现浮点数的散列函数"><a href="#实现浮点数的散列函数" class="header-anchor">#</a> 实现浮点数的散列函数</h3> <div class="language- extra-class"><pre class="language-text"><code>    function binary_value(val){
+        const farr=new Float32Array(1)
+        farr[0]=val
+        const intBytes=new Int8Array(farr.buffer)
+        const view=new DataView(intBytes.buffer)
+        return view.getUnit32()
+    }
+    k=&gt;binary_value(k)%M
+</code></pre></div><h3 id="实现千位分隔符"><a href="#实现千位分隔符" class="header-anchor">#</a> 实现千位分隔符</h3> <div class="language- extra-class"><pre class="language-text"><code>    function parseToMoney(num) {
+        num = parseFloat(num.toFixed(3));
+        let [integer, decimal] = String.prototype.split.call(num, '.');
+        integer = integer.replace(/\d(?=(\d{3})+$)/g, '$&amp;,');
+        return integer + '.' + (decimal ? decimal : '');
+    }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    function parseToMoney(str){
+        let re = /(?=(?!\b)(\d{3})+$)/g; 
+        return str.replace(re,','); 
+    }
+</code></pre></div><h3 id="判断是否是电话号码"><a href="#判断是否是电话号码" class="header-anchor">#</a> 判断是否是电话号码</h3> <div class="language- extra-class"><pre class="language-text"><code>    function isPhone(tel) {
+        var regx = /^1[34578]\d{9}$/;
+        return regx.test(tel);
+    }
+</code></pre></div><h3 id="验证是否是邮箱"><a href="#验证是否是邮箱" class="header-anchor">#</a> 验证是否是邮箱</h3> <div class="language- extra-class"><pre class="language-text"><code>    function isEmail(email) {
+        var regx = /^([a-zA-Z0-9_\-])+@([a-zA-Z0-9_\-])+(\.[a-zA-Z0-9_\-])+$/;
+        return regx.test(email);
+    }
+</code></pre></div><h3 id="验证是否是身份证"><a href="#验证是否是身份证" class="header-anchor">#</a> 验证是否是身份证</h3> <div class="language- extra-class"><pre class="language-text"><code>    function isCardNo(number) {
+        var regx = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        return regx.test(number);
+    }
+</code></pre></div><h3 id="实现一个函数柯里化"><a href="#实现一个函数柯里化" class="header-anchor">#</a> 实现一个函数柯里化</h3> <div class="language- extra-class"><pre class="language-text"><code>    const curry=(fn,arr=[])=&gt;(...args)=&gt;(
+        arg=&gt;arg.length===fn.length
+            ? fn(...arg)
+            : curry(fn,arg)
+    )([...arr,...args])
+</code></pre></div><h3 id="实现一个函数反柯里化"><a href="#实现一个函数反柯里化" class="header-anchor">#</a> 实现一个函数反柯里化</h3> <div class="language- extra-class"><pre class="language-text"><code>    const unCurrying=(fn)=&gt;{
+        return (...args)=&gt;{
+            return fn.call(...args);
+        }
+    }
+</code></pre></div><h3 id="实现数组扁平化"><a href="#实现数组扁平化" class="header-anchor">#</a> 实现数组扁平化</h3> <p>递归</p> <div class="language- extra-class"><pre class="language-text"><code>    function flatten(arr){
+        return [].concat(
+            ...arr.map(x=&gt;Array.isArray(x)?flatten(x):x)
+        )
+    }
+</code></pre></div><p>递归，可以用for去展平拿到想要的第几项，可以忽略后续的非展平项，保证性能</p> <div class="language- extra-class"><pre class="language-text"><code>    function *flatten(arr){
+        for(let i=0;i&lt;arr.length;i++){
+            if(Array.isArray(arr[i])){
+                yield * flatten(arr[i])
+            }else{
+                yield arr[i]
+            }
+        }
+    }
+</code></pre></div><p>堆栈实现非递归</p> <div class="language- extra-class"><pre class="language-text"><code>    function *flatten(arr){
+        let stack=arr.slice.reverse();
+        while(stack.length){
+            const item=stack.pop();
+            if(item.constructor===Array){
+                stack=stack.concat(item)
+            }else{
+                yield item
+            }
+        }
+    }
+</code></pre></div><h3 id="判断是否是回文数"><a href="#判断是否是回文数" class="header-anchor">#</a> 判断是否是回文数</h3> <div class="language- extra-class"><pre class="language-text"><code>function isPalindrome(str) {
+    str = str.replace(/\W/g, '').toLowerCase();
+    return (str == str.split('').reverse().join(''));
+}
+</code></pre></div><h3 id="实现isarray-方法-判断是否为数组"><a href="#实现isarray-方法-判断是否为数组" class="header-anchor">#</a> 实现isArray()方法 判断是否为数组</h3> <div class="language- extra-class"><pre class="language-text"><code>    Array.myIsArray=function(o){
+        return Object.prototype.toString.call(Object(o)) === '[object Array]'
+    }
+</code></pre></div><h3 id="实现iscontain-方法，判断是否包含该字符串"><a href="#实现iscontain-方法，判断是否包含该字符串" class="header-anchor">#</a> 实现isContain()方法，判断是否包含该字符串</h3> <div class="language- extra-class"><pre class="language-text"><code>    function isContain(a, b) {
+        for (let i in b) {
+            if (a[0] === b[i]) {
+            let tmp = true;
+            for (let j in a) {
+                if (a[j] !== b[~~i + ~~j]) {
+                tmp = false;
+                }
+            }
+            if (tmp) {
+                return i;
+            }
+            }
+        }
+        return -1;
+    }
+</code></pre></div><h3 id="实现isnegzero函数"><a href="#实现isnegzero函数" class="header-anchor">#</a> 实现isNegZero函数</h3> <div class="language- extra-class"><pre class="language-text"><code>    function isNegZero(n){
+        n=Number(n);
+        return (n === n) &amp;&amp; (1/n === -Infinity)
+    }
+</code></pre></div><h3 id="实现object-is-函数"><a href="#实现object-is-函数" class="header-anchor">#</a> 实现Object.is()函数</h3> <div class="language- extra-class"><pre class="language-text"><code>    Object.is=function(v1,v2){
+        if(v1===0 &amp;&amp; v2===0){
+            return 1/v1 === 1/v2;
+        }
+        if(v1!==v1){
+            return v2!==v2;
+        }
+        return v1 === v2;
+    }
+</code></pre></div><h2 id="原理部分"><a href="#原理部分" class="header-anchor">#</a> 原理部分</h2> <h3 id="实现event-event-bus"><a href="#实现event-event-bus" class="header-anchor">#</a> 实现Event(event bus)</h3> <div class="language- extra-class"><pre class="language-text"><code>    class EventEmitter {
+        constructor() {
+            this._events = this._events || new Map(); 
+            this._maxListeners = this._maxListeners || 10; 
+        }
+    }
+
+    EventEmitter.prototype.emit = function(type, ...args) {
+        let handler;
+        handler = this._events.get(type);
+        if (args.length &gt; 0) {
+            handler.apply(this, args);
+        } else {
+            handler.call(this);
+        }
+        return true;
+    };
+
+    EventEmitter.prototype.addListener = function(type, fn) {
+        if (!this._events.get(type)) {
+            this._events.set(type, fn);
+        }
+    };
+
+    EventEmitter.prototype.emit = function(type, ...args) {
+        let handler;
+        handler = this._events.get(type);
+        if (Array.isArray(handler)) {
+            for (let i = 0; i &lt; handler.length; i++) {
+                if (args.length &gt; 0) {
+                    handler[i].apply(this, args);
+                } else {
+                    handler[i].call(this);
+                }
+            }
+        } else {
+            if (args.length &gt; 0) {
+                handler.apply(this, args);
+            } else {
+                handler.call(this);
+            }
+        }
+        return true;
+    };
+
+    EventEmitter.prototype.addListener = function(type, fn) {
+        const handler = this._events.get(type); 
+        if (!handler) {
+            this._events.set(type, fn);
+        } else if (handler &amp;&amp; typeof handler === &quot;function&quot;) {
+            this._events.set(type, [handler, fn]); 
+        } else {
+            handler.push(fn); 
+        }
+    };
+
+    EventEmitter.prototype.removeListener = function(type, fn) {
+        const handler = this._events.get(type); 
+
+        if (handler &amp;&amp; typeof handler === &quot;function&quot;) {
+            this._events.delete(type, fn);
+        } else {
+            let position;
+            for (let i = 0; i &lt; handler.length; i++) {
+                if (handler[i] === fn) {
+                    position = i;
+                } else {
+                    position = -1;
+                }
+            }
+
+            if (position !== -1) {
+                handler.splice(position, 1);
+                if (handler.length === 1) {
+                    this._events.set(type, handler[0]);
+                }
+            } else {
+                return this;
+            }
+        }
+    };
+</code></pre></div><p>简版</p> <div class="language- extra-class"><pre class="language-text"><code>    class EventEmitter{
+        constructor(){
+            this._events={};
+        }
+        on(type,listener){
+            let listeners=this._events[type];
+            if(listeners){
+                listeners.push(listener)
+            }else{
+                this._events[type]=[listener];
+            }
+        }
+        emit(type){
+            let listeners=this._events[type];
+            let args=Array.from(arguments).slice(1);
+            listeners.forEach(listener=&gt;listener(...args));
+        }
+    }
+</code></pre></div><h3 id="实现一个writable-stream"><a href="#实现一个writable-stream" class="header-anchor">#</a> 实现一个Writable Stream?</h3> <div class="language- extra-class"><pre class="language-text"><code>var Writable = require('stream').Writable;
+var util = require('util');
+
+function MyWritable(options) {
+	Writable.call(this, options);
+} // 构造函数
+util.inherits(MyWritable, Writable); // 继承自Writable
+MyWritable.prototype._write = function(chunk, encoding, callback) {
+	console.log(&quot;被写入的数据是:&quot;, chunk.toString()); // 此处可对写入的数据进行处理
+	callback();
+};
+
+process.stdin.pipe(new MyWritable()); // stdin作为输入源，MyWritable作为输出源  
+</code></pre></div><h3 id="实现instanceof"><a href="#实现instanceof" class="header-anchor">#</a> 实现instanceOf</h3> <div class="language- extra-class"><pre class="language-text"><code>    function instance_of(L, R) {
+        var O = R.prototype; 
+        L = L.__proto__; 
+        while (true) {
+            if (L === null) return false;
+            if (O === L)
+            return true;
+            L = L.__proto__;
+        }
+    }
+</code></pre></div><h3 id="实现一个new"><a href="#实现一个new" class="header-anchor">#</a> 实现一个new</h3> <div class="language- extra-class"><pre class="language-text"><code>    function _new(P){
+        let o={};
+        let arg=Array.prototype.slice.call(arguments,1);
+        o.__proto__=P.prototype;
+        P.apply(o,arg);
+        return o;
+    }
+</code></pre></div><h3 id="实现一个const"><a href="#实现一个const" class="header-anchor">#</a> 实现一个const</h3> <div class="language- extra-class"><pre class="language-text"><code>var __const = function __const (data, value) {
+    window.data = value 
+    Object.defineProperty(window, data, { 
+        enumerable: false,
+        configurable: false,
+        get: function () {
+            return value
+        },
+        set: function (data) {
+            if (data !== value) { 
+                throw new TypeError('Assignment to constant variable.')
+            } else {
+                return value
+            }
+        }
+    })
+}
+</code></pre></div><h3 id="实现一个extends"><a href="#实现一个extends" class="header-anchor">#</a> 实现一个extends</h3> <div class="language- extra-class"><pre class="language-text"><code>    function myExtends(sourceObj,targetObj){
+        for(let key in sourceObj){
+            if(!(key in targetObj)){
+                targetObj[key]=sourceObj[key];
+            }
+        }
+        return targetObj;
+    }
+</code></pre></div><h3 id="实现一个call"><a href="#实现一个call" class="header-anchor">#</a> 实现一个call</h3> <div class="language- extra-class"><pre class="language-text"><code>    Function.prototype.myCall = function(context) {
+        context.fn = this;
+        let args = [];
+        for (let i = 1, len = arguments.length; i &lt; len; i++) {
+            args.push(arguments[i]);
+        }
+        context.fn(...args);
+        let result = context.fn(...args);
+        delete context.fn;
+        return result;
+    };
+</code></pre></div><h3 id="实现一个apply"><a href="#实现一个apply" class="header-anchor">#</a> 实现一个apply</h3> <div class="language- extra-class"><pre class="language-text"><code>    Function.prototype.myapply = function(context, arr) {
+        var context = Object(context) || window;
+        context.fn = this;
+
+        var result;
+        if (!arr) {
+            result = context.fn();
+        } else {
+            var args = [];
+            for (var i = 0, len = arr.length; i &lt; len; i++) {
+                args.push(&quot;arr[&quot; + i + &quot;]&quot;);
+            }
+            result = eval(&quot;context.fn(&quot; + args + &quot;)&quot;);
+        }
+
+        delete context.fn;
+        return result;
+    };
+</code></pre></div><h3 id="实现bind"><a href="#实现bind" class="header-anchor">#</a> 实现bind</h3> <div class="language- extra-class"><pre class="language-text"><code>    if (!Function.prototype.bind) {
+        Function.prototype.bind = function(oThis) {
+            if (typeof this !== 'function') {
+                throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+            }
+
+            var aArgs   = Array.prototype.slice.call(arguments, 1),
+                fToBind = this,
+                fNOP    = function() {},
+                fBound  = function() {
+                return fToBind.apply(this instanceof fBound
+                        ? this
+                        : oThis,
+                        aArgs.concat(Array.prototype.slice.call(arguments)));
+                };
+
+            if (this.prototype) {
+                fNOP.prototype = this.prototype; 
+            }
+
+            fBound.prototype = new fNOP();
+
+            return fBound;
+        };
+    }
+</code></pre></div><h3 id="模拟object-create"><a href="#模拟object-create" class="header-anchor">#</a> 模拟Object.create</h3> <div class="language- extra-class"><pre class="language-text"><code>function create(proto) {
+  function F() {}
+  F.prototype = proto;
+
+  return new F();
+}
+</code></pre></div><h3 id="实现一个软绑定"><a href="#实现一个软绑定" class="header-anchor">#</a> 实现一个软绑定</h3> <div class="language- extra-class"><pre class="language-text"><code>    if(!Function.prototype.softBind){
+        Function.prototype.softBind=function(obj){
+            let fn=this;
+            let curried=[].slice.call(arguments,1);
+            let bound=function(){
+                return fn.apply(
+                    (!this || this===(window || global))?obj:this,
+                      curried.concat.apply(curried,arguments)    
+                );
+            };
+            bound.prototype=Object.create(fn.prototype);
+            return bound;
+        }
+    }
+</code></pre></div><h3 id="实现super关键字"><a href="#实现super关键字" class="header-anchor">#</a> 实现super关键字</h3> <div class="language- extra-class"><pre class="language-text"><code>Object.prototype.mysuper = function(){
+    var caller = arguments.callee.caller,
+        name;
+    for(var i in this){
+        if(this[i] === caller){
+            name = i;
+            break;
+        }
+    }
+    __proto = this.__proto__ || this.constructor.prototype;
+    try{
+        return __proto[name].apply(this, arguments);
+    }catch(e){
+        alert(name + ' is undefined.');
+    }
+}
+</code></pre></div><h3 id="实现object-create"><a href="#实现object-create" class="header-anchor">#</a> 实现Object.create()</h3> <div class="language- extra-class"><pre class="language-text"><code>    function create(proto) {
+        function F() {}
+        F.prototype = proto;
+        return new F();
+    }
+</code></pre></div><h3 id="实现类的继承"><a href="#实现类的继承" class="header-anchor">#</a> 实现类的继承</h3> <div class="language- extra-class"><pre class="language-text"><code>    function Parent(name) {
+        this.parent = name
+    }
+    Parent.prototype.say = function() {
+        console.log(`${this.parent}: 你打篮球的样子像kunkun`)
+    }
+    function Child(name, parent) {
+        Parent.call(this, parent)
+        this.child = name
+    }
+
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.say = function() {
+        console.log(`${this.parent}好，我是练习时长两年半的${this.child}`);
+    }
+
+    Child.prototype.constructor = Child;
+
+    var parent = new Parent('father');
+    parent.say();
+
+    var child = new Child('cxk', 'father');
+    child.say();
+</code></pre></div><h3 id="实现rem原理"><a href="#实现rem原理" class="header-anchor">#</a> 实现rem原理</h3> <div class="language- extra-class"><pre class="language-text"><code>    function setRem(){
+        let doc=document.documentElement;
+        let width=doc.getBoundingClientRect().width;
+        let rem=width/75;
+        doc.style.fontSize=rem+'px'
+    }
+    addEventListener('resize',setRem)
+</code></pre></div><h3 id="实现一个双向数据绑定"><a href="#实现一个双向数据绑定" class="header-anchor">#</a> 实现一个双向数据绑定</h3> <div class="language- extra-class"><pre class="language-text"><code>    let arrayProto=Array.prototype;
+    let proto=Object.create(arrayProto);
+    ['push','unshift','splice','reverse','sort','shift','pop'].forEach(method=&gt;{
+        proto[method]=function(...args){
+            let inserted;
+            switch(method){
+                case 'push':
+                case 'unshift':
+                    inserted=args
+                    break;
+                case 'splice':
+                    inserted = args.slice(2);
+                default:
+                    break;
+            }
+            ArrayObserver(inserted);
+            arrayProto[method].call(this,...args)
+        }
+    })
+    function ArrayObserver(obj){
+        for(let i=0;i&lt;obj.length;i++){
+            let item=obj[i];
+            observer(item);
+        }
+    }
+    function observer(obj){
+        if(typeof obj !== 'object' || obj == null){
+            return obj;
+        }
+        if(Array.isArray(obj)){
+            Object.setPrototypeOf(obj,proto)
+            ArrayObserver(obj);
+        }else{
+            for (let key in obj){
+                defineReactive(obj,key,obj[key])
+            }
+        }
+    }
+    function defineReactive(obj,key,value){
+        observer(value); // 递归创建
+        get(){
+            return value;
+        },
+        set(newValue){
+            if(value!==newValue){
+                observer(newValue);
+                value=newValue;
+            }
+        }
+    }
+</code></pre></div><h3 id="实现commonjs模块化"><a href="#实现commonjs模块化" class="header-anchor">#</a> 实现CommonJS模块化</h3> <div class="language- extra-class"><pre class="language-text"><code>const path=require('path');
+const fs=require('fs');
+const vm=require('vm');
+function Module(id){
+    this.id=id;
+    this.exports={};//模块的结果
+}
+Module.wrapper=[
+    '(function(exports,module,require,__filename,__dirname){'
+    ,
+    '})'
+]
+//静态方法
+Module._extensions={
+    '.js'(module){//js需要将exports传给用户 用户自己解析
+        let script=fs.readFileSync(module.id,'utf8');
+        let fnStr=Module.wrapper[0]+script+Module.wrapper[1];
+        let fn=vm.runInThisContext(fnStr);//让字符串执行js代码
+        //第一个参数改变this指向 module module.exports
+        fn.call(module.exports,module,module.exports,req,module.id,path.dirname(module.id));
+    },
+    '.json'(module){
+        let script=fs.readFileSync(module.id,'utf8');
+        module.exports=JSON.parse(script)
+    }
+}
+//给你一个相对路径 解析成绝对路径
+Module.resolveFileName=function(filename){
+    // 1) 把相对路径转化为绝对路径 默认会先判断一下是否是绝对路径
+    let absPath=path.resolve(__dirname,filename);
+    let flag=fs.existsSync(absPath);//判断文件是否存在 异步方法被废弃
+    let current=absPath; //默认是当前路径
+    if(!flag){
+        let keys=Object.keys(Module._extensions);
+        for(let i=0;i&lt;keys.length;i++){
+            current=absPath+keys[i];//当前找到的文件路径
+            flag=fs.existsSync(current);
+            if(flag){
+                break;
+            }else{
+                current=null;
+            }
+        }
+    }
+    if(!current){ // 如果没有 说明加了后缀文件还是不存在
+        throw new Error('文件不存在')
+    }
+    return current;
+}
+Module.prototype.load=function(){
+    //模块加载就是读取文件的内容
+    let ext =path.extname(this.id);
+    Module._extensions[ext](this);//根据不同的路径处理不同的方法
+}
+Module._cache={};
+function req(filename){
+    //自己实现了一个require方法
+    let current=Module.resolveFileName(filename);
+    if(Module._cache[current]){
+        return Module._cache[current].exports;
+    }
+    let module=new Module(current);
+    Module._cache[current]=module;
+    module.load();
+    return module.exports;
+}
+</code></pre></div><h3 id="实现jwt"><a href="#实现jwt" class="header-anchor">#</a> 实现jwt</h3> <div class="language- extra-class"><pre class="language-text"><code>const crypto = require('crypto');
+function encode(payload, key) {
+    let header = { type: 'JWT', alg: 'sha256' };//声明类型和算法
+    var segments = [];//声明一个数组
+    segments.push(base64urlEncode(JSON.stringify(header)));//对header进行base64
+    segments.push(base64urlEncode(JSON.stringify(payload)));//对负载进行base64
+    segments.push(sign(segments.join('.'), key));//加入签名
+    return segments.join('.');
+}
+function sign(input, key) {
+    return crypto.createHmac('sha256', key).update(input).digest('base64');
+}
+
+
+function decode(token, key) {
+    var segments = token.split('.');
+    var headerSeg = segments[0];
+    var payloadSeg = segments[1];
+    var signatureSeg = segments[2];
+
+    var header = JSON.parse(base64urlDecode(headerSeg));
+    var payload = JSON.parse(base64urlDecode(payloadSeg));
+
+    if (signatureSeg != sign([headerSeg, payloadSeg].join('.'), key)) {
+        throw new Error('verify failed');
+    }
+
+    if (payload.exp &amp;&amp; Date.now() &gt; payload.exp * 1000) {
+        throw new Error('Token expired');
+    }
+    return payload;
+}
+
+function base64urlEncode(str) {
+    return new Buffer(str).toString('base64');
+}
+
+function base64urlDecode(str) {
+    return new Buffer(str, 'base64').toString();
+}
+
+module.exports = {
+    encode,
+    decode
+}
+</code></pre></div><h3 id="实现redux"><a href="#实现redux" class="header-anchor">#</a> 实现Redux</h3> <div class="language- extra-class"><pre class="language-text"><code>    // bindActionCreator
+    export default function bindActionCreator(actions,dispatch){
+        let newActions={};
+        for(let key in actions){
+            newActions[key]=()=&gt;dispatch(actions[key].apply(null,arguments));
+        }
+        return newActions;
+    }
+    // combineReducers
+    export default combineReducers=reducers=&gt;(state={},action)=&gt;Object.keys(reducers).reduce((currentState,key)=&gt;{
+        currentState[key]=reducers[key](state[key],action);
+        return currentState;
+    },{});
+    // createStore
+    export default function createStore(reducer,enhancer){
+        if(typeof enhancer !== 'undefined'){
+            return enhancer(createStore)(reducer);
+        }
+        let state=null;
+        const listeners=[];
+        const subscribe=(listener)=&gt;{
+            listeners.push(listener);
+        }
+        const getState=()=&gt;state;
+        const dispatch=(action)=&gt;{
+            state=reducer(state,action);
+            listeners.forEach((listener)=&gt;listener())
+        };
+        dispatch({});
+        return {getState,dispatch,subscribe}
+    }
+    // applyMiddleware
+    export default function applyMiddleware(...middlewares){
+        return (createStore)=&gt;(reducer)=&gt;{
+            const store=createStore(reducer);
+            let dispatch=store.dispatch;
+            let chain=[];
+
+            const middlewareAPI={
+                getState:store.getState,
+                dispatch:(action)=&gt;dispatch(action)
+            }
+            chain=middlewares.map(middleware=&gt;middleware(middlewareAPI));
+            dispatch=compose(...chain)(store.dispatch);
+
+            return {
+                ...store,
+                dispatch
+            }
+        }
+    }
+    // compose
+    export default function compose(...funcs){
+        return funcs.reduce((a,b)=&gt;(...args)=&gt;a(b(...args)));
+    }
+</code></pre></div><h3 id="实现一个简单路由"><a href="#实现一个简单路由" class="header-anchor">#</a> 实现一个简单路由</h3> <div class="language- extra-class"><pre class="language-text"><code>    class Route{
+        constructor(){
+            this.routes={};
+            this.currentHash='';
+            this.freshRoute=this.freshRoute.bind(this);
+            window.addEventListener('load',this.freshRoute,false);
+            window.addEventListener('hashchange',this.freshRoute,false);
+        }
+        storeRoute(path,cb){
+            this.routes[path]=cb || function(){}
+        }
+        freshRoute(){
+            this.currentHash=location.hash.slice(1) || '/';
+            this.routes[this.currentHash]()
+        }
+    }
+</code></pre></div><h3 id="实现promise"><a href="#实现promise" class="header-anchor">#</a> 实现Promise</h3> <p>完整版</p> <div class="language- extra-class"><pre class="language-text"><code>    const PENDING='pending';
+    const FULFILLED='fulfilled';
+    const REJECTED='rejected';
+
+    function MyPromise(fn){
+        const self=this;
+        self.value=null;
+        self.error=null;
+        self.status=PENDING;
+        self.onFulfilledCallbacks=[];
+        self.onRejectedCallbacks=[];
+
+        function resolve(value){
+            if(value instanceof MyPromise){
+                return value.then(resolve,reject);
+            }
+            if(self.status===PENDING){
+                setTimeout(()=&gt;{
+                    self.status=FULFILLED;
+                    self.value=value;
+                    self.onFulfilledCallbacks.forEach((callback)=&gt;callback(self.value));
+                },0)
+            }
+        }
+
+        function reject(error){
+            if(self.status===PENDING){
+                setTimeout(function(){
+                    self.status=REJECTED;
+                    self.error=error;
+                    self.onRejectedCallbacks.forEach((callback)=&gt;callback(self.error))
+                },0)
+            }
+        }
+        try{
+            fn(resolve,reject);
+        }catch(e){
+            reject(e);
+        }
+    }
+
+    function resolvePromise(bridgepromise,x,resolve,reject){
+        if(bridgepromise===x){
+            return reject(new TypeError('Circular reference'));
+        }
+
+        let called=false;
+        if(x instanceof MyPromise){
+            if(x.status===PENDING){
+                x.then(y=&gt;{
+                    resolvePromise(bridgepromise,y,resolve,reject)
+                },error=&gt;{
+                    reject(error);
+                })
+            }else{
+                x.then(resolve,reject)
+            }
+        }else if(x!=null &amp;&amp; ((typeof x === 'object') || (typeof x === 'function'))){
+            try{
+                let then=x.then;
+                if(typeof then === 'function'){
+                    then.call(x,y=&gt;{
+                        if(called) return;
+                        called=true;
+                        resolvePromise(bridgepromise,y,resolve,reject)
+                    },error=&gt;{
+                        if(called) return;
+                        called=true;
+                        reject(error);
+                    })
+                }else{
+                    resolve(x);
+                }
+            }catch(e){
+                if(called) return;
+                called=true;
+                reject(e);
+            }
+        }else{
+            resolve(x);
+        }
+    }
+
+    MyPromise.prototype.then=function(onFulfilled,onRejected){
+        const self=this;
+        let bridgePromise;
+        onFulfilled=typeof onFulfilled==='function'?onFulfilled:value=&gt;value;
+        onRejected=typeof onRejected==='function'?onRejected:error=&gt;{throw error};
+        if(self.status===FULFILLED){
+            return bridgePromise=new MyPromise((resolve,reject)=&gt;{
+                setTimeout(()=&gt;{
+                    try{
+                        let x=onFulfilled(self.value);
+                        resolvePromise(bridgePromise,x,resolve,reject);
+                    }catch(e){
+                        reject(e);
+                    }
+                },0)
+            })
+        }
+        if(self.status===REJECTED){
+            return bridgePromise=new MyPromise((resolve,reject)=&gt;{
+                setTimeout(()=&gt;{
+                    try{
+                        let x=onRejected(self.error);
+                        resolvePromise(bridgePromise,x,resolve,reject);
+                    }catch(e){
+                        reject(e);
+                    }
+                },0)
+            })
+        }
+        if(self.status===PENDING){
+            return bridgePromise=new MyPromise((resolve,reject)=&gt;{
+                self.onFulfilledCallbacks.push((value)=&gt;{
+                    try{
+                        let x=onFulfilled(value);
+                        resolvePromise(bridgePromise,x,resolve,reject)
+                    }catch(e){
+                        reject(e);
+                    }
+                });
+                self.onRejectedCallbacks.push((error)=&gt;{
+                    try{
+                        let x=onRejected(error);
+                        resolvePromise(bridgePromise,x,resolve,reject);
+                    }catch(e){
+                        reject(e);
+                    }
+                });
+            });
+        }
+    }
+    MyPromise.prototype.catch=function(onRejected){
+        return this.then(null,onRejected);
+    }
+    MyPromise.deferred=function(){
+        let defer={};
+        defer.promise=new MyPromise((resolve,reject)=&gt;{
+            defer.resolve=resolve;
+            defer.reject=reject;
+        });
+        return defer;
+    }
+    try{
+        module.exports=MyPromise;
+    }catch(e){}
+</code></pre></div><p>简版</p> <div class="language- extra-class"><pre class="language-text"><code>    function myPromise(constructor){
+        let self=this;
+        self.status='pending';
+        self.vlaue=undefined;
+        self.reason=undefined;
+        function resolve(value){
+            if(self.status==='pending'){
+                self.value=value;
+                self.status='resolved';
+            }
+        }
+        function reject(reason){
+            if(self.status==='pending'){
+                self.reason=reason;
+                self.status='rejected';
+            }
+        }
+        try{
+            constructor(resolve,reject);
+        }catch(e){
+            reject(e);
+        }
+    }
+    myPromise.prototype.then=function(onFullfilled,onRejected){
+        let self=this;
+        switch(self.status){
+            case 'resolved':
+                onFullfilled(self.value);
+                break;
+            case 'rejected':
+                onRejected(self.reason);
+                break;
+            default:
+        }
+    }
+</code></pre></div><h3 id="实现promise的生成器run方法"><a href="#实现promise的生成器run方法" class="header-anchor">#</a> 实现promise的生成器run方法</h3> <div class="language- extra-class"><pre class="language-text"><code>    function run(gen){
+        let args=[].slice.call(arguments,1),
+            it;
+        it=gen.apply(this,args);
+
+        return Promise.resolve().then(function handleNext(value){
+            let next =it.next(value);
+
+            return (function handleResult(next){
+                if(next.done){
+                    return next.value;
+                }else{
+                    return Promise.resolve(next.value).then(
+                        handleNext,
+                        function handleErr(err){
+                            return Promise.resolve(
+                                if.throw(err)
+                            ).then(handleResult);
+                        }
+                    );
+                }
+            })(next);
+        })
+    }
+</code></pre></div><h3 id="实现promisify"><a href="#实现promisify" class="header-anchor">#</a> 实现promisify</h3> <div class="language- extra-class"><pre class="language-text"><code>    function promisify(fn){
+        return function(...args){
+            return new Promise(function(resolve,reject){
+                fn(...args,function(err,data){
+                    if(err){
+                        reject(err)
+                    }else{
+                        resolve(data);
+                    }
+                };
+            });
+        }
+    }
+</code></pre></div><h3 id="实现thunkify"><a href="#实现thunkify" class="header-anchor">#</a> 实现thunkify</h3> <div class="language- extra-class"><pre class="language-text"><code>    function thunkify(fn){
+        let args=[].slice.call(arguments,1);
+        return function(cb){
+            args.push(cb);
+            return fn.apply(null,args);
+        }
+    }
+</code></pre></div><h3 id="使用settimeout实现setinterval"><a href="#使用settimeout实现setinterval" class="header-anchor">#</a> 使用setTimeout实现setInterval</h3> <div class="language- extra-class"><pre class="language-text"><code>    setTimeout(function(){
+        setTimeout(arguments.callee,500)
+    },500)
+</code></pre></div><h3 id="实现json-parse"><a href="#实现json-parse" class="header-anchor">#</a> 实现JSON.parse</h3> <div class="language- extra-class"><pre class="language-text"><code>    var json = '{&quot;name&quot;:&quot;cxk&quot;, &quot;age&quot;:25}';
+    var obj = eval(&quot;(&quot; + json + &quot;)&quot;);
+</code></pre></div><h3 id="实现json-stringify"><a href="#实现json-stringify" class="header-anchor">#</a> 实现JSON.stringify</h3> <div class="language- extra-class"><pre class="language-text"><code>    function jsonStringify(obj){
+        let type=typeof obj;
+        if(type !== 'object' || type === null){
+            if(/string|undefined|function/.test(type)){
+                obj='&quot;'+obj+'&quot;';
+            }
+            return String(obj);
+        }else{
+            let json=[];
+            arr=(obj &amp;&amp; obj.constructor===Array);
+            for(let k in obj){
+                let v=obj[k];
+                let type=typeof v;
+                if(/string|undefined|function/.test(type)){
+                    v='&quot;'+v+'&quot;';
+                }else if(type === 'object'){
+                    v=jsonStringify(v);
+                }
+                json.push((arr ? &quot;&quot;:'&quot;'+k'&quot;:')+String(v));
+            }
+            return (arr ? &quot;[&quot; : &quot;{&quot; ) + String(json)+(arr ? &quot;]&quot; : &quot;}&quot; )
+        }
+    }
+</code></pre></div><h3 id="实现indexof方法"><a href="#实现indexof方法" class="header-anchor">#</a> 实现indexOf方法</h3> <div class="language- extra-class"><pre class="language-text"><code>    function indexOf(arr,elem,fromi){
+        fromi=fromi||0;
+        for(var i=fromi;i&lt;arr.length;i++){
+            if(elem===arr[i]){
+                return i;
+            }
+        }
+    return -1;
+    }
+</code></pre></div><h3 id="实现reduce方法"><a href="#实现reduce方法" class="header-anchor">#</a> 实现reduce方法</h3> <p>简版：</p> <div class="language- extra-class"><pre class="language-text"><code>    Array.prototype.myReduce=function(fn,initialValue){
+        if(this.length===0){
+            if(initialValue===undefined){
+                console.error(&quot;reduce of empty array with no initialValue&quot;)
+            }else{
+                return initialValue
+            }
+        }else{
+            let prev=initialValue !== undefined ? initialValue : this[0];
+            let startIndex = initialValue !== undefined ? 0 : 1;
+            for(let i=startIndex;i&lt;this.length;i++){
+                prev = fn(prev,this[i]);
+            }
+            return prev;
+        }
+    }
+</code></pre></div><p>完整版：</p> <div class="language- extra-class"><pre class="language-text"><code>    Array.prototype.myreduce=function reduce(callbackfn){
+        const o=this,
+              len=o.length;
+        let k=0,
+            accumulator=undefined,
+            kPresent=false,
+            initialValue=arguments.length&gt;1?arguments[1]:undefined;
+        
+        if(typeof callbackfn !== 'function'){
+            throw new TypeError(callbackfn+'is not a function');
+        }
+
+        if(len === 0 &amp;&amp; arguments.length&lt;2){
+            throw new TypeError('Reduce of empty array with no initial value');
+        }
+
+        if(arguments.length&gt;1){
+            accumulator=initialValue;
+        }else{
+            accumulator=o[k];
+            ++k;
+        }
+
+        while(k&lt;len){
+            kPresent=o.hasOwnProperty(k);
+
+            if(kPresent){
+                const kValue=o[k];
+                accumulator=callbackfn.apply(undefined,[accumulator,kValue,k,o]);
+            }
+            ++k;
+        }
+
+        return accumulator;
+    }
+</code></pre></div><h3 id="实现trim方法"><a href="#实现trim方法" class="header-anchor">#</a> 实现trim方法</h3> <div class="language- extra-class"><pre class="language-text"><code>    function trim(str){
+        if(str &amp;&amp; typeof str==='string'){
+            return str.replace(/^\s+l\s+$/g/,'')
+        }
+    }
+</code></pre></div><h3 id="实现join方法"><a href="#实现join方法" class="header-anchor">#</a> 实现join方法</h3> <div class="language- extra-class"><pre class="language-text"><code>    function join(arr,connector){
+        let str='';
+        for(let i=0;i&lt;arr.length;i++){
+            if(i&gt;0){
+                str+=connector;
+            }
+            if(arr[i] !== undefined){
+                str+=arr[i];
+            }
+        }
+        return str;
+    }
+</code></pre></div><h3 id="实现一个模板引擎"><a href="#实现一个模板引擎" class="header-anchor">#</a> 实现一个模板引擎</h3> <div class="language- extra-class"><pre class="language-text"><code>    function render(template, data) {
+        const reg = /\{\{(\w+)\}\}/; 
+        if (reg.test(template)) { 
+            const name = reg.exec(template)[1]; 
+            template = template.replace(reg, data[name]); 
+            return render(template, data); 
+        }
+        return template; 
+    }
+</code></pre></div><h3 id="实现一个转驼峰方法camelcase"><a href="#实现一个转驼峰方法camelcase" class="header-anchor">#</a> 实现一个转驼峰方法camelCase</h3> <div class="language- extra-class"><pre class="language-text"><code>    function camelCase(str){
+        return str.replace(/-\w/g,function(newStr){
+            return newStr.slice(1).toUpperCase();
+        })
+    }
+</code></pre></div><h3 id="实现virtual-dom-diff"><a href="#实现virtual-dom-diff" class="header-anchor">#</a> 实现Virtual Dom &amp;&amp; Diff</h3> <div class="language- extra-class"><pre class="language-text"><code>// 实现一个utils方法库
+const _ = exports
+
+_.setAttr = function setAttr (node, key, value) {
+  switch (key) {
+    case 'style':
+      node.style.cssText = value
+      break;
+    case 'value':
+      let tagName = node.tagName || ''
+      tagName = tagName.toLowerCase()
+      if (
+        tagName === 'input' || tagName === 'textarea'
+      ) {
+        node.value = value
+      } else {
+        // 如果节点不是 input 或者 textarea, 则使用 `setAttribute` 去设置属性
+        node.setAttribute(key, value)
+      }
+      break;
+    default:
+      node.setAttribute(key, value)
+      break;
+  }
+}
+
+_.slice = function slice (arrayLike, index) {
+  return Array.prototype.slice.call(arrayLike, index)
+}
+
+
+_.type = function type (obj) {
+  return Object.prototype.toString.call(obj).replace(/\[object\s|\]/g, '')
+}
+
+_.isArray = function isArray (list) {
+  return _.type(list) === 'Array'
+}
+
+_.toArray = function toArray (listLike) {
+  if (!listLike) return []
+
+  let list = []
+  for (let i = 0, l = listLike.length; i &lt; l; i++) {
+    list.push(listLike[i])
+  }
+  return list
+}
+
+_.isString = function isString (list) {
+  return _.type(list) === 'String'
+}
+
+_.isElementNode = function (node) {
+  return node.nodeType === 1
+}
+
+// 实现一个 Element
+import _ from './utils'
+
+/**
+ * @class Element Virtrual Dom
+ * @param { String } tagName
+ * @param { Object } attrs   Element's attrs, 如: { id: 'list' }
+ * @param { Array &lt;Element|String&gt; } 可以是Element对象，也可以只是字符串，即textNode
+ */
+class Element {
+  constructor(tagName, attrs, children) {
+    // 如果只有两个参数
+    if (_.isArray(attrs)) {
+      children = attrs
+      attrs = {}
+    }
+
+    this.tagName  = tagName
+    this.attrs    = attrs || {}
+    this.children = children
+    // 设置this.key属性，为了后面list diff做准备
+    this.key = attrs
+      ? attrs.key
+      : void 0
+  }
+
+  render () {
+    let el    = document.createElement(this.tagName)
+    let attrs = this.attrs
+
+    for (let attrName in attrs) { // 设置节点的DOM属性
+      let attrValue = attrs[attrName]
+      _.setAttr(el, attrName, attrValue)
+    }
+
+    let children = this.children || []
+    children.forEach(child =&gt; {
+      let childEl = child instanceof Element
+        ? child.render() // 若子节点也是虚拟节点，递归进行构建
+        : document.createTextNode(child)  // 若是字符串，直接构建文本节点
+      el.appendChild(childEl)
+    })
+
+    return el
+  }
+}
+function el (tagName, attrs, children) {
+  return new Element(tagName, attrs, children)
+}
+module.exports = el;
+
+// 实现 diff 算法
+/**
+ * Diff two list in O(N).
+ * @param {Array} oldList - 原始列表
+ * @param {Array} newList - 经过一些操作的得出的新列表
+ * @return {Object} - {moves: &lt;Array&gt;}
+ *                  - moves list操作记录的集合
+ */
+function diff (oldList, newList, key) {
+  let oldMap = getKeyIndexAndFree(oldList, key)
+  let newMap = getKeyIndexAndFree(newList, key)
+
+  let newFree = newMap.free
+
+  let oldKeyIndex = oldMap.keyIndex
+  let newKeyIndex = newMap.keyIndex
+  // 记录所有move操作
+  let moves = []
+
+  // a simulate list
+  let children = []
+  let i = 0
+  let item
+  let itemKey
+  let freeIndex = 0
+
+  // newList 向 oldList 的形式靠近进行操作
+  while (i &lt; oldList.length) {
+    item = oldList[i]
+    itemKey = getItemKey(item, key)
+    if (itemKey) {
+      if (!newKeyIndex.hasOwnProperty(itemKey)) {
+        children.push(null)
+      } else {
+        let newItemIndex = newKeyIndex[itemKey]
+        children.push(newList[newItemIndex])
+      }
+    } else {
+      let freeItem = newFree[freeIndex++]
+      children.push(freeItem || null)
+    }
+    i++
+  }
+  let simulateList = children.slice(0)
+
+  // 移除列表中一些不存在的元素
+  i = 0
+  while (i &lt; simulateList.length) {
+    if (simulateList[i] === null) {
+      remove(i)
+      removeSimulate(i)
+    } else {
+      i++
+    }
+  }
+  // i  =&gt; new list
+  // j  =&gt; simulateList
+  let j = i = 0
+  while (i &lt; newList.length) {
+    item = newList[i]
+    itemKey = getItemKey(item, key)
+
+    let simulateItem = simulateList[j]
+    let simulateItemKey = getItemKey(simulateItem, key)
+
+    if (simulateItem) {
+      if (itemKey === simulateItemKey) {
+        j++
+      }
+      else {
+        // 如果移除掉当前的 simulateItem 可以让 item在一个正确的位置，那么直接移除
+        let nextItemKey = getItemKey(simulateList[j + 1], key)
+        if (nextItemKey === itemKey) {
+          remove(i)
+          removeSimulate(j)
+          j++ // 移除后，当前j的值是正确的，直接自加进入下一循环
+        } else {
+          // 否则直接将item 执行 insert
+          insert(i, item)
+        }
+      }
+    // 如果是新的 item, 直接执行 inesrt
+    } else {
+      insert(i, item)
+    }
+    i++
+  }
+  // if j is not remove to the end, remove all the rest item
+  // let k = 0;
+  // while (j++ &lt; simulateList.length) {
+  //   remove(k + i);
+  //   k++;
+  // }
+
+  // 记录remove操作
+  function remove (index) {
+    let move = {index: index, type: 0}
+    moves.push(move)
+  }
+  // 记录insert操作
+  function insert (index, item) {
+    let move = {index: index, item: item, type: 1}
+    moves.push(move)
+  }
+  // 移除simulateList中对应实际list中remove掉节点的元素
+  function removeSimulate (index) {
+    simulateList.splice(index, 1)
+  }
+  // 返回所有操作记录
+  return {
+    moves: moves,
+    children: children
+  }
+}
+/**
+ * 将 list转变成  key-item keyIndex 对象的形式进行展示.
+ * @param {Array} list
+ * @param {String|Function} key
+ */
+function getKeyIndexAndFree (list, key) {
+  let keyIndex = {}
+  let free = []
+  for (let i = 0, len = list.length; i &lt; len; i++) {
+    let item = list[i]
+    let itemKey = getItemKey(item, key)
+    if (itemKey) {
+      keyIndex[itemKey] = i
+    } else {
+      free.push(item)
+    }
+  }
+
+  // 返回 key-item keyIndex
+  return {
+    keyIndex: keyIndex,
+    free: free
+  }
+}
+
+function getItemKey (item, key) {
+  if (!item || !key) return void 0
+  return typeof key === 'string'
+    ? item[key]
+    : key(item)
+}
+
+module.exports = diff
+
+// 实现 patch，解析 patch 对象
+function patch (rootNode, patches) {
+  let walker = { index: 0 }
+  walk(rootNode, walker, patches)
+}
+
+function walk (node, walker, patches) {
+  let currentPatches = patches[walker.index] // 从patches取出当前节点的差异
+
+  let len = node.childNodes
+    ? node.childNodes.length
+    : 0
+  for (let i = 0; i &lt; len; i++) { // 深度遍历子节点
+    let child = node.childNodes[i]
+    walker.index++
+    walk(child, walker, patches)
+  }
+
+  if (currentPatches) {
+    dealPatches(node, currentPatches)  // 对当前节点进行DOM操作
+  }
+}
+
+function dealPatches (node, currentPatches) {
+  currentPatches.forEach(currentPatch =&gt; {
+    switch (currentPatch.type) {
+      case REPLACE:
+        let newNode = (typeof currentPatch.node === 'string')
+          ? document.createTextNode(currentPatch.node)
+          : currentPatch.node.render()
+        node.parentNode.replaceChild(newNode, node)
+        break
+      case REORDER:
+        reorderChildren(node, currentPatch.moves)
+        break
+      case ATTRS:
+        setProps(node, currentPatch.props)
+        break
+      case TEXT:
+        if (node.textContent) {
+          node.textContent = currentPatch.content
+        } else {
+          // for ie
+          node.nodeValue = currentPatch.content
+        }
+        break
+      default:
+        throw new Error('Unknown patch type ' + currentPatch.type)
+    }
+  })
+}
+
+function setAttrs (node, props) {
+  for (let key in props) {
+    if (props[key] === void 0) {
+      node.removeAttribute(key)
+    } else {
+      let value = props[key]
+      _.setAttr(node, key, value)
+    }
+  }
+}
+function reorderChildren (node, moves) {
+  let staticNodeList = _.toArray(node.childNodes)
+  let maps = {} // 存储含有key特殊字段的节点
+
+  staticNodeList.forEach(node =&gt; {
+    // 如果当前节点是ElementNode，通过maps将含有key字段的节点进行存储
+    if (_.isElementNode(node)) {
+      let key = node.getAttribute('key')
+      if (key) {
+        maps[key] = node
+      }
+    }
+  })
+
+  moves.forEach(move =&gt; {
+    let index = move.index
+    if (move.type === 0) { // remove item
+      if (staticNodeList[index] === node.childNodes[index]) { // maybe have been removed for inserting
+        node.removeChild(node.childNodes[index])
+      }
+      staticNodeList.splice(index, 1)
+    } else if (move.type === 1) { // insert item
+      let insertNode = maps[move.item.key]
+        ? maps[move.item.key] // reuse old item
+        : (typeof move.item === 'object')
+            ? move.item.render()
+            : document.createTextNode(move.item)
+      staticNodeList.splice(index, 0, insertNode)
+      node.insertBefore(insertNode, node.childNodes[index] || null)
+    }
+  })
+}
+</code></pre></div><h3 id="实现一个简版jquery"><a href="#实现一个简版jquery" class="header-anchor">#</a> 实现一个简版jQuery</h3> <div class="language- extra-class"><pre class="language-text"><code>    (function(window,undefined){
+        let njQuery=function(){
+            return new njQuery.prototype.init();
+        }
+        njQuery.prototype={
+            constructor:njQuery
+        }
+        njQuery.prototype.init.prototype=njQuery.prototype;
+        window.njQuery=window.$=njQuery;
+    })(window)
+</code></pre></div><h2 id="算法部分"><a href="#算法部分" class="header-anchor">#</a> 算法部分</h2> <h3 id="实现冒泡排序"><a href="#实现冒泡排序" class="header-anchor">#</a> 实现冒泡排序</h3> <div class="language- extra-class"><pre class="language-text"><code>    function swap(A,i,j){
+        const t=A[i];
+        A[i]=A[j];
+        A[j]=t;
+    }
+    function buble_sort(A){
+        // |---未排序---|---已排序的最大值---|
+        // 初始 |------未排序------|i|
+        for(let i=A.length;i&gt;0;i--){
+            for(let j=1;j&lt;i;j++){
+                if(A[j]&lt;A[j-1]){
+                    swap(A,j,j-1)
+                }
+            }
+            // 循环不变式成立
+        }
+        return A
+    }
+</code></pre></div><h3 id="实现快速排序"><a href="#实现快速排序" class="header-anchor">#</a> 实现快速排序</h3> <div class="language- extra-class"><pre class="language-text"><code>    // i指向最后一个小于支点的数字，j指向未确认的下一个数字 初始值 i=-1,j=0
+    function swap(A,i,j){
+        [A[i],A[j]]=[A[j],A[i]];
+    }
+
+    function divide(A,p,r){
+        const x=A[r-1];
+        let i=p-1;
+        for(let j=p;j&lt;r-1;j++){
+            if(A[j]&lt;x){
+                i++;
+                swap(A,i,j);
+            }
+        }
+        swap(A,i+1,r-1);
+        return i+1;
+    }
+
+    function quick_sort(A,p=0,r){
+        r = typeof r !== 'undefined' ? r : A.length;
+        if(p&lt;r-1){
+            const q=divide(A,p,r);
+            quick_sort(A,p,q);
+            quick_sort(A,q+1,r)
+        }
+    }
+</code></pre></div><h3 id="实现插入排序"><a href="#实现插入排序" class="header-anchor">#</a> 实现插入排序</h3> <div class="language- extra-class"><pre class="language-text"><code>    function insert_sort(A){
+        for(
+            let j=1;                    
+            j&lt;A.length;                 
+            j++){                       
+            const key=A[j];             
+            let i=j-1;                  
+            while(i&gt;=0 &amp;&amp; A[i]&gt;key){    
+                A[i+1]=A[i];            
+                i--;                    
+            }
+            A[i+1]=key                  
+        }
+    }
+</code></pre></div><h3 id="实现归并排序"><a href="#实现归并排序" class="header-anchor">#</a> 实现归并排序</h3> <div class="language- extra-class"><pre class="language-text"><code>    const SENTINEL=Number.MAX_SAFE_INTEGER;
+
+    function divide(p,r){
+        return Math.floor((p+r)/2)
+    }
+
+    function conquer(A,p,q,r){
+        const A1=A.slice(p,q);
+        const A2=A.slice(q,r);
+
+        A1.push(SENTINEL);
+        A2.push(SENTINEL);
+
+        for(let k=p,i=0,j=0;k&lt;r;k++){
+            A[k]=A1[i]&lt;A2[i]?A1[i++]:A2[j++]
+        }
+    }
+
+    function merge_sort(A,p=0,r){
+        r=r || A.length;
+        if(r-p===1){return}
+        if(r-p===2){
+            if(A[p]&gt;A[r-1]){
+                [A[p],A[r-1]]=[A[r-1],A[p]]
+            }
+            return
+        }
+
+        const q=divide(p,r);
+        console.log('divide:'+q);
+        merge_sort(A,p,q)
+        merge_sort(A,q,r)
+        conquer(A,p,q,r)
+    }
+</code></pre></div><h3 id="实现桶排序"><a href="#实现桶排序" class="header-anchor">#</a> 实现桶排序</h3> <div class="language- extra-class"><pre class="language-text"><code>function bucket_sort(A,max){
+    const a=max;
+    const B=[...Array(a+1)].map(x=&gt;[])
+
+    const indexFunc=(value)=&gt;{
+        const key=Math.floor(value/a);
+        if(key&gt;a){
+            return a
+        }     
+        return key
+    }
+
+    A.forEach(value=&gt;{
+        const idx=Math.floor(indexFunc(value))
+        if(!B[idx]){
+            throw new Error('桶脚标没有命中 index='+idx)
+        }
+        B[idx].push(value)
+    })
+
+    return [].concat(...B.map(bucket=&gt;{
+        return bucket.sort((x,y)=&gt;x-y)
+    }))
+}
+</code></pre></div><h3 id="实现二分查找"><a href="#实现二分查找" class="header-anchor">#</a> 实现二分查找</h3> <div class="language- extra-class"><pre class="language-text"><code>    function bsearch(A,x){
+        let l=0,
+            r=A.length-1,
+            guess;
+        while(l&lt;=r){
+            guess=Math.floor((l+r)/2);
+            if(A[guess]===x){
+                return guess;
+            }else if(A[guess]&gt;x){
+                r=guess-1;
+            }else{
+                l=guess+1
+            }
+        }
+        return -1;
+    }
+</code></pre></div><h3 id="实现红黑树"><a href="#实现红黑树" class="header-anchor">#</a> 实现红黑树</h3> <p>BinarySearchTree</p> <div class="language- extra-class"><pre class="language-text"><code>import BinarySearchTreeNode from './BinarySearchTreeNode';
+
+export default class BinarySearchTree {
+  /**
+   * @param {function} [nodeValueCompareFunction]
+   */
+  constructor(nodeValueCompareFunction) {
+    this.root = new BinarySearchTreeNode(null, nodeValueCompareFunction);
+
+    // Steal node comparator from the root.
+    this.nodeComparator = this.root.nodeComparator;
+  }
+
+  /**
+   * @param {*} value
+   * @return {BinarySearchTreeNode}
+   */
+  insert(value) {
+    return this.root.insert(value);
+  }
+
+  /**
+   * @param {*} value
+   * @return {boolean}
+   */
+  contains(value) {
+    return this.root.contains(value);
+  }
+
+  /**
+   * @param {*} value
+   * @return {boolean}
+   */
+  remove(value) {
+    return this.root.remove(value);
+  }
+
+  /**
+   * @return {string}
+   */
+  toString() {
+    return this.root.toString();
+  }
+}
+</code></pre></div><p>RedBlackTree</p> <div class="language- extra-class"><pre class="language-text"><code>import BinarySearchTree from '../binary-search-tree/BinarySearchTree';
+
+// Possible colors of red-black tree nodes.
+const RED_BLACK_TREE_COLORS = {
+  red: 'red',
+  black: 'black',
+};
+
+// Color property name in meta information of the nodes.
+const COLOR_PROP_NAME = 'color';
+
+export default class RedBlackTree extends BinarySearchTree {
+  /**
+   * @param {*} value
+   * @return {BinarySearchTreeNode}
+   */
+  insert(value) {
+    const insertedNode = super.insert(value);
+
+    // if (!this.root.left &amp;&amp; !this.root.right) {
+    if (this.nodeComparator.equal(insertedNode, this.root)) {
+      // Make root to always be black.
+      this.makeNodeBlack(insertedNode);
+    } else {
+      // Make all newly inserted nodes to be red.
+      this.makeNodeRed(insertedNode);
+    }
+
+    // Check all conditions and balance the node.
+    this.balance(insertedNode);
+
+    return insertedNode;
+  }
+
+  /**
+   * @param {*} value
+   * @return {boolean}
+   */
+  remove(value) {
+    throw new Error(`Can't remove ${value}. Remove method is not implemented yet`);
+  }
+
+  /**
+   * @param {BinarySearchTreeNode} node
+   */
+  balance(node) {
+    // If it is a root node then nothing to balance here.
+    if (this.nodeComparator.equal(node, this.root)) {
+      return;
+    }
+
+    // If the parent is black then done. Nothing to balance here.
+    if (this.isNodeBlack(node.parent)) {
+      return;
+    }
+
+    const grandParent = node.parent.parent;
+
+    if (node.uncle &amp;&amp; this.isNodeRed(node.uncle)) {
+      // If node has red uncle then we need to do RECOLORING.
+
+      // Recolor parent and uncle to black.
+      this.makeNodeBlack(node.uncle);
+      this.makeNodeBlack(node.parent);
+
+      if (!this.nodeComparator.equal(grandParent, this.root)) {
+        // Recolor grand-parent to red if it is not root.
+        this.makeNodeRed(grandParent);
+      } else {
+        // If grand-parent is black root don't do anything.
+        // Since root already has two black sibling that we've just recolored.
+        return;
+      }
+
+      // Now do further checking for recolored grand-parent.
+      this.balance(grandParent);
+    } else if (!node.uncle || this.isNodeBlack(node.uncle)) {
+      // If node uncle is black or absent then we need to do ROTATIONS.
+
+      if (grandParent) {
+        // Grand parent that we will receive after rotations.
+        let newGrandParent;
+
+        if (this.nodeComparator.equal(grandParent.left, node.parent)) {
+          // Left case.
+          if (this.nodeComparator.equal(node.parent.left, node)) {
+            // Left-left case.
+            newGrandParent = this.leftLeftRotation(grandParent);
+          } else {
+            // Left-right case.
+            newGrandParent = this.leftRightRotation(grandParent);
+          }
+        } else {
+          // Right case.
+          if (this.nodeComparator.equal(node.parent.right, node)) {
+            // Right-right case.
+            newGrandParent = this.rightRightRotation(grandParent);
+          } else {
+            // Right-left case.
+            newGrandParent = this.rightLeftRotation(grandParent);
+          }
+        }
+
+        // Set newGrandParent as a root if it doesn't have parent.
+        if (newGrandParent &amp;&amp; newGrandParent.parent === null) {
+          this.root = newGrandParent;
+
+          // Recolor root into black.
+          this.makeNodeBlack(this.root);
+        }
+
+        // Check if new grand parent don't violate red-black-tree rules.
+        this.balance(newGrandParent);
+      }
+    }
+  }
+
+  /**
+   * Left Left Case (p is left child of g and x is left child of p)
+   * @param {BinarySearchTreeNode|BinaryTreeNode} grandParentNode
+   * @return {BinarySearchTreeNode}
+   */
+  leftLeftRotation(grandParentNode) {
+    // Memorize the parent of grand-parent node.
+    const grandGrandParent = grandParentNode.parent;
+
+    // Check what type of sibling is our grandParentNode is (left or right).
+    let grandParentNodeIsLeft;
+    if (grandGrandParent) {
+      grandParentNodeIsLeft = this.nodeComparator.equal(grandGrandParent.left, grandParentNode);
+    }
+
+    // Memorize grandParentNode's left node.
+    const parentNode = grandParentNode.left;
+
+    // Memorize parent's right node since we're going to transfer it to
+    // grand parent's left subtree.
+    const parentRightNode = parentNode.right;
+
+    // Make grandParentNode to be right child of parentNode.
+    parentNode.setRight(grandParentNode);
+
+    // Move child's right subtree to grandParentNode's left subtree.
+    grandParentNode.setLeft(parentRightNode);
+
+    // Put parentNode node in place of grandParentNode.
+    if (grandGrandParent) {
+      if (grandParentNodeIsLeft) {
+        grandGrandParent.setLeft(parentNode);
+      } else {
+        grandGrandParent.setRight(parentNode);
+      }
+    } else {
+      // Make parent node a root
+      parentNode.parent = null;
+    }
+
+    // Swap colors of granParent and parent nodes.
+    this.swapNodeColors(parentNode, grandParentNode);
+
+    // Return new root node.
+    return parentNode;
+  }
+
+  /**
+   * Left Right Case (p is left child of g and x is right child of p)
+   * @param {BinarySearchTreeNode|BinaryTreeNode} grandParentNode
+   * @return {BinarySearchTreeNode}
+   */
+  leftRightRotation(grandParentNode) {
+    // Memorize left and left-right nodes.
+    const parentNode = grandParentNode.left;
+    const childNode = parentNode.right;
+
+    // We need to memorize child left node to prevent losing
+    // left child subtree. Later it will be re-assigned to
+    // parent's right sub-tree.
+    const childLeftNode = childNode.left;
+
+    // Make parentNode to be a left child of childNode node.
+    childNode.setLeft(parentNode);
+
+    // Move child's left subtree to parent's right subtree.
+    parentNode.setRight(childLeftNode);
+
+    // Put left-right node in place of left node.
+    grandParentNode.setLeft(childNode);
+
+    // Now we're ready to do left-left rotation.
+    return this.leftLeftRotation(grandParentNode);
+  }
+
+  /**
+   * Right Right Case (p is right child of g and x is right child of p)
+   * @param {BinarySearchTreeNode|BinaryTreeNode} grandParentNode
+   * @return {BinarySearchTreeNode}
+   */
+  rightRightRotation(grandParentNode) {
+    // Memorize the parent of grand-parent node.
+    const grandGrandParent = grandParentNode.parent;
+
+    // Check what type of sibling is our grandParentNode is (left or right).
+    let grandParentNodeIsLeft;
+    if (grandGrandParent) {
+      grandParentNodeIsLeft = this.nodeComparator.equal(grandGrandParent.left, grandParentNode);
+    }
+
+    // Memorize grandParentNode's right node.
+    const parentNode = grandParentNode.right;
+
+    // Memorize parent's left node since we're going to transfer it to
+    // grand parent's right subtree.
+    const parentLeftNode = parentNode.left;
+
+    // Make grandParentNode to be left child of parentNode.
+    parentNode.setLeft(grandParentNode);
+
+    // Transfer all left nodes from parent to right sub-tree of grandparent.
+    grandParentNode.setRight(parentLeftNode);
+
+    // Put parentNode node in place of grandParentNode.
+    if (grandGrandParent) {
+      if (grandParentNodeIsLeft) {
+        grandGrandParent.setLeft(parentNode);
+      } else {
+        grandGrandParent.setRight(parentNode);
+      }
+    } else {
+      // Make parent node a root.
+      parentNode.parent = null;
+    }
+
+    // Swap colors of granParent and parent nodes.
+    this.swapNodeColors(parentNode, grandParentNode);
+
+    // Return new root node.
+    return parentNode;
+  }
+
+  /**
+   * Right Left Case (p is right child of g and x is left child of p)
+   * @param {BinarySearchTreeNode|BinaryTreeNode} grandParentNode
+   * @return {BinarySearchTreeNode}
+   */
+  rightLeftRotation(grandParentNode) {
+    // Memorize right and right-left nodes.
+    const parentNode = grandParentNode.right;
+    const childNode = parentNode.left;
+
+    // We need to memorize child right node to prevent losing
+    // right child subtree. Later it will be re-assigned to
+    // parent's left sub-tree.
+    const childRightNode = childNode.right;
+
+    // Make parentNode to be a right child of childNode.
+    childNode.setRight(parentNode);
+
+    // Move child's right subtree to parent's left subtree.
+    parentNode.setLeft(childRightNode);
+
+    // Put childNode node in place of parentNode.
+    grandParentNode.setRight(childNode);
+
+    // Now we're ready to do right-right rotation.
+    return this.rightRightRotation(grandParentNode);
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {BinarySearchTreeNode}
+   */
+  makeNodeRed(node) {
+    node.meta.set(COLOR_PROP_NAME, RED_BLACK_TREE_COLORS.red);
+
+    return node;
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {BinarySearchTreeNode}
+   */
+  makeNodeBlack(node) {
+    node.meta.set(COLOR_PROP_NAME, RED_BLACK_TREE_COLORS.black);
+
+    return node;
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {boolean}
+   */
+  isNodeRed(node) {
+    return node.meta.get(COLOR_PROP_NAME) === RED_BLACK_TREE_COLORS.red;
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {boolean}
+   */
+  isNodeBlack(node) {
+    return node.meta.get(COLOR_PROP_NAME) === RED_BLACK_TREE_COLORS.black;
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {boolean}
+   */
+  isNodeColored(node) {
+    return this.isNodeRed(node) || this.isNodeBlack(node);
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} firstNode
+   * @param {BinarySearchTreeNode|BinaryTreeNode} secondNode
+   */
+  swapNodeColors(firstNode, secondNode) {
+    const firstColor = firstNode.meta.get(COLOR_PROP_NAME);
+    const secondColor = secondNode.meta.get(COLOR_PROP_NAME);
+
+    firstNode.meta.set(COLOR_PROP_NAME, secondColor);
+    secondNode.meta.set(COLOR_PROP_NAME, firstColor);
+  }
+}
+</code></pre></div><h3 id="实现分段树"><a href="#实现分段树" class="header-anchor">#</a> 实现分段树</h3> <div class="language- extra-class"><pre class="language-text"><code>import isPowerOfTwo from '../../../algorithms/math/is-power-of-two/isPowerOfTwo';
+
+export default class SegmentTree {
+  /**
+   * @param {number[]} inputArray
+   * @param {function} operation - binary function (i.e. sum, min)
+   * @param {number} operationFallback - operation fallback value (i.e. 0 for sum, Infinity for min)
+   */
+  constructor(inputArray, operation, operationFallback) {
+    this.inputArray = inputArray;
+    this.operation = operation;
+    this.operationFallback = operationFallback;
+
+    // Init array representation of segment tree.
+    this.segmentTree = this.initSegmentTree(this.inputArray);
+
+    this.buildSegmentTree();
+  }
+
+  /**
+   * @param {number[]} inputArray
+   * @return {number[]}
+   */
+  initSegmentTree(inputArray) {
+    let segmentTreeArrayLength;
+    const inputArrayLength = inputArray.length;
+
+    if (isPowerOfTwo(inputArrayLength)) {
+      // If original array length is a power of two.
+      segmentTreeArrayLength = (2 * inputArrayLength) - 1;
+    } else {
+      // If original array length is not a power of two then we need to find
+      // next number that is a power of two and use it to calculate
+      // tree array size. This is happens because we need to fill empty children
+      // in perfect binary tree with nulls.And those nulls need extra space.
+      const currentPower = Math.floor(Math.log2(inputArrayLength));
+      const nextPower = currentPower + 1;
+      const nextPowerOfTwoNumber = 2 ** nextPower;
+      segmentTreeArrayLength = (2 * nextPowerOfTwoNumber) - 1;
+    }
+
+    return new Array(segmentTreeArrayLength).fill(null);
+  }
+
+  /**
+   * Build segment tree.
+   */
+  buildSegmentTree() {
+    const leftIndex = 0;
+    const rightIndex = this.inputArray.length - 1;
+    const position = 0;
+    this.buildTreeRecursively(leftIndex, rightIndex, position);
+  }
+
+  /**
+   * Build segment tree recursively.
+   *
+   * @param {number} leftInputIndex
+   * @param {number} rightInputIndex
+   * @param {number} position
+   */
+  buildTreeRecursively(leftInputIndex, rightInputIndex, position) {
+    // If low input index and high input index are equal that would mean
+    // the we have finished splitting and we are already came to the leaf
+    // of the segment tree. We need to copy this leaf value from input
+    // array to segment tree.
+    if (leftInputIndex === rightInputIndex) {
+      this.segmentTree[position] = this.inputArray[leftInputIndex];
+      return;
+    }
+
+    // Split input array on two halves and process them recursively.
+    const middleIndex = Math.floor((leftInputIndex + rightInputIndex) / 2);
+    // Process left half of the input array.
+    this.buildTreeRecursively(leftInputIndex, middleIndex, this.getLeftChildIndex(position));
+    // Process right half of the input array.
+    this.buildTreeRecursively(middleIndex + 1, rightInputIndex, this.getRightChildIndex(position));
+
+    // Once every tree leaf is not empty we're able to build tree bottom up using
+    // provided operation function.
+    this.segmentTree[position] = this.operation(
+      this.segmentTree[this.getLeftChildIndex(position)],
+      this.segmentTree[this.getRightChildIndex(position)],
+    );
+  }
+
+  /**
+   * Do range query on segment tree in context of this.operation function.
+   *
+   * @param {number} queryLeftIndex
+   * @param {number} queryRightIndex
+   * @return {number}
+   */
+  rangeQuery(queryLeftIndex, queryRightIndex) {
+    const leftIndex = 0;
+    const rightIndex = this.inputArray.length - 1;
+    const position = 0;
+
+    return this.rangeQueryRecursive(
+      queryLeftIndex,
+      queryRightIndex,
+      leftIndex,
+      rightIndex,
+      position,
+    );
+  }
+
+  /**
+   * Do range query on segment tree recursively in context of this.operation function.
+   *
+   * @param {number} queryLeftIndex - left index of the query
+   * @param {number} queryRightIndex - right index of the query
+   * @param {number} leftIndex - left index of input array segment
+   * @param {number} rightIndex - right index of input array segment
+   * @param {number} position - root position in binary tree
+   * @return {number}
+   */
+  rangeQueryRecursive(queryLeftIndex, queryRightIndex, leftIndex, rightIndex, position) {
+    if (queryLeftIndex &lt;= leftIndex &amp;&amp; queryRightIndex &gt;= rightIndex) {
+      // Total overlap.
+      return this.segmentTree[position];
+    }
+
+    if (queryLeftIndex &gt; rightIndex || queryRightIndex &lt; leftIndex) {
+      // No overlap.
+      return this.operationFallback;
+    }
+
+    // Partial overlap.
+    const middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+
+    const leftOperationResult = this.rangeQueryRecursive(
+      queryLeftIndex,
+      queryRightIndex,
+      leftIndex,
+      middleIndex,
+      this.getLeftChildIndex(position),
+    );
+
+    const rightOperationResult = this.rangeQueryRecursive(
+      queryLeftIndex,
+      queryRightIndex,
+      middleIndex + 1,
+      rightIndex,
+      this.getRightChildIndex(position),
+    );
+
+    return this.operation(leftOperationResult, rightOperationResult);
+  }
+
+  /**
+   * Left child index.
+   * @param {number} parentIndex
+   * @return {number}
+   */
+  getLeftChildIndex(parentIndex) {
+    return (2 * parentIndex) + 1;
+  }
+
+  /**
+   * Right child index.
+   * @param {number} parentIndex
+   * @return {number}
+   */
+  getRightChildIndex(parentIndex) {
+    return (2 * parentIndex) + 2;
+  }
+}
+</code></pre></div><h3 id="实现字典树"><a href="#实现字典树" class="header-anchor">#</a> 实现字典树</h3> <p>TrieNode</p> <div class="language- extra-class"><pre class="language-text"><code>import HashTable from '../hash-table/HashTable';
+
+export default class TrieNode {
+  /**
+   * @param {string} character
+   * @param {boolean} isCompleteWord
+   */
+  constructor(character, isCompleteWord = false) {
+    this.character = character;
+    this.isCompleteWord = isCompleteWord;
+    this.children = new HashTable();
+  }
+
+  /**
+   * @param {string} character
+   * @return {TrieNode}
+   */
+  getChild(character) {
+    return this.children.get(character);
+  }
+
+  /**
+   * @param {string} character
+   * @param {boolean} isCompleteWord
+   * @return {TrieNode}
+   */
+  addChild(character, isCompleteWord = false) {
+    if (!this.children.has(character)) {
+      this.children.set(character, new TrieNode(character, isCompleteWord));
+    }
+
+    const childNode = this.children.get(character);
+
+    // In cases similar to adding &quot;car&quot; after &quot;carpet&quot; we need to mark &quot;r&quot; character as complete.
+    childNode.isCompleteWord = childNode.isCompleteWord || isCompleteWord;
+
+    return childNode;
+  }
+
+  /**
+   * @param {string} character
+   * @return {TrieNode}
+   */
+  removeChild(character) {
+    const childNode = this.getChild(character);
+
+    // Delete childNode only if:
+    // - childNode has NO children,
+    // - childNode.isCompleteWord === false.
+    if (
+      childNode
+      &amp;&amp; !childNode.isCompleteWord
+      &amp;&amp; !childNode.hasChildren()
+    ) {
+      this.children.delete(character);
+    }
+
+    return this;
+  }
+
+  /**
+   * @param {string} character
+   * @return {boolean}
+   */
+  hasChild(character) {
+    return this.children.has(character);
+  }
+
+  /**
+   * Check whether current TrieNode has children or not.
+   * @return {boolean}
+   */
+  hasChildren() {
+    return this.children.getKeys().length !== 0;
+  }
+
+  /**
+   * @return {string[]}
+   */
+  suggestChildren() {
+    return [...this.children.getKeys()];
+  }
+
+  /**
+   * @return {string}
+   */
+  toString() {
+    let childrenAsString = this.suggestChildren().toString();
+    childrenAsString = childrenAsString ? `:${childrenAsString}` : '';
+    const isCompleteString = this.isCompleteWord ? '*' : '';
+
+    return `${this.character}${isCompleteString}${childrenAsString}`;
+  }
+}
+</code></pre></div><p>Tri</p> <div class="language- extra-class"><pre class="language-text"><code>import TrieNode from './TrieNode';
+
+// Character that we will use for trie tree root.
+const HEAD_CHARACTER = '*';
+
+export default class Trie {
+  constructor() {
+    this.head = new TrieNode(HEAD_CHARACTER);
+  }
+
+  /**
+   * @param {string} word
+   * @return {Trie}
+   */
+  addWord(word) {
+    const characters = Array.from(word);
+    let currentNode = this.head;
+
+    for (let charIndex = 0; charIndex &lt; characters.length; charIndex += 1) {
+      const isComplete = charIndex === characters.length - 1;
+      currentNode = currentNode.addChild(characters[charIndex], isComplete);
+    }
+
+    return this;
+  }
+
+  /**
+   * @param {string} word
+   * @return {Trie}
+   */
+  deleteWord(word) {
+    const depthFirstDelete = (currentNode, charIndex = 0) =&gt; {
+      if (charIndex &gt;= word.length) {
+        // Return if we're trying to delete the character that is out of word's scope.
+        return;
+      }
+
+      const character = word[charIndex];
+      const nextNode = currentNode.getChild(character);
+
+      if (nextNode == null) {
+        // Return if we're trying to delete a word that has not been added to the Trie.
+        return;
+      }
+
+      // Go deeper.
+      depthFirstDelete(nextNode, charIndex + 1);
+
+      // Since we're going to delete a word let's un-mark its last character isCompleteWord flag.
+      if (charIndex === (word.length - 1)) {
+        nextNode.isCompleteWord = false;
+      }
+
+      // childNode is deleted only if:
+      // - childNode has NO children
+      // - childNode.isCompleteWord === false
+      currentNode.removeChild(character);
+    };
+
+    // Start depth-first deletion from the head node.
+    depthFirstDelete(this.head);
+
+    return this;
+  }
+
+  /**
+   * @param {string} word
+   * @return {string[]}
+   */
+  suggestNextCharacters(word) {
+    const lastCharacter = this.getLastCharacterNode(word);
+
+    if (!lastCharacter) {
+      return null;
+    }
+
+    return lastCharacter.suggestChildren();
+  }
+
+  /**
+   * Check if complete word exists in Trie.
+   *
+   * @param {string} word
+   * @return {boolean}
+   */
+  doesWordExist(word) {
+    const lastCharacter = this.getLastCharacterNode(word);
+
+    return !!lastCharacter &amp;&amp; lastCharacter.isCompleteWord;
+  }
+
+  /**
+   * @param {string} word
+   * @return {TrieNode}
+   */
+  getLastCharacterNode(word) {
+    const characters = Array.from(word);
+    let currentNode = this.head;
+
+    for (let charIndex = 0; charIndex &lt; characters.length; charIndex += 1) {
+      if (!currentNode.hasChild(characters[charIndex])) {
+        return null;
+      }
+
+      currentNode = currentNode.getChild(characters[charIndex]);
+    }
+
+    return currentNode;
+  }
+}
+</code></pre></div><h3 id="使用堆栈简单的符号匹配"><a href="#使用堆栈简单的符号匹配" class="header-anchor">#</a> 使用堆栈简单的符号匹配</h3> <div class="language- extra-class"><pre class="language-text"><code>    function match(n,c){
+        return (
+            c=='[' &amp;&amp; n==']'
+        ) ||
+        (
+            c=='(' &amp;&amp; n==')'
+        )
+    }
+
+    function is_balance(str){
+        const [first,...others]=str;
+        const stack=[first];
+        while(others.length&gt;0){
+            const c=stack[stack.length-1];
+            const n=others.shift();
+            if(!match(n,c)){
+                stack.push(n)
+            }else{
+                stack.pop()
+            }
+        }
+        return stack.length === 0;
+    }
+</code></pre></div><h3 id="实现广度优先遍历和深度优先遍历"><a href="#实现广度优先遍历和深度优先遍历" class="header-anchor">#</a> 实现广度优先遍历和深度优先遍历</h3> <p>堆栈实现深度优先遍历</p> <div class="language- extra-class"><pre class="language-text"><code>    function depth_first_search(node){
+        let stack=[node];
+        while(stack.length&gt;0){
+            const item=stack.pop();
+            for(let i=item.length-1;i&gt;0;i--){
+                stack.push(item.children[i])
+            }
+        }
+    }
+</code></pre></div><p>队列实现广度优先搜索</p> <div class="language- extra-class"><pre class="language-text"><code>    function *breath_first_search(node){
+        let queue=[node];
+        while(queue.length&gt;0){
+            const item=queue.pop();
+            yield item.tagName;
+            for(let i=item.length-1;i&gt;0;i--){
+                queue.unshift(item.children[i])
+            }
+        }
+    }
+</code></pre></div><h3 id="实现n皇后问题"><a href="#实现n皇后问题" class="header-anchor">#</a> 实现n皇后问题</h3> <div class="language- extra-class"><pre class="language-text"><code>    // 判断棋盘上两个皇后是否互相攻击
+    function compatible(p,q,n){
+        const [x1,y1]=[~~(p/n),p%n];
+        const [x2,y2]=[~~(q/n),q%n];
+        return (
+            x1 !== x2 &amp;&amp; y1 !== y2 &amp;&amp; Math.abs(x1-x2) !== Math.abs(y1-y2)
+        )
+    }
+
+    function queen(n,decisions=[]){
+        if(decisions.length===n){
+            return [decisions]
+        }
+
+        let r=[];
+        const start=decisions[decisions.length-1] || -1;
+        for(let i=start+1;i&lt;n*n;i++){
+            if(decisions.indexOf(i)===-1){
+                if(decisions.every(j=&gt;compatible(j,i,n))){
+                    r=r.concat(queen(n,decisions.concat(i)))
+                }
+            }
+        }
+        return r;
+    }
+</code></pre></div><h3 id="实现翻转链表"><a href="#实现翻转链表" class="header-anchor">#</a> 实现翻转链表</h3> <div class="language- extra-class"><pre class="language-text"><code>    class List{
+        ...
+        reverse(p=this.head){
+            if(p.next){
+                this.reverse(p.next);
+                p.next.next=p;
+                p.next=null
+            }else{
+                this.head=p
+            }
+        }
+    }
+</code></pre></div><h3 id="实现最长公共子序列lcs"><a href="#实现最长公共子序列lcs" class="header-anchor">#</a> 实现最长公共子序列LCS</h3> <div class="language- extra-class"><pre class="language-text"><code>    export default function longestCommonSubsequence(set1, set2) {
+    // Init LCS matrix.
+    const lcsMatrix = Array(set2.length + 1).fill(null).map(() =&gt; Array(set1.length + 1).fill(null));
+
+    // Fill first row with zeros.
+    for (let columnIndex = 0; columnIndex &lt;= set1.length; columnIndex += 1) {
+        lcsMatrix[0][columnIndex] = 0;
+    }
+
+    // Fill first column with zeros.
+    for (let rowIndex = 0; rowIndex &lt;= set2.length; rowIndex += 1) {
+        lcsMatrix[rowIndex][0] = 0;
+    }
+
+    // Fill rest of the column that correspond to each of two strings.
+    for (let rowIndex = 1; rowIndex &lt;= set2.length; rowIndex += 1) {
+        for (let columnIndex = 1; columnIndex &lt;= set1.length; columnIndex += 1) {
+        if (set1[columnIndex - 1] === set2[rowIndex - 1]) {
+            lcsMatrix[rowIndex][columnIndex] = lcsMatrix[rowIndex - 1][columnIndex - 1] + 1;
+        } else {
+            lcsMatrix[rowIndex][columnIndex] = Math.max(
+            lcsMatrix[rowIndex - 1][columnIndex],
+            lcsMatrix[rowIndex][columnIndex - 1],
+            );
+        }
+        }
+    }
+
+    // Calculate LCS based on LCS matrix.
+    if (!lcsMatrix[set2.length][set1.length]) {
+        // If the length of largest common string is zero then return empty string.
+        return [''];
+    }
+
+    const longestSequence = [];
+    let columnIndex = set1.length;
+    let rowIndex = set2.length;
+
+    while (columnIndex &gt; 0 || rowIndex &gt; 0) {
+        if (set1[columnIndex - 1] === set2[rowIndex - 1]) {
+        // Move by diagonal left-top.
+        longestSequence.unshift(set1[columnIndex - 1]);
+        columnIndex -= 1;
+        rowIndex -= 1;
+        } else if (lcsMatrix[rowIndex][columnIndex] === lcsMatrix[rowIndex][columnIndex - 1]) {
+        // Move left.
+        columnIndex -= 1;
+        } else {
+        // Move up.
+        rowIndex -= 1;
+        }
+    }
+
+    return longestSequence;
+    }
+</code></pre></div><h3 id="反转二叉树-阿里、头条、知乎"><a href="#反转二叉树-阿里、头条、知乎" class="header-anchor">#</a> 反转二叉树(阿里、头条、知乎)</h3> <div class="language- extra-class"><pre class="language-text"><code>    function reverseBTree(node){
+        if(!node){
+            return
+        }
+        const tmp=node.left;
+        node.left=node.right;
+        node.right=tmp;
+        reverseBTree(node.left);
+        reverseBTree(node.right)
+    }
+</code></pre></div><h3 id="树的轮廓-头条"><a href="#树的轮廓-头条" class="header-anchor">#</a> 树的轮廓(头条)</h3> <div class="language- extra-class"><pre class="language-text"><code>    /**
+    *          1
+    *       5     9
+    *     4   2  7  3
+    *                 8
+    */
+    // 求一个二叉树从左侧看的轮廓，如图，返回[1,5,4,8]？如果求每行最大值，返回[1,9,7,8]该如何做？
+    function leftoutlineTree(node,d=0,outline=[]){
+        if(!node){
+            return
+        }
+        if(!outline[d]){
+            outline[d]=node.value
+        }
+        leftoutlineTree(node.left,d+1,outline);
+        leftoutlineTree(node.right,d+1,outline);
+        return outline;
+    }
+    function maxOfLine(node,d=0,outline=[]){
+        if(!node){
+            return
+        }
+        outline[d]=Math.max(outline[d] || -1,node.value);
+        maxOfLine(node.left,d+1,outline);
+        maxOfLine(node.right,d+1,outline);
+        return outline;
+    }
+</code></pre></div><h3 id="两个栈实现一个队列-滴滴"><a href="#两个栈实现一个队列-滴滴" class="header-anchor">#</a> 两个栈实现一个队列(滴滴)</h3> <div class="language- extra-class"><pre class="language-text"><code>    class Queue{
+        constructor({
+            this.s1=[];
+            this.s2=[];
+        }
+        enqueue(item){
+            this.s1.push(item)
+        }
+        dequeue(){
+            while(this.s1.length&gt;0){
+                this.s2.push(this.s1.pop());
+            }
+            if(this.s2.length&gt;0){
+                return this.s2.pop();
+            }
+        }
+    }
+</code></pre></div><h2 id="综合部分"><a href="#综合部分" class="header-anchor">#</a> 综合部分</h2> <h3 id="实现一个无缝轮播图"><a href="#实现一个无缝轮播图" class="header-anchor">#</a> 实现一个无缝轮播图</h3> <ul><li>html部分</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    &lt;div class=&quot;container&quot; id=&quot;container&quot;&gt;
+        &lt;div id=&quot;btn-prev&quot; class=&quot;btn-ctrl&quot;&gt;&amp;lt;&lt;/div&gt;
+        &lt;div id=&quot;btn-next&quot; class=&quot;btn-ctrl&quot;&gt;&amp;gt;&lt;/div&gt;
+        &lt;ul id=&quot;inner-list&quot;&gt;
+            &lt;li&gt;&lt;img src=&quot;images/head1.jpeg&quot; alt=&quot;&quot;/&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/head2.jpeg&quot; alt=&quot;&quot;/&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/head3.jpeg&quot; alt=&quot;&quot;/&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul id=&quot;dot-list&quot;&gt;
+           
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre></div><ul><li>js部分</li></ul> <div class="language- extra-class"><pre class="language-text"><code>window.onload = function(){
+    var eleInners = document.getElementById('inner-list'),
+        eleDots = document.getElementById('dot-list'),
+        liImgs = eleInners.getElementsByTagName('li'),
+        liDots = eleDots.children,
+        elePrev = document.getElementById('btn-prev'),
+        eleNext = document.getElementById('btn-next'),
+        LI_WIDTH = liImgs[0].offsetWidth,
+        TIME_DURATION = 3000,
+        interval = null,
+        index = 0,
+        circle = 0;
+    eleInners.appendChild(liImgs[0].cloneNode(true));
+
+    for(var i= 0,len = liImgs.length -1;i&lt;len;i++){
+        var li = document.createElement('li');
+        li.innerHTML = i+1;
+        eleDots.appendChild(li)
+    };
+
+    liDots[0].className = 'cur';
+
+    function animate(obj,targetPlace){
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+            var speed = obj.offsetLeft &gt; targetPlace ? -15:15;
+            var result = targetPlace - obj.offsetLeft;
+            
+            if(Math.abs(result) &gt; Math.abs(speed)){
+                obj.style.left = obj.offsetLeft + speed +'px'
+            }else{
+                obj.style.left = targetPlace+'px';
+                clearInterval(obj.timer);
+            }
+        },10)
+    }
+
+    interval = setInterval(autoplay,3000)
+
+    function autoplay(){
+        index++;
+        
+        if(index &gt; liImgs.length -1){
+            eleInners.style.left = 0;
+            index = 1;
+        }
+
+        animate(eleInners, -index * LI_WIDTH);
+        circle++;
+
+        if(circle &gt;= liImgs.length -1){
+            circle = 0;
+        }
+        
+        for(var i= 0,len = liDots.length;i&lt;len;i++){
+            liDots[i].className ='';
+        }
+
+        liDots[circle].className = 'cur';
+    }
+
+    function moveright(){
+        index--;
+
+        if(index &lt;0){
+            eleInners.style.left = -(liImgs.length -2)* LI_WIDTH + 'px';
+            index = liImgs.length -2;
+        }
+        
+        animate(eleInners, -index * LI_WIDTH);
+        
+        circle --;
+
+        if(circle &lt; 0){
+            circle = liImgs.length - 2;//circle回到最后一个点
+        }
+
+        for(var i= 0,len = liDots.length;i&lt;len;i++){
+            liDots[i].className ='';
+        }
+
+        liDots[circle].className = 'cur'
+    }
+
+    eleInners.addEventListener('mouseenter',function(event){
+        clearInterval(interval)
+    });
+
+    eleInners.addEventListener('mouseleave',function(event){
+        interval = setInterval(autoplay,3000)
+    });
+
+    eleDots.addEventListener('click',function(event){
+        clearInterval(interval);
+        var target = event.target;
+        var currentTarget = event.currentTarget;
+        index = target.innerHTML - 0 - 1;
+        circle = index ;
+
+        for(var i= 0,len = liDots.length;i&lt;len;i++){
+            liDots[i].className ='';
+        }
+
+        liDots[circle].className = 'cur';
+        animate(eleInners, - index * LI_WIDTH);
+    })
+
+    elePrev.addEventListener('click',function(event){
+        clearInterval(interval)
+        moveright();
+        interval = setInterval(autoplay,3000)
+    })
+
+    eleNext.addEventListener('click',function(event){
+        clearInterval(interval);
+        autoplay();
+        interval = setInterval(autoplay,3000);
+    })
+}
+</code></pre></div><h3 id="写一个幻灯片（css加分）"><a href="#写一个幻灯片（css加分）" class="header-anchor">#</a> 写一个幻灯片（css加分）</h3> <ul><li>html部分：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    &lt;div class=&quot;myDiv&quot;&gt;&lt;/div&gt;
+</code></pre></div><ul><li>css部分：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    .myDiv{
+        width: 600px;
+        height: 400px;
+        margin: 20px auto;
+        background-size: over;
+        background-position: center;
+        animation-name:loop;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes loop{
+        0% {background: url('图片1.jpg') no-repeat;}
+        25% {background: url('图片2.jpg') no-repeat;}
+        50% {background: url('图片3.jpg') no-repeat;}
+        75% {background: url('图片4.jpg') no-repeat;}
+        100% {background: url('图片5.jpg') no-repeat;}
+    }
+</code></pre></div><h3 id="如何用css实现瀑布流布局"><a href="#如何用css实现瀑布流布局" class="header-anchor">#</a> 如何用css实现瀑布流布局</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;style&gt;
+        body {
+            margin: 0;
+        }
+        .waterfall-container {
+            /*分几列*/
+            column-count: 2;
+            width: 100%;
+            /* 列间距 */
+            column-gap: 10px;
+        }
+
+        .waterfall-item {
+            break-inside: avoid;
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            background: #ddd;
+            column-gap: 0;
+            text-align: center;
+            color: #fff;
+            font-size: 40px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;waterfall-container&quot;&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 100px&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 300px&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 400px&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 100px&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 300px&quot;&gt;5&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 600px&quot;&gt;6&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 400px&quot;&gt;7&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 300px&quot;&gt;8&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 700px&quot;&gt;9&lt;/div&gt;
+        &lt;div class=&quot;waterfall-item&quot; style=&quot;height: 100px&quot;&gt;10&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><h3 id="实现三栏布局有哪些方法-分别描述一下"><a href="#实现三栏布局有哪些方法-分别描述一下" class="header-anchor">#</a> 实现三栏布局有哪些方法, 分别描述一下</h3> <p>Flex 布局</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;style&gt;
+.container{
+  display:flex;
+  justify-content: center;
+  height: 200px;
+  background: #eee;
+}
+.left {
+   width: 200px;
+   background-color: red;
+   height: 100%;
+ }
+.main {
+    background-color: yellow;
+    flex: 1;
+}
+.right {
+    width: 200px;
+    background-color: green;
+}
+&lt;/style&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;left&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;main&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><p>绝对定位布局</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;style&gt;
+.container {
+  position: relative;
+  background:#eee;
+  height:200px;
+	}
+.main {
+  height: 200px;
+  margin: 0 120px;
+  background-color: yellow;
+	}
+.left {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  left: 0;
+  top: 0;
+  background-color: red;
+	}
+.right {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  background-color: green;
+  right: 0;
+  top: 0;
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;left&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;main&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><p>双飞翼布局</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;style&gt;
+.content {
+  float: left;
+  width: 100%;
+}
+.main {
+  height: 200px;
+  margin-left: 110px;
+  margin-right: 220px;
+  background-color: yellow;
+}
+.left {
+  float: left;
+  height: 200px;
+  width: 100px;
+  margin-left: -100%;
+  background-color: red;
+}
+.right {
+  width: 200px;
+  height: 200px;
+  float: right;
+  margin-left: -200px;
+  background-color: green;
+}	
+
+&lt;/style&gt;
+&lt;div class=&quot;content&quot;&gt;
+  &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+</code></pre></div><p>圣杯布局</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;style&gt;
+.container {
+  margin-left: 120px;
+  margin-right: 220px;
+}
+.main {
+  float: left;
+  width: 100%;
+  height: 300px;
+  background-color: yellow;
+}
+.left {
+  float: left;
+  width: 100px;
+  height: 300px;
+  margin-left: -100%;
+  position: relative;
+  left: -120px;
+  background-color: blue;
+}
+.right {
+  float: left;
+  width: 200px;
+  height: 300px;
+  margin-left: -200px;
+  position: relative;
+  right: -220px;
+  background-color: green;
+}
+&lt;/style&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><h3 id="一边固定宽度一边宽度自适应"><a href="#一边固定宽度一边宽度自适应" class="header-anchor">#</a> 一边固定宽度一边宽度自适应</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;div class=&quot;wrap&quot;&gt;
+  &lt;div class=&quot;div1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;div2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.div1 {
+  min-width: 200px;
+}
+.div2 {
+  width: 100%;
+  background: #e6e6e6;
+}
+html,
+body,
+div {
+  height: 100%;
+  margin: 0;
+}
+</code></pre></div><h3 id="绘制一个等腰三角形"><a href="#绘制一个等腰三角形" class="header-anchor">#</a> 绘制一个等腰三角形</h3> <ul><li>html部分：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    &lt;canvas id=&quot;canvas&quot; width=&quot;300px&quot; height=&quot;300px&quot;&gt;&lt;/canvas&gt;
+</code></pre></div><ul><li>script部分：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    let ctx=document.getElementById('canvas').getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(0,150);
+    ctx.lineTo(150,0);
+    ctx.lineTo(300,150);
+    ctx.closePath();
+    ctx.strokeStyle='#666';
+    ctx.lineWidth=3;
+    ctx.stroke();
+</code></pre></div><h3 id="文本超出部分显示省略号"><a href="#文本超出部分显示省略号" class="header-anchor">#</a> 文本超出部分显示省略号</h3> <p>单行</p> <div class="language- extra-class"><pre class="language-text"><code>overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+</code></pre></div><p>多行</p> <div class="language- extra-class"><pre class="language-text"><code>display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3; // 最多显示几行
+overflow: hidden;
+</code></pre></div><h3 id="利用伪元素画三角"><a href="#利用伪元素画三角" class="header-anchor">#</a> 利用伪元素画三角</h3> <div class="language- extra-class"><pre class="language-text"><code>.info-tab {
+    position: relative;
+}
+.info-tab::after {
+    content: '';
+    border: 4px solid transparent;
+    border-top-color: #2c8ac2;
+    position: absolute;
+    top: 0;
+}
+</code></pre></div><h3 id="已知父级盒子的宽高，子级img宽高未知，想让img铺满父级盒子且图片不能变形"><a href="#已知父级盒子的宽高，子级img宽高未知，想让img铺满父级盒子且图片不能变形" class="header-anchor">#</a> 已知父级盒子的宽高，子级img宽高未知，想让img铺满父级盒子且图片不能变形</h3> <div class="language- extra-class"><pre class="language-text"><code>div {
+    width: 200px;
+    height: 200px;
+}
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+</code></pre></div><h3 id="css3实现0-5px的细线"><a href="#css3实现0-5px的细线" class="header-anchor">#</a> css3实现0.5px的细线</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;style&gt;
+.line {
+    position: relative;
+}
+.line:after {
+    content: &quot;&quot;;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;
+</code></pre></div><h3 id="用javascript实现斐波那契数列函数，返回第n个斐波那切数。fib-1-1-fib-2-1-fib-3-2等"><a href="#用javascript实现斐波那契数列函数，返回第n个斐波那切数。fib-1-1-fib-2-1-fib-3-2等" class="header-anchor">#</a> 用JavaScript实现斐波那契数列函数，返回第n个斐波那切数。fib(1)=1,fib(2)=1,fib(3)=2等</h3> <p>递归</p> <div class="language- extra-class"><pre class="language-text"><code>    function fib(n) {
+        return fib(n) = n &gt; 2 ?
+            fib(n - 1) + fib(n - 2) :
+            1
+    }
+</code></pre></div><p>尾递归</p> <div class="language- extra-class"><pre class="language-text"><code>    function fib(n,a=1,b=1){
+        if(n&lt;=1) return b;
+        return fib(n-1,b,a+b);
+    }
+</code></pre></div><p>非递归 动态规划</p> <div class="language- extra-class"><pre class="language-text"><code>    function fib(n){
+        let a=1,
+            b=1;
+        for(let i=2;i&lt;n;i++){
+            const t=b;
+            b=a+b;
+            a=t
+        }
+        return b
+    }
+</code></pre></div><p>非递归 生成器</p> <div class="language- extra-class"><pre class="language-text"><code>    function *fib(){
+        let a=1,b=1;
+        yield a;
+        yield b;
+        while(true){
+            const t=b;
+            b=a+b;
+            a=t;
+            yield b
+        }
+    }
+</code></pre></div><p>递归 reduce流</p> <div class="language- extra-class"><pre class="language-text"><code>    function fib(n){
+        return Array(n).fill().reduce(([a,b],_)=&gt;{
+            return [b,a+b]
+        },[0,1])[0]
+    }
+</code></pre></div><p>非递归 堆栈</p> <div class="language- extra-class"><pre class="language-text"><code>    function fib(n){
+        let stack=[n]
+        while(stack.length){
+            const item=stack.pop();
+            if(item===1 || item===2){
+                stack.push(1)
+            }else{
+                stack.push(item-1);
+                stack.push(item-2);
+            }
+        }
+    }
+</code></pre></div><h3 id="判断一个数是否是素数"><a href="#判断一个数是否是素数" class="header-anchor">#</a> 判断一个数是否是素数</h3> <div class="language- extra-class"><pre class="language-text"><code>    function is_prime(n){
+        if(n&lt;=1){return false}
+        const N=Math.floor(Math.sqrt(n));
+        let is_prime=true
+        for(let i=2;i&lt;=N;i++){
+            if(n%i===0){
+                is_prime=false;
+                break;
+            }
+        }
+        return is_prime;
+    }
+</code></pre></div><h3 id="获取n以内所有的素数"><a href="#获取n以内所有的素数" class="header-anchor">#</a> 获取n以内所有的素数</h3> <div class="language- extra-class"><pre class="language-text"><code>    function *sieve_primes(n){
+        let numbers=Array.from({length:n-2},(_,i)=&gt;i+2);
+        let p=null;
+        while((p=numbers.shift())){
+            yield p;
+            numbers=numbers.filter(t=&gt;t%p!==0)
+        }
+    }
+</code></pre></div><h3 id="删除数组arr第一个元素。不要直接修改数组arr，结果返回新的数组。"><a href="#删除数组arr第一个元素。不要直接修改数组arr，结果返回新的数组。" class="header-anchor">#</a> 删除数组arr第一个元素。不要直接修改数组arr，结果返回新的数组。</h3> <div class="language- extra-class"><pre class="language-text"><code>    function insert(arr, item, index) {
+        return arr.slice(0,index).concat(item,arr.slice(index));
+    }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    function insert(arr, item, index) {
+        var newArr=arr.concat();
+        newArr.splice(index,0,item);
+        return newArr;
+    }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    function insert(arr, item, index) {
+        var newArr=arr.slice(0);
+        newArr.splice(index,0,item);
+        return newArr;
+    }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    function insert(arr, item, index) {
+        var newArr=[];
+        [].push.apply(newArr, arr);
+        newArr.splice(index,0,item);
+        return newArr;
+    }
+</code></pre></div><h3 id="实现一个打点计时器，要求：-1-从start到end（包含start和end），每隔100毫秒console-log一个数字，每次数字增幅为1；-2-返回的对象中需要包含一个cancel方法，用于停止定时操作；-3-第一个数需要立即输出"><a href="#实现一个打点计时器，要求：-1-从start到end（包含start和end），每隔100毫秒console-log一个数字，每次数字增幅为1；-2-返回的对象中需要包含一个cancel方法，用于停止定时操作；-3-第一个数需要立即输出" class="header-anchor">#</a> 实现一个打点计时器，要求：(1)从start到end（包含start和end），每隔100毫秒console.log一个数字，每次数字增幅为1；(2)返回的对象中需要包含一个cancel方法，用于停止定时操作；(3)第一个数需要立即输出</h3> <div class="language- extra-class"><pre class="language-text"><code>    function count(start, end) {
+        console.log(start)
+        var timer = setInterval(
+            function(){
+                if(start&lt;end) console.log(start+=1);
+            },100)
+        return {cancel:function(){clearInterval(timer)}}
+    }
+</code></pre></div><h3 id="sort方法将数组内的对象进行排序"><a href="#sort方法将数组内的对象进行排序" class="header-anchor">#</a> sort方法将数组内的对象进行排序</h3> <div class="language- extra-class"><pre class="language-text"><code>    function compare(propertyName, index) {
+        return function(a, b) {
+            let value1 = a[propertyName];
+            let value2 = b[propertyName];
+            if (vm.reverse[index]) {
+                return value2 - value1;
+            } else {
+                return value1 - value2;
+            }
+        };
+    }
+</code></pre></div><h3 id="查找字符串中出现最多的字符和个数-2"><a href="#查找字符串中出现最多的字符和个数-2" class="header-anchor">#</a> 查找字符串中出现最多的字符和个数</h3> <div class="language- extra-class"><pre class="language-text"><code>    let num=0;
+    let char='';
+
+    let str = str.split('').sort().join('');
+    str.replace(/(\w)\1+/g,($0,$1) =&gt; {
+        if(num &lt; $0.length){
+            num = $0.length;
+            char = $1;        
+        }
+    });
+    console.log(`字符最多的是${char}，出现了${num}次`);
+</code></pre></div><h3 id="实现一个方法，随机打乱一个数组"><a href="#实现一个方法，随机打乱一个数组" class="header-anchor">#</a> 实现一个方法，随机打乱一个数组</h3> <div class="language- extra-class"><pre class="language-text"><code>    function shuffle_simple(arr){
+        return arr.sort(()=&gt;Math.random()- .5)
+    }
+</code></pre></div><p>或</p> <div class="language- extra-class"><pre class="language-text"><code>    function fisher_yates_shuffle(arr){
+        for(let i=0;i&lt;arr.length-1;i++){
+            const j=i+Math.floor(Math.random()*(arr.length-1));
+            [arr[i],[arr[j]]]=[arr[j],arr[i]]
+        }
+        return arr
+    }
+</code></pre></div><p>或</p> <div class="language- extra-class"><pre class="language-text"><code>    function shuffle(arr){
+        const m=[];
+        const N=arr.length*arr.length*arr.length;
+        for(let i=0;i&lt;arr.length-1;i++){
+            m[i]=Math.floor(Math.random(1,N))
+        }
+        return arr.sort((i,j)=&gt;m[i]-m[j])
+    }
+</code></pre></div><h3 id="用jq实现一个类似百度搜索框的模糊查询"><a href="#用jq实现一个类似百度搜索框的模糊查询" class="header-anchor">#</a> 用jq实现一个类似百度搜索框的模糊查询</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        #div_main {
+            margin: 0 auto;
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            margin-top: 50px;
+        }
+
+        #div_txt {
+            position: relative;
+            width: 200px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        #txt1 {
+            width: 99%;
+        }
+
+        #div_items {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border: 1px solid #66afe9;
+            border-top: 0px;
+            overflow: auto;
+            display: none;
+        }
+
+        .div_item {
+            width: 100%;
+            height: 20px;
+            margin-top: 1px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;div_main&quot;&gt;
+        &lt;!--表单的autocomplete=&quot;off&quot;属性设置可以阻止浏览器默认的提示框--&gt;
+        &lt;form autocomplete=&quot;off&quot;&gt;
+            &lt;div id=&quot;div_txt&quot;&gt;
+                &lt;!--要模糊匹配的文本框--&gt;
+                &lt;input type=&quot;text&quot; id=&quot;txt1&quot; /&gt;
+
+                &lt;!--模糊匹配窗口--&gt;
+                &lt;div id=&quot;div_items&quot;&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;周杰伦&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;周杰&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;林俊杰&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;林宥嘉&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;林妙可&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;唐嫣&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;唐家三少&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;唐朝盛世&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;奥迪A4L&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;奥迪A6L&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;奥迪A8L&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;奥迪R8&lt;/div&gt;
+                    &lt;div class=&quot;div_item&quot;&gt;宝马GT&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;./jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        //弹出列表框
+        $(&quot;#txt1&quot;).click(function () {
+            $(&quot;#div_items&quot;).css('display', 'block');
+            return false;
+        });
+
+        //隐藏列表框
+        $(&quot;body&quot;).click(function () {
+            $(&quot;#div_items&quot;).css('display', 'none');
+        });
+
+        //移入移出效果
+        $(&quot;.div_item&quot;).hover(function () {
+            $(this).css('background-color', '#1C86EE').css('color', 'white');
+        }, function () {
+            $(this).css('background-color', 'white').css('color', 'black');
+        });
+
+        //文本框输入
+        $(&quot;#txt1&quot;).keyup(function () {
+            $(&quot;#div_items&quot;).css('display', 'block');//只要输入就显示列表框
+
+            if ($(&quot;#txt1&quot;).val().length &lt;= 0) {
+                $(&quot;.div_item&quot;).css('display', 'block');//如果什么都没填，跳出，保持全部显示状态
+                return;
+            }
+
+            $(&quot;.div_item&quot;).css('display', 'none');//如果填了，先将所有的选项隐藏
+
+            for (var i = 0; i &lt; $(&quot;.div_item&quot;).length; i++) {
+                //模糊匹配，将所有匹配项显示
+                if ($(&quot;.div_item&quot;).eq(i).text().substr(0, $(&quot;#txt1&quot;).val().length) == $(&quot;#txt1&quot;).val()) {
+                    $(&quot;.div_item&quot;).eq(i).css('display', 'block');
+                }
+            }
+        });
+
+        //项点击
+        $(&quot;.div_item&quot;).click(function () {
+            $(&quot;#txt1&quot;).val($(this).text());
+        });
+
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre></div><h3 id="实现页面整屏切换"><a href="#实现页面整屏切换" class="header-anchor">#</a> 实现页面整屏切换</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;ch&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=”viewport” content=&quot;width=device-width, user-scalable=no, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        body, html{
+            padding: 0;
+            margin: 0;
+        }
+ 
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+ 
+        #container, .section {
+            height: 100%;
+        }
+ 
+        .section {
+            background-color: #000;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+ 
+        #section0 {
+            background-color: #83af9b;
+        }
+ 
+        #section1 {
+            background-color: #764d39;
+        }
+ 
+        #section2 {
+            background-color: #ff9000;
+        }
+ 
+        #section3 {
+            background-color: #380d31;
+        }
+ 
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;container&quot;&gt;
+    &lt;div class=&quot;section&quot; id=&quot;section0&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;section&quot; id=&quot;section1&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;section&quot; id=&quot;section2&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;section&quot; id=&quot;section3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+ 
+&lt;script src=&quot;http://code.jquery.com/jquery-latest.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var curIndex = 0;
+    var container = $(&quot;#container&quot;);
+    var sumCount = $(&quot;.section&quot;).length;
+    var $window = $(window);
+    var duration = 500;
+    //时间控制
+    var aniTime = 0;
+ 
+    var scrollFunc = function (e) {
+        //如果动画还没执行完，则return
+        if(new Date().getTime() &lt; aniTime + duration){
+            return;
+        }
+        e = e || window.event;
+        var t = 0;
+        if (e.wheelDelta) {//IE/Opera/Chrome
+            t = e.wheelDelta;
+            if (t &gt; 0 &amp;&amp; curIndex &gt; 0) {
+                //上滚动
+                movePrev();
+            } else if (t &lt; 0 &amp;&amp; curIndex &lt; sumCount - 1) {
+                //下滚动
+                moveNext();
+            }
+        } else if (e.detail) {//Firefox
+            t = e.detail;
+            if (t &lt; 0 &amp;&amp; curIndex &gt; 0) {
+                //上滚动
+                movePrev();
+            } else if (t &gt; 0 &amp;&amp; curIndex &lt; sumCount - 1) {
+                //下滚动
+                moveNext();
+            }
+        }
+    };
+ 
+    function moveNext(){
+        //获取动画开始时的时间
+        aniTime = new Date().getTime();
+        container.css(&quot;transform&quot;, &quot;translate3D(0, -&quot; + (++curIndex) * $window.height() + &quot;px, 0)&quot;);
+    }
+ 
+    function movePrev(){
+        //获取动画开始时的时间
+        aniTime = new Date().getTime();
+        container.css(&quot;transform&quot;, &quot;translate3D(0, -&quot; + (--curIndex) * $window.height() + &quot;px, 0)&quot;);
+    }
+ 
+    function init(){
+        /*注册事件*/
+        if (document.addEventListener) {
+            document.addEventListener('DOMMouseScroll', scrollFunc, false);
+        }//W3C
+        window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
+ 
+        container.css({
+            &quot;transition&quot;: &quot;all 0.5s&quot;,
+            &quot;-moz-transition&quot;: &quot;all 0.5s&quot;,
+            &quot;-webkit-transition&quot;: &quot;all 0.5s&quot;
+        });
+    }
+ 
+    init();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><h3 id="实现一个瀑布流效果"><a href="#实现一个瀑布流效果" class="header-anchor">#</a> 实现一个瀑布流效果</h3> <div class="language- extra-class"><pre class="language-text"><code>var left_top=$(&quot;.left_div&gt;div:last-child&quot;).offset().top
+ var right_top=$(&quot;.right_div&gt;div:last-child&quot;).offset().top
+        if(left_top&lt;=right_top){
+               $(&quot;.left_div&quot;).append(img_info)
+           }else{
+               $(&quot;.right_div&quot;).append(img_info)
+           }
+</code></pre></div><h3 id="实现一个树组件"><a href="#实现一个树组件" class="header-anchor">#</a> 实现一个树组件</h3> <div class="language- extra-class"><pre class="language-text"><code></code></pre></div><h3 id="实现一个购物车动效"><a href="#实现一个购物车动效" class="header-anchor">#</a> 实现一个购物车动效</h3> <div class="language- extra-class"><pre class="language-text"><code></code></pre></div><h3 id="实现函数找到dom的绝对位置"><a href="#实现函数找到dom的绝对位置" class="header-anchor">#</a> 实现函数找到DOM的绝对位置</h3> <div class="language- extra-class"><pre class="language-text"><code>    function get_layout(ele){
+        const layout={
+            width:ele.offsetWidth,
+            height:ele.offsetHeight,
+            left:ele.offsetLeft,
+            top:ele.offsetTop
+        }
+        if(ele.offsetParent){
+            const parentLayout=get_layout(ele.offsetParent);
+            layout.left+=parentLayout.left;
+            layout.top+=parentLayout.top;
+        }
+        return layout;
+    }
+</code></pre></div><h3 id="子数组整除：写一个函数，给定一个数组，判断数组中某一项，或者任意多项的和，是否被另一个整数整除。比如：solve-3-5-8-13-true-solve-3-9-15-false-solve-7-8-2-7-true-solve-1-2-3-6-true"><a href="#子数组整除：写一个函数，给定一个数组，判断数组中某一项，或者任意多项的和，是否被另一个整数整除。比如：solve-3-5-8-13-true-solve-3-9-15-false-solve-7-8-2-7-true-solve-1-2-3-6-true" class="header-anchor">#</a> 子数组整除：写一个函数，给定一个数组，判断数组中某一项，或者任意多项的和，是否被另一个整数整除。比如：solve([3,5,8],13)=true;solve([3,9],15)=false;solve([7,8,2],7)=true;solve([1,2,3],6)=true</h3> <div class="language- extra-class"><pre class="language-text"><code>    function solve(arr,N){
+        const s=new Set([arr.shift()%N]);
+        while(arr.length&gt;0){
+            const ak=arr.shift();
+            const items=[...s];
+            items.forEach(x=&gt;{
+                s.add((x+ak)%N);
+            })
+            s.add(ak)
+        }
+        return s.has(0);
+    }
+</code></pre></div><h3 id="实现一段脚本，使得点击对应链接alert出响应的编号"><a href="#实现一段脚本，使得点击对应链接alert出响应的编号" class="header-anchor">#</a> 实现一段脚本，使得点击对应链接alert出响应的编号</h3> <div class="language- extra-class"><pre class="language-text"><code>    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot; /&gt;
+    &lt;body&gt;
+        &lt;a href=&quot;#&quot;&gt;第一个链接&lt;/a&gt;&lt;/br&gt;
+        &lt;a href=&quot;#&quot;&gt;第二个链接&lt;/a&gt;&lt;/br&gt;
+        &lt;a href=&quot;#&quot;&gt;第三个链接&lt;/a&gt;&lt;/br&gt;
+        &lt;a href=&quot;#&quot;&gt;第四个链接&lt;/a&gt;&lt;/br&gt;
+    &lt;/body&gt;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    &lt;script&gt;
+        let aGroup=document.getElementsByTagName('a');
+        let i=0;
+        for(let a of aGroup){
+            a.onclick=(function(i){
+                return function(){
+                    alert(i);
+                }
+            })(++i)
+        }
+    &lt;/script&gt;
+</code></pre></div><h3 id="用纯js实现，点击一个列表时，输出对应的索引？"><a href="#用纯js实现，点击一个列表时，输出对应的索引？" class="header-anchor">#</a> 用纯JS实现，点击一个列表时，输出对应的索引？</h3> <p>方式一：</p> <div class="language- extra-class"><pre class="language-text"><code>for(let i = 0, 
+    len = lis.length; 
+    i &lt; len; i++){
+    lis[i].addEventListener('click',
+      function () {        
+        console.log(i);
+      }, false);
+}
+</code></pre></div><p>方式二：</p> <div class="language- extra-class"><pre class="language-text"><code>for(var i = 0, 
+    len = lis.length; 
+    i &lt; len; i++) {
+    (function (i) {
+        lis[i].addEventListener
+        ('click', function () {            
+             console.log(i);
+        }, false);
+    })(i)
+}
+</code></pre></div><p>方式三：</p> <div class="language- extra-class"><pre class="language-text"><code>let ul = document.querySelector('ul');
+let lis = document.querySelectorAll('ul li');
+ul.addEventListener('click', 
+function (e) {    
+  let target = e.target;    
+  if(target.nodeName.toLowerCase() === 'li') {        
+      console.log([].indexOf.call(lis, target));
+    }
+}, false);
+</code></pre></div><h3 id="点击按钮发出ajax请求，如何防止用户在此请求方式返回之前再次点击"><a href="#点击按钮发出ajax请求，如何防止用户在此请求方式返回之前再次点击" class="header-anchor">#</a> 点击按钮发出ajax请求，如何防止用户在此请求方式返回之前再次点击?</h3> <div class="language- extra-class"><pre class="language-text"><code>// 点击提交按钮的时候，
+// 把这个提交这个处理函数给解绑掉，
+// 请求完成的时候在绑定回来
+function clickHandler(){
+  $(this).unbind('click', clickHandler);
+    $.ajax({        
+       url : 'url',        
+       dataType : 'json',
+       type : 'post',
+       success : function (data) {
+         if (data.success) { 
+          //提交成功做跳转处理
+         } else { 
+          //处理失败，重新绑定点击事件
+          $(self).click(clickHandler);
+         }
+        }
+  });
+}
+                
+$('#itlike').click(clickHandler);
+                
+// 可以点击后让按钮不可用,
+// 如果提交失败可以再次设置为可用
+// 1.让按钮不可用
+$(&quot;#itlike&quot;).attr(&quot;disabled&quot;,&quot;disabled&quot;);
+$.ajax({
+    url : 'url',
+    dataType : 'json',    
+    type : 'post',    
+    success : function (data) {
+       if (data.success) {
+       // 提交成功做跳转处理
+       } else {            
+       // 处理失败，重新绑定点击事件
+       // 2. 让按钮可用
+       $(&quot;#itlike&quot;).removeAttr(&quot;disabled&quot;);
+      }
+    }
+});
+</code></pre></div><h3 id="ios-safari-如何阻止-橡皮筋效果-？"><a href="#ios-safari-如何阻止-橡皮筋效果-？" class="header-anchor">#</a> iOS safari 如何阻止“橡皮筋效果”？</h3> <div class="language- extra-class"><pre class="language-text"><code>$(document).ready(function(){
+      var stopScrolling = function(event) {
+          event.preventDefault();
+      }
+      document.addEventListener('touchstart', stopScrolling, false);
+      document.addEventListener('touchmove', stopScrolling, false);
+  });
+</code></pre></div><h3 id="n个数字和为m的问题-今日头条"><a href="#n个数字和为m的问题-今日头条" class="header-anchor">#</a> N个数字和为M的问题(今日头条)</h3> <div class="language- extra-class"><pre class="language-text"><code>    // 给定一个不重复的正整数集合，从中取N个数字，使得它们的和为M，写一个函数，求这N个数字。如有多个，只需要返回一个
+    function sumN(A,n,m,i=0,decisions=[]){
+        if(m===0){
+            return decisions
+        }
+        if(i===A.length || n===0 || m&lt;0){
+            return null
+        }
+        return sumN(A,n-1,m-A[i],i+1,decisions.concat(A[i])) || sumN(A,n,m,i+1,decisions)
+    }
+</code></pre></div><p>优化</p> <div class="language- extra-class"><pre class="language-text"><code>    function sumN(A,n,m){
+        // 最终结果
+        let r=null;
+
+        // 决策
+        const decisions=[];
+
+        function inner(i=0,n,m){
+            // 如果已有结果，终止递归
+            if(r){return}
+            // 如果m=0，找到一个解
+            if(m===0){
+                r=decisions.slice();
+                return
+            }
+            // 没有找到解的情况
+            if(i===A.length || n===0 || m&lt;0){
+                return
+            }
+            decisions.push(A[i]);
+            inner(i+1,n-1,m-A[i]);
+            decisions.pop(A[i]);
+            inner(i+1,n,m)
+        }
+        inner(0,n,m);
+        return r;
+    }
+</code></pre></div><p>利用位运算</p> <div class="language- extra-class"><pre class="language-text"><code>    function sumByBinaryCode(A,code){
+        const max=1 &lt;&lt; A.length;
+        const p=[];
+        let sum=0;
+        for(let i=0;i&lt;A.length;i++){
+            if(code &amp; (1&lt;&lt;i)){
+                sum+=A[i];
+                p.push(A[i])
+            }
+        }
+        return {sum,p}
+    }
+    function sumN(A,n,m){
+        const max=1 &lt;&lt; A.length;
+        for(let i=0;i&lt;max;i++){
+            const {sum,p}=sumByBinaryCode(A,i);
+            if(sum===m){
+                return p
+            }
+        }
+        return null;
+    }
+</code></pre></div><h3 id="火车车厢重排问题-今日头条"><a href="#火车车厢重排问题-今日头条" class="header-anchor">#</a> 火车车厢重排问题(今日头条)</h3> <div class="language- extra-class"><pre class="language-text"><code>    // 给定一列火车，利用左侧的环状铁轨对火车车厢进行重新排序，给定初始顺序和排序后的顺序，写一个函数，判断这样是否可行？
+    function isTrans(o,t){
+        const q=[];
+        for(let x of t){
+            if(q[q.length-1]===x){
+                q.pop()
+            }
+            let y=null;
+            while(o.length &gt;0 &amp;&amp; (y=o.shift()) !== x){
+                q.unshift(y);
+            }
+        }
+        return q.length === 0;
+    }
+</code></pre></div><p>优化</p> <div class="language- extra-class"><pre class="language-text"><code>    function isTrans(o,t){
+        const q=new Queue();
+        for(let x of t){
+            if(q.peek()===x){
+                q.dequeue()
+            }
+            let y=null;
+            while(o.size()&gt;0 &amp;&amp; (y=o.dequeue()) !== x){
+                q.enqueue(y)
+            }
+        }
+        return q.size()===0
+    }
+</code></pre></div><h3 id="数网格中的路径-阿里、美团"><a href="#数网格中的路径-阿里、美团" class="header-anchor">#</a> 数网格中的路径(阿里、美团)</h3> <div class="language- extra-class"><pre class="language-text"><code>    // 小虫子从A到B，只能沿着网格走，每次只能向右或向下。求有多少种走法？
+    function f(x,y){
+        if(x&gt;0 &amp;&amp; y&gt;0){
+            return f(x-1,y)+f(x,y-1)
+        }else if(x&gt;0){
+            return f(x-1,y)
+        }else if(y&gt;0){
+            return f(x,y-1)
+        }else{
+            return 1
+        }
+    }
+</code></pre></div><p>优化</p> <div class="language- extra-class"><pre class="language-text"><code>    function f(x,y,dp=[]){
+        if(!dp[y]){
+            dp[y]=[]
+        }
+        if(dp[y][x] !== undefined){
+            return dp[y][x]
+        }
+        if(x&gt;0 &amp;&amp; y&gt;0){
+            dp[y][x]= f(x-1,y,dp)+f(x,y-1,dp)
+        }else if(x&gt;0){
+            dp[y][x]= f(x-1,y,dp)
+        }else if(y&gt;0){
+            dp[y][x]= f(x,y-1,dp)
+        }else{
+            dp[y][x]= 1
+        }
+        return dp[y][x]
+    }
+</code></pre></div><h3 id="使用object-defineproperty-模拟实现vue的绑定原理"><a href="#使用object-defineproperty-模拟实现vue的绑定原理" class="header-anchor">#</a> 使用Object.defineProperty()模拟实现Vue的绑定原理</h3> <p>题目：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;h2&gt;积分:&lt;span&gt;{{score}}&lt;/span&gt;&lt;/h2&gt;
+    &lt;h1&gt;用户名:&lt;span&gt;{{uname}}&lt;/span&gt;&lt;/h1&gt;
+    &lt;h2&gt;积分:&lt;span&gt;{{score}}&lt;/span&gt;&lt;/h2&gt;
+    &lt;script&gt;
+        var data={
+            uname:'dingding',
+            score:3000
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>答案：</p> <div class="language- extra-class"><pre class="language-text"><code></code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/interview/string20210807.html">
+        算法题(字符串篇)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/29.f6af6fbb.js" defer></script>
+  </body>
+</html>

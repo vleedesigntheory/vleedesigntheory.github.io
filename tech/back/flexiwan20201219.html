@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>flexiwan项目踩坑实践（后端篇） | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/38.0ce5462f.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>后端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/back/cicd20200806.html" class="sidebar-link">前端自动化集成部署交付实践</a></li><li><a href="/tech/back/ng20201030.html" class="sidebar-link">NG全家桶全栈项目实践总结</a></li><li><a href="/tech/back/flexiwan20201219.html" class="active sidebar-link">flexiwan项目踩坑实践（后端篇）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/back/flexiwan20201219.html#项目背景" class="sidebar-link">项目背景</a></li><li class="sidebar-sub-header"><a href="/tech/back/flexiwan20201219.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/tech/back/flexiwan20201219.html#踩坑案例" class="sidebar-link">踩坑案例</a></li><li class="sidebar-sub-header"><a href="/tech/back/flexiwan20201219.html#源码解析" class="sidebar-link">源码解析</a></li><li class="sidebar-sub-header"><a href="/tech/back/flexiwan20201219.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/tech/back/dns20210708.html" class="sidebar-link">前端静态服务踩坑实践</a></li><li><a href="/tech/back/gateway20211120.html" class="sidebar-link">前端网关踩坑实践</a></li><li><a href="/tech/back/deploy20220116.html" class="sidebar-link">前端部署脚手架专网项目实践</a></li><li><a href="/tech/back/imagepic20220129.html" class="sidebar-link">前端图床搭建实践（后端篇）</a></li><li><a href="/tech/back/log20220718.html" class="sidebar-link">前端日志采集方案浅析</a></li><li><a href="/tech/back/piper20220914.html" class="sidebar-link">前端设计走查平台实践（后端篇）</a></li><li><a href="/tech/back/node20241216.html" class="sidebar-link">Node.js的Web服务在Nacos中的实践</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="flexiwan项目踩坑实践（后端篇）"><a href="#flexiwan项目踩坑实践（后端篇）" class="header-anchor">#</a> flexiwan项目踩坑实践（后端篇）</h1> <h2 id="项目背景"><a href="#项目背景" class="header-anchor">#</a> 项目背景</h2> <p>flexiManage是以色列一家初创公司flexiWAN开源的基于SD-WAN平台的应用层的框架，包括<a href="https://gitlab.com/flexiwangroup/fleximanage" target="_blank" rel="noopener noreferrer">flexiManage<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>服务端框架，基于此服务端框架进行了一些借鉴和改进</p> <p><img src="/tech/back/flexiwan20201219/flexiwan01.jpg" alt="图片"></p> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <ul><li>api</li> <li>billing</li> <li>bin</li> <li>broker</li> <li>controllers</li> <li>deviceLogic</li> <li>logging</li> <li>logs</li> <li>migrations</li> <li>models</li> <li>notifications</li> <li>periodic</li> <li>public</li> <li>routes</li> <li>services</li> <li>utils</li> <li>websocket</li> <li>authenticate.js</li> <li>configs.js</li> <li>expressserver.js</li> <li>flexibilling.js</li> <li>mongoConns.js</li> <li>rateLimitStore.js</li> <li>token.js</li></ul> <h2 id="踩坑案例"><a href="#踩坑案例" class="header-anchor">#</a> 踩坑案例</h2> <h3 id="bff抹掉https的node模块验证"><a href="#bff抹掉https的node模块验证" class="header-anchor">#</a> BFF抹掉https的node模块验证</h3> <p>[bug描述] 做验证使用服务端及硬件侧未配置ssl，而node启动https模块会默认验证ssl，导致无法启动服务</p> <p>[bug分析] node模块的ssl验证</p> <p>[解决方案] 起一层bff用于透传接口，后续方便将后续服务层进行微服务化等处理</p> <div class="language- extra-class"><pre class="language-text"><code>process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+const express = require('express');
+const request = require('request');
+const app = express();
+const bodyParser = require('body-parser');
+const router = express.Router();
+
+const SUCC_REG = /^2[0-9]{2}$/
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+const headers = {
+            'authorization': &quot;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmEzYTY5OGZjNDI2ODEwODc3MDYzZDQiLCJ1c2VybmFtZSI6Im1jYWlkYW9Ac2luYS5jb20iLCJvcmciOiI1ZmFkZTkyZDljNGQ2MDQyOWRjN2RhNmMiLCJvcmdOYW1lIjoidHQiLCJhY2NvdW50IjoiNWZhM2E2OThmYzQyNjgxMDg3NzA2M2QzIiwiYWNjb3VudE5hbWUiOiJ0ZXN0IiwicGVybXMiOnsiam9icyI6MTUsImJpbGxpbmciOjMsImFjY291bnRzIjo3LCJvcmdhbml6YXRpb25zIjoxNSwiZGV2aWNlcyI6MTUsInRva2VucyI6MTUsImFwcGlkZW50aWZpY2F0aW9ucyI6MTUsIm1lbWJlcnMiOjE1LCJ0dW5uZWxzIjoxNSwiYWNjZXNzdG9rZW5zIjoxNSwibm90aWZpY2F0aW9ucyI6MTUsInBhdGhsYWJlbHMiOjE1LCJtbHBvbGljaWVzIjoxNX0sImlhdCI6MTYwODExMjcwMiwiZXhwIjoxNjA4NzE3NTAyfQ.LYFv1pBP1540gb-NRCCe4dvbQ0T9HSoZHMkD8xkMFLc&quot;,
+            'Content-Type': 'application/json'
+        },
+        errMsg = {
+            msg:'unexpected response'
+        },
+        baseUrl = 'https://10.100.37.101:3443';
+
+
+// 获取所有设备接口
+app.get('/api/devices',(req,res)=&gt; {
+    console.log(req.url)
+    request({
+        url: `${baseUrl}${req.url}`,
+        method: 'GET',
+        headers
+    }, (err, response, body) =&gt; {
+        console.log(response.statusCode)
+        if(SUCC_REG.test(response.statusCode)) {
+            res.send({code: 200,msg:JSON.parse(response.body)})
+        } else {
+            res.send(errMsg)
+        }
+    })
+});
+
+// 获取单个设备接口
+app.get('/api/devices/:id',(req,res)=&gt; {
+    console.log(req.url)
+    request({
+        url: `${baseUrl}${req.url}`,
+        method: 'GET',
+        headers
+    }, (err, response, body) =&gt; {
+        console.log(response.statusCode)
+        if(SUCC_REG.test(response.statusCode)) {
+            res.send({code: 200,msg:JSON.parse(response.body)})
+        } else {
+            res.send(errMsg)
+        }
+    })
+});
+
+// 获取路由接口
+app.get('/api/devices/:id/routes',(req,res)=&gt; {
+    console.log(req.url)
+    request({
+        url: `https://10.100.37.101:3443/api/devices/${req.params.id}/routes`,
+        method: 'GET',
+        headers
+    }, (err, response, body) =&gt; {
+        console.log(response.statusCode)
+        if(SUCC_REG.test(response.statusCode)) {
+            res.send({code: 200,msg:JSON.parse(response.body)})
+        } else {
+            res.send(errMsg)
+        }
+    })
+});
+
+// 启动单个设备
+app.post('/api/devices/:id/apply/start',(req,res)=&gt; {
+    console.log(req.url);
+    request({
+        url: `${baseUrl}/api/devices/${req.params.id}/apply`,
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+            &quot;method&quot;: &quot;start&quot;
+        })
+    }, (err, response, body) =&gt; {
+        let r = JSON.parse(body)
+        if(r.status == 'completed') {
+            res.send({code: 200,msg:'start success'})
+        } else {
+            res.send({msg: 'start error'})
+        }
+    })
+});
+
+// 停止单个设备
+app.post('/api/devices/:id/apply/stop',(req,res)=&gt; {
+    console.log(req.url)
+    request({
+        url: `${baseUrl}/api/devices/${req.params.id}/apply`,
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+            &quot;method&quot;: &quot;stop&quot;
+        })
+    }, (err, response, body) =&gt; {
+        let r = JSON.parse(body)
+        if(r.status == 'completed') {
+            res.send({code: 200,msg:'stop success'})
+        } else {
+            res.send({msg: 'stop error'})
+        }
+    })
+});
+
+// 同步单个设备
+app.post('/api/devices/:id/apply',(req,res)=&gt; {
+    console.log(req.url)
+    request.post({
+        url: `${baseUrl}${req.url}`,
+        headers,
+        body: JSON.stringify({
+            &quot;method&quot;: &quot;sync&quot;
+        })
+    }, (err, response, body) =&gt; {
+        let r = JSON.parse(body)
+        if(r.status == 'completed') {
+            res.send({code: 200,msg:'update success'})
+        } else {
+            res.send({msg: 'update error'})
+        }
+    })
+});
+
+// 删除单个设备
+app.delete('/api/devices/:id',(req,res)=&gt; {
+    console.log(req.url)
+    request({
+        url: `${baseUrl}${req.url}`,
+        method: 'DELETE',
+        headers
+    }, (err, response, body) =&gt; {
+        console.log(response.statusCode)
+        if(SUCC_REG.test(response.statusCode)) {
+            res.send({code: 200,msg:JSON.parse(response.body)})
+        } else {
+            res.send(errMsg)
+        }
+    })
+});
+
+// 更新设备详情
+app.put('/api/devices/:id',(req,res)=&gt; {
+    request({
+        url: `${baseUrl}${req.url}`,
+        method: 'PUT',
+        headers,
+        body: JSON.stringify(req.body)
+    }, (err, response, body) =&gt; {
+        console.log('put device', response.statusCode)
+        if(SUCC_REG.test(response.statusCode)) {
+            res.send({code: 200,msg:JSON.parse(response.body)})
+        } else {
+            res.send(errMsg)
+            console.log('error device', response.statusCode, response.body)
+        }
+    })
+});
+
+// 删除隧道接口
+app.post('/api/devices/apply/delTunnel',(req,res)=&gt; {
+    console.log('req.body', req.body)
+    request.post({
+        url: `${baseUrl}/api/devices/apply`,
+        headers,
+        body: JSON.stringify(req.body)
+    }, (err, response, body) =&gt; {
+        let r = JSON.parse(body)
+        console.log(r)
+        if(r.status == 'completed') {
+            res.send({code: 200,msg:'删除隧道成功'})
+        } else {
+            res.send({msg: r.error})
+        }
+    })
+});
+
+// 建立隧道接口
+app.post('/api/devices/apply/createTunnel',(req,res)=&gt; {
+    console.log(req.body)
+    request.post({
+        url: `${baseUrl}/api/devices/apply`,
+        headers,
+        body: JSON.stringify(req.body)
+    }, (err, response, body) =&gt; {
+        let r = JSON.parse(body)
+        console.log(r)
+        if(r.status == 'completed') {
+            res.send({code: 200,msg:r.message})
+        } else {
+            res.send({msg: r.error})
+        }
+    })
+});
+
+
+
+// 获取所有隧道接口
+app.get('/api/tunnels',(req,res)=&gt; {
+    console.log(req.url)
+    request({
+        url: `${baseUrl}${req.url}`,
+        method: 'GET',
+        headers
+    }, (err, response, body) =&gt; {
+        console.log(response.statusCode)
+        if(SUCC_REG.test(response.statusCode)) {
+            res.send({code: 200,msg:JSON.parse(response.body)})
+        } else {
+            res.send(errMsg)
+        }
+    })
+});
+
+app.listen(6000, '127.0.0.1', ()=&gt;{
+    console.log('app server');
+});
+</code></pre></div><h3 id="express请求接口请求体不同无法匹配"><a href="#express请求接口请求体不同无法匹配" class="header-anchor">#</a> express请求接口请求体不同无法匹配</h3> <p><img src="/tech/back/flexiwan20201219/flexiwan02.jpg" alt="图片"></p> <p>[bug描述] express实例中同样post请求，只是body体不同而导致无法区分，从而覆盖后续接口</p> <p>[bug分析] express的中间件原理，在加载路由过程正则匹配后不会匹配body体</p> <p>[解决方案] 区分路由接口，通过request转发或加上路由模块区分</p> <div class="language- extra-class"><pre class="language-text"><code>// 启动单个设备
+app.post('/api/devices/:id/apply/start',(req,res)=&gt; {
+    console.log(req.url);
+    request({
+        url: `${baseUrl}/api/devices/${req.params.id}/apply`,
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+            &quot;method&quot;: &quot;start&quot;
+        })
+    }, (err, response, body) =&gt; {
+        let r = JSON.parse(body)
+        if(r.status == 'completed') {
+            res.send({code: 200,msg:'start success'})
+        } else {
+            res.send({msg: 'start error'})
+        }
+    })
+});
+
+// 停止单个设备
+app.post('/api/devices/:id/apply/stop',(req,res)=&gt; {
+    console.log(req.url)
+    request({
+        url: `${baseUrl}/api/devices/${req.params.id}/apply`,
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+            &quot;method&quot;: &quot;stop&quot;
+        })
+    }, (err, response, body) =&gt; {
+        let r = JSON.parse(body)
+        if(r.status == 'completed') {
+            res.send({code: 200,msg:'stop success'})
+        } else {
+            res.send({msg: 'stop error'})
+        }
+    })
+});
+</code></pre></div><h2 id="源码解析"><a href="#源码解析" class="header-anchor">#</a> 源码解析</h2> <p><img src="/tech/back/flexiwan20201219/flexiwan03.jpg" alt="图片"></p> <p>主要是以express为核心的node应用，封装了express的基类进行实例，配合websocket进行实时数据的连接，redis的输出消费存储</p> <h3 id="expressserver"><a href="#expressserver" class="header-anchor">#</a> expressserver</h3> <p><img src="/tech/back/flexiwan20201219/flexiwan04.jpg" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>class ExpressServer {
+  constructor (port, securePort, openApiYaml) {
+    this.port = port;
+    this.securePort = securePort;
+    this.app = express();
+    this.openApiPath = openApiYaml;
+    this.schema = yamljs.load(openApiYaml);
+    const restServerUrl = configs.get('restServerUrl');
+    const servers = this.schema.servers.filter(server =&gt; server.url.includes(restServerUrl));
+    if (servers.length === 0) {
+      this.schema.servers.unshift({
+        description: 'Local Server',
+        url: restServerUrl + '/api'
+      });
+    }
+
+    this.setupMiddleware = this.setupMiddleware.bind(this);
+    this.addErrorHandler = this.addErrorHandler.bind(this);
+    this.onError = this.onError.bind(this);
+    this.onListening = this.onListening.bind(this);
+    this.launch = this.launch.bind(this);
+    this.close = this.close.bind(this);
+
+    this.setupMiddleware();
+  }
+
+  setupMiddleware () {
+    // this.setupAllowedMedia();
+    this.app.use((req, res, next) =&gt; {
+      console.log(`${req.method}: ${req.url}`);
+      return next();
+    });
+
+    // Request logging middleware - must be defined before routers.
+    this.app.use(reqLogger);
+    this.app.set('trust proxy', true); // Needed to get the public IP if behind a proxy
+
+    // Don't expose system internals in response headers
+    this.app.disable('x-powered-by');
+
+    // Use morgan request logger in development mode
+    if (configs.get('environment') === 'development') this.app.use(morgan('dev'));
+
+    // Start periodic device tasks
+    deviceStatus.start();
+    deviceQueues.start();
+    deviceSwVersion.start();
+    deviceSwUpgrade.start();
+    notifyUsers.start();
+    appRules.start();
+
+    // Secure traffic only
+    this.app.all('*', (req, res, next) =&gt; {
+      // Allow Let's encrypt certbot to access its certificate dirctory
+      if (!configs.get('shouldRedirectHttps') ||
+          req.secure || req.url.startsWith('/.well-known/acme-challenge')) {
+        return next();
+      } else {
+        return res.redirect(
+          307, 'https://' + req.hostname + ':' + configs.get('redirectHttpsPort') + req.url
+        );
+      }
+    });
+
+    // Global rate limiter to protect against DoS attacks
+    // Windows size of 5 minutes
+    const inMemoryStore = new RateLimitStore(5 * 60 * 1000);
+    const rateLimiter = rateLimit({
+      store: inMemoryStore,
+      max: +configs.get('userIpReqRateLimit'), // Rate limit for requests in 5 min per IP address
+      message: 'Request rate limit exceeded',
+      onLimitReached: (req, res, options) =&gt; {
+        logger.error(
+          'Request rate limit exceeded. blocking request', {
+            params: { ip: req.ip },
+            req: req
+          });
+      }
+    });
+    this.app.use(rateLimiter);
+
+    // General settings here
+    this.app.use(cors.cors);
+    this.app.use(bodyParser.json());
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: false }));
+    this.app.use(cookieParser());
+
+    // Routes allowed without authentication
+    this.app.use(express.static(path.join(__dirname, configs.get('clientStaticDir'))));
+
+    // Secure traffic only
+    this.app.all('*', (req, res, next) =&gt; {
+      // Allow Let's encrypt certbot to access its certificate dirctory
+      if (!configs.get('shouldRedirectHttps') ||
+          req.secure || req.url.startsWith('/.well-known/acme-challenge')) {
+        return next();
+      } else {
+        return res.redirect(
+          307, 'https://' + req.hostname + ':' + configs.get('redirectHttpsPort') + req.url
+        );
+      }
+    });
+
+    // no authentication
+    this.app.use('/api/connect', require('./routes/connect'));
+    this.app.use('/api/users', require('./routes/users'));
+
+    // add API documentation
+    this.app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(this.schema));
+
+    // initialize passport and authentication
+    this.app.use(passport.initialize());
+
+    // Enable db admin only in development mode
+    if (configs.get('environment') === 'development') {
+      logger.warn('Warning: Enabling UI database access');
+      this.app.use('/admindb', mongoExpress(mongoExpressConfig));
+    }
+
+    // Enable routes for non-authorized links
+    this.app.use('/ok', express.static(path.join(__dirname, 'public', 'ok.html')));
+    this.app.use('/spec', express.static(path.join(__dirname, 'api', 'openapi.yaml')));
+    this.app.get('/hello', (req, res) =&gt; res.send('Hello World'));
+
+    this.app.get('/api/version', (req, res) =&gt; res.json({ version }));
+
+    this.app.use(cors.corsWithOptions);
+    this.app.use(auth.verifyUserJWT);
+    // this.app.use(auth.verifyPermission);
+
+    try {
+      // FIXME: temporary map the OLD routes
+      // this.app.use('/api/devices', require('./routes/devices'));
+      // this.app.use('/api/devicestats', require('./routes/deviceStats'));
+      // this.app.use('/api/jobs', require('./routes/deviceQueue'));
+      this.app.use('/api/portals', require('./routes/portals'));
+    } catch (error) {
+      logger.error('Error: Can\'t connect OLD routes');
+    }
+
+    // Intialize routes
+    this.app.use('/api/admin', adminRouter);
+
+    const validator = new OpenApiValidator({
+      apiSpec: this.openApiPath,
+      validateRequests: true,
+      validateResponses: configs.get('validateOpenAPIResponse')
+    });
+
+    validator
+      .install(this.app)
+      .then(async () =&gt; {
+        await this.app.use(openapiRouter());
+        await this.launch();
+        logger.info('Express server running');
+      });
+  }
+
+  addErrorHandler () {
+    // &quot;catchall&quot; handler, for any request that doesn't match one above, send back index.html file.
+    this.app.get('*', (req, res, next) =&gt; {
+      logger.info('Route not found', { req: req });
+      res.sendFile(path.join(__dirname, configs.get('clientStaticDir'), 'index.html'));
+    });
+
+    // catch 404 and forward to error handler
+    this.app.use(function (req, res, next) {
+      next(createError(404));
+    });
+
+    // Request error logger - must be defined after all routers
+    // Set log severity on the request to log errors only for 5xx status codes.
+    this.app.use((err, req, res, next) =&gt; {
+      req.logSeverity = err.status || 500;
+      next(err);
+    });
+    this.app.use(errLogger);
+
+    /**
+     * suppressed eslint rule: The next variable is required here, even though it's not used.
+     *
+     ** */
+    // eslint-disable-next-line no-unused-vars
+    this.app.use((error, req, res, next) =&gt; {
+      const errorResponse = error.error || error.message || error.errors || 'Unknown error';
+      res.status(error.status || 500);
+      res.type('json');
+      res.json({ error: errorResponse });
+    });
+  }
+
+  /**
+   * Event listener for HTTP/HTTPS server &quot;error&quot; event.
+   */
+  onError (port) {
+    return function (error) {
+      if (error.syscall !== 'listen') {
+        throw error;
+      }
+
+      const bind = 'Port ' + port;
+
+      // handle specific listen errors with friendly messages
+      /* eslint-disable no-unreachable */
+      switch (error.code) {
+        case 'EACCES':
+          console.error(bind + ' requires elevated privileges');
+          process.exit(1);
+        case 'EADDRINUSE':
+          console.error(bind + ' is already in use');
+          process.exit(1);
+        default:
+          throw error;
+      }
+    };
+  }
+
+  /**
+  * Event listener for HTTP server &quot;listening&quot; event.
+  */
+  onListening (server) {
+    return function () {
+      const addr = server.address();
+      const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+      console.debug('Listening on ' + bind);
+    };
+  }
+
+  async launch () {
+    this.addErrorHandler();
+
+    try {
+      this.server = http.createServer(this.app);
+
+      this.options = {
+        key: fs.readFileSync(path.join(__dirname, 'bin', configs.get('httpsCertKey'))),
+        cert: fs.readFileSync(path.join(__dirname, 'bin', configs.get('httpsCert')))
+      };
+      this.secureServer = https.createServer(this.options, this.app);
+
+      // setup wss here
+      this.wss = new WebSocket.Server({
+        server: configs.get('shouldRedirectHttps') ? this.secureServer : this.server,
+        verifyClient: connections.verifyDevice
+      });
+
+      connections.registerConnectCallback('broker', broker.deviceConnectionOpened);
+      connections.registerCloseCallback('broker', broker.deviceConnectionClosed);
+      connections.registerCloseCallback('deviceStatus', deviceStatus.deviceConnectionClosed);
+
+      this.wss.on('connection', connections.createConnection);
+      console.log('Websocket server running');
+
+      this.server.listen(this.port, () =&gt; {
+        console.log('HTTP server listening on port', { params: { port: this.port } });
+      });
+      this.server.on('error', this.onError(this.port));
+      this.server.on('listening', this.onListening(this.server));
+
+      this.secureServer.listen(this.securePort, () =&gt; {
+        console.log('HTTPS server listening on port', { params: { port: this.securePort } });
+      });
+      this.secureServer.on('error', this.onError(this.securePort));
+      this.secureServer.on('listening', this.onListening(this.secureServer));
+    } catch (error) {
+      console.log('Express server lunch error', { params: { message: error.message } });
+    }
+  }
+
+  async close () {
+    if (this.server !== undefined) {
+      await this.server.close();
+      console.log(`HTTP Server on port ${this.port} shut down`);
+    }
+    if (this.secureServer !== undefined) {
+      await this.secureServer.close();
+      console.log(`HTTPS Server on port ${this.securePort} shut down`);
+    }
+  }
+}
+</code></pre></div><p>封装了一个express的基类，主要包含中间件的处理、错误处理、监听server</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>基于express封装的扩展应用，主要利用的是express的中间件原理，可以同类类比nest.js，其核心也是基于express封装的应用，但nest.js基于ng的模块思想做的隔离性更好，更像是服务端的一种node版的spring框架，而本应用确实还是像express的node应用，略显冗余</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/back/ng20201030.html" class="prev">
+        NG全家桶全栈项目实践总结
+      </a></span> <span class="next"><a href="/tech/back/dns20210708.html">
+        前端静态服务踩坑实践
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/38.0ce5462f.js" defer></script>
+  </body>
+</html>

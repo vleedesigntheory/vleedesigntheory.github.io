@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端日志采集方案浅析 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/41.7b0f5165.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>后端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/back/cicd20200806.html" class="sidebar-link">前端自动化集成部署交付实践</a></li><li><a href="/tech/back/ng20201030.html" class="sidebar-link">NG全家桶全栈项目实践总结</a></li><li><a href="/tech/back/flexiwan20201219.html" class="sidebar-link">flexiwan项目踩坑实践（后端篇）</a></li><li><a href="/tech/back/dns20210708.html" class="sidebar-link">前端静态服务踩坑实践</a></li><li><a href="/tech/back/gateway20211120.html" class="sidebar-link">前端网关踩坑实践</a></li><li><a href="/tech/back/deploy20220116.html" class="sidebar-link">前端部署脚手架专网项目实践</a></li><li><a href="/tech/back/imagepic20220129.html" class="sidebar-link">前端图床搭建实践（后端篇）</a></li><li><a href="/tech/back/log20220718.html" class="active sidebar-link">前端日志采集方案浅析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/back/log20220718.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/back/log20220718.html#架构" class="sidebar-link">架构</a></li><li class="sidebar-sub-header"><a href="/tech/back/log20220718.html#实践" class="sidebar-link">实践</a></li><li class="sidebar-sub-header"><a href="/tech/back/log20220718.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/back/log20220718.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/back/piper20220914.html" class="sidebar-link">前端设计走查平台实践（后端篇）</a></li><li><a href="/tech/back/node20241216.html" class="sidebar-link">Node.js的Web服务在Nacos中的实践</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="前端日志采集方案浅析"><a href="#前端日志采集方案浅析" class="header-anchor">#</a> 前端日志采集方案浅析</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>在前端部署过程中，通常会使用nginx作为部署服务器，而对于默认的nginx服务来说，其提供了对应的日志记录，可以用于记录服务器访问的相关日志，对于系统稳定性及健壮性监控来说，日志采集、分析等能够提供更加量化的指标性建设，本文旨在简述前端应用及打点服务过程中所需要使用的nginx采集方案。</p> <h2 id="架构"><a href="#架构" class="header-anchor">#</a> 架构</h2> <h3 id="打点日志采集"><a href="#打点日志采集" class="header-anchor">#</a> 打点日志采集</h3> <p><img src="https://vleedesigntheory.github.io/tech/back/log20220718/log01.jpg" alt="图片"></p> <p>对于前端应用来说，通常需要埋点及处理对应的数据服务</p> <h3 id="应用日志采集"><a href="#应用日志采集" class="header-anchor">#</a> 应用日志采集</h3> <p><img src="https://vleedesigntheory.github.io/tech/back/log20220718/log02.jpg" alt="图片"></p> <p>对于日常应用来说，通常需要对nginx服务器本身的稳定性进行收集处理</p> <h2 id="实践"><a href="#实践" class="header-anchor">#</a> 实践</h2> <h3 id="nginx"><a href="#nginx" class="header-anchor">#</a> Nginx</h3> <h4 id="日志格式"><a href="#日志格式" class="header-anchor">#</a> 日志格式</h4> <p>设置日志格式 <code>log_format</code> 为约定的日志内容，可以用于日志清洗及过滤等，对于nginx的日志格式可以参看<a href="http://nginx.org/en/docs/http/ngx_http_log_module.html#log_format" target="_blank" rel="noopener noreferrer">Nginx log_format官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <table><thead><tr><th style="text-align:center;">字段</th> <th style="text-align:center;">含义</th></tr></thead> <tbody><tr><td style="text-align:center;">$time_iso8601</td> <td style="text-align:center;">服务器时间的ISO 8610格式</td></tr> <tr><td style="text-align:center;">$remote_addr</td> <td style="text-align:center;">客户端地址</td></tr> <tr><td style="text-align:center;">$http_host</td> <td style="text-align:center;">主机名</td></tr> <tr><td style="text-align:center;">$status</td> <td style="text-align:center;">HTTP响应代码</td></tr> <tr><td style="text-align:center;">$request_time</td> <td style="text-align:center;">处理客户端请求使用的时间</td></tr> <tr><td style="text-align:center;">$request_length</td> <td style="text-align:center;">请求的长度</td></tr> <tr><td style="text-align:center;">$body_bytes_sent</td> <td style="text-align:center;">传输给客户端的字节数</td></tr> <tr><td style="text-align:center;">$request_uri</td> <td style="text-align:center;">包含一些客户端请求参数的原始URI</td></tr> <tr><td style="text-align:center;">$http_user_agent</td> <td style="text-align:center;">客户端用户代理</td></tr></tbody></table> <h4 id="日志路径"><a href="#日志路径" class="header-anchor">#</a> 日志路径</h4> <p>配置server的access_log，例如：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token comment"># /etc/nginx/nginx.conf</span>
+<span class="token keyword">http</span> <span class="token punctuation">{</span>
+    <span class="token keyword">log_format</span> aaa <span class="token string">'$time_iso8601 $remote_addr $http_host $status $request_time $request_length $body_bytes_sent $request_uri $http_user_agent'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">access_log</span>  <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>nginx<span class="token operator">/</span>access<span class="token punctuation">.</span>log  aaa<span class="token punctuation">;</span>
+
+    <span class="token keyword">server</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$time_iso</span><span class="token number">8601</span> <span class="token operator">~</span> <span class="token string">&quot;^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">set</span> <span class="token variable">$year</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">set</span> <span class="token variable">$month</span> $<span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">set</span> <span class="token variable">$day</span> $<span class="token number">3</span><span class="token punctuation">;</span>
+            <span class="token keyword">set</span> <span class="token variable">$hour</span> $<span class="token number">4</span><span class="token punctuation">;</span>
+            <span class="token keyword">set</span> <span class="token variable">$minute</span> $<span class="token number">5</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">access_log</span> <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>nginx<span class="token operator">/</span>aaa<span class="token operator">/</span><span class="token variable">$year</span><span class="token variable">$month</span><span class="token operator">-</span><span class="token variable">$day</span><span class="token operator">-</span><span class="token variable">$hour</span><span class="token operator">-</span><span class="token variable">$minute</span><span class="token punctuation">.</span>log aaa<span class="token punctuation">;</span>
+
+        <span class="token keyword">location</span> <span class="token operator">=</span> <span class="token operator">/</span>dig<span class="token punctuation">.</span>gif <span class="token punctuation">{</span>
+            <span class="token keyword">empty_gif</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="日志清除"><a href="#日志清除" class="header-anchor">#</a> 日志清除</h4> <p>为防止nginx产生的日志占满磁盘，需要定期清除，可以设置清除的时间间隔为1天，例如：</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment">#Filename: delete_nginx_logs.sh</span>
+<span class="token assign-left variable">LOGS_PATH</span><span class="token operator">=</span>/var/log/nginx
+<span class="token assign-left variable">KEEP_DAYS</span><span class="token operator">=</span><span class="token number">30</span>
+<span class="token assign-left variable">PID_FILE</span><span class="token operator">=</span>/run/nginx.pid
+<span class="token assign-left variable">YESTERDAY</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> -d <span class="token string">&quot;yesterday&quot;</span> +%Y-%m-%d<span class="token variable">)</span></span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token variable">$PID_FILE</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">`</span><span class="token function">date</span> <span class="token string">&quot;+%Y-%m-%d %H:%M:%S&quot;</span><span class="token variable">`</span></span> Deleting logs<span class="token punctuation">..</span>.
+    <span class="token function">mv</span> <span class="token variable">${LOGS_PATH}</span>/access.log <span class="token variable">${LOGS_PATH}</span>/access.<span class="token variable">${YESTERDAY}</span>.log <span class="token operator">&gt;</span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+    <span class="token function">mv</span> <span class="token variable">${LOGS_PATH}</span>/access.json <span class="token variable">${LOGS_PATH}</span>/access.<span class="token variable">${YESTERDAY}</span>.json <span class="token operator">&gt;</span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+    <span class="token function">mv</span> <span class="token variable">${LOGS_PATH}</span>/error.log <span class="token variable">${LOGS_PATH}</span>/error.<span class="token variable">${YESTERDAY}</span>.log <span class="token operator">&gt;</span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+    <span class="token function">kill</span> -USR1 <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> $PID_FILE<span class="token variable">`</span></span>
+    <span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">`</span><span class="token function">date</span> <span class="token string">&quot;+%Y-%m-%d %H:%M:%S&quot;</span><span class="token variable">`</span></span> Logs have deleted.
+<span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">`</span><span class="token function">date</span> <span class="token string">&quot;+%Y-%m-%d %H:%M:%S&quot;</span><span class="token variable">`</span></span> Please <span class="token function">make</span> sure that nginx is running<span class="token punctuation">..</span>.
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">echo</span>
+
+<span class="token function">find</span> <span class="token variable">$LOGS_PATH</span> -type f -mtime +<span class="token variable">$KEEP_DAYS</span> -print0 <span class="token operator">|</span><span class="token function">xargs</span> -0 <span class="token function">rm</span> -f
+</code></pre></div><p>也可以建立一个删除日志的脚本，用于记录删除脚本的日志</p> <h3 id="filebeat"><a href="#filebeat" class="header-anchor">#</a> Filebeat</h3> <p>filebeat是一个日志文件托运工具，在你的服务器上安装客户端后，filebeat会监控日志目录或者指定的日志文件，追踪读取这些文件（追踪文件的变化，不停的读），并且转发这些信息到elasticsearch或者logstarsh或者kafka等。</p> <p>通过 <code>filebeat.yml</code> 进行相关的配置，例如：</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token comment">###################### Filebeat Configuration Example #########################</span>
+
+<span class="token comment"># This file is an example configuration file highlighting only the most common</span>
+<span class="token comment"># options. The filebeat.reference.yml file from the same directory contains all the</span>
+<span class="token comment"># supported options with more comments. You can use it as a reference.</span>
+<span class="token comment">#</span>
+<span class="token comment"># You can find the full configuration reference here:</span>
+<span class="token comment"># https://www.elastic.co/guide/en/beats/filebeat/index.html</span>
+
+<span class="token comment"># For more available modules and options, please see the filebeat.reference.yml sample</span>
+<span class="token comment"># configuration file.</span>
+
+<span class="token comment"># ============================== Filebeat inputs ===============================</span>
+
+<span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+
+<span class="token comment"># Each - is an input. Most options can be set at the input level, so</span>
+<span class="token comment"># you can use different inputs for various configurations.</span>
+<span class="token comment"># Below are the input specific configurations.</span>
+
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+
+<span class="token comment"># Change to true to enable this input configuration.</span>
+<span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token comment"># Paths that should be crawled and fetched. Glob based paths.</span>
+<span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/log/nginx/ferms/*.log
+    <span class="token comment">#- c:\programdata\elasticsearch\logs\*</span>
+
+<span class="token comment"># Exclude lines. A list of regular expressions to match. It drops the lines that are</span>
+<span class="token comment"># matching any regular expression from the list.</span>
+<span class="token comment">#exclude_lines: ['^DBG']</span>
+
+<span class="token comment"># Include lines. A list of regular expressions to match. It exports the lines that are</span>
+<span class="token comment"># matching any regular expression from the list.</span>
+<span class="token comment">#include_lines: ['^ERR', '^WARN']</span>
+
+<span class="token comment"># Exclude files. A list of regular expressions to match. Filebeat drops the files that</span>
+<span class="token comment"># are matching any regular expression from the list. By default, no files are dropped.</span>
+<span class="token comment">#exclude_files: ['.gz$']</span>
+
+<span class="token comment"># Optional additional fields. These fields can be freely picked</span>
+<span class="token comment"># to add additional information to the crawled log files for filtering</span>
+<span class="token comment">#fields:</span>
+<span class="token comment">#  level: debug</span>
+<span class="token comment">#  review: 1</span>
+
+<span class="token comment">### Multiline options</span>
+
+<span class="token comment"># Multiline can be used for log messages spanning multiple lines. This is common</span>
+<span class="token comment"># for Java Stack Traces or C-Line Continuation</span>
+
+<span class="token comment"># The regexp Pattern that has to be matched. The example pattern matches all lines starting with [</span>
+<span class="token comment">#multiline.pattern: ^\[</span>
+
+<span class="token comment"># Defines if the pattern set under pattern should be negated or not. Default is false.</span>
+<span class="token comment">#multiline.negate: false</span>
+
+<span class="token comment"># Match can be set to &quot;after&quot; or &quot;before&quot;. It is used to define if lines should be append to a pattern</span>
+<span class="token comment"># that was (not) matched before or after or as long as a pattern is not matched based on negate.</span>
+<span class="token comment"># Note: After is the equivalent to previous and before is the equivalent to to next in Logstash</span>
+<span class="token comment">#multiline.match: after</span>
+
+<span class="token comment"># ============================== Filebeat modules ==============================</span>
+
+<span class="token key atrule">filebeat.config.modules</span><span class="token punctuation">:</span>
+<span class="token comment"># Glob pattern for configuration loading</span>
+<span class="token key atrule">path</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>path.config<span class="token punctuation">}</span>/modules.d/*.yml
+
+<span class="token comment"># Set to true to enable config reloading</span>
+<span class="token key atrule">reload.enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token comment"># Period on which files under path should be checked for changes</span>
+<span class="token comment">#reload.period: 10s</span>
+
+<span class="token comment"># ======================= Elasticsearch template setting =======================</span>
+
+<span class="token key atrule">setup.template.settings</span><span class="token punctuation">:</span>
+<span class="token key atrule">index.number_of_shards</span><span class="token punctuation">:</span> <span class="token number">3</span>
+<span class="token comment">#index.codec: best_compression</span>
+<span class="token comment">#_source.enabled: false</span>
+
+
+<span class="token comment"># ================================== General ===================================</span>
+
+<span class="token comment"># The name of the shipper that publishes the network data. It can be used to group</span>
+<span class="token comment"># all the transactions sent by a single shipper in the web interface.</span>
+<span class="token comment">#name:</span>
+
+<span class="token comment"># The tags of the shipper are included in their own field with each</span>
+<span class="token comment"># transaction published.</span>
+<span class="token comment">#tags: [&quot;service-X&quot;, &quot;web-tier&quot;]</span>
+
+<span class="token comment"># Optional fields that you can specify to add additional information to the</span>
+<span class="token comment"># output.</span>
+<span class="token comment">#fields:</span>
+<span class="token comment">#  env: staging</span>
+
+<span class="token comment"># ================================= Dashboards =================================</span>
+<span class="token comment"># These settings control loading the sample dashboards to the Kibana index. Loading</span>
+<span class="token comment"># the dashboards is disabled by default and can be enabled either by setting the</span>
+<span class="token comment"># options here or by using the `setup` command.</span>
+<span class="token comment">#setup.dashboards.enabled: false</span>
+
+<span class="token comment"># The URL from where to download the dashboards archive. By default this URL</span>
+<span class="token comment"># has a value which is computed based on the Beat name and version. For released</span>
+<span class="token comment"># versions, this URL points to the dashboard archive on the artifacts.elastic.co</span>
+<span class="token comment"># website.</span>
+<span class="token comment">#setup.dashboards.url:</span>
+
+<span class="token comment"># =================================== Kibana ===================================</span>
+
+<span class="token comment"># Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.</span>
+<span class="token comment"># This requires a Kibana endpoint configuration.</span>
+<span class="token key atrule">setup.kibana</span><span class="token punctuation">:</span>
+
+<span class="token comment"># Kibana Host</span>
+<span class="token comment"># Scheme and port can be left out and will be set to the default (http and 5601)</span>
+<span class="token comment"># In case you specify and additional path, the scheme is required: http://localhost:5601/path</span>
+<span class="token comment"># IPv6 addresses should always be defined as: https://[2001:db8::1]:5601</span>
+<span class="token comment">#host: &quot;localhost:5601&quot;</span>
+
+<span class="token comment"># Kibana Space ID</span>
+<span class="token comment"># ID of the Kibana Space into which the dashboards should be loaded. By default,</span>
+<span class="token comment"># the Default Space will be used.</span>
+<span class="token comment">#space.id:</span>
+
+<span class="token comment"># =============================== Elastic Cloud ================================</span>
+
+<span class="token comment"># These settings simplify using Filebeat with the Elastic Cloud (https://cloud.elastic.co/).</span>
+
+<span class="token comment"># The cloud.id setting overwrites the `output.elasticsearch.hosts` and</span>
+<span class="token comment"># `setup.kibana.host` options.</span>
+<span class="token comment"># You can find the `cloud.id` in the Elastic Cloud web UI.</span>
+<span class="token comment">#cloud.id:</span>
+
+<span class="token comment"># The cloud.auth setting overwrites the `output.elasticsearch.username` and</span>
+<span class="token comment"># `output.elasticsearch.password` settings. The format is `&lt;user&gt;:&lt;pass&gt;`.</span>
+<span class="token comment">#cloud.auth:</span>
+
+<span class="token comment"># ================================== Outputs ===================================</span>
+
+<span class="token comment"># Configure what output to use when sending the data collected by the beat.</span>
+
+<span class="token key atrule">output.kafka</span><span class="token punctuation">:</span>
+    <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;xxx.xxx.xxx.xxx:9092&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;yyy.yyy.yyy.yyy:9092&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;zzz.zzz.zzz.zzz:9092&quot;</span><span class="token punctuation">]</span>
+    <span class="token key atrule">topic</span><span class="token punctuation">:</span> <span class="token string">&quot;fee&quot;</span>
+
+<span class="token comment"># ---------------------------- Elasticsearch Output ----------------------------</span>
+<span class="token comment">#output.elasticsearch:</span>
+<span class="token comment"># Array of hosts to connect to.</span>
+<span class="token comment">#hosts: [&quot;localhost:9200&quot;]</span>
+
+<span class="token comment"># Protocol - either `http` (default) or `https`.</span>
+<span class="token comment">#protocol: &quot;https&quot;</span>
+
+<span class="token comment"># Authentication credentials - either API key or username/password.</span>
+<span class="token comment">#api_key: &quot;id:api_key&quot;</span>
+<span class="token comment">#username: &quot;elastic&quot;</span>
+<span class="token comment">#password: &quot;changeme&quot;</span>
+
+<span class="token comment"># ------------------------------ Logstash Output -------------------------------</span>
+<span class="token comment">#output.logstash:</span>
+<span class="token comment"># The Logstash hosts</span>
+<span class="token comment">#hosts: [&quot;localhost:5044&quot;]</span>
+
+<span class="token comment"># Optional SSL. By default is off.</span>
+<span class="token comment"># List of root certificates for HTTPS server verifications</span>
+<span class="token comment">#ssl.certificate_authorities: [&quot;/etc/pki/root/ca.pem&quot;]</span>
+
+<span class="token comment"># Certificate for SSL client authentication</span>
+<span class="token comment">#ssl.certificate: &quot;/etc/pki/client/cert.pem&quot;</span>
+
+<span class="token comment"># Client Certificate Key</span>
+<span class="token comment">#ssl.key: &quot;/etc/pki/client/cert.key&quot;</span>
+
+<span class="token comment"># ================================= Processors =================================</span>
+<span class="token key atrule">processors</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">drop_fields</span><span class="token punctuation">:</span>
+    <span class="token key atrule">fields</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;@timestamp&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;@metadata&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;log&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;input&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;ecs&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;host&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;agent&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># ================================== Logging ===================================</span>
+
+<span class="token comment"># Sets log level. The default log level is info.</span>
+<span class="token comment"># Available log levels are: error, warning, info, debug</span>
+<span class="token comment"># logging.level: debug</span>
+
+<span class="token comment"># At debug level, you can selectively enable logging only for some components.</span>
+<span class="token comment"># To enable all selectors use [&quot;*&quot;]. Examples of other selectors are &quot;beat&quot;,</span>
+<span class="token comment"># &quot;publish&quot;, &quot;service&quot;.</span>
+<span class="token comment">#logging.selectors: [&quot;*&quot;]</span>
+
+<span class="token comment"># ============================= X-Pack Monitoring ==============================</span>
+<span class="token comment"># Filebeat can export internal metrics to a central Elasticsearch monitoring</span>
+<span class="token comment"># cluster.  This requires xpack monitoring to be enabled in Elasticsearch.  The</span>
+<span class="token comment"># reporting is disabled by default.</span>
+
+<span class="token comment"># Set to true to enable the monitoring reporter.</span>
+<span class="token comment">#monitoring.enabled: false</span>
+
+<span class="token comment"># Sets the UUID of the Elasticsearch cluster under which monitoring data for this</span>
+<span class="token comment"># Filebeat instance will appear in the Stack Monitoring UI. If output.elasticsearch</span>
+<span class="token comment"># is enabled, the UUID is derived from the Elasticsearch cluster referenced by output.elasticsearch.</span>
+<span class="token comment">#monitoring.cluster_uuid:</span>
+
+<span class="token comment"># Uncomment to send the metrics to Elasticsearch. Most settings from the</span>
+<span class="token comment"># Elasticsearch output are accepted here as well.</span>
+<span class="token comment"># Note that the settings should point to your Elasticsearch *monitoring* cluster.</span>
+<span class="token comment"># Any setting that is not set is automatically inherited from the Elasticsearch</span>
+<span class="token comment"># output configuration, so if you have the Elasticsearch output configured such</span>
+<span class="token comment"># that it is pointing to your Elasticsearch monitoring cluster, you can simply</span>
+<span class="token comment"># uncomment the following line.</span>
+<span class="token comment">#monitoring.elasticsearch:</span>
+
+<span class="token comment"># ============================== Instrumentation ===============================</span>
+
+<span class="token comment"># Instrumentation support for the filebeat.</span>
+<span class="token comment">#instrumentation:</span>
+    <span class="token comment"># Set to true to enable instrumentation of filebeat.</span>
+    <span class="token comment">#enabled: false</span>
+
+    <span class="token comment"># Environment in which filebeat is running on (eg: staging, production, etc.)</span>
+    <span class="token comment">#environment: &quot;&quot;</span>
+
+    <span class="token comment"># APM Server hosts to report instrumentation results to.</span>
+    <span class="token comment">#hosts:</span>
+    <span class="token comment">#  - http://localhost:8200</span>
+
+    <span class="token comment"># API Key for the APM Server(s).</span>
+    <span class="token comment"># If api_key is set then secret_token will be ignored.</span>
+    <span class="token comment">#api_key:</span>
+
+    <span class="token comment"># Secret token for the APM Server(s).</span>
+    <span class="token comment">#secret_token:</span>
+
+
+<span class="token comment"># ================================= Migration ==================================</span>
+
+<span class="token comment"># This allows to enable 6.7 migration aliases</span>
+<span class="token comment">#migration.6_to_7.enabled: true</span>
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>日志系统作为大型系统的重要组成部分，在前端侧的应用过程中通常不如后端体系那么庞大和重视，但其重要的数据支撑作用在前端系统中也是不可或缺的，对于日志的过滤清洗及分析也可以在前端体系中做一些对应生态建设。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://cloud.tencent.com/developer/article/1895982" target="_blank" rel="noopener noreferrer">三种姿势轻松采集 Nginx 日志<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/34943332" target="_blank" rel="noopener noreferrer">8分钟带你深入浅出搞懂Nginx<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/qq_41868309/article/details/115517374" target="_blank" rel="noopener noreferrer">docker部署Nginx并使用filebeat收集运行日志<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/weixin_37537645/article/details/119204364" target="_blank" rel="noopener noreferrer">docker容器启动filebeat采集nginx模版(module)数据<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/JReno/article/details/92798383" target="_blank" rel="noopener noreferrer">分布式ELK平台之Kibana和Logstash<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/861091c71bcd" target="_blank" rel="noopener noreferrer">Filebeat<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/back/imagepic20220129.html" class="prev">
+        前端图床搭建实践（后端篇）
+      </a></span> <span class="next"><a href="/tech/back/piper20220914.html">
+        前端设计走查平台实践（后端篇）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/41.7b0f5165.js" defer></script>
+  </body>
+</html>

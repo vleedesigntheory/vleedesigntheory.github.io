@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>umi3源码探究简析 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/87.dd59cc6f.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="active sidebar-link">umi3源码探究简析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/umi20210222.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/umi20210222.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/tech/front/umi20210222.html#源码解析" class="sidebar-link">源码解析</a></li><li class="sidebar-sub-header"><a href="/tech/front/umi20210222.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/umi20210222.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="umi3源码探究简析"><a href="#umi3源码探究简析" class="header-anchor">#</a> umi3源码探究简析</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p><img src="/tech/front/umi20210222/umi01.png" alt="图片"></p> <p>近期，团(ling)队(dao)准(yao)备(qiu)从Vue技术栈转向React技术栈，而且特别指定了使用Ant Design的设计组件库，出于相关生态考虑，我们决定采用蚂蚁金服团队相关react方案。选择理由如下：一来是React原装全家桶比较散，引包组装比较麻烦；二来是国内React生态相关方面阿里开源及社区做的比较突出，因而我们决定使用阿里React相关技术栈。基于组件库及相关可视化展示等因素，我们选择了蚂蚁金服团队的开源生态圈：umi + dva + antd + antv ( ps：最佳实践案例是<a href="https://pro.ant.design" target="_blank" rel="noopener noreferrer">Ant Desgin Pro<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)，当然淘系的飞冰相关React技术栈做的也很突出，但权衡之后，我们最终还是选择了蚂蚁金服团队的React技术栈。作为整个生态圈最为核心的部分，umi可谓是王冠上的红宝石，因而个人认为对于整个umi架构内核的学习及设计哲学的理解，可能比如何使用要来的更为重要；作为一个使用者，希望能从各位大佬的源码中汲取一些养分以及获得一些灵感，私以为：思想的拓展要远比不断地重复劳作要来的重要！</p> <p><img src="/tech/front/umi20210222/umi02.png" alt="图片"></p> <p>umi基于的是一种微内核架构方式，其核心是只保留架构的核心功能，将其他需求服务以插件的形式载入进来，“即插即用，不用即走”，因而又称为“插件化架构”，对于想具体了解微内核的童鞋，可以看这篇文章<a href="https://blog.csdn.net/lz710117239/article/details/86603811" target="_blank" rel="noopener noreferrer">微内核架构<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，总结来讲就是“如无必要，勿增实体”，只保留最精简、最核心的部分。</p> <p><img src="/tech/front/umi20210222/umi03.png" alt="图片"></p> <p>对于umi来说，其具体是通过“约定大于配置”的核心理念，将技术收敛，让开发者更集中精力于业务的开发，对于更具体的可以看看云谦(陈成)的大佬2019 SEE Conf的分享 <a href="https://www.bilibili.com/video/av40319780/" target="_blank" rel="noopener noreferrer">云谦 - 蚂蚁金服前端框架探索之路<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <p><img src="/tech/front/umi20210222/umi04.png" alt="图片"></p> <p>本质上umi最后会导出一个基于EventEmitter的Service的类，用户通过Config中的配置将插件与核心Service关联，umi将react-router和react-router-dom内嵌进了框架中，从而可以“约定式定义路由”，此处可以对比Next.js的方案</p> <ul><li>packages
+<ul><li>ast</li> <li>babel-plugin-auto-css-modules</li> <li>babel-plugin-import-to-await-require</li> <li>babel-plugin-lock-core-js-3</li> <li>babel-preset-umi</li> <li>bundler-utils</li> <li>bundler-webpack</li> <li>core
+<ul><li>src
+<ul><li>Config</li> <li>Html</li> <li>Logger</li> <li>Route</li> <li>Service</li></ul></li></ul></li> <li>create-umi-app</li> <li>preset-built-in</li> <li>renderer-mpa</li> <li>renderer-react</li> <li>runtime</li> <li>server</li> <li>test</li> <li>test-utils</li> <li>types</li> <li>umi</li> <li>utils</li></ul></li></ul> <h2 id="源码解析"><a href="#源码解析" class="header-anchor">#</a> 源码解析</h2> <p>核心源码在于core目录下的Config、Route及Service，微内核中最最最核心的就是这个Service类，其他都是基于其进行的相关的扩展与融合，重点分析Service、Route及Config这三个目录中的源码</p> <h3 id="service"><a href="#service" class="header-anchor">#</a> Service</h3> <table><thead><tr><th style="text-align:left;">文件名</th> <th style="text-align:center;">作用</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">Service.ts</td> <td style="text-align:center;">提供整个核心服务类，用于导出服务</td> <td style="text-align:right;">核心配置</td></tr> <tr><td style="text-align:left;">getPaths.ts</td> <td style="text-align:center;">获取文件绝对路径的核心方法</td> <td style="text-align:right;">文件路径</td></tr> <tr><td style="text-align:left;">PluginAPI.ts</td> <td style="text-align:center;">插件的注册及接入核心类</td> <td style="text-align:right;">插件注册</td></tr> <tr><td style="text-align:left;">types.ts</td> <td style="text-align:center;">固定值</td> <td style="text-align:right;">接口及类型</td></tr> <tr><td style="text-align:left;">enums.ts</td> <td style="text-align:center;">固定值</td> <td style="text-align:right;">枚举</td></tr></tbody></table> <h4 id="service-ts"><a href="#service-ts" class="header-anchor">#</a> Service.ts</h4> <p><img src="/tech/front/umi20210222/umi05.png" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>export default class Service extends EventEmitter {
+  // 项目根路径
+  cwd: string;
+  // package.json的绝对路径
+  pkg: IPackage;
+  // 跳过的插件
+  skipPluginIds: Set&lt;string&gt; = new Set&lt;string&gt;();
+  // 生命周期执行阶段
+  stage: ServiceStage = ServiceStage.uninitialized;
+  // 注册命令
+  commands: {
+    [name: string]: ICommand | string;
+  } = {};
+  // 解析完的插件
+  plugins: {
+    [id: string]: IPlugin;
+  } = {};
+  // 插件方法
+  pluginMethods: {
+    [name: string]: Function;
+  } = {};
+  // 初始化插件预设
+  initialPresets: IPreset[];
+  initialPlugins: IPlugin[];
+  // 额外的插件预设
+  _extraPresets: IPreset[] = [];
+  _extraPlugins: IPlugin[] = [];
+  // 用户配置
+  userConfig: IConfig;
+  configInstance: Config;
+  config: IConfig | null = null;
+  // babel处理
+  babelRegister: BabelRegister;
+  // 钩子函数处理
+  hooksByPluginId: {
+    [id: string]: IHook[];
+  } = {};
+  hooks: {
+    [key: string]: IHook[];
+  } = {};
+  // 用户配置生成的路径信息
+  paths: {
+	// 项目根目录
+    cwd?: string;
+	// node_modules文件目录
+    absNodeModulesPath?: string;
+	// src目录
+    absSrcPath?: string;
+	// pages目录
+    absPagesPath?: string;
+	// dist导出目录
+    absOutputPath?: string;
+	// 生成的.umi目录
+    absTmpPath?: string;
+  } = {};
+  env: string | undefined;
+  ApplyPluginsType = ApplyPluginsType;
+  EnableBy = EnableBy;
+  ConfigChangeType = ConfigChangeType;
+  ServiceStage = ServiceStage;
+  args: any;
+
+  constructor(opts: IServiceOpts) {
+    super();
+    this.cwd = opts.cwd || process.cwd();
+    // 仓库根目录，antd pro构建的时候需要一个新的空文件夹
+    this.pkg = opts.pkg || this.resolvePackage();
+    this.env = opts.env || process.env.NODE_ENV;
+
+    // babel处理
+    this.babelRegister = new BabelRegister();
+
+    // 加载环境变量
+    this.loadEnv();
+
+    // 获取用户配置
+    this.configInstance = new Config({
+      cwd: this.cwd,
+      service: this,
+      localConfig: this.env === 'development',
+    });
+
+	// 从.umirc.ts中获取内容
+    this.userConfig = this.configInstance.getUserConfig();
+
+    // 获取导出的配置
+    this.paths = getPaths({
+      cwd: this.cwd,
+      config: this.userConfig!,
+      env: this.env,
+    });
+
+    // 初始化插件
+    const baseOpts = {
+      pkg: this.pkg,
+      cwd: this.cwd,
+    };
+
+	// 初始化预设
+    this.initialPresets = resolvePresets({
+      ...baseOpts,
+      presets: opts.presets || [],
+      userConfigPresets: this.userConfig.presets || [],
+    });
+
+	// 初始化插件
+    this.initialPlugins = resolvePlugins({
+      ...baseOpts,
+      plugins: opts.plugins || [],
+      userConfigPlugins: this.userConfig.plugins || [],
+    });
+
+	// 初始化配置及插件放入babel注册中
+    this.babelRegister.setOnlyMap({
+      key: 'initialPlugins',
+      value: lodash.uniq([
+        ...this.initialPresets.map(({ path }) =&gt; path),
+        ...this.initialPlugins.map(({ path }) =&gt; path),
+      ]),
+    });
+  }
+  // 设置生命周期
+  setStage(stage: ServiceStage) {
+    this.stage = stage;
+  }
+  // 解析package.json的文件
+  resolvePackage() {
+    try {
+      return require(join(this.cwd, 'package.json'));
+    } catch (e) {
+      return {};
+    }
+  }
+  // 加载环境
+  loadEnv() {
+    const basePath = join(this.cwd, '.env');
+    const localPath = `${basePath}.local`;
+    loadDotEnv(basePath);
+    loadDotEnv(localPath);
+  }
+
+  // 真正的初始化
+  async init() {
+    this.setStage(ServiceStage.init);
+    await this.initPresetsAndPlugins();
+
+	// 状态：初始
+    this.setStage(ServiceStage.initHooks);
+
+	// 注册了plugin要执行的钩子方法
+    Object.keys(this.hooksByPluginId).forEach((id) =&gt; {
+      const hooks = this.hooksByPluginId[id];
+      hooks.forEach((hook) =&gt; {
+        const { key } = hook;
+        hook.pluginId = id;
+        this.hooks[key] = (this.hooks[key] || []).concat(hook);
+      });
+    });
+
+    // 状态：插件已注册
+    this.setStage(ServiceStage.pluginReady);
+	// 执行插件
+    await this.applyPlugins({
+      key: 'onPluginReady',
+      type: ApplyPluginsType.event,
+    });
+
+    // 状态：获取配置信息
+    this.setStage(ServiceStage.getConfig);
+
+	// 拿到对应插件的默认配置信息
+    const defaultConfig = await this.applyPlugins({
+      key: 'modifyDefaultConfig',
+      type: this.ApplyPluginsType.modify,
+      initialValue: await this.configInstance.getDefaultConfig(),
+    });
+
+	// 将实例中的配置信息对应修改的配置信息
+    this.config = await this.applyPlugins({
+      key: 'modifyConfig',
+      type: this.ApplyPluginsType.modify,
+      initialValue: this.configInstance.getConfig({
+        defaultConfig,
+      }) as any,
+    });
+
+    // 状态：合并路径
+    this.setStage(ServiceStage.getPaths);
+    
+    if (this.config!.outputPath) {
+      this.paths.absOutputPath = join(this.cwd, this.config!.outputPath);
+    }
+
+	// 修改路径对象
+    const paths = (await this.applyPlugins({
+      key: 'modifyPaths',
+      type: ApplyPluginsType.modify,
+      initialValue: this.paths,
+    })) as object;
+    Object.keys(paths).forEach((key) =&gt; {
+      this.paths[key] = paths[key];
+    });
+  }
+
+  
+  async initPresetsAndPlugins() {
+    this.setStage(ServiceStage.initPresets);
+    this._extraPlugins = [];
+    while (this.initialPresets.length) {
+      await this.initPreset(this.initialPresets.shift()!);
+    }
+
+    this.setStage(ServiceStage.initPlugins);
+    this._extraPlugins.push(...this.initialPlugins);
+    while (this._extraPlugins.length) {
+      await this.initPlugin(this._extraPlugins.shift()!);
+    }
+  }
+
+  getPluginAPI(opts: any) {
+    const pluginAPI = new PluginAPI(opts);
+
+    [
+      'onPluginReady',
+      'modifyPaths',
+      'onStart',
+      'modifyDefaultConfig',
+      'modifyConfig',
+    ].forEach((name) =&gt; {
+      pluginAPI.registerMethod({ name, exitsError: false });
+    });
+
+    return new Proxy(pluginAPI, {
+      get: (target, prop: string) =&gt; {
+        // 由于 pluginMethods 需要在 register 阶段可用
+        // 必须通过 proxy 的方式动态获取最新，以实现边注册边使用的效果
+        if (this.pluginMethods[prop]) return this.pluginMethods[prop];
+        if (
+          [
+            'applyPlugins',
+            'ApplyPluginsType',
+            'EnableBy',
+            'ConfigChangeType',
+            'babelRegister',
+            'stage',
+            'ServiceStage',
+            'paths',
+            'cwd',
+            'pkg',
+            'userConfig',
+            'config',
+            'env',
+            'args',
+            'hasPlugins',
+            'hasPresets',
+          ].includes(prop)
+        ) {
+          return typeof this[prop] === 'function'
+            ? this[prop].bind(this)
+            : this[prop];
+        }
+        return target[prop];
+      },
+    });
+  }
+
+  async applyAPI(opts: { apply: Function; api: PluginAPI }) {
+    let ret = opts.apply()(opts.api);
+    if (isPromise(ret)) {
+      ret = await ret;
+    }
+    return ret || {};
+  }
+
+  // 初始化配置
+  async initPreset(preset: IPreset) {
+    const { id, key, apply } = preset;
+    preset.isPreset = true;
+
+    const api = this.getPluginAPI({ id, key, service: this });
+
+    // register before apply
+    this.registerPlugin(preset);
+    // TODO: ...defaultConfigs 考虑要不要支持，可能这个需求可以通过其他渠道实现
+    const { presets, plugins, ...defaultConfigs } = await this.applyAPI({
+      api,
+      apply,
+    });
+
+    // register extra presets and plugins
+    if (presets) {
+      assert(
+        Array.isArray(presets),
+        `presets returned from preset ${id} must be Array.`,
+      );
+      // 插到最前面，下个 while 循环优先执行
+      this._extraPresets.splice(
+        0,
+        0,
+        ...presets.map((path: string) =&gt; {
+          return pathToObj({
+            type: PluginType.preset,
+            path,
+            cwd: this.cwd,
+          });
+        }),
+      );
+    }
+
+    // 深度优先
+    const extraPresets = lodash.clone(this._extraPresets);
+    this._extraPresets = [];
+    while (extraPresets.length) {
+      await this.initPreset(extraPresets.shift()!);
+    }
+
+    if (plugins) {
+      assert(
+        Array.isArray(plugins),
+        `plugins returned from preset ${id} must be Array.`,
+      );
+      this._extraPlugins.push(
+        ...plugins.map((path: string) =&gt; {
+          return pathToObj({
+            type: PluginType.plugin,
+            path,
+            cwd: this.cwd,
+          });
+        }),
+      );
+    }
+  }
+
+  // 初始化插件
+  async initPlugin(plugin: IPlugin) {
+    const { id, key, apply } = plugin;
+
+    const api = this.getPluginAPI({ id, key, service: this });
+
+    // register before apply
+    this.registerPlugin(plugin);
+    await this.applyAPI({ api, apply });
+  }
+
+  getPluginOptsWithKey(key: string) {
+    return getUserConfigWithKey({
+      key,
+      userConfig: this.userConfig,
+    });
+  }
+
+  // 注册插件
+  registerPlugin(plugin: IPlugin) {
+    // 考虑要不要去掉这里的校验逻辑
+    // 理论上不会走到这里，因为在 describe 的时候已经做了冲突校验
+    if (this.plugins[plugin.id]) {
+      const name = plugin.isPreset ? 'preset' : 'plugin';
+      throw new Error(`\
+${name} ${plugin.id} is already registered by ${this.plugins[plugin.id].path}, \
+${name} from ${plugin.path} register failed.`);
+    }
+    this.plugins[plugin.id] = plugin;
+  }
+
+  isPluginEnable(pluginId: string) {
+    // api.skipPlugins() 的插件
+    if (this.skipPluginIds.has(pluginId)) return false;
+
+    const { key, enableBy } = this.plugins[pluginId];
+
+    // 手动设置为 false
+    if (this.userConfig[key] === false) return false;
+
+    // 配置开启
+    if (enableBy === this.EnableBy.config &amp;&amp; !(key in this.userConfig)) {
+      return false;
+    }
+
+    // 函数自定义开启
+    if (typeof enableBy === 'function') {
+      return enableBy();
+    }
+
+    // 注册开启
+    return true;
+  }
+
+  // 判断函数：是否有插件
+  hasPlugins(pluginIds: string[]) {
+    return pluginIds.every((pluginId) =&gt; {
+      const plugin = this.plugins[pluginId];
+      return plugin &amp;&amp; !plugin.isPreset &amp;&amp; this.isPluginEnable(pluginId);
+    });
+  }
+
+  // 判断函数：是否有预设
+  hasPresets(presetIds: string[]) {
+    return presetIds.every((presetId) =&gt; {
+      const preset = this.plugins[presetId];
+      return preset &amp;&amp; preset.isPreset &amp;&amp; this.isPluginEnable(presetId);
+    });
+  }
+
+  // 真正的插件执行函数，基于promise实现
+  async applyPlugins(opts: {
+    key: string;
+    type: ApplyPluginsType;
+    initialValue?: any;
+    args?: any;
+  }) {
+    const hooks = this.hooks[opts.key] || [];
+    switch (opts.type) {
+      case ApplyPluginsType.add:
+        if ('initialValue' in opts) {
+          assert(
+            Array.isArray(opts.initialValue),
+            `applyPlugins failed, opts.initialValue must be Array if opts.type is add.`,
+          );
+        }
+        const tAdd = new AsyncSeriesWaterfallHook(['memo']);
+        for (const hook of hooks) {
+          if (!this.isPluginEnable(hook.pluginId!)) {
+            continue;
+          }
+          tAdd.tapPromise(
+            {
+              name: hook.pluginId!,
+              stage: hook.stage || 0,
+              // @ts-ignore
+              before: hook.before,
+            },
+            async (memo: any[]) =&gt; {
+              const items = await hook.fn(opts.args);
+              return memo.concat(items);
+            },
+          );
+        }
+        return await tAdd.promise(opts.initialValue || []);
+      case ApplyPluginsType.modify:
+        const tModify = new AsyncSeriesWaterfallHook(['memo']);
+        for (const hook of hooks) {
+          if (!this.isPluginEnable(hook.pluginId!)) {
+            continue;
+          }
+          tModify.tapPromise(
+            {
+              name: hook.pluginId!,
+              stage: hook.stage || 0,
+              // @ts-ignore
+              before: hook.before,
+            },
+            async (memo: any) =&gt; {
+              return await hook.fn(memo, opts.args);
+            },
+          );
+        }
+        return await tModify.promise(opts.initialValue);
+      case ApplyPluginsType.event:
+        const tEvent = new AsyncSeriesWaterfallHook(['_']);
+        for (const hook of hooks) {
+          if (!this.isPluginEnable(hook.pluginId!)) {
+            continue;
+          }
+          tEvent.tapPromise(
+            {
+              name: hook.pluginId!,
+              stage: hook.stage || 0,
+              // @ts-ignore
+              before: hook.before,
+            },
+            async () =&gt; {
+              await hook.fn(opts.args);
+            },
+          );
+        }
+        return await tEvent.promise();
+      default:
+        throw new Error(
+          `applyPlugin failed, type is not defined or is not matched, got ${opts.type}.`,
+        );
+    }
+  }
+
+  // 运行方法
+  async run({ name, args = {} }: { name: string; args?: any }) {
+    args._ = args._ || [];
+    if (args._[0] === name) args._.shift();
+
+    this.args = args;
+    await this.init();
+
+    this.setStage(ServiceStage.run);
+    await this.applyPlugins({
+      key: 'onStart',
+      type: ApplyPluginsType.event,
+      args: {
+        args,
+      },
+    });
+    return this.runCommand({ name, args });
+  }
+  
+  // 运行命令
+  async runCommand({ name, args = {} }: { name: string; args?: any }) {
+    assert(this.stage &gt;= ServiceStage.init, `service is not initialized.`);
+
+    args._ = args._ || [];
+    if (args._[0] === name) args._.shift();
+
+    const command =
+      typeof this.commands[name] === 'string'
+        ? this.commands[this.commands[name] as string]
+        : this.commands[name];
+    assert(command, `run command failed, command ${name} does not exists.`);
+
+    const { fn } = command as ICommand;
+    return fn({ args });
+  }
+}
+</code></pre></div><h4 id="getpaths-ts"><a href="#getpaths-ts" class="header-anchor">#</a> getPaths.ts</h4> <div class="language- extra-class"><pre class="language-text"><code>export default function getServicePaths({
+  cwd,
+  config,
+  env,
+}: {
+  cwd: string;
+  config: any;
+  env?: string;
+}): IServicePaths {
+  // 项目根目录
+  let absSrcPath = cwd;
+
+  // 如果存在src目录，将absSrcPath定位到src路径下
+  if (isDirectoryAndExist(join(cwd, 'src'))) {
+    absSrcPath = join(cwd, 'src');
+  }
+
+  // src下是page还是pages
+  const absPagesPath = config.singular
+    ? join(absSrcPath, 'page')
+    : join(absSrcPath, 'pages');
+
+  // 临时文件路径
+  const tmpDir = ['.umi', env !== 'development' &amp;&amp; env]
+    .filter(Boolean)
+    .join('-');
+
+  // outputPath 指定输出路径
+  return normalizeWithWinPath({
+    cwd,
+    absNodeModulesPath: join(cwd, 'node_modules'),
+    absOutputPath: join(cwd, config.outputPath || './dist'),
+    absSrcPath,
+    absPagesPath,
+    absTmpPath: join(absSrcPath, tmpDir),
+  });
+}
+</code></pre></div><h4 id="pluginapi-ts"><a href="#pluginapi-ts" class="header-anchor">#</a> PluginAPI.ts</h4> <p>描述插件核心方法的类，插件的编写需借助这个api，扩展方法需要在preset-built-in的presets集合中进行扩展</p> <div class="language- extra-class"><pre class="language-text"><code>export default class PluginAPI {
+  // 插件的id，区别不同的插件
+  id: string;
+  // 插件内的不同内容，如方法及数据等
+  key: string;
+  service: Service;
+  Html: typeof Html;
+  utils: typeof utils;
+  logger: Logger;
+
+  constructor(opts: IOpts) {
+    this.id = opts.id;
+    this.key = opts.key;
+    this.service = opts.service;
+    this.utils = utils;
+    this.Html = Html;
+    this.logger = new Logger(`umi:plugin:${this.id || this.key}`);
+  }
+
+  // TODO: reversed keys
+  describe({
+    id,
+    key,
+    config,
+    enableBy,
+  }: {
+    id?: string;
+    key?: string;
+    config?: IPluginConfig;
+    enableBy?: EnableBy | (() =&gt; boolean);
+  } = {}) {
+    const { plugins } = this.service;
+    // this.id and this.key is generated automatically
+    // so we need to diff first
+    if (id &amp;&amp; this.id !== id) {
+      if (plugins[id]) {
+        const name = plugins[id].isPreset ? 'preset' : 'plugin';
+        throw new Error(
+          `api.describe() failed, ${name} ${id} is already registered by ${plugins[id].path}.`,
+        );
+      }
+      plugins[id] = plugins[this.id];
+      plugins[id].id = id;
+      delete plugins[this.id];
+      this.id = id;
+    }
+    if (key &amp;&amp; this.key !== key) {
+      this.key = key;
+      plugins[this.id].key = key;
+    }
+
+    if (config) {
+      plugins[this.id].config = config;
+    }
+
+    plugins[this.id].enableBy = enableBy || EnableBy.register;
+  }
+
+  // 注册插件
+  register(hook: IHook) {
+    assert(
+      hook.key &amp;&amp; typeof hook.key === 'string',
+      `api.register() failed, hook.key must supplied and should be string, but got ${hook.key}.`,
+    );
+    assert(
+      hook.fn &amp;&amp; typeof hook.fn === 'function',
+      `api.register() failed, hook.fn must supplied and should be function, but got ${hook.fn}.`,
+    );
+    this.service.hooksByPluginId[this.id] = (
+      this.service.hooksByPluginId[this.id] || []
+    ).concat(hook);
+  }
+
+  // 注册插件命令
+  registerCommand(command: ICommand) {
+    const { name, alias } = command;
+    assert(
+      !this.service.commands[name],
+      `api.registerCommand() failed, the command ${name} is exists.`,
+    );
+    this.service.commands[name] = command;
+    if (alias) {
+      this.service.commands[alias] = name;
+    }
+  }
+
+  // 注册预设
+  registerPresets(presets: (IPreset | string)[]) {
+    assert(
+      this.service.stage === ServiceStage.initPresets,
+      `api.registerPresets() failed, it should only used in presets.`,
+    );
+    assert(
+      Array.isArray(presets),
+      `api.registerPresets() failed, presets must be Array.`,
+    );
+    const extraPresets = presets.map((preset) =&gt; {
+      return isValidPlugin(preset as any)
+        ? (preset as IPreset)
+        : pathToObj({
+            type: PluginType.preset,
+            path: preset as string,
+            cwd: this.service.cwd,
+          });
+    });
+    // 插到最前面，下个 while 循环优先执行
+    this.service._extraPresets.splice(0, 0, ...extraPresets);
+  }
+
+  // 在 preset 初始化阶段放后面，在插件注册阶段放前面
+  registerPlugins(plugins: (IPlugin | string)[]) {
+    assert(
+      this.service.stage === ServiceStage.initPresets ||
+        this.service.stage === ServiceStage.initPlugins,
+      `api.registerPlugins() failed, it should only be used in registering stage.`,
+    );
+    assert(
+      Array.isArray(plugins),
+      `api.registerPlugins() failed, plugins must be Array.`,
+    );
+    const extraPlugins = plugins.map((plugin) =&gt; {
+      return isValidPlugin(plugin as any)
+        ? (plugin as IPreset)
+        : pathToObj({
+            type: PluginType.plugin,
+            path: plugin as string,
+            cwd: this.service.cwd,
+          });
+    });
+    if (this.service.stage === ServiceStage.initPresets) {
+      this.service._extraPlugins.push(...extraPlugins);
+    } else {
+      this.service._extraPlugins.splice(0, 0, ...extraPlugins);
+    }
+  }
+
+  // 注册方法
+  registerMethod({
+    name,
+    fn,
+    exitsError = true,
+  }: {
+    name: string;
+    fn?: Function;
+    exitsError?: boolean;
+  }) {
+    if (this.service.pluginMethods[name]) {
+      if (exitsError) {
+        throw new Error(
+          `api.registerMethod() failed, method ${name} is already exist.`,
+        );
+      } else {
+        return;
+      }
+    }
+    this.service.pluginMethods[name] =
+      fn ||
+      // 这里不能用 arrow function，this 需指向执行此方法的 PluginAPI
+      // 否则 pluginId 会不会，导致不能正确 skip plugin
+      function (fn: Function) {
+        const hook = {
+          key: name,
+          ...(utils.lodash.isPlainObject(fn) ? fn : { fn }),
+        };
+        // @ts-ignore
+        this.register(hook);
+      };
+  }
+
+  // 跳过插件，不执行的插件
+  skipPlugins(pluginIds: string[]) {
+    pluginIds.forEach((pluginId) =&gt; {
+      this.service.skipPluginIds.add(pluginId);
+    });
+  }
+}
+</code></pre></div><h3 id="route"><a href="#route" class="header-anchor">#</a> Route</h3> <table><thead><tr><th style="text-align:left;">文件名</th> <th style="text-align:center;">作用</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">Route.ts</td> <td style="text-align:center;">路由的核心类</td> <td style="text-align:right;">封装了路由匹配等方法</td></tr> <tr><td style="text-align:left;">routesToJSON.ts</td> <td style="text-align:center;">路由转化为json的方法</td> <td style="text-align:right;">用于前后端传递</td></tr> <tr><td style="text-align:left;">getConventionalRoutes.ts</td> <td style="text-align:center;">获取默认路由</td> <td style="text-align:right;">前端开发时常用写的路由表</td></tr></tbody></table> <h4 id="route-ts"><a href="#route-ts" class="header-anchor">#</a> Route.ts</h4> <div class="language- extra-class"><pre class="language-text"><code>class Route {
+  opts: IOpts;
+  constructor(opts?: IOpts) {
+    this.opts = opts || {};
+  }
+
+  async getRoutes(opts: IGetRoutesOpts) {
+	// config 用户 + 插件配置
+	// root 是 absPagesPath
+	// componentPrefix是路径的分割符号，默认是 &quot;/&quot;
+    const { config, root, componentPrefix } = opts;
+
+    // 避免修改配置里的 routes，导致重复 patch
+    let routes = lodash.cloneDeep(config.routes);
+    let isConventional = false;
+
+	// 如果用户没有自定义，则使用约定式路由；如果配置了则约定式路由无效
+    if (!routes) {
+      assert(root, `opts.root must be supplied for conventional routes.`);
+
+	  // 默认路由的拼接方式
+      routes = this.getConventionRoutes({
+        root: root!,
+        config,
+        componentPrefix,
+      });
+      isConventional = true;
+    }
+
+	// 生成的路由可以被插件新增，修改，删除
+    await this.patchRoutes(routes, {
+      ...opts,
+      isConventional,
+    });
+    return routes;
+  }
+
+  // TODO:
+  // 1. 移动 /404 到最后，并处理 component 和 redirect
+  async patchRoutes(routes: IRoute[], opts: IGetRoutesOpts) {
+	// 执行插件的 onPatchRoutesBefore 钩子函数对路由修改
+    if (this.opts.onPatchRoutesBefore) {
+      await this.opts.onPatchRoutesBefore({
+        routes,
+        parentRoute: opts.parentRoute,
+      });
+    }
+
+	// routes中的route执行patrchRoute方法
+    for (const route of routes) {
+      await this.patchRoute(route, opts);
+    }
+
+	// onPatchRoutes进行最终的路由修改
+    if (this.opts.onPatchRoutes) {
+      await this.opts.onPatchRoutes({
+        routes,
+        parentRoute: opts.parentRoute,
+      });
+    }
+  }
+
+  async patchRoute(route: IRoute, opts: IGetRoutesOpts) {
+    if (this.opts.onPatchRouteBefore) {
+      await this.opts.onPatchRouteBefore({
+        route,
+        parentRoute: opts.parentRoute,
+      });
+    }
+
+    // route.path 的修改需要在子路由 patch 之前做
+    if (
+      route.path &amp;&amp;
+      route.path.charAt(0) !== '/' &amp;&amp;
+      !/^https?:\/\//.test(route.path)
+    ) {
+      route.path = winPath(join(opts.parentRoute?.path || '/', route.path));
+    }
+    if (route.redirect &amp;&amp; route.redirect.charAt(0) !== '/') {
+      route.redirect = winPath(
+        join(opts.parentRoute?.path || '/', route.redirect),
+      );
+    }
+
+	// 递归 patchRoutes
+    if (route.routes) {
+      await this.patchRoutes(route.routes, {
+        ...opts,
+        parentRoute: route,
+      });
+    } else {
+      if (!('exact' in route)) {
+        // exact by default
+        route.exact = true;
+      }
+    }
+
+    // resolve component path
+    if (
+      route.component &amp;&amp;
+      !opts.isConventional &amp;&amp;
+      typeof route.component === 'string' &amp;&amp;
+      !route.component.startsWith('@/') &amp;&amp;
+      !path.isAbsolute(route.component)
+    ) {
+      route.component = winPath(join(opts.root, route.component));
+    }
+
+    // resolve wrappers path
+    if (route.wrappers) {
+      route.wrappers = route.wrappers.map((wrapper) =&gt; {
+        if (wrapper.startsWith('@/') || path.isAbsolute(wrapper)) {
+          return wrapper;
+        } else {
+          return winPath(join(opts.root, wrapper));
+        }
+      });
+    }
+
+	// onPatchRoute 钩子函数
+    if (this.opts.onPatchRoute) {
+      await this.opts.onPatchRoute({
+        route,
+        parentRoute: opts.parentRoute,
+      });
+    }
+  }
+
+  // 约定式路由
+  getConventionRoutes(opts: any): IRoute[] {
+    return getConventionalRoutes(opts);
+  }
+
+  getJSON(opts: { routes: IRoute[]; config: IConfig; cwd: string }) {
+    return routesToJSON(opts);
+  }
+
+  getPaths({ routes }: { routes: IRoute[] }): string[] {
+    return lodash.uniq(
+      routes.reduce((memo: string[], route) =&gt; {
+        if (route.path) memo.push(route.path);
+        if (route.routes)
+          memo = memo.concat(this.getPaths({ routes: route.routes }));
+        return memo;
+      }, []),
+    );
+  }
+}
+</code></pre></div><h4 id="routestojson-ts"><a href="#routestojson-ts" class="header-anchor">#</a> routesToJSON.ts</h4> <div class="language- extra-class"><pre class="language-text"><code>// 正则匹配，然后JSON.stringify()
+export default function ({ routes, config, cwd }: IOpts) {
+  // 因为要往 routes 里加无用的信息，所以必须 deep clone 一下，避免污染
+  const clonedRoutes = lodash.cloneDeep(routes);
+
+  if (config.dynamicImport) {
+    patchRoutes(clonedRoutes);
+  }
+
+  function patchRoutes(routes: IRoute[]) {
+    routes.forEach(patchRoute);
+  }
+
+  function patchRoute(route: IRoute) {
+    if (route.component &amp;&amp; !isFunctionComponent(route.component)) {
+      const webpackChunkName = routeToChunkName({
+        route,
+        cwd,
+      });
+      // 解决 SSR 开启动态加载后，页面闪烁问题
+      if (config?.ssr &amp;&amp; config?.dynamicImport) {
+        route._chunkName = webpackChunkName;
+      }
+      route.component = [
+        route.component,
+        webpackChunkName,
+        route.path || EMPTY_PATH,
+      ].join(SEPARATOR);
+    }
+    if (route.routes) {
+      patchRoutes(route.routes);
+    }
+  }
+
+  function isFunctionComponent(component: string) {
+    return (
+      /^\((.+)?\)(\s+)?=&gt;/.test(component) ||
+      /^function([^\(]+)?\(([^\)]+)?\)([^{]+)?{/.test(component)
+    );
+  }
+
+  function replacer(key: string, value: any) {
+    switch (key) {
+      case 'component':
+        if (isFunctionComponent(value)) return value;
+        if (config.dynamicImport) {
+          const [component, webpackChunkName] = value.split(SEPARATOR);
+          let loading = '';
+          if (config.dynamicImport.loading) {
+            loading = `, loading: LoadingComponent`;
+          }
+          return `dynamic({ loader: () =&gt; import(/* webpackChunkName: '${webpackChunkName}' */'${component}')${loading}})`;
+        } else {
+          return `require('${value}').default`;
+        }
+      case 'wrappers':
+        const wrappers = value.map((wrapper: string) =&gt; {
+          if (config.dynamicImport) {
+            let loading = '';
+            if (config.dynamicImport.loading) {
+              loading = `, loading: LoadingComponent`;
+            }
+            return `dynamic({ loader: () =&gt; import(/* webpackChunkName: 'wrappers' */'${wrapper}')${loading}})`;
+          } else {
+            return `require('${wrapper}').default`;
+          }
+        });
+        return `[${wrappers.join(', ')}]`;
+      default:
+        return value;
+    }
+  }
+
+  return JSON.stringify(clonedRoutes, replacer, 2)
+    .replace(/\&quot;component\&quot;: (\&quot;(.+?)\&quot;)/g, (global, m1, m2) =&gt; {
+      return `&quot;component&quot;: ${m2.replace(/\^/g, '&quot;')}`;
+    })
+    .replace(/\&quot;wrappers\&quot;: (\&quot;(.+?)\&quot;)/g, (global, m1, m2) =&gt; {
+      return `&quot;wrappers&quot;: ${m2.replace(/\^/g, '&quot;')}`;
+    })
+    .replace(/\\r\\n/g, '\r\n')
+    .replace(/\\n/g, '\r\n');
+}
+</code></pre></div><h4 id="getconventionalroutes-ts"><a href="#getconventionalroutes-ts" class="header-anchor">#</a> getConventionalRoutes.ts</h4> <p>需要考虑多种情况，如：目录、文件、动态路由等</p> <div class="language- extra-class"><pre class="language-text"><code>// 考虑多种情况：
+// 可能是目录，没有后缀，比如 [post]/add.tsx
+// 可能是文件，有后缀，比如 [id].tsx
+// [id$] 是可选动态路由
+const RE_DYNAMIC_ROUTE = /^\[(.+?)\]/;
+
+// 获取文件，主要就是fs模块的读写问价等方法
+function getFiles(root: string) {
+  if (!existsSync(root)) return [];
+  return readdirSync(root).filter((file) =&gt; {
+    const absFile = join(root, file);
+    const fileStat = statSync(absFile);
+    const isDirectory = fileStat.isDirectory();
+    const isFile = fileStat.isFile();
+    if (
+      isDirectory &amp;&amp;
+      ['components', 'component', 'utils', 'util'].includes(file)
+    ) {
+      return false;
+    }
+    if (file.charAt(0) === '.') return false;
+    if (file.charAt(0) === '_') return false;
+    // exclude test file
+    if (/\.(test|spec|e2e)\.(j|t)sx?$/.test(file)) return false;
+    // d.ts
+    if (/\.d\.ts$/.test(file)) return false;
+    if (isFile) {
+      if (!/\.(j|t)sx?$/.test(file)) return false;
+      const content = readFileSync(absFile, 'utf-8');
+      try {
+        if (!isReactComponent(content)) return false;
+      } catch (e) {
+        throw new Error(
+          `Parse conventional route component ${absFile} failed, ${e.message}`,
+        );
+      }
+    }
+    return true;
+  });
+}
+
+// 文件路由的reducer方法
+function fileToRouteReducer(opts: IOpts, memo: IRoute[], file: string) {
+  const { root, relDir = '' } = opts;
+  const absFile = join(root, relDir, file);
+  const stats = statSync(absFile);
+  const __isDynamic = RE_DYNAMIC_ROUTE.test(file);
+
+  if (stats.isDirectory()) {
+    const relFile = join(relDir, file);
+    const layoutFile = getFile({
+      base: join(root, relFile),
+      fileNameWithoutExt: '_layout',
+      type: 'javascript',
+    });
+    const route = {
+      path: normalizePath(relFile, opts),
+      routes: getRoutes({
+        ...opts,
+        relDir: join(relFile),
+      }),
+      __isDynamic,
+      ...(layoutFile
+        ? {
+            component: layoutFile.path,
+          }
+        : {
+            exact: true,
+            __toMerge: true,
+          }),
+    };
+    memo.push(normalizeRoute(route, opts));
+  } else {
+    const bName = basename(file, extname(file));
+    memo.push(
+      normalizeRoute(
+        {
+          path: normalizePath(join(relDir, bName), opts),
+          exact: true,
+          component: absFile,
+          __isDynamic,
+        },
+        opts,
+      ),
+    );
+  }
+  return memo;
+}
+
+// 格式化路由
+function normalizeRoute(route: IRoute, opts: IOpts) {
+  let props: unknown = undefined;
+  if (route.component) {
+    try {
+      props = getExportProps(readFileSync(route.component, 'utf-8'));
+    } catch (e) {
+      throw new Error(
+        `Parse conventional route component ${route.component} failed, ${e.message}`,
+      );
+    }
+    route.component = winPath(relative(join(opts.root, '..'), route.component));
+    route.component = `${opts.componentPrefix || '@/'}${route.component}`;
+  }
+  return {
+    ...route,
+    ...(typeof props === 'object' ? props : {}),
+  };
+}
+
+// 格式化路径
+function normalizePath(path: string, opts: IOpts) {
+  path = winPath(path)
+    .split('/')
+    .map((p) =&gt; {
+      // dynamic route
+      p = p.replace(RE_DYNAMIC_ROUTE, ':$1');
+
+      // :post$ =&gt; :post?
+      if (p.endsWith('$')) {
+        p = p.slice(0, -1) + '?';
+      }
+      return p;
+    })
+    .join('/');
+
+  path = `/${path}`;
+
+  // /index/index -&gt; /
+  if (path === '/index/index') {
+    path = '/';
+  }
+
+  // /xxxx/index -&gt; /xxxx/
+  path = path.replace(/\/index$/, '/');
+
+  // remove the last slash
+  // e.g. /abc/ -&gt; /abc
+  if (path !== '/' &amp;&amp; path.slice(-1) === '/') {
+    path = path.slice(0, -1);
+  }
+
+  return path;
+}
+
+// 格式化路由表
+function normalizeRoutes(routes: IRoute[]): IRoute[] {
+  const paramsRoutes: IRoute[] = [];
+  const exactRoutes: IRoute[] = [];
+  const layoutRoutes: IRoute[] = [];
+
+  routes.forEach((route) =&gt; {
+    const { __isDynamic, exact } = route;
+    delete route.__isDynamic;
+    if (__isDynamic) {
+      paramsRoutes.push(route);
+    } else if (exact) {
+      exactRoutes.push(route);
+    } else {
+      layoutRoutes.push(route);
+    }
+  });
+
+  assert(
+    paramsRoutes.length &lt;= 1,
+    `We should not have multiple dynamic routes under a directory.`,
+  );
+
+  return [...exactRoutes, ...layoutRoutes, ...paramsRoutes].reduce(
+    (memo, route) =&gt; {
+      if (route.__toMerge &amp;&amp; route.routes) {
+        memo = memo.concat(route.routes);
+      } else {
+        memo.push(route);
+      }
+      return memo;
+    },
+    [] as IRoute[],
+  );
+}
+
+// 获取路由表
+export default function getRoutes(opts: IOpts) {
+  const { root, relDir = '', config } = opts;
+  const files = getFiles(join(root, relDir));
+  const routes = normalizeRoutes(
+    files.reduce(fileToRouteReducer.bind(null, opts), []),
+  );
+
+  if (!relDir) {
+    const globalLayoutFile = getFile({
+      base: root,
+      fileNameWithoutExt: `../${config.singular ? 'layout' : 'layouts'}/index`,
+      type: 'javascript',
+    });
+    if (globalLayoutFile) {
+      return [
+        normalizeRoute(
+          {
+            path: '/',
+            component: globalLayoutFile.path,
+            routes,
+          },
+          opts,
+        ),
+      ];
+    }
+  }
+
+  return routes;
+}
+</code></pre></div><h3 id="config"><a href="#config" class="header-anchor">#</a> Config</h3> <table><thead><tr><th style="text-align:left;">文件名</th> <th style="text-align:center;">作用</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">Config.ts</td> <td style="text-align:center;">核心配置类</td> <td style="text-align:right;">关联用户输入与脚手架输出的中介者</td></tr></tbody></table> <div class="language- extra-class"><pre class="language-text"><code>export default class Config {
+  cwd: string;
+  service: Service;
+  config?: object;
+  localConfig?: boolean;
+  configFile?: string | null;
+
+  constructor(opts: IOpts) {
+    this.cwd = opts.cwd || process.cwd();
+    this.service = opts.service;
+    this.localConfig = opts.localConfig;
+  }
+
+  // 获取默认配置
+  async getDefaultConfig() {
+    const pluginIds = Object.keys(this.service.plugins);
+
+    // collect default config
+    let defaultConfig = pluginIds.reduce((memo, pluginId) =&gt; {
+      const { key, config = {} } = this.service.plugins[pluginId];
+      if ('default' in config) memo[key] = config.default;
+      return memo;
+    }, {});
+
+    return defaultConfig;
+  }
+
+  // 获取配置的方法
+  getConfig({ defaultConfig }: { defaultConfig: object }) {
+    assert(
+      this.service.stage &gt;= ServiceStage.pluginReady,
+      `Config.getConfig() failed, it should not be executed before plugin is ready.`,
+    );
+
+    const userConfig = this.getUserConfig();
+    // 用于提示用户哪些 key 是未定义的
+    // TODO: 考虑不排除 false 的 key
+    const userConfigKeys = Object.keys(userConfig).filter((key) =&gt; {
+      return userConfig[key] !== false;
+    });
+
+    // get config
+    const pluginIds = Object.keys(this.service.plugins);
+    pluginIds.forEach((pluginId) =&gt; {
+      const { key, config = {} } = this.service.plugins[pluginId];
+      // recognize as key if have schema config
+      if (!config.schema) return;
+
+      const value = getUserConfigWithKey({ key, userConfig });
+      // 不校验 false 的值，此时已禁用插件
+      if (value === false) return;
+
+      // do validate
+      const schema = config.schema(joi);
+      assert(
+        joi.isSchema(schema),
+        `schema return from plugin ${pluginId} is not valid schema.`,
+      );
+      const { error } = schema.validate(value);
+      if (error) {
+        const e = new Error(
+          `Validate config &quot;${key}&quot; failed, ${error.message}`,
+        );
+        e.stack = error.stack;
+        throw e;
+      }
+
+      // remove key
+      const index = userConfigKeys.indexOf(key.split('.')[0]);
+      if (index !== -1) {
+        userConfigKeys.splice(index, 1);
+      }
+
+      // update userConfig with defaultConfig
+      if (key in defaultConfig) {
+        const newValue = mergeDefault({
+          defaultConfig: defaultConfig[key],
+          config: value,
+        });
+        updateUserConfigWithKey({
+          key,
+          value: newValue,
+          userConfig,
+        });
+      }
+    });
+
+    if (userConfigKeys.length) {
+      const keys = userConfigKeys.length &gt; 1 ? 'keys' : 'key';
+      throw new Error(`Invalid config ${keys}: ${userConfigKeys.join(', ')}`);
+    }
+
+    return userConfig;
+  }
+
+  // 获取用户配置
+  getUserConfig() {
+    const configFile = this.getConfigFile();
+    this.configFile = configFile;
+    // 潜在问题：
+    // .local 和 .env 的配置必须有 configFile 才有效
+    if (configFile) {
+      let envConfigFile;
+      if (process.env.UMI_ENV) {
+        const envConfigFileName = this.addAffix(
+          configFile,
+          process.env.UMI_ENV,
+        );
+        const fileNameWithoutExt = envConfigFileName.replace(
+          extname(envConfigFileName),
+          '',
+        );
+        envConfigFile = getFile({
+          base: this.cwd,
+          fileNameWithoutExt,
+          type: 'javascript',
+        })?.filename;
+        if (!envConfigFile) {
+          throw new Error(
+            `get user config failed, ${envConfigFile} does not exist, but process.env.UMI_ENV is set to ${process.env.UMI_ENV}.`,
+          );
+        }
+      }
+      const files = [
+        configFile,
+        envConfigFile,
+        this.localConfig &amp;&amp; this.addAffix(configFile, 'local'),
+      ]
+        .filter((f): f is string =&gt; !!f)
+        .map((f) =&gt; join(this.cwd, f))
+        .filter((f) =&gt; existsSync(f));
+
+      // clear require cache and set babel register
+      const requireDeps = files.reduce((memo: string[], file) =&gt; {
+        memo = memo.concat(parseRequireDeps(file));
+        return memo;
+      }, []);
+      requireDeps.forEach(cleanRequireCache);
+      this.service.babelRegister.setOnlyMap({
+        key: 'config',
+        value: requireDeps,
+      });
+
+      // require config and merge
+      return this.mergeConfig(...this.requireConfigs(files));
+    } else {
+      return {};
+    }
+  }
+
+  addAffix(file: string, affix: string) {
+    const ext = extname(file);
+    return file.replace(new RegExp(`${ext}$`), `.${affix}${ext}`);
+  }
+
+  requireConfigs(configFiles: string[]) {
+    return configFiles.map((f) =&gt; compatESModuleRequire(require(f)));
+  }
+
+  mergeConfig(...configs: object[]) {
+    let ret = {};
+    for (const config of configs) {
+      // TODO: 精细化处理，比如处理 dotted config key
+      ret = deepmerge(ret, config);
+    }
+    return ret;
+  }
+
+  getConfigFile(): string | null {
+    // TODO: support custom config file
+    const configFile = CONFIG_FILES.find((f) =&gt; existsSync(join(this.cwd, f)));
+    return configFile ? winPath(configFile) : null;
+  }
+
+  getWatchFilesAndDirectories() {
+    const umiEnv = process.env.UMI_ENV;
+    const configFiles = lodash.clone(CONFIG_FILES);
+    CONFIG_FILES.forEach((f) =&gt; {
+      if (this.localConfig) configFiles.push(this.addAffix(f, 'local'));
+      if (umiEnv) configFiles.push(this.addAffix(f, umiEnv));
+    });
+
+    const configDir = winPath(join(this.cwd, 'config'));
+
+    const files = configFiles
+      .reduce&lt;string[]&gt;((memo, f) =&gt; {
+        const file = winPath(join(this.cwd, f));
+        if (existsSync(file)) {
+          memo = memo.concat(parseRequireDeps(file));
+        } else {
+          memo.push(file);
+        }
+        return memo;
+      }, [])
+      .filter((f) =&gt; !f.startsWith(configDir));
+
+    return [configDir].concat(files);
+  }
+
+  // 发布订阅，监听用户配置的修改
+  watch(opts: {
+    userConfig: object;
+    onChange: (args: {
+      userConfig: any;
+      pluginChanged: IChanged[];
+      valueChanged: IChanged[];
+    }) =&gt; void;
+  }) {
+    let paths = this.getWatchFilesAndDirectories();
+    let userConfig = opts.userConfig;
+    const watcher = chokidar.watch(paths, {
+      ignoreInitial: true,
+      cwd: this.cwd,
+    });
+    watcher.on('all', (event, path) =&gt; {
+      console.log(chalk.green(`[${event}] ${path}`));
+      const newPaths = this.getWatchFilesAndDirectories();
+      const diffs = lodash.difference(newPaths, paths);
+      if (diffs.length) {
+        watcher.add(diffs);
+        paths = paths.concat(diffs);
+      }
+
+      const newUserConfig = this.getUserConfig();
+      const pluginChanged: IChanged[] = [];
+      const valueChanged: IChanged[] = [];
+      Object.keys(this.service.plugins).forEach((pluginId) =&gt; {
+        const { key, config = {} } = this.service.plugins[pluginId];
+        // recognize as key if have schema config
+        if (!config.schema) return;
+        if (!isEqual(newUserConfig[key], userConfig[key])) {
+          const changed = {
+            key,
+            pluginId: pluginId,
+          };
+          if (newUserConfig[key] === false || userConfig[key] === false) {
+            pluginChanged.push(changed);
+          } else {
+            valueChanged.push(changed);
+          }
+        }
+      });
+      debug(`newUserConfig: ${JSON.stringify(newUserConfig)}`);
+      debug(`oldUserConfig: ${JSON.stringify(userConfig)}`);
+      debug(`pluginChanged: ${JSON.stringify(pluginChanged)}`);
+      debug(`valueChanged: ${JSON.stringify(valueChanged)}`);
+
+      if (pluginChanged.length || valueChanged.length) {
+        opts.onChange({
+          userConfig: newUserConfig,
+          pluginChanged,
+          valueChanged,
+        });
+      }
+      userConfig = newUserConfig;
+    });
+
+    return () =&gt; {
+      watcher.close();
+    };
+  }
+}
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p><img src="/tech/front/umi20210222/umi06.png" alt="图片"></p> <p><img src="/tech/front/umi20210222/umi07.png" alt="图片"></p> <p>umi是蚂蚁金服前端架构的基石，其他的各种扩展应用，诸如：antd组件库、dva数据流等，都是基于umi来构建的，而Ant Design Pro算是蚂蚁金服中后台应用的一个最佳实践。umi对于自研前端生态的核心基础库有着重要的参考价值，对整个生态的支撑也起着“牵一发而动全身”的作用，如果用一句话来概括umi的核心设计理念，那就是“约定大于配置”，其他各种设计都是围绕着这一设计哲学展开的，因而对于生态的建设要想好我想给外界传递一种什么样的价值与理念，反复造轮子是没有意义的，只有真正能解决问题，好用的轮子才能走的更长远！</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://github.com/umijs/umi" target="_blank" rel="noopener noreferrer">umi官方仓库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/lz710117239/article/details/86603811" target="_blank" rel="noopener noreferrer">微内核架构<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://segmentfault.com/a/1190000019719722" target="_blank" rel="noopener noreferrer">基于Umi的开发方案<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.zhihu.com/column/c_1269578954706702336" target="_blank" rel="noopener noreferrer">神马翔：umi 源码专栏<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/micro20210125.html" class="prev">
+        几种微前端方案探究
+      </a></span> <span class="next"><a href="/tech/front/react20210305.html">
+        react17源码浅析
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/87.dd59cc6f.js" defer></script>
+  </body>
+</html>

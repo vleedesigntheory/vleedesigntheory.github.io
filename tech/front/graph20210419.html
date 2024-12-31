@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>可视化图布局算法浅析 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/58.4574e3c3.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="active sidebar-link">可视化图布局算法浅析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/graph20210419.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/graph20210419.html#分类" class="sidebar-link">分类</a></li><li class="sidebar-sub-header"><a href="/tech/front/graph20210419.html#常见算法" class="sidebar-link">常见算法</a></li><li class="sidebar-sub-header"><a href="/tech/front/graph20210419.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/graph20210419.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="可视化图布局算法浅析"><a href="#可视化图布局算法浅析" class="header-anchor">#</a> 可视化图布局算法浅析</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>图算法在前端领域考察的较少，一般除非是要写框架或者打包工具对依赖关系处理（DAG）会用到，前端对图算法的考察一般是比较少的，而对于可视化领域而言，图又是必不可少的一种展示方式，其中对于边和节点的展示布局方案结合美学效果会有不同的算法实现，本文旨在介绍一些常见的通用布局算法，其中的每个小的布局方案也会有不同的分支实现</p> <h2 id="分类"><a href="#分类" class="header-anchor">#</a> 分类</h2> <p><img src="/tech/front/graph20210419/graph.png" alt="图片"></p> <table><thead><tr><th style="text-align:left;">简写</th> <th style="text-align:center;">算法名称</th> <th style="text-align:center;">分类</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">grid</td> <td style="text-align:center;">网格布局算法</td> <td style="text-align:center;">几何布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/grid.png" alt="图片"></td></tr> <tr><td style="text-align:left;">circle</td> <td style="text-align:center;">环形布局算法</td> <td style="text-align:center;">几何布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/circle.png" alt="图片"></td></tr> <tr><td style="text-align:left;">concentric</td> <td style="text-align:center;">同心圆布局算法</td> <td style="text-align:center;">几何布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/concentric.png" alt="图片"></td></tr> <tr><td style="text-align:left;">radial</td> <td style="text-align:center;">辐射状布局算法</td> <td style="text-align:center;">几何布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/radial.png" alt="图片"></td></tr> <tr><td style="text-align:left;">avsdf</td> <td style="text-align:center;">邻接点最小度优先算法（Adjacent Vertex with Smallest Degree First）</td> <td style="text-align:center;">几何布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/avsdf.png" alt="图片"></td></tr> <tr><td style="text-align:left;">dagre</td> <td style="text-align:center;">有向无环图树布局算法（Directed Acyclic Graph and Trees）</td> <td style="text-align:center;">层级布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/dagre.png" alt="图片"></td></tr> <tr><td style="text-align:left;">breadthfirst</td> <td style="text-align:center;">广度优先布局算法</td> <td style="text-align:center;">层级布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/breadthfirst.png" alt="图片"></td></tr> <tr><td style="text-align:left;">elk</td> <td style="text-align:center;">Eclipse布局算法（Eclipse Layout Kernel）</td> <td style="text-align:center;">层级布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/elk.png" alt="图片"></td></tr> <tr><td style="text-align:left;">klay</td> <td style="text-align:center;">K层布局算法（K Lay）</td> <td style="text-align:center;">层级布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/klay.png" alt="图片"></td></tr> <tr><td style="text-align:left;">fcose</td> <td style="text-align:center;">最快复合弹簧内置布局算法（Fast Compound Spring Embedder）</td> <td style="text-align:center;">力导布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/fcose.png" alt="图片"></td></tr> <tr><td style="text-align:left;">cola</td> <td style="text-align:center;">约束布局（Constraint-based Layout）</td> <td style="text-align:center;">力导布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/cola.png" alt="图片"></td></tr> <tr><td style="text-align:left;">cise</td> <td style="text-align:center;">环形弹簧内置布局算法（Circular Spring Embedder）</td> <td style="text-align:center;">力导布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/cise.png" alt="图片"></td></tr> <tr><td style="text-align:left;">elk2</td> <td style="text-align:center;">Eclipse布局算法（Eclipse Layout Kernel）</td> <td style="text-align:center;">力导布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/elk2.png" alt="图片"></td></tr> <tr><td style="text-align:left;">euler</td> <td style="text-align:center;">欧拉布局算法</td> <td style="text-align:center;">力导布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/euler.png" alt="图片"></td></tr> <tr><td style="text-align:left;">spread</td> <td style="text-align:center;">扩展布局算法</td> <td style="text-align:center;">力导布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/spread.png" alt="图片"></td></tr> <tr><td style="text-align:left;">fruchterman</td> <td style="text-align:center;">Fruchterman-Reingold布局算法</td> <td style="text-align:center;">力导布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/fruchterman.png" alt="图片"></td></tr> <tr><td style="text-align:left;">combo</td> <td style="text-align:center;">混合布局算法</td> <td style="text-align:center;">力导布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/combo.png" alt="图片"></td></tr> <tr><td style="text-align:left;">mds</td> <td style="text-align:center;">高维数据降维布局算法（Multi Dimensional Scaling）</td> <td style="text-align:center;">其他布局算法</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/mds.png" alt="图片"></td></tr> <tr><td style="text-align:left;">random</td> <td style="text-align:center;">随机布局算法</td> <td style="text-align:center;">其他布局</td> <td style="text-align:right;"><img src="/tech/front/graph20210419/random.png" alt="图片"></td></tr></tbody></table> <h2 id="常见算法"><a href="#常见算法" class="header-anchor">#</a> 常见算法</h2> <h3 id="fruchterman-reingold布局算法"><a href="#fruchterman-reingold布局算法" class="header-anchor">#</a> Fruchterman-Reingold布局算法</h3> <p><img src="/tech/front/graph20210419/energy.png" alt="图片"></p> <p><img src="/tech/front/graph20210419/sa.png" alt="图片"></p> <p>Fruchterman-Reingold算法属于力导布局的一种，其本质是将之前Eades的布点算法中的基于胡克定律模型进行了改进，使用了库伦斥力并且聚焦在最近相邻节点之间的能量模型，利用模拟退火等优化策略，结合美学标准对整体进行减少线交叉及整体均匀布局，其伪码描述如下图：</p> <p><img src="/tech/front/graph20210419/pseudo.png" alt="图片"></p> <p>对于更加细节的关于FR算法的推到，可以参看这篇论文<a href="http://www.mathe2.uni-bayreuth.de/axel/papers/reingold:graph_drawing_by_force_directed_placement.pdf" target="_blank" rel="noopener noreferrer">Graph Drawing by Force-directed Placement<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>；接下来，我们来看一下前端可视化领域的一些具体实现，我们结合Antv G6中的源码看一下实现思路：</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+* Antv的layout是专门发布了一个npm包 源码地址：https://github.com/antvis/layout
+* FR算法目录位置 https://github.com/antvis/layout/blob/master/src/layout/fruchterman.ts
+*/
+
+
+import {
+  OutNode,
+  Edge,
+  PointTuple,
+  IndexMap,
+  Point,
+  FruchtermanLayoutOptions
+} from &quot;./types&quot;;
+import { Base } from &quot;./base&quot;;
+import { isNumber } from &quot;../util&quot;;
+
+type NodeMap = {
+  [key: string]: INode;
+};
+
+type INode = OutNode &amp; {
+  cluster: string;
+};
+
+const SPEED_DIVISOR = 800;
+
+/**
+ * fruchterman 布局
+ */
+export class FruchtermanLayout extends Base {
+  /** 布局中心 */
+  public center: PointTuple;
+
+  /** 停止迭代的最大迭代数 */
+  public maxIteration: number = 1000;
+
+  /** 重力大小，影响图的紧凑程度 */
+  public gravity: number = 10;
+
+  /** 速度 */
+  public speed: number = 1;
+
+  /** 是否产生聚类力 */
+  public clustering: boolean = false;
+
+  /** 聚类力大小 */
+  public clusterGravity: number = 10;
+
+  public nodes: INode[] = [];
+
+  public edges: Edge[] = [];
+
+  public width: number = 300;
+
+  public height: number = 300;
+
+  public nodeMap: NodeMap = {};
+
+  public nodeIdxMap: IndexMap = {};
+
+  /** 迭代结束的回调函数 */
+  public onLayoutEnd: () =&gt; void = () =&gt; {};
+
+  constructor(options?: FruchtermanLayoutOptions) {
+    super();
+    this.updateCfg(options);
+  }
+
+  public getDefaultCfg() {
+    return {
+      maxIteration: 1000,
+      gravity: 10,
+      speed: 1,
+      clustering: false,
+      clusterGravity: 10
+    };
+  }
+
+  /**
+   * 执行布局
+   */
+  public execute() {
+    const self = this;
+    const nodes = self.nodes;
+
+    if (!nodes || nodes.length === 0) {
+      if (self.onLayoutEnd) self.onLayoutEnd();
+      return;
+    }
+
+    if (!self.width &amp;&amp; typeof window !== &quot;undefined&quot;) {
+      self.width = window.innerWidth;
+    }
+    if (!self.height &amp;&amp; typeof window !== &quot;undefined&quot;) {
+      self.height = window.innerHeight;
+    }
+    if (!self.center) {
+      self.center = [self.width / 2, self.height / 2];
+    }
+    const center = self.center;
+
+    if (nodes.length === 1) {
+      nodes[0].x = center[0];
+      nodes[0].y = center[1];
+      if (self.onLayoutEnd) self.onLayoutEnd();
+      return;
+    }
+    const nodeMap: NodeMap = {};
+    const nodeIdxMap: IndexMap = {};
+    nodes.forEach((node, i) =&gt; {
+      if (!isNumber(node.x)) node.x = Math.random() * this.width;
+      if (!isNumber(node.y)) node.y = Math.random() * this.height;
+      nodeMap[node.id] = node;
+      nodeIdxMap[node.id] = i;
+    });
+    self.nodeMap = nodeMap;
+    self.nodeIdxMap = nodeIdxMap;
+    // layout
+    return self.run();
+  }
+
+  public run() {
+    const self = this;
+    const nodes = self.nodes;
+    const edges = self.edges;
+    const maxIteration = self.maxIteration;
+    const center = self.center;
+    const area = self.height * self.width;
+    const maxDisplace = Math.sqrt(area) / 10;
+    const k2 = area / (nodes.length + 1);
+    const k = Math.sqrt(k2);
+    const gravity = self.gravity;
+    const speed = self.speed;
+    const clustering = self.clustering;
+    const clusterMap: {
+      [key: string]: {
+        name: string | number;
+        cx: number;
+        cy: number;
+        count: number;
+      };
+    } = {};
+    if (clustering) {
+      nodes.forEach(n =&gt; {
+        if (clusterMap[n.cluster] === undefined) {
+          const cluster = {
+            name: n.cluster,
+            cx: 0,
+            cy: 0,
+            count: 0
+          };
+          clusterMap[n.cluster] = cluster;
+        }
+        const c = clusterMap[n.cluster];
+        if (isNumber(n.x)) {
+          c.cx += n.x;
+        }
+        if (isNumber(n.y)) {
+          c.cy += n.y;
+        }
+        c.count++;
+      });
+      for (const key in clusterMap) {
+        clusterMap[key].cx /= clusterMap[key].count;
+        clusterMap[key].cy /= clusterMap[key].count;
+      }
+    }
+    for (let i = 0; i &lt; maxIteration; i++) {
+      const displacements: Point[] = [];
+      nodes.forEach((_, j) =&gt; {
+        displacements[j] = { x: 0, y: 0 };
+      });
+      self.applyCalculate(nodes, edges, displacements, k, k2);
+
+      // gravity for clusters
+      if (clustering) {
+        const clusterGravity = self.clusterGravity || gravity;
+        nodes.forEach((n, j) =&gt; {
+          if (!isNumber(n.x) || !isNumber(n.y)) return;
+          const c = clusterMap[n.cluster];
+          const distLength = Math.sqrt(
+            (n.x - c.cx) * (n.x - c.cx) + (n.y - c.cy) * (n.y - c.cy)
+          );
+          const gravityForce = k * clusterGravity;
+          displacements[j].x -= (gravityForce * (n.x - c.cx)) / distLength;
+          displacements[j].y -= (gravityForce * (n.y - c.cy)) / distLength;
+        });
+
+        for (const key in clusterMap) {
+          clusterMap[key].cx = 0;
+          clusterMap[key].cy = 0;
+          clusterMap[key].count = 0;
+        }
+
+        nodes.forEach(n =&gt; {
+          const c = clusterMap[n.cluster];
+          if (isNumber(n.x)) {
+            c.cx += n.x;
+          }
+          if (isNumber(n.y)) {
+            c.cy += n.y;
+          }
+          c.count++;
+        });
+        for (const key in clusterMap) {
+          clusterMap[key].cx /= clusterMap[key].count;
+          clusterMap[key].cy /= clusterMap[key].count;
+        }
+      }
+
+      // gravity
+      nodes.forEach((n, j) =&gt; {
+        if (!isNumber(n.x) || !isNumber(n.y)) return;
+        const gravityForce = 0.01 * k * gravity;
+        displacements[j].x -= gravityForce * (n.x - center[0]);
+        displacements[j].y -= gravityForce * (n.y - center[1]);
+      });
+
+      // move
+      nodes.forEach((n, j) =&gt; {
+        if (!isNumber(n.x) || !isNumber(n.y)) return;
+        const distLength = Math.sqrt(
+          displacements[j].x * displacements[j].x +
+            displacements[j].y * displacements[j].y
+        );
+        if (distLength &gt; 0) {
+          // &amp;&amp; !n.isFixed()
+          const limitedDist = Math.min(
+            maxDisplace * (speed / SPEED_DIVISOR),
+            distLength
+          );
+          n.x += (displacements[j].x / distLength) * limitedDist;
+          n.y += (displacements[j].y / distLength) * limitedDist;
+        }
+      });
+    }
+
+    if (self.onLayoutEnd) self.onLayoutEnd();
+
+    return {
+      nodes,
+      edges
+    };
+  }
+
+  private applyCalculate(
+    nodes: INode[],
+    edges: Edge[],
+    displacements: Point[],
+    k: number,
+    k2: number
+  ) {
+    const self = this;
+    self.calRepulsive(nodes, displacements, k2);
+    self.calAttractive(edges, displacements, k);
+  }
+
+  // 计算斥力
+  private calRepulsive(nodes: INode[], displacements: Point[], k2: number) {
+    nodes.forEach((v, i) =&gt; {
+      displacements[i] = { x: 0, y: 0 };
+      nodes.forEach((u, j) =&gt; {
+        if (i === j) {
+          return;
+        }
+        if (
+          !isNumber(v.x) ||
+          !isNumber(u.x) ||
+          !isNumber(v.y) ||
+          !isNumber(u.y)
+        )
+          return;
+        let vecX = v.x - u.x;
+        let vecY = v.y - u.y;
+        let vecLengthSqr = vecX * vecX + vecY * vecY;
+        if (vecLengthSqr === 0) {
+          vecLengthSqr = 1;
+          const sign = i &gt; j ? 1 : -1;
+          vecX = 0.01 * sign;
+          vecY = 0.01 * sign;
+        }
+        // 核心计算项 C常数值
+        const common = k2 / vecLengthSqr;
+        displacements[i].x += vecX * common;
+        displacements[i].y += vecY * common;
+      });
+    });
+  }
+
+  // 计算引力
+  private calAttractive(edges: Edge[], displacements: Point[], k: number) {
+    edges.forEach(e =&gt; {
+      if (!e.source || !e.target) return;
+      const uIndex = this.nodeIdxMap[e.source];
+      const vIndex = this.nodeIdxMap[e.target];
+      if (uIndex === vIndex) {
+        return;
+      }
+      const u = this.nodeMap[e.source];
+      const v = this.nodeMap[e.target];
+      if (!isNumber(v.x) || !isNumber(u.x) || !isNumber(v.y) || !isNumber(u.y))
+        return;
+      const vecX = v.x - u.x;
+      const vecY = v.y - u.y;
+      const vecLength = Math.sqrt(vecX * vecX + vecY * vecY);
+      const common = (vecLength * vecLength) / k;
+      displacements[vIndex].x -= (vecX / vecLength) * common;
+      displacements[vIndex].y -= (vecY / vecLength) * common;
+      displacements[uIndex].x += (vecX / vecLength) * common;
+      displacements[uIndex].y += (vecY / vecLength) * common;
+    });
+  }
+
+  public getType() {
+    return &quot;fruchterman&quot;;
+  }
+}
+</code></pre></div><h3 id="grid布局算法"><a href="#grid布局算法" class="header-anchor">#</a> Grid布局算法</h3> <p>在dom中布局，我们最常想到的就是网格布局，在最早的没有div的时代，都是通过table进行布局的，这里图的布局也是最容易想到的一种布局方式，虽然简单，但我们也可以看一下对应的实现思路，我们看一下在Cytoscape中的实现方案：</p> <div class="language- extra-class"><pre class="language-text"><code>// grid布局目录位置 https://github.com/cytoscape/cytoscape.js/blob/unstable/src/extensions/layout/grid.js
+
+function GridLayout( options ){
+  this.options = util.extend( {}, defaults, options );
+}
+
+GridLayout.prototype.run = function(){
+  let params = this.options;
+  let options = params;
+
+  let cy = params.cy;
+  let eles = options.eles;
+  let nodes = eles.nodes().not( ':parent' );
+
+  if( options.sort ){
+    nodes = nodes.sort( options.sort );
+  }
+
+  let bb = math.makeBoundingBox( options.boundingBox ? options.boundingBox : {
+    x1: 0, y1: 0, w: cy.width(), h: cy.height()
+  } );
+
+  if( bb.h === 0 || bb.w === 0 ){
+    eles.nodes().layoutPositions( this, options, function( ele ){
+      return { x: bb.x1, y: bb.y1 };
+    } );
+
+  } else {
+
+    // width/height * splits^2 = cells where splits is number of times to split width
+    let cells = nodes.size();
+    let splits = Math.sqrt( cells * bb.h / bb.w );
+    let rows = Math.round( splits );
+    let cols = Math.round( bb.w / bb.h * splits );
+
+    let small = function( val ){
+      if( val == null ){
+        return Math.min( rows, cols );
+      } else {
+        let min = Math.min( rows, cols );
+        if( min == rows ){
+          rows = val;
+        } else {
+          cols = val;
+        }
+      }
+    };
+
+    let large = function( val ){
+      if( val == null ){
+        return Math.max( rows, cols );
+      } else {
+        let max = Math.max( rows, cols );
+        if( max == rows ){
+          rows = val;
+        } else {
+          cols = val;
+        }
+      }
+    };
+
+    let oRows = options.rows;
+    let oCols = options.cols != null ? options.cols : options.columns;
+
+    // if rows or columns were set in options, use those values
+    if( oRows != null &amp;&amp; oCols != null ){
+      rows = oRows;
+      cols = oCols;
+    } else if( oRows != null &amp;&amp; oCols == null ){
+      rows = oRows;
+      cols = Math.ceil( cells / rows );
+    } else if( oRows == null &amp;&amp; oCols != null ){
+      cols = oCols;
+      rows = Math.ceil( cells / cols );
+    }
+
+    // otherwise use the automatic values and adjust accordingly
+
+    // if rounding was up, see if we can reduce rows or columns
+    else if( cols * rows &gt; cells ){
+      let sm = small();
+      let lg = large();
+
+      // reducing the small side takes away the most cells, so try it first
+      if( (sm - 1) * lg &gt;= cells ){
+        small( sm - 1 );
+      } else if( (lg - 1) * sm &gt;= cells ){
+        large( lg - 1 );
+      }
+    } else {
+
+      // if rounding was too low, add rows or columns
+      while( cols * rows &lt; cells ){
+        let sm = small();
+        let lg = large();
+
+        // try to add to larger side first (adds less in multiplication)
+        if( (lg + 1) * sm &gt;= cells ){
+          large( lg + 1 );
+        } else {
+          small( sm + 1 );
+        }
+      }
+    }
+
+    let cellWidth = bb.w / cols;
+    let cellHeight = bb.h / rows;
+
+    if( options.condense ){
+      cellWidth = 0;
+      cellHeight = 0;
+    }
+
+    if( options.avoidOverlap ){
+      for( let i = 0; i &lt; nodes.length; i++ ){
+        let node = nodes[ i ];
+        let pos = node._private.position;
+
+        if( pos.x == null || pos.y == null ){ // for bb
+          pos.x = 0;
+          pos.y = 0;
+        }
+
+        let nbb = node.layoutDimensions( options );
+        let p = options.avoidOverlapPadding;
+
+        let w = nbb.w + p;
+        let h = nbb.h + p;
+
+        cellWidth = Math.max( cellWidth, w );
+        cellHeight = Math.max( cellHeight, h );
+      }
+    }
+
+    let cellUsed = {}; // e.g. 'c-0-2' =&gt; true
+
+    let used = function( row, col ){
+      return cellUsed[ 'c-' + row + '-' + col ] ? true : false;
+    };
+
+    let use = function( row, col ){
+      cellUsed[ 'c-' + row + '-' + col ] = true;
+    };
+
+    // to keep track of current cell position
+    let row = 0;
+    let col = 0;
+    let moveToNextCell = function(){
+      col++;
+      if( col &gt;= cols ){
+        col = 0;
+        row++;
+      }
+    };
+
+    // get a cache of all the manual positions
+    let id2manPos = {};
+    for( let i = 0; i &lt; nodes.length; i++ ){
+      let node = nodes[ i ];
+      let rcPos = options.position( node );
+
+      if( rcPos &amp;&amp; (rcPos.row !== undefined || rcPos.col !== undefined) ){ // must have at least row or col def'd
+        let pos = {
+          row: rcPos.row,
+          col: rcPos.col
+        };
+
+        if( pos.col === undefined ){ // find unused col
+          pos.col = 0;
+
+          while( used( pos.row, pos.col ) ){
+            pos.col++;
+          }
+        } else if( pos.row === undefined ){ // find unused row
+          pos.row = 0;
+
+          while( used( pos.row, pos.col ) ){
+            pos.row++;
+          }
+        }
+
+        id2manPos[ node.id() ] = pos;
+        use( pos.row, pos.col );
+      }
+    }
+
+    let getPos = function( element, i ){
+      let x, y;
+
+      if( element.locked() || element.isParent() ){
+        return false;
+      }
+
+      // see if we have a manual position set
+      let rcPos = id2manPos[ element.id() ];
+      if( rcPos ){
+        x = rcPos.col * cellWidth + cellWidth / 2 + bb.x1;
+        y = rcPos.row * cellHeight + cellHeight / 2 + bb.y1;
+
+      } else { // otherwise set automatically
+
+        while( used( row, col ) ){
+          moveToNextCell();
+        }
+
+        x = col * cellWidth + cellWidth / 2 + bb.x1;
+        y = row * cellHeight + cellHeight / 2 + bb.y1;
+        use( row, col );
+
+        moveToNextCell();
+      }
+
+      return { x: x, y: y };
+
+    };
+
+    nodes.layoutPositions( this, options, getPos );
+  }
+
+  return this; // chaining
+
+};
+
+export default GridLayout;
+</code></pre></div><h3 id="mds算法"><a href="#mds算法" class="header-anchor">#</a> MDS算法</h3> <p><img src="/tech/front/graph20210419/stress.png" alt="图片"></p> <p>MDS是Multidimensional Scaling的简称，即为高维数据降维算法，其是一种力导算法高维数据下的稳定下布局的优化，避免数据超载而导致的整体的布局不稳定，上图中方程式经过数学推导化简后（ps：对于具体推导感兴趣的同学可以看这篇文章<a href="https://zhuanlan.zhihu.com/p/317840611" target="_blank" rel="noopener noreferrer">图布局算法之Stress Majorization<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>），其伪码描述如下：</p> <p><img src="/tech/front/graph20210419/conjugate.png" alt="图片"></p> <p>接下来，我们来看一下前端的具体实现，来看一下Antv G6中的实现方案：</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+* Antv的layout是专门发布了一个npm包 源码地址：https://github.com/antvis/layout
+* MDS算法目录位置 https://github.com/antvis/layout/blob/master/src/layout/mds.ts
+*/
+
+// ml-matrix是机器学习相关的一些矩阵操作
+import { Matrix as MLMatrix, SingularValueDecomposition } from &quot;ml-matrix&quot;;
+import { PointTuple, OutNode, Edge, Matrix, MDSLayoutOptions } from &quot;./types&quot;;
+import { floydWarshall, getAdjMatrix, scaleMatrix } from &quot;../util&quot;;
+import { Base } from &quot;./base&quot;;
+
+/**
+ * mds 布局
+ */
+export class MDSLayout extends Base {
+  /** 布局中心 */
+  public center: PointTuple = [0, 0];
+
+  /** 边长度 */
+  public linkDistance: number = 50;
+
+  private scaledDistances: Matrix[];
+
+  public nodes: OutNode[] = [];
+
+  public edges: Edge[] = [];
+
+  /** 迭代结束的回调函数 */
+  public onLayoutEnd: () =&gt; void = () =&gt; {};
+
+  constructor(options?: MDSLayoutOptions) {
+    super();
+    this.updateCfg(options);
+  }
+
+  public getDefaultCfg() {
+    return {
+      center: [0, 0],
+      linkDistance: 50
+    };
+  }
+
+  /**
+   * 执行布局
+   */
+  public execute() {
+    const self = this;
+    const { nodes, edges = [] } = self;
+    const center = self.center;
+    if (!nodes || nodes.length === 0) {
+      if (self.onLayoutEnd) self.onLayoutEnd();
+      return;
+    }
+    if (nodes.length === 1) {
+      nodes[0].x = center[0];
+      nodes[0].y = center[1];
+      if (self.onLayoutEnd) self.onLayoutEnd();
+      return;
+    }
+    const linkDistance = self.linkDistance;
+    // the graph-theoretic distance (shortest path distance) matrix
+    const adjMatrix = getAdjMatrix({ nodes, edges }, false);
+    const distances = floydWarshall(adjMatrix);
+    self.handleInfinity(distances);
+
+    // scale the ideal edge length acoording to linkDistance
+    const scaledD = scaleMatrix(distances, linkDistance);
+    self.scaledDistances = scaledD;
+
+    // get positions by MDS
+    const positions = self.runMDS();
+    self.positions = positions;
+    positions.forEach((p: number[], i: number) =&gt; {
+      nodes[i].x = p[0] + center[0];
+      nodes[i].y = p[1] + center[1];
+    });
+
+    if (self.onLayoutEnd) self.onLayoutEnd();
+
+    return {
+      nodes,
+      edges
+    };
+  }
+
+  /**
+   * mds 算法
+   * @return {array} positions 计算后的节点位置数组
+   */
+  public runMDS(): PointTuple[] {
+    const self = this;
+    const dimension = 2;
+    const distances = self.scaledDistances;
+
+    // square distances
+    const M = MLMatrix.mul(MLMatrix.pow(distances, 2), -0.5);
+
+    // double centre the rows/columns
+    const rowMeans = M.mean(&quot;row&quot;);
+    const colMeans = M.mean(&quot;column&quot;);
+    const totalMean = M.mean();
+    M.add(totalMean)
+      .subRowVector(rowMeans)
+      .subColumnVector(colMeans);
+
+    // take the SVD of the double centred matrix, and return the
+    // points from it
+    const ret = new SingularValueDecomposition(M);
+    const eigenValues = MLMatrix.sqrt(ret.diagonalMatrix).diagonal();
+    return ret.leftSingularVectors.toJSON().map((row: number[]) =&gt; {
+      return MLMatrix.mul([row], [eigenValues])
+        .toJSON()[0]
+        .splice(0, dimension) as PointTuple;
+    });
+  }
+
+  public handleInfinity(distances: Matrix[]) {
+    let maxDistance = -999999;
+    distances.forEach(row =&gt; {
+      row.forEach(value =&gt; {
+        if (value === Infinity) {
+          return;
+        }
+        if (maxDistance &lt; value) {
+          maxDistance = value;
+        }
+      });
+    });
+    distances.forEach((row, i) =&gt; {
+      row.forEach((value, j) =&gt; {
+        if (value === Infinity) {
+          distances[i][j] = maxDistance;
+        }
+      });
+    });
+  }
+
+  public getType() {
+    return &quot;mds&quot;;
+  }
+}
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>可视化图布局是可视化领域一个比较精深的方向，其设计了美学理念、机器学习、数据分析等相关知识，对于智能布局预测，可以结合机器学习等人工智能方法进行处理，业界常见的比如对于OpenOrd的一些大规模图布局的边切优化等，具体感兴趣的同学可以参看这篇文章<a href="https://cloud.tencent.com/developer/article/1483027" target="_blank" rel="noopener noreferrer">OpenOrd-面向大规模图布局的开源算法-研读<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>；对于前端智能化与可视化结合的方面，可以将tensorflow与可视化图布局进行拓展，具体可以看一下G6的图布局预测方案<a href="https://antv-g6.gitee.io/zh/docs/manual/middle/layout/ai-layout" target="_blank" rel="noopener noreferrer">G6 智能布局预测<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，其大概实现思路是借助tensorflow，对于卷积层和池化层的处理以及相关操作。综上，可视化图布局领域的拓展结合了前端智能化与前端数据可视化两大前端方向，由此可见，前端的七大发展方向并非是割裂开来的，他们之间相互影响、相互借鉴，对于交叉领域深入研究或许能有不同的启发！</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://blog.js.cytoscape.org/2020/05/11/layouts/" target="_blank" rel="noopener noreferrer">Using layouts<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://antv-g6.gitee.io/zh/docs/manual/middle/layout/graph-layout" target="_blank" rel="noopener noreferrer">G6-图布局<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://antv-g6.gitee.io/zh/docs/manual/middle/layout/ai-layout" target="_blank" rel="noopener noreferrer">G6 智能布局预测<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/antvis/vis-predict-engine" target="_blank" rel="noopener noreferrer">antv/vis-predict-engine源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.yuque.com/antv/g6-blog/vfnf7n" target="_blank" rel="noopener noreferrer">图可视化之图布局<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://cloud.tencent.com/developer/article/1483027" target="_blank" rel="noopener noreferrer">OpenOrd-面向大规模图布局的开源算法-研读<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/341530616" target="_blank" rel="noopener noreferrer">全栈之计算机基础系列 - 图布局算法与可视化<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/346059370" target="_blank" rel="noopener noreferrer">图可视化之图布局<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/u014044032/article/details/91513982" target="_blank" rel="noopener noreferrer">P问题、NP问题、NP完全问题和NP难问题<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/317840611" target="_blank" rel="noopener noreferrer">图布局算法之Stress Majorization<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/279859898" target="_blank" rel="noopener noreferrer">关系网络图(分析&amp;可视化)的13个JavaScript库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://www.mathe2.uni-bayreuth.de/axel/papers/reingold:graph_drawing_by_force_directed_placement.pdf" target="_blank" rel="noopener noreferrer">Graph Drawing by Force-directed Placement<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/weixin_42398658/article/details/84031235/" target="_blank" rel="noopener noreferrer">深度学习 --- 模拟退火算法详解（Simulated Annealing， SA）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/xierhacker/article/details/82747919" target="_blank" rel="noopener noreferrer">TensorFlow学习（十七）：高级API之tf.layers<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/screen20210402.html" class="prev">
+        自服务大屏踩坑实践
+      </a></span> <span class="next"><a href="/tech/front/function20210427.html">
+        前端函数式编程浅析
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/58.4574e3c3.js" defer></script>
+  </body>
+</html>

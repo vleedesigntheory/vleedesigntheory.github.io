@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AntV G6新版源码浅析 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/59.5f46f092.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="active sidebar-link">AntV G6新版源码浅析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/gsix20230624.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/gsix20230624.html#架构" class="sidebar-link">架构</a></li><li class="sidebar-sub-header"><a href="/tech/front/gsix20230624.html#目录" class="sidebar-link">目录</a></li><li class="sidebar-sub-header"><a href="/tech/front/gsix20230624.html#源码" class="sidebar-link">源码</a></li><li class="sidebar-sub-header"><a href="/tech/front/gsix20230624.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/gsix20230624.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="antv-g6新版源码浅析"><a href="#antv-g6新版源码浅析" class="header-anchor">#</a> AntV G6新版源码浅析</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p><a href="https://antv.vision" target="_blank" rel="noopener noreferrer">AntV<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>是蚂蚁金服全新一代数据可视化解决方案，其中G6主要用于解决图可视领域相关的前端可视化问题，其是一个简单、易用、完备的图可视化引擎。本文旨在通过简要分析G6 5.x版本源码来对图可视领域的一些底层引擎进行一个大致了解，同时也为G6引擎的社区共建共享提供一些力量，可以更好的提供插件化功能的编写。</p> <h2 id="架构"><a href="#架构" class="header-anchor">#</a> 架构</h2> <p><img src="/tech/front/gsix20230624/gsix01.png" alt="图片"></p> <p>新版G6整体是基于“插件化”的架构进行设计的，对外整体暴露<code>Graph</code>类及<code>StdLib</code>标准库，将主题、数据处理、布局、视图、类型、交互等均作为插件来进行处理，提供更高层次的定制化需求，提升更好的开源能力。</p> <h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <p>整体采用monorepo进行源码的仓库管理</p> <ul><li>packages
+<ul><li>g6</li> <li>docs</li> <li>src
+<ul><li>constant
+<ul><li>index.ts</li> <li>shape.ts</li></ul></li> <li>item
+<ul><li>combo.ts</li> <li>edge.ts</li> <li>item.ts</li> <li>node.ts</li></ul></li> <li>runtime
+<ul><li>controller
+<ul><li>data.ts</li> <li>extensions.ts</li> <li>index.ts</li> <li>interaction.ts</li> <li>item.ts</li> <li>layout.ts</li> <li>plugin.ts</li> <li>theme.ts</li> <li>viewport.ts</li></ul></li> <li>graph.ts</li> <li>hooks.ts</li></ul></li> <li>stdlib
+<ul><li>behavior
+<ul><li>activate-relations.ts</li> <li>brush-select.ts</li> <li>click-select.ts</li> <li>drag-canvas.ts</li> <li>drag-node.ts</li> <li>hover-activate.ts</li> <li>lasso-select.ts</li> <li>orbit-canvas-3d.ts</li> <li>rotate-canvas-3d.ts</li> <li>track-canvas-3d.ts</li> <li>zoom-canvas-3d.ts</li> <li>zoom-canvas.ts</li></ul></li> <li>data
+<ul><li>comboFromNode.ts</li></ul></li> <li>item
+<ul><li>edge
+<ul><li>base.ts</li> <li>index.ts</li> <li>line.ts</li></ul></li> <li>node
+<ul><li>base.ts</li> <li>base3d.ts</li> <li>circle.ts</li> <li>index.ts</li> <li>sphere.ts</li></ul></li></ul></li> <li>plugin
+<ul><li>grid
+<ul><li>index.ts</li></ul></li> <li>legend
+<ul><li>index.ts</li></ul></li> <li>minimap
+<ul><li>index.ts</li></ul></li></ul></li> <li>selector
+<ul><li>lasso.ts</li> <li>rect.ts</li></ul></li> <li>theme
+<ul><li>dark.ts</li> <li>light.ts</li></ul></li> <li>themeSolver
+<ul><li>base.ts</li> <li>spec.ts</li> <li>subject.ts</li></ul></li> <li>index.ts</li></ul></li> <li>types
+<ul><li>animate.ts</li> <li>behavior.ts</li> <li>combo.ts</li> <li>common.ts</li> <li>data.ts</li> <li>edge.ts</li> <li>event.ts</li> <li>graph.ts</li> <li>hook.ts</li> <li>index.ts</li> <li>item.ts</li> <li>layout.ts</li> <li>node.ts</li> <li>plugin.ts</li> <li>render.ts</li> <li>spec.ts</li> <li>stdlib.ts</li> <li>theme.ts</li> <li>view.ts</li></ul></li> <li>util
+<ul><li>animate.ts</li> <li>array.ts</li> <li>canvas.ts</li> <li>event.ts</li> <li>extend.ts</li> <li>extension.ts</li> <li>index.ts</li> <li>item.ts</li> <li>mapper.ts</li> <li>math.ts</li> <li>point.ts</li> <li>shape.ts</li> <li>shape3d.ts</li> <li>text.ts</li> <li>type.ts</li> <li>zoom.ts</li></ul></li> <li>index.ts</li></ul></li> <li>tests</li></ul></li></ul> <h2 id="源码"><a href="#源码" class="header-anchor">#</a> 源码</h2> <p>从架构层次可以看出，整体对外暴露的就是<code>Graph</code>的类以及<code>stdLib</code>的标准库，因而在分析源码调用过程中，我们抓住Graph进行逐步的往外拓展，从而把握整体的一个设计链路，避免陷入局部无法抽离。</p> <h3 id="graph"><a href="#graph" class="header-anchor">#</a> Graph</h3> <p>对外暴露的<code>Graph</code>类是整个G6图的核心类</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// https://github.com/antvis/G6/blob/v5/packages/g6/src/runtime/graph.ts</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Graph</span><span class="token operator">&lt;</span><span class="token constant">B</span> <span class="token keyword">extends</span> <span class="token class-name">BehaviorRegistry</span><span class="token punctuation">,</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token class-name">ThemeRegistry</span><span class="token operator">&gt;</span>
+  <span class="token keyword">extends</span> <span class="token class-name">EventEmitter</span>
+  <span class="token keyword">implements</span> <span class="token class-name">IGraph</span><span class="token operator">&lt;</span><span class="token constant">B</span><span class="token punctuation">,</span> <span class="token constant">T</span><span class="token operator">&gt;</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">public</span> hooks<span class="token operator">:</span> Hooks<span class="token punctuation">;</span>
+  <span class="token comment">// for nodes and edges, which will be separate into groups</span>
+  <span class="token keyword">public</span> canvas<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+  <span class="token comment">// the container dom for the graph canvas</span>
+  <span class="token keyword">public</span> container<span class="token operator">:</span> HTMLElement<span class="token punctuation">;</span>
+  <span class="token comment">// the tag to indicate whether the graph instance is destroyed</span>
+  <span class="token keyword">public</span> destroyed<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+  <span class="token comment">// the renderer type of current graph</span>
+  <span class="token keyword">public</span> rendererType<span class="token operator">:</span> RendererName<span class="token punctuation">;</span>
+  <span class="token comment">// for transient shapes for interactions, e.g. transient node and related edges while draging, delegates</span>
+  <span class="token keyword">public</span> transientCanvas<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+  <span class="token comment">// for background shapes, e.g. grid, pipe indices</span>
+  <span class="token keyword">public</span> backgroundCanvas<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+  <span class="token comment">// the tag indicates all the three canvases are all ready</span>
+  <span class="token keyword">private</span> canvasReady<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+  <span class="token keyword">private</span> specification<span class="token operator">:</span> Specification<span class="token operator">&lt;</span><span class="token constant">B</span><span class="token punctuation">,</span> <span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  <span class="token keyword">private</span> dataController<span class="token operator">:</span> DataController<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> interactionController<span class="token operator">:</span> InteractionController<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> layoutController<span class="token operator">:</span> LayoutController<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> viewportController<span class="token operator">:</span> ViewportController<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> itemController<span class="token operator">:</span> ItemController<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> extensionController<span class="token operator">:</span> ExtensionController<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> themeController<span class="token operator">:</span> ThemeController<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> pluginController<span class="token operator">:</span> PluginController<span class="token punctuation">;</span>
+
+  <span class="token keyword">private</span> defaultSpecification <span class="token operator">=</span> <span class="token punctuation">{</span>
+    theme<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">type</span><span class="token operator">:</span> <span class="token string">'spec'</span><span class="token punctuation">,</span>
+      base<span class="token operator">:</span> <span class="token string">'light'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token parameter">spec<span class="token operator">:</span> Specification<span class="token operator">&lt;</span><span class="token constant">B</span><span class="token punctuation">,</span> <span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// TODO: analyse cfg</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>specification <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>defaultSpecification<span class="token punctuation">,</span> spec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initHooks</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initCanvas</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initControllers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>init<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      canvases<span class="token operator">:</span> <span class="token punctuation">{</span>
+        background<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>backgroundCanvas<span class="token punctuation">,</span>
+        main<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>canvas<span class="token punctuation">,</span>
+        transient<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transientCanvas<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> data <span class="token punctuation">}</span> <span class="token operator">=</span> spec<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// TODO: handle multiple type data configs</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>data <span class="token keyword">as</span> GraphData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 初始化控制器，用于各种类型插件的依赖注入</span>
+  <span class="token keyword">private</span> <span class="token function">initControllers</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>dataController <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataController</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>interactionController <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InteractionController</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>layoutController <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LayoutController</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>themeController <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThemeController</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>itemController <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ItemController</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>viewportController <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ViewportController</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>extensionController <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ExtensionController</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pluginController <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PluginController</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 初始化画布</span>
+  <span class="token keyword">private</span> <span class="token function">initCanvas</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> renderer<span class="token punctuation">,</span> container<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>specification<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> pixelRatio<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>renderer <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">isString</span><span class="token punctuation">(</span>renderer<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// @ts-ignore</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>rendererType <span class="token operator">=</span> renderer<span class="token punctuation">.</span><span class="token keyword">type</span> <span class="token operator">||</span> <span class="token string">'canvas'</span><span class="token punctuation">;</span>
+      <span class="token comment">// @ts-ignore</span>
+      pixelRatio <span class="token operator">=</span> renderer<span class="token punctuation">.</span>pixelRatio<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// @ts-ignore</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>rendererType <span class="token operator">=</span> renderer <span class="token operator">||</span> <span class="token string">'canvas'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> containerDOM <span class="token operator">=</span> <span class="token function">isString</span><span class="token punctuation">(</span>container<span class="token punctuation">)</span>
+      <span class="token operator">?</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>container <span class="token keyword">as</span> <span class="token builtin">string</span><span class="token punctuation">)</span>
+      <span class="token operator">:</span> container<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>containerDOM<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Create graph failed. The container for graph </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>containerDOM<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is not exist.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>container <span class="token operator">=</span> containerDOM<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> size <span class="token operator">=</span> <span class="token punctuation">[</span>width<span class="token punctuation">,</span> height<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> containerDOM<span class="token punctuation">.</span>scrollWidth<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> containerDOM<span class="token punctuation">.</span>scrollHeight<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>backgroundCanvas <span class="token operator">=</span> <span class="token function">createCanvas</span><span class="token punctuation">(</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>rendererType<span class="token punctuation">,</span>
+      containerDOM<span class="token punctuation">,</span>
+      size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      pixelRatio<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>canvas <span class="token operator">=</span> <span class="token function">createCanvas</span><span class="token punctuation">(</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>rendererType<span class="token punctuation">,</span>
+      containerDOM<span class="token punctuation">,</span>
+      size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      pixelRatio<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>transientCanvas <span class="token operator">=</span> <span class="token function">createCanvas</span><span class="token punctuation">(</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>rendererType<span class="token punctuation">,</span>
+      containerDOM<span class="token punctuation">,</span>
+      size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      pixelRatio<span class="token punctuation">,</span>
+      <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        pointerEvents<span class="token operator">:</span> <span class="token string">'none'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>
+      <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>backgroundCanvas<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>canvas<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transientCanvas<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>
+        <span class="token punctuation">(</span><span class="token parameter">canvas</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> canvas<span class="token punctuation">.</span>ready<span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>canvasReady <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 改变渲染类型，默认为Canvas</span>
+  <span class="token keyword">public</span> <span class="token function">changeRenderer</span><span class="token punctuation">(</span><span class="token parameter"><span class="token keyword">type</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 初始化生命周期钩子函数</span>
+  <span class="token keyword">private</span> <span class="token function">initHooks</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>hooks <span class="token operator">=</span> <span class="token punctuation">{</span>
+      init<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        canvases<span class="token operator">:</span> <span class="token punctuation">{</span>
+          background<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+          main<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+          transient<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'init'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      datachange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> data<span class="token operator">:</span> GraphData<span class="token punctuation">;</span> <span class="token keyword">type</span><span class="token operator">:</span> DataChangeType <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'datachange'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      itemchange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">type</span><span class="token operator">:</span> <span class="token constant">ITEM_TYPE</span><span class="token punctuation">;</span>
+        changes<span class="token operator">:</span> GraphChange<span class="token operator">&lt;</span>NodeModelData<span class="token punctuation">,</span> EdgeModelData<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        graphCore<span class="token operator">:</span> GraphCore<span class="token punctuation">;</span>
+        theme<span class="token operator">:</span> ThemeSpecification<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'itemchange'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      render<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        graphCore<span class="token operator">:</span> GraphCore<span class="token punctuation">;</span>
+        theme<span class="token operator">:</span> ThemeSpecification<span class="token punctuation">;</span>
+        transientCanvas<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'render'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      layout<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> graphCore<span class="token operator">:</span> GraphCore <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'layout'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      viewportchange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span>ViewportChangeHookParams<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'viewport'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      modechange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> mode<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'modechange'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      behaviorchange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        action<span class="token operator">:</span> <span class="token string">'update'</span> <span class="token operator">|</span> <span class="token string">'add'</span> <span class="token operator">|</span> <span class="token string">'remove'</span><span class="token punctuation">;</span>
+        modes<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        behaviors<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token builtin">string</span> <span class="token operator">|</span> BehaviorOptionsOf<span class="token operator">&lt;</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'behaviorchange'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      itemstatechange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        ids<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        states<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        value<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'itemstatechange'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      itemvisibilitychange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> ids<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> value<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'itemvisibilitychange'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      transientupdate<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">type</span><span class="token operator">:</span> <span class="token constant">ITEM_TYPE</span> <span class="token operator">|</span> <span class="token constant">SHAPE_TYPE</span><span class="token punctuation">;</span>
+        id<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">;</span>
+        config<span class="token operator">:</span> <span class="token punctuation">{</span>
+          style<span class="token operator">:</span> ShapeStyle<span class="token punctuation">;</span>
+          action<span class="token operator">:</span> <span class="token string">'remove'</span> <span class="token operator">|</span> <span class="token string">'add'</span> <span class="token operator">|</span> <span class="token string">'update'</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        canvas<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'transientupdate'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      pluginchange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        action<span class="token operator">:</span> <span class="token string">'update'</span> <span class="token operator">|</span> <span class="token string">'add'</span> <span class="token operator">|</span> <span class="token string">'remove'</span><span class="token punctuation">;</span>
+        plugins<span class="token operator">:</span> <span class="token punctuation">(</span>
+          <span class="token operator">|</span> <span class="token builtin">string</span>
+          <span class="token operator">|</span> <span class="token punctuation">{</span> key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token keyword">type</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token punctuation">[</span>cfgName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">unknown</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'pluginchange'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      themechange<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        theme<span class="token operator">:</span> ThemeSpecification<span class="token punctuation">;</span>
+        canvases<span class="token operator">:</span> <span class="token punctuation">{</span>
+          background<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+          main<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+          transient<span class="token operator">:</span> Canvas<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'init'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      destroy<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Hook</span><span class="token operator">&lt;</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'destroy'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更改spec配置</span>
+  <span class="token keyword">public</span> <span class="token function">updateSpecification</span><span class="token punctuation">(</span>spec<span class="token operator">:</span> Specification<span class="token operator">&lt;</span><span class="token constant">B</span><span class="token punctuation">,</span> <span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator">:</span> Specification<span class="token operator">&lt;</span><span class="token constant">B</span><span class="token punctuation">,</span> <span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更改theme配置</span>
+  <span class="token keyword">public</span> <span class="token function">updateTheme</span><span class="token punctuation">(</span><span class="token parameter">theme<span class="token operator">:</span> ThemeOptionsOf<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取配置信息</span>
+  <span class="token keyword">public</span> <span class="token function">getSpecification</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Specification<span class="token operator">&lt;</span><span class="token constant">B</span><span class="token punctuation">,</span> <span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 数据渲染，diff比对</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token parameter">data<span class="token operator">:</span> GraphData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更改图数据</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">changeData</span><span class="token punctuation">(</span>
+    data<span class="token operator">:</span> GraphData<span class="token punctuation">,</span>
+    <span class="token keyword">type</span><span class="token operator">:</span> <span class="token string">'replace'</span> <span class="token operator">|</span> <span class="token string">'mergeReplace'</span> <span class="token operator">=</span> <span class="token string">'mergeReplace'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 清空画布</span>
+  <span class="token keyword">public</span> <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取视图中心</span>
+  <span class="token keyword">public</span> <span class="token function">getViewportCenter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> PointLike <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 更给视图转换</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">transform</span><span class="token punctuation">(</span>
+    options<span class="token operator">:</span> GraphTransformOptions<span class="token punctuation">,</span>
+    effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token keyword">void</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 立刻停止当前过渡变化</span>
+  <span class="token keyword">public</span> <span class="token function">stopTransformTransition</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 画布位移</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">translate</span><span class="token punctuation">(</span>
+    <span class="token parameter">distance<span class="token operator">:</span> Partial<span class="token operator">&lt;</span><span class="token punctuation">{</span>
+      dx<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+      dy<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+      dz<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions<span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 画布移动至视图坐标</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">translateTo</span><span class="token punctuation">(</span>
+    <span class="token parameter"><span class="token punctuation">{</span> x<span class="token punctuation">,</span> y <span class="token punctuation">}</span><span class="token operator">:</span> PointLike<span class="token punctuation">,</span>
+    effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions<span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 画布放大/缩小</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">zoom</span><span class="token punctuation">(</span>
+    <span class="token parameter">ratio<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    origin<span class="token operator">?</span><span class="token operator">:</span> PointLike<span class="token punctuation">,</span>
+    effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions<span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 画布放大/缩小至</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">zoomTo</span><span class="token punctuation">(</span>
+    <span class="token parameter">zoom<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    origin<span class="token operator">?</span><span class="token operator">:</span> PointLike<span class="token punctuation">,</span>
+    effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions<span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取画布放大/缩小比例</span>
+  <span class="token keyword">public</span> <span class="token function">getZoom</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 旋转画布</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">rotate</span><span class="token punctuation">(</span>
+    <span class="token parameter">angle<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    origin<span class="token operator">?</span><span class="token operator">:</span> PointLike<span class="token punctuation">,</span>
+    effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions<span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 旋转画布至 </span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">rotateTo</span><span class="token punctuation">(</span>
+    <span class="token parameter">angle<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    origin<span class="token operator">?</span><span class="token operator">:</span> PointLike<span class="token punctuation">,</span>
+    effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions<span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 自适应画布</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">fitView</span><span class="token punctuation">(</span>
+    <span class="token parameter">options<span class="token operator">?</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      padding<span class="token operator">:</span> Padding<span class="token punctuation">;</span>
+      rules<span class="token operator">:</span> FitViewRules<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions<span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 对齐画布中心与视图中心</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">fitCenter</span><span class="token punctuation">(</span><span class="token parameter">effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 对齐元素</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">focusItem</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> effectTiming<span class="token operator">?</span><span class="token operator">:</span> CameraAnimationOptions</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取画布大小</span>
+  <span class="token keyword">public</span> <span class="token function">getSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置画布大小</span>
+  <span class="token keyword">public</span> <span class="token function">setSize</span><span class="token punctuation">(</span><span class="token parameter">size<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取视图下的渲染坐标</span>
+  <span class="token keyword">public</span> <span class="token function">getCanvasByViewport</span><span class="token punctuation">(</span>viewportPoint<span class="token operator">:</span> Point<span class="token punctuation">)</span><span class="token operator">:</span> Point <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取画布下的渲染视图</span>
+  <span class="token keyword">public</span> <span class="token function">getViewportByCanvas</span><span class="token punctuation">(</span>canvasPoint<span class="token operator">:</span> Point<span class="token punctuation">)</span><span class="token operator">:</span> Point <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取浏览器坐标</span>
+  <span class="token keyword">public</span> <span class="token function">getClientByCanvas</span><span class="token punctuation">(</span>canvasPoint<span class="token operator">:</span> Point<span class="token punctuation">)</span><span class="token operator">:</span> Point <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取画布坐标</span>
+  <span class="token keyword">public</span> <span class="token function">getCanvasByClient</span><span class="token punctuation">(</span>clientPoint<span class="token operator">:</span> Point<span class="token punctuation">)</span><span class="token operator">:</span> Point <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// ===== item operations =====</span>
+  
+  <span class="token comment">// 获取节点数据</span>
+  <span class="token keyword">public</span> <span class="token function">getNodeData</span><span class="token punctuation">(</span>condition<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token builtin">Function</span><span class="token punctuation">)</span><span class="token operator">:</span> NodeModel <span class="token operator">|</span> <span class="token keyword">undefined</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 获取边数据</span>
+  <span class="token keyword">public</span> <span class="token function">getEdgeData</span><span class="token punctuation">(</span>condition<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token builtin">Function</span><span class="token punctuation">)</span><span class="token operator">:</span> EdgeModel <span class="token operator">|</span> <span class="token keyword">undefined</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+ 
+  <span class="token comment">// 获取combo数据</span>
+  <span class="token keyword">public</span> <span class="token function">getComboData</span><span class="token punctuation">(</span>condition<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token builtin">Function</span><span class="token punctuation">)</span><span class="token operator">:</span> ComboModel <span class="token operator">|</span> <span class="token keyword">undefined</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 获取所有节点数据</span>
+  <span class="token keyword">public</span> <span class="token function">getAllNodesData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> NodeModel<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 获取所有边数据</span>
+  <span class="token keyword">public</span> <span class="token function">getAllEdgesData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> EdgeModel<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 获取所有combo类型数据</span>
+  <span class="token keyword">public</span> <span class="token function">getAllCombosData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> ComboModel<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 获取相关边数据</span>
+  <span class="token keyword">public</span> <span class="token function">getRelatedEdgesData</span><span class="token punctuation">(</span>
+    nodeId<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">,</span>
+    direction<span class="token operator">:</span> <span class="token string">'in'</span> <span class="token operator">|</span> <span class="token string">'out'</span> <span class="token operator">|</span> <span class="token string">'both'</span> <span class="token operator">=</span> <span class="token string">'both'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span> EdgeModel<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 获取临近节点数据</span>
+  <span class="token keyword">public</span> <span class="token function">getNeighborNodesData</span><span class="token punctuation">(</span>
+    nodeId<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">,</span>
+    direction<span class="token operator">:</span> <span class="token string">'in'</span> <span class="token operator">|</span> <span class="token string">'out'</span> <span class="token operator">|</span> <span class="token string">'both'</span> <span class="token operator">=</span> <span class="token string">'both'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span> NodeModel<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取状态类型的id</span>
+  <span class="token keyword">public</span> <span class="token function">findIdByState</span><span class="token punctuation">(</span>
+    itemType<span class="token operator">:</span> <span class="token constant">ITEM_TYPE</span><span class="token punctuation">,</span>
+    state<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+    value<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    additionalFilter<span class="token operator">?</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">item<span class="token operator">:</span> NodeModel <span class="token operator">|</span> EdgeModel <span class="token operator">|</span> ComboModel</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">boolean</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 添加数据</span>
+  <span class="token keyword">public</span> <span class="token function">addData</span><span class="token punctuation">(</span>
+    itemType<span class="token operator">:</span> <span class="token constant">ITEM_TYPE</span><span class="token punctuation">,</span>
+    models<span class="token operator">:</span>
+      <span class="token operator">|</span> NodeUserModel
+      <span class="token operator">|</span> EdgeUserModel
+      <span class="token operator">|</span> ComboUserModel
+      <span class="token operator">|</span> NodeUserModel<span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token operator">|</span> EdgeUserModel<span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token operator">|</span> ComboUserModel<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    stack<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span>
+    <span class="token operator">|</span> NodeModel
+    <span class="token operator">|</span> EdgeModel
+    <span class="token operator">|</span> ComboModel
+    <span class="token operator">|</span> NodeModel<span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token operator">|</span> EdgeModel<span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token operator">|</span> ComboModel<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 移除数据</span>
+  <span class="token keyword">public</span> <span class="token function">removeData</span><span class="token punctuation">(</span><span class="token parameter">itemType<span class="token operator">:</span> <span class="token constant">ITEM_TYPE</span><span class="token punctuation">,</span> ids<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> stack<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 更新数据</span>
+  <span class="token keyword">public</span> <span class="token function">updateData</span><span class="token punctuation">(</span>
+    itemType<span class="token operator">:</span> <span class="token constant">ITEM_TYPE</span><span class="token punctuation">,</span>
+    models<span class="token operator">:</span>
+      <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>NodeUserModel<span class="token operator">&gt;</span>
+      <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>EdgeUserModel<span class="token operator">&gt;</span>
+      <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>
+          <span class="token operator">|</span> ComboUserModel
+          <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>NodeUserModel<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+          <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>EdgeUserModel<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+          <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>ComboUserModel<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    stack<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span>
+    <span class="token operator">|</span> NodeModel
+    <span class="token operator">|</span> EdgeModel
+    <span class="token operator">|</span> ComboModel
+    <span class="token operator">|</span> NodeModel<span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token operator">|</span> EdgeModel<span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token operator">|</span> ComboModel<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新节点位置</span>
+  <span class="token keyword">public</span> <span class="token function">updateNodePosition</span><span class="token punctuation">(</span>
+    <span class="token parameter">models<span class="token operator">:</span>
+      <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>NodeUserModel<span class="token operator">&gt;</span>
+      <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>
+          ComboUserModel <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>NodeUserModel<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">|</span> Partial<span class="token operator">&lt;</span>ComboUserModel<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    stack<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 显示类型元素</span>
+  <span class="token keyword">public</span> <span class="token function">showItem</span><span class="token punctuation">(</span><span class="token parameter">ids<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> disableAniamte<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 隐藏类型元素</span>
+  <span class="token keyword">public</span> <span class="token function">hideItem</span><span class="token punctuation">(</span><span class="token parameter">ids<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> disableAniamte<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 设置类型元素状态</span>
+  <span class="token keyword">public</span> <span class="token function">setItemState</span><span class="token punctuation">(</span>
+    <span class="token parameter">ids<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    states<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    value<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 获取类型元素状态</span>
+  <span class="token keyword">public</span> <span class="token function">getItemState</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">,</span> state<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 清空类型元素状态</span>
+  <span class="token keyword">public</span> <span class="token function">clearItemState</span><span class="token punctuation">(</span><span class="token parameter">ids<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token constant">ID</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> states<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取渲染器box</span>
+  <span class="token keyword">public</span> <span class="token function">getRenderBBox</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token constant">ID</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">AABB</span> <span class="token operator">|</span> <span class="token boolean">false</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取显示类型id</span>
+  <span class="token keyword">public</span> <span class="token function">getItemVisible</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token operator">:</span> <span class="token constant">ID</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// ===== combo operations =====</span>
+  
+  <span class="token comment">// 创建组</span>
+  <span class="token keyword">public</span> <span class="token function">createCombo</span><span class="token punctuation">(</span>
+    <span class="token parameter">combo<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> ComboUserModel<span class="token punctuation">,</span>
+    childrenIds<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    stack<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+ 
+  <span class="token comment">// 取消组</span>
+  <span class="token keyword">public</span> <span class="token function">uncombo</span><span class="token punctuation">(</span><span class="token parameter">comboId<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">,</span> stack<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 释放组</span>
+  <span class="token keyword">public</span> <span class="token function">collapseCombo</span><span class="token punctuation">(</span><span class="token parameter">comboId<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">,</span> stack<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 扩展组</span>
+  <span class="token keyword">public</span> <span class="token function">expandCombo</span><span class="token punctuation">(</span><span class="token parameter">comboId<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">,</span> stack<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// ===== layout =====</span>
+  
+  <span class="token comment">// 设置布局参数</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">layout</span><span class="token punctuation">(</span><span class="token parameter">options<span class="token operator">?</span><span class="token operator">:</span> LayoutOptions</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 取消布局算法</span>
+  <span class="token keyword">public</span> <span class="token function">stopLayout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置交互模式</span>
+  <span class="token keyword">public</span> <span class="token function">setMode</span><span class="token punctuation">(</span><span class="token parameter">mode<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 添加交互行为</span>
+  <span class="token keyword">public</span> <span class="token function">addBehaviors</span><span class="token punctuation">(</span>
+    <span class="token parameter">behaviors<span class="token operator">:</span> BehaviorOptionsOf<span class="token operator">&lt;</span><span class="token constant">B</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    modes<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 移除交互行为</span>
+  <span class="token keyword">public</span> <span class="token function">removeBehaviors</span><span class="token punctuation">(</span><span class="token parameter">behaviorKeys<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> modes<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新交互行为</span>
+  <span class="token keyword">public</span> <span class="token function">updateBehavior</span><span class="token punctuation">(</span><span class="token parameter">behavior<span class="token operator">:</span> BehaviorOptionsOf<span class="token operator">&lt;</span><span class="token constant">B</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> mode<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 添加插件</span>
+  <span class="token keyword">public</span> <span class="token function">addPlugins</span><span class="token punctuation">(</span>
+    pluginCfgs<span class="token operator">:</span> <span class="token punctuation">(</span>
+      <span class="token operator">|</span> <span class="token punctuation">{</span>
+          key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+          <span class="token keyword">type</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+          <span class="token punctuation">[</span>cfgName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">;</span> <span class="token comment">// TODO: configs from plugins</span>
+        <span class="token punctuation">}</span>
+      <span class="token operator">|</span> <span class="token builtin">string</span>
+    <span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 移除插件</span>
+  <span class="token keyword">public</span> <span class="token function">removePlugins</span><span class="token punctuation">(</span><span class="token parameter">pluginKeys<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新插件</span>
+  <span class="token keyword">public</span> <span class="token function">updatePlugin</span><span class="token punctuation">(</span><span class="token parameter">plugin<span class="token operator">:</span> <span class="token punctuation">{</span>
+    key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    <span class="token keyword">type</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    <span class="token punctuation">[</span>cfg<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 绘制过渡动效</span>
+  <span class="token keyword">public</span> <span class="token function">drawTransient</span><span class="token punctuation">(</span>
+    <span class="token keyword">type</span><span class="token operator">:</span> <span class="token constant">ITEM_TYPE</span> <span class="token operator">|</span> <span class="token constant">SHAPE_TYPE</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token constant">ID</span><span class="token punctuation">,</span>
+    config<span class="token operator">:</span> <span class="token punctuation">{</span>
+      action<span class="token operator">:</span> <span class="token string">'remove'</span> <span class="token operator">|</span> <span class="token string">'add'</span> <span class="token operator">|</span> <span class="token string">'update'</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+      style<span class="token operator">:</span> ShapeStyle<span class="token punctuation">;</span>
+      onlyDrawKeyShape<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span> DisplayObject <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 销毁画布</span>
+  <span class="token keyword">public</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token parameter">callback<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">Function</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="stdlib"><a href="#stdlib" class="header-anchor">#</a> StdLib</h3> <p>标准库用于提供和社区开发者进行交互的标准构件，方便自定义开发及共建共享。其中，提供了<code>data</code>、<code>extensions</code>、<code>interaction</code>、<code>item</code>、<code>layout</code>、<code>plugin</code>、<code>theme</code>以及<code>viewport</code>的插件化能力。</p> <p>这里，以<code>plugin</code>的控制器接入为例，代码如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// https://github.com/antvis/G6/blob/v5/packages/g6/src/runtime/controller/plugin.ts</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">PluginController</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> extensions<span class="token operator">:</span> <span class="token builtin">any</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> graph<span class="token operator">:</span> IGraph<span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * Plugins on graph.
+   * @example
+   * { 'minimap': Minimap, 'tooltip': Tooltip }
+   */</span>
+  <span class="token keyword">private</span> pluginMap<span class="token operator">:</span> Map<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> plugin<span class="token operator">:</span> Plugin <span class="token punctuation">}</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * Listeners added by all current plugins.
+   * @example
+   * {
+   *   'minimap': { 'afterlayout': function },
+   * }
+   */</span>
+  <span class="token keyword">private</span> listenersMap<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> Record<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> Listener<span class="token operator">&gt;&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token parameter">graph<span class="token operator">:</span> IGraph<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token punctuation">,</span> <span class="token builtin">any</span><span class="token operator">&gt;</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>graph <span class="token operator">=</span> graph<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * Subscribe the lifecycle of graph.
+   */</span>
+  <span class="token keyword">private</span> <span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>init<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onPluginInit</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>pluginchange<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onPluginChange</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>destroy<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onDestroy</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">onPluginInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1. Initialize new behaviors.</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pluginMap<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> graph <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> pluginConfigs <span class="token operator">=</span> graph<span class="token punctuation">.</span><span class="token function">getSpecification</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>plugins <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    pluginConfigs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initPlugin</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 2. Add listeners for each behavior.</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>listenersMap <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pluginMap<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> plugin <span class="token punctuation">}</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addListeners</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> plugin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">initPlugin</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> graph <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> Plugin <span class="token operator">=</span> <span class="token function">getExtension</span><span class="token punctuation">(</span>config<span class="token punctuation">,</span> registry<span class="token punctuation">.</span>useLib<span class="token punctuation">,</span> <span class="token string">'plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token keyword">typeof</span> config <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">?</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">:</span> config<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">type</span> <span class="token operator">=</span> <span class="token keyword">typeof</span> config <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">?</span> config <span class="token operator">:</span> config<span class="token punctuation">.</span><span class="token keyword">type</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token keyword">typeof</span> config <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">?</span> config <span class="token operator">:</span> config<span class="token punctuation">.</span>key <span class="token operator">||</span> <span class="token keyword">type</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> plugin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Plugin</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    plugin<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>graph<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pluginMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token punctuation">,</span> plugin <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> key<span class="token punctuation">,</span> <span class="token keyword">type</span><span class="token punctuation">,</span> plugin <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">onPluginChange</span><span class="token punctuation">(</span>params<span class="token operator">:</span> <span class="token punctuation">{</span>
+    action<span class="token operator">:</span> <span class="token string">'update'</span> <span class="token operator">|</span> <span class="token string">'add'</span> <span class="token operator">|</span> <span class="token string">'remove'</span><span class="token punctuation">;</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token builtin">string</span> <span class="token operator">|</span> <span class="token punctuation">{</span> key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token keyword">type</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> options<span class="token operator">:</span> <span class="token builtin">any</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> action<span class="token punctuation">,</span> plugins<span class="token operator">:</span> pluginCfgs <span class="token punctuation">}</span> <span class="token operator">=</span> params<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">===</span> <span class="token string">'add'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pluginCfgs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> <span class="token punctuation">{</span> key<span class="token punctuation">,</span> plugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initPlugin</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addListeners</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> plugin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">===</span> <span class="token string">'remove'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pluginCfgs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> key <span class="token operator">=</span>
+          <span class="token keyword">typeof</span> config <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">?</span> config <span class="token operator">:</span> config<span class="token punctuation">.</span>key <span class="token operator">||</span> config<span class="token punctuation">.</span><span class="token keyword">type</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> item <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>pluginMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>item<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> <span class="token punctuation">{</span> plugin <span class="token punctuation">}</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeListeners</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        plugin<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>pluginMap<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">===</span> <span class="token string">'update'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pluginCfgs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> config <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> key <span class="token operator">=</span> config<span class="token punctuation">.</span>key <span class="token operator">||</span> config<span class="token punctuation">.</span><span class="token keyword">type</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> item <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>pluginMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>item<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> <span class="token punctuation">{</span> plugin <span class="token punctuation">}</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+        plugin<span class="token punctuation">.</span><span class="token function">updateCfgs</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeListeners</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addListeners</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> plugin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function-variable function">addListeners</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> plugin<span class="token operator">:</span> Plugin</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> events <span class="token operator">=</span> plugin<span class="token punctuation">.</span><span class="token function">getEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>listenersMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>events<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">eventName</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Wrap the listener with error logging.</span>
+      <span class="token keyword">const</span> listener <span class="token operator">=</span> <span class="token function">wrapListener</span><span class="token punctuation">(</span>
+        key<span class="token punctuation">,</span>
+        eventName<span class="token punctuation">,</span>
+        events<span class="token punctuation">[</span>eventName<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>plugin<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span>eventName<span class="token punctuation">,</span> listener<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>listenersMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">[</span>eventName<span class="token punctuation">]</span> <span class="token operator">=</span> listener<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">private</span> <span class="token function-variable function">removeListeners</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> listeners <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>listenersMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>listeners<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">eventName</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> listener <span class="token operator">=</span> listeners<span class="token punctuation">[</span>eventName<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>listener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>graph<span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span>eventName<span class="token punctuation">,</span> listener<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">private</span> <span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pluginMap<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> plugin <span class="token punctuation">}</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+      plugin<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>而其他的标准库控制器，则通过配置的方式，在<code>Graph</code>初始化时进行接入，代码如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// https://github.com/antvis/G6/blob/v5/packages/g6/src/stdlib/index.ts</span>
+<span class="token keyword">const</span> stdLib <span class="token operator">=</span> <span class="token punctuation">{</span>
+  transforms<span class="token operator">:</span> <span class="token punctuation">{</span>
+    comboFromNode<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  themes<span class="token operator">:</span> <span class="token punctuation">{</span>
+    light<span class="token operator">:</span> LightTheme<span class="token punctuation">,</span>
+    dark<span class="token operator">:</span> DarkTheme<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  themeSolvers<span class="token operator">:</span> <span class="token punctuation">{</span>
+    spec<span class="token operator">:</span> SpecThemeSolver<span class="token punctuation">,</span>
+    subject<span class="token operator">:</span> SubjectThemeSolver<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  layouts<span class="token operator">:</span> layoutRegistry<span class="token punctuation">,</span>
+  behaviors<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'activate-relations'</span><span class="token operator">:</span> ActivateRelations<span class="token punctuation">,</span>
+    <span class="token string">'drag-canvas'</span><span class="token operator">:</span> DragCanvas<span class="token punctuation">,</span>
+    <span class="token string">'hover-activate'</span><span class="token operator">:</span> HoverActivate<span class="token punctuation">,</span>
+    <span class="token string">'zoom-canvas'</span><span class="token operator">:</span> ZoomCanvas<span class="token punctuation">,</span>
+    <span class="token string">'drag-node'</span><span class="token operator">:</span> DragNode<span class="token punctuation">,</span>
+    <span class="token string">'click-select'</span><span class="token operator">:</span> ClickSelect<span class="token punctuation">,</span>
+    <span class="token string">'brush-select'</span><span class="token operator">:</span> BrushSelect<span class="token punctuation">,</span>
+    <span class="token string">'lasso-select'</span><span class="token operator">:</span> LassoSelect<span class="token punctuation">,</span>
+    <span class="token string">'zoom-canvas-3d'</span><span class="token operator">:</span> ZoomCanvas3D<span class="token punctuation">,</span>
+    <span class="token string">'rotate-canvas-3d'</span><span class="token operator">:</span> RotateCanvas3D<span class="token punctuation">,</span>
+    <span class="token string">'track-canvas-3d'</span><span class="token operator">:</span> TrackCanvas3D<span class="token punctuation">,</span>
+    <span class="token string">'orbit-canvas-3d'</span><span class="token operator">:</span> OrbitCanvas3D<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">{</span>
+    minimap<span class="token operator">:</span> Minimap<span class="token punctuation">,</span>
+    legend<span class="token operator">:</span> Legend<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  nodes<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'circle-node'</span><span class="token operator">:</span> CircleNode<span class="token punctuation">,</span>
+    <span class="token string">'sphere-node'</span><span class="token operator">:</span> SphereNode<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  edges<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'line-edge'</span><span class="token operator">:</span> LineEdge<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  combos<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span> stdLib <span class="token punctuation">}</span>
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>综上所述，AntV G6 5.0提供了更好的插件化机制，将功能进行解耦后提供暴露的通用标准制式方便开发者能够更好的开源与共建共享，从而利用开源社区的力量将G6建设成为更加通用且适配更多场景的图可视化库。开源的商业逻辑从来不在开源本身，用闭源的思路做开源就失去了开源的价值，共勉！！！</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://g6.antv.antgroup.com/zh" target="_blank" rel="noopener noreferrer">G6官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/antvis/G6/blob/v5/" target="_blank" rel="noopener noreferrer">G6源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/2hVjFX-oHRob634Cd6nr-w" target="_blank" rel="noopener noreferrer">AntV 图发布会圆满收官，G6 5.0 招募社区大牛，共同拥抱开源！<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/mpa20230217.html" class="prev">
+        vue脚手架多页自动化生成实践
+      </a></span> <span class="next"><a href="/tech/front/pwa20230731.html">
+        面向边缘场景的PWA实践
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/59.5f46f092.js" defer></script>
+  </body>
+</html>

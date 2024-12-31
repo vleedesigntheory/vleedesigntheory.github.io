@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端网关踩坑实践 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/39.eea49bbe.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>后端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/back/cicd20200806.html" class="sidebar-link">前端自动化集成部署交付实践</a></li><li><a href="/tech/back/ng20201030.html" class="sidebar-link">NG全家桶全栈项目实践总结</a></li><li><a href="/tech/back/flexiwan20201219.html" class="sidebar-link">flexiwan项目踩坑实践（后端篇）</a></li><li><a href="/tech/back/dns20210708.html" class="sidebar-link">前端静态服务踩坑实践</a></li><li><a href="/tech/back/gateway20211120.html" class="active sidebar-link">前端网关踩坑实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/back/gateway20211120.html#项目背景" class="sidebar-link">项目背景</a></li><li class="sidebar-sub-header"><a href="/tech/back/gateway20211120.html#架构设计" class="sidebar-link">架构设计</a></li><li class="sidebar-sub-header"><a href="/tech/back/gateway20211120.html#方案选择" class="sidebar-link">方案选择</a></li><li class="sidebar-sub-header"><a href="/tech/back/gateway20211120.html#踩坑案例" class="sidebar-link">踩坑案例</a></li><li class="sidebar-sub-header"><a href="/tech/back/gateway20211120.html#源码浅析" class="sidebar-link">源码浅析</a></li><li class="sidebar-sub-header"><a href="/tech/back/gateway20211120.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/back/gateway20211120.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/back/deploy20220116.html" class="sidebar-link">前端部署脚手架专网项目实践</a></li><li><a href="/tech/back/imagepic20220129.html" class="sidebar-link">前端图床搭建实践（后端篇）</a></li><li><a href="/tech/back/log20220718.html" class="sidebar-link">前端日志采集方案浅析</a></li><li><a href="/tech/back/piper20220914.html" class="sidebar-link">前端设计走查平台实践（后端篇）</a></li><li><a href="/tech/back/node20241216.html" class="sidebar-link">Node.js的Web服务在Nacos中的实践</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="前端网关踩坑实践"><a href="#前端网关踩坑实践" class="header-anchor">#</a> 前端网关踩坑实践</h1> <h2 id="项目背景"><a href="#项目背景" class="header-anchor">#</a> 项目背景</h2> <p>在后端微服务中，常见的通常会通过暴露一个统一的网关入口给外界，从而使得整个系统服务有一个统一的入口和出口，收敛服务；然而，在前端这种统一提供网关出入口的服务比较少见，常常是各个应用独立提供出去服务，目前业界也有采用微前端应用来进行应用的调度和通信，其中nginx做转发便是其中的一种方案，这里为了收敛前端应用的出入口，项目需要在内网去做相关的部署，公网端口有限，因而为了更好接入更多的应用，这里借鉴了后端的网关的思路，实现了一个前端网关代理转发方案，本文旨在对本次前端网关实践过程中的一些思考和踩坑进行归纳和总结，也希望能给有相关场景应用的同学提供一些解决方面的思路</p> <h2 id="架构设计"><a href="#架构设计" class="header-anchor">#</a> 架构设计</h2> <p><img src="/tech/back/gateway20211120/gateway01.png" alt="gateway01"></p> <table><thead><tr><th style="text-align:center;">名称</th> <th style="text-align:center;">作用</th> <th style="text-align:center;">备注</th></tr></thead> <tbody><tr><td style="text-align:center;">网关层</td> <td style="text-align:center;">用来承载前端流量，作为统一入口</td> <td style="text-align:center;">可以使用前端路由或后端路由来承载，主要作用是流量切分，也可以将单一应用布置于此处，作为路由与调度的混合</td></tr> <tr><td style="text-align:center;">应用层</td> <td style="text-align:center;">用来部署各个前端应用，不限于框架，各个应用之间通信可以通过http或者向网关派发，前提是网关层有接收调度的功能存在</td> <td style="text-align:center;">不限于前端框架及版本，每个应用已经单独部署完成，相互之间通信需要通过http之间的通信，也可以借助k8s等容器化部署之间的通信</td></tr> <tr><td style="text-align:center;">接口层</td> <td style="text-align:center;">用来从后端获取数据，由于后端部署的不同形式，可能有不同的微服务网关，也有可能有单独的第三方接口，也可能是node.js等BFF接口形式</td> <td style="text-align:center;">对于统一共用的接口形式可将其上承至网关层进行代理转发</td></tr></tbody></table> <h2 id="方案选择"><a href="#方案选择" class="header-anchor">#</a> 方案选择</h2> <p>目前项目应用系统业务逻辑较为复杂，不太便于统一落载在以类SingleSPA形式的微前端形式，因而选择了以nginx为主要技术形态的微前端网关切分的形式进行构建，另外后续需要接入多个第三方的应用，做成iframe形式又会涉及网络打通之间的问题。由于业务形态，公网端口有限，需要设计出一套能够1：n的虚拟端口的形态出来，因而这里最终选择了以nginx作为主网关转发来做流量及应用切分的方案。</p> <p><img src="/tech/back/gateway20211120/gateway02.png" alt="gateway02"></p> <table><thead><tr><th style="text-align:center;">层级</th> <th style="text-align:center;">方案</th> <th style="text-align:center;">备注</th></tr></thead> <tbody><tr><td style="text-align:center;">网关层</td> <td style="text-align:center;">使用一个nginx作为公网流量入口，利用路径对不同子应用进行切分</td> <td style="text-align:center;">父nginx应用作为前端应用入口，需要作一个负载均衡处理，这里利用k8s的负载均衡来做，配置3个副本，如果某一个pod挂掉，可以利用k8的机制进行拉起</td></tr> <tr><td style="text-align:center;">应用层</td> <td style="text-align:center;">多个不同的nginx应用，这里由于做了路径的切分，因而需要对资源定向做一个处理，具体详见下一部分踩坑案例</td> <td style="text-align:center;">这里利用docker挂载目录进行处理</td></tr> <tr><td style="text-align:center;">接口层</td> <td style="text-align:center;">多个不同的nginx应用对接口做了反向代理后，接口由于是浏览器正向发送，因而这里无法进行转发，这里需要对前端代码做一个处理，具体详见踩坑案例</td> <td style="text-align:center;">后续会配置ci、cd构建脚手架以及一些配置一些常见前端脚手架如：vue-cli、cra、umi的接入插件包</td></tr></tbody></table> <h2 id="踩坑案例"><a href="#踩坑案例" class="header-anchor">#</a> 踩坑案例</h2> <h3 id="静态资源404错误"><a href="#静态资源404错误" class="header-anchor">#</a> 静态资源404错误</h3> <p><img src="/tech/back/gateway20211120/gateway03.png" alt="gateway03"></p> <p>[案例描述] 我们发现在代理完路径后正常的html资源是可以定位到的，但是对于js、css资源等会出现找不到的404错误</p> <p>[案例分析] 由于目前应用多为单页应用，而单页应用的主要都是由js去操作dom的，对于mv*框架而言通常又会在前端路由及对一些数据进行拦截操作，因而在对应模板引擎处理过程中需要对资源查找进行相对路径查找</p> <p>[解决方案] 我们项目构建主要是通过docker+k8s进行部署的，因而这里我们想到将资源路径统一放在一个路径目录下，而这个目录路径需要和父nginx应用转发路径的名称相一致，也就是说子应用需要在父应用中需要注册一个路由信息，后续就可以通过服务注册方式进行定位变更等</p> <p>父应用nginx配置</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;rj&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;xxx应用&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;path: &quot;</span>/rj/&quot;
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-conf extra-class"><pre class="language-text"><code>server {
+    location /rj/ {
+        proxy_pass http://ip:port/rj/;
+    }
+}
+</code></pre></div><p>子应用</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">FROM</span> xxx/nginx<span class="token punctuation">:</span>1.20.1
+<span class="token keyword">COPY</span> ./dist /usr/share/nginx/html/rj/
+</code></pre></div><h3 id="接口代理404错误"><a href="#接口代理404错误" class="header-anchor">#</a> 接口代理404错误</h3> <p><img src="/tech/back/gateway20211120/gateway04.jpg" alt="gateway04"></p> <p>[案例描述] 在处理完静态资源之后，我们父应用中请求接口，发现接口居然也出现了404的查询错误</p> <p>[案例分析] 由于目前都是前后端分离的项目，因而后端接口通常也是通过子应用的nginx进行方向代理实现的，这样通过父应用的nginx转发过来后由于父应用的nginx中没有代理接口地址，因而会出现没有资源的情况</p> <p>[解决方案] 有两种解决方案，一种是通过父应用去代理后端的接口地址来进行，这样的话会出现一个问题就是子应用代理的名称如果相同，并且接口并不只是来自一个微服务，或者会有不同的静态代理以及BFF形式，那样对父应用的构建就会出现复杂度不可控的情形；另一种则是通过改变子应用中的前端请求路径为约定好的一种路径，比如加上约定好的服务注册中的路径进行隔离。这里我们兼而有之，对于我们自研项目的接入，会在复应用中进行统一的网关及静态资源转发代理等配置，与子应用约定好路径名，比如后端网关统一以/api/进行转发，对于非自研项目的接入，我们目前需要接入应用进行接口的魔改，后续我们会提供一个插件库进行常见脚手架的api魔改方案，比如vue-cli/cra/umi等，对于第三方团队自研的脚手架构建应用需要自行手动更改，但一般来说自定义脚手架团队通常会有一个统一配置前端请求的路径，对于老应用如以jq等构建的项目，则需要各自手动更改</p> <p>这里我以vue-cli3构建的方案进行一个示范：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// config</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
+    data_url<span class="token operator">:</span> <span class="token string">'/rj/api'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 具体接口</span>
+<span class="token comment">// 通常这里会做一些axios的路由拦截处理等</span>
+<span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">'@/xxx'</span><span class="token punctuation">;</span>
+<span class="token comment">// 这里对baseUrl做了统一入口，只需更改这里的baseurl入口即可</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> config <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/config'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 具体接口</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">xxx</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> 
+    <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        url<span class="token operator">:</span> config<span class="token punctuation">.</span>data_url <span class="token operator">+</span> <span class="token string">'/xxx'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="源码浅析"><a href="#源码浅析" class="header-anchor">#</a> 源码浅析</h2> <p><img src="/tech/back/gateway20211120/gateway05.png" alt="gateway05"></p> <p>nginx作为一个轻量的高性能web服务器，其架构及设计是极具借鉴意义的，对node.js或其他web框架的设计具有一定的指导思路</p> <p>nginx是用C语言书写的，因而其将整个架构通过模块进行组合，其中包含了常见的诸如：HTTP模块、事件模块、配置模块以及核心模块等，通过核心模块来调度和加载其它模块，从而实现了模块之间的相互作用</p> <p>这里我们主要是需要通过location中的proxy_pass对应用进行转发，因而，我们来看一下proxy模块中对proxy_pass的处理</p> <h3 id="ngx-http-proxy-module"><a href="#ngx-http-proxy-module" class="header-anchor">#</a> ngx_http_proxy_module</h3> <p><img src="/tech/back/gateway20211120/gateway06.png" alt="gateway06"></p> <div class="language-C extra-class"><pre class="language-c"><code><span class="token keyword">static</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">ngx_http_proxy_pass</span><span class="token punctuation">(</span>ngx_conf_t <span class="token operator">*</span>cf<span class="token punctuation">,</span> ngx_command_t <span class="token operator">*</span>cmd<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">static</span> ngx_command_t ngx_http_proxy_commands<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">ngx_string</span><span class="token punctuation">(</span><span class="token string">&quot;proxy_pass&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        NGX_HTTP_LOC_CONF <span class="token operator">|</span> NGX_HTTP_LIF_CONF <span class="token operator">|</span> NGX_HTTP_LMT_CONF <span class="token operator">|</span> NGX_CONF_TAKE1<span class="token punctuation">,</span>
+        ngx_http_proxy_pass<span class="token punctuation">,</span>
+        NGX_HTTP_LOC_CONF_OFFSET<span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token constant">NULL</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">static</span> <span class="token keyword">char</span> <span class="token operator">*</span>
+<span class="token function">ngx_http_proxy_pass</span><span class="token punctuation">(</span>ngx_conf_t <span class="token operator">*</span>cf<span class="token punctuation">,</span> ngx_command_t <span class="token operator">*</span>cmd<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>conf<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_http_proxy_loc_conf_t <span class="token operator">*</span>plcf <span class="token operator">=</span> conf<span class="token punctuation">;</span>
+
+    size_t                      add<span class="token punctuation">;</span>
+    u_short                     port<span class="token punctuation">;</span>
+    ngx_str_t                  <span class="token operator">*</span>value<span class="token punctuation">,</span> <span class="token operator">*</span>url<span class="token punctuation">;</span>
+    ngx_url_t                   u<span class="token punctuation">;</span>
+    ngx_uint_t                  n<span class="token punctuation">;</span>
+    ngx_http_core_loc_conf_t   <span class="token operator">*</span>clcf<span class="token punctuation">;</span>
+    ngx_http_script_compile_t   sc<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>plcf<span class="token operator">-&gt;</span>upstream<span class="token punctuation">.</span>upstream <span class="token operator">||</span> plcf<span class="token operator">-&gt;</span>proxy_lengths<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;is duplicate&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    clcf <span class="token operator">=</span> <span class="token function">ngx_http_conf_get_module_loc_conf</span><span class="token punctuation">(</span>cf<span class="token punctuation">,</span> ngx_http_core_module<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    clcf<span class="token operator">-&gt;</span>handler <span class="token operator">=</span> ngx_http_proxy_handler<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>clcf<span class="token operator">-&gt;</span>name<span class="token punctuation">.</span>len <span class="token operator">&amp;&amp;</span> clcf<span class="token operator">-&gt;</span>name<span class="token punctuation">.</span>data<span class="token punctuation">[</span>clcf<span class="token operator">-&gt;</span>name<span class="token punctuation">.</span>len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        clcf<span class="token operator">-&gt;</span>auto_redirect <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    value <span class="token operator">=</span> cf<span class="token operator">-&gt;</span>args<span class="token operator">-&gt;</span>elts<span class="token punctuation">;</span>
+
+    url <span class="token operator">=</span> <span class="token operator">&amp;</span>value<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    n <span class="token operator">=</span> <span class="token function">ngx_http_script_variables_count</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token function">ngx_memzero</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sc<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_http_script_compile_t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        sc<span class="token punctuation">.</span>cf <span class="token operator">=</span> cf<span class="token punctuation">;</span>
+        sc<span class="token punctuation">.</span>source <span class="token operator">=</span> url<span class="token punctuation">;</span>
+        sc<span class="token punctuation">.</span>lengths <span class="token operator">=</span> <span class="token operator">&amp;</span>plcf<span class="token operator">-&gt;</span>proxy_lengths<span class="token punctuation">;</span>
+        sc<span class="token punctuation">.</span>values <span class="token operator">=</span> <span class="token operator">&amp;</span>plcf<span class="token operator">-&gt;</span>proxy_values<span class="token punctuation">;</span>
+        sc<span class="token punctuation">.</span>variables <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        sc<span class="token punctuation">.</span>complete_lengths <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        sc<span class="token punctuation">.</span>complete_values <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_http_script_compile</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sc<span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> NGX_CONF_ERROR<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_SSL)</span>
+        plcf<span class="token operator">-&gt;</span>ssl <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+        <span class="token keyword">return</span> NGX_CONF_OK<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_strncasecmp</span><span class="token punctuation">(</span>url<span class="token operator">-&gt;</span>data<span class="token punctuation">,</span> <span class="token punctuation">(</span>u_char <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token string">&quot;http://&quot;</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        add <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+        port <span class="token operator">=</span> <span class="token number">80</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_strncasecmp</span><span class="token punctuation">(</span>url<span class="token operator">-&gt;</span>data<span class="token punctuation">,</span> <span class="token punctuation">(</span>u_char <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token string">&quot;https://&quot;</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_SSL)</span>
+        plcf<span class="token operator">-&gt;</span>ssl <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+        add <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+        port <span class="token operator">=</span> <span class="token number">443</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">else</span></span>
+        <span class="token function">ngx_conf_log_error</span><span class="token punctuation">(</span>NGX_LOG_EMERG<span class="token punctuation">,</span> cf<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                           <span class="token string">&quot;https protocol requires SSL support&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> NGX_CONF_ERROR<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">ngx_conf_log_error</span><span class="token punctuation">(</span>NGX_LOG_EMERG<span class="token punctuation">,</span> cf<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">&quot;invalid URL prefix&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> NGX_CONF_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">ngx_memzero</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_url_t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    u<span class="token punctuation">.</span>url<span class="token punctuation">.</span>len <span class="token operator">=</span> url<span class="token operator">-&gt;</span>len <span class="token operator">-</span> add<span class="token punctuation">;</span>
+    u<span class="token punctuation">.</span>url<span class="token punctuation">.</span>data <span class="token operator">=</span> url<span class="token operator">-&gt;</span>data <span class="token operator">+</span> add<span class="token punctuation">;</span>
+    u<span class="token punctuation">.</span>default_port <span class="token operator">=</span> port<span class="token punctuation">;</span>
+    u<span class="token punctuation">.</span>uri_part <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    u<span class="token punctuation">.</span>no_resolve <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    plcf<span class="token operator">-&gt;</span>upstream<span class="token punctuation">.</span>upstream <span class="token operator">=</span> <span class="token function">ngx_http_upstream_add</span><span class="token punctuation">(</span>cf<span class="token punctuation">,</span> <span class="token operator">&amp;</span>u<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>plcf<span class="token operator">-&gt;</span>upstream<span class="token punctuation">.</span>upstream <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> NGX_CONF_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    plcf<span class="token operator">-&gt;</span>vars<span class="token punctuation">.</span>schema<span class="token punctuation">.</span>len <span class="token operator">=</span> add<span class="token punctuation">;</span>
+    plcf<span class="token operator">-&gt;</span>vars<span class="token punctuation">.</span>schema<span class="token punctuation">.</span>data <span class="token operator">=</span> url<span class="token operator">-&gt;</span>data<span class="token punctuation">;</span>
+    plcf<span class="token operator">-&gt;</span>vars<span class="token punctuation">.</span>key_start <span class="token operator">=</span> plcf<span class="token operator">-&gt;</span>vars<span class="token punctuation">.</span>schema<span class="token punctuation">;</span>
+
+    <span class="token function">ngx_http_proxy_set_vars</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">,</span> <span class="token operator">&amp;</span>plcf<span class="token operator">-&gt;</span>vars<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    plcf<span class="token operator">-&gt;</span>location <span class="token operator">=</span> clcf<span class="token operator">-&gt;</span>name<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>clcf<span class="token operator">-&gt;</span>named
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_PCRE)</span>
+        <span class="token operator">||</span> clcf<span class="token operator">-&gt;</span>regex
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+        <span class="token operator">||</span> clcf<span class="token operator">-&gt;</span>noname<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>plcf<span class="token operator">-&gt;</span>vars<span class="token punctuation">.</span>uri<span class="token punctuation">.</span>len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">ngx_conf_log_error</span><span class="token punctuation">(</span>NGX_LOG_EMERG<span class="token punctuation">,</span> cf<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                               <span class="token string">&quot;\&quot;proxy_pass\&quot; cannot have URI part in &quot;</span>
+                               <span class="token string">&quot;location given by regular expression, &quot;</span>
+                               <span class="token string">&quot;or inside named location, &quot;</span>
+                               <span class="token string">&quot;or inside \&quot;if\&quot; statement, &quot;</span>
+                               <span class="token string">&quot;or inside \&quot;limit_except\&quot; block&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> NGX_CONF_ERROR<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        plcf<span class="token operator">-&gt;</span>location<span class="token punctuation">.</span>len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    plcf<span class="token operator">-&gt;</span>url <span class="token operator">=</span> <span class="token operator">*</span>url<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> NGX_CONF_OK<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="ngx-http"><a href="#ngx-http" class="header-anchor">#</a> ngx_http</h3> <p><img src="/tech/back/gateway20211120/gateway07.png" alt="gateway07"></p> <div class="language-C extra-class"><pre class="language-c"><code><span class="token keyword">static</span> ngx_int_t
+<span class="token function">ngx_http_add_addresses</span><span class="token punctuation">(</span>ngx_conf_t <span class="token operator">*</span>cf<span class="token punctuation">,</span> ngx_http_core_srv_conf_t <span class="token operator">*</span>cscf<span class="token punctuation">,</span>
+    ngx_http_conf_port_t <span class="token operator">*</span>port<span class="token punctuation">,</span> ngx_http_listen_opt_t <span class="token operator">*</span>lsopt<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_uint_t             i<span class="token punctuation">,</span> default_server<span class="token punctuation">,</span> proxy_protocol<span class="token punctuation">;</span>
+    ngx_http_conf_addr_t  <span class="token operator">*</span>addr<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_SSL)</span>
+    ngx_uint_t             ssl<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_V2)</span>
+    ngx_uint_t             http2<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+    <span class="token comment">/*
+     * we cannot compare whole sockaddr struct's as kernel
+     * may fill some fields in inherited sockaddr struct's
+     */</span>
+
+    addr <span class="token operator">=</span> port<span class="token operator">-&gt;</span>addrs<span class="token punctuation">.</span>elts<span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> port<span class="token operator">-&gt;</span>addrs<span class="token punctuation">.</span>nelts<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_cmp_sockaddr</span><span class="token punctuation">(</span>lsopt<span class="token operator">-&gt;</span>sockaddr<span class="token punctuation">,</span> lsopt<span class="token operator">-&gt;</span>socklen<span class="token punctuation">,</span>
+                             addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>sockaddr<span class="token punctuation">,</span>
+                             addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>socklen<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">/* the address is already in the address list */</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ngx_http_add_server</span><span class="token punctuation">(</span>cf<span class="token punctuation">,</span> cscf<span class="token punctuation">,</span> <span class="token operator">&amp;</span>addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> NGX_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">/* preserve default_server bit during listen options overwriting */</span>
+        default_server <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>default_server<span class="token punctuation">;</span>
+
+        proxy_protocol <span class="token operator">=</span> lsopt<span class="token operator">-&gt;</span>proxy_protocol <span class="token operator">||</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>proxy_protocol<span class="token punctuation">;</span>
+
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_SSL)</span>
+        ssl <span class="token operator">=</span> lsopt<span class="token operator">-&gt;</span>ssl <span class="token operator">||</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>ssl<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_V2)</span>
+        http2 <span class="token operator">=</span> lsopt<span class="token operator">-&gt;</span>http2 <span class="token operator">||</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>http2<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>lsopt<span class="token operator">-&gt;</span>set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">ngx_conf_log_error</span><span class="token punctuation">(</span>NGX_LOG_EMERG<span class="token punctuation">,</span> cf<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                                   <span class="token string">&quot;duplicate listen options for %V&quot;</span><span class="token punctuation">,</span>
+                                   <span class="token operator">&amp;</span>addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>addr_text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt <span class="token operator">=</span> <span class="token operator">*</span>lsopt<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">/* check the duplicate &quot;default&quot; server for this address:port */</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>lsopt<span class="token operator">-&gt;</span>default_server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>default_server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">ngx_conf_log_error</span><span class="token punctuation">(</span>NGX_LOG_EMERG<span class="token punctuation">,</span> cf<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                                   <span class="token string">&quot;a duplicate default server for %V&quot;</span><span class="token punctuation">,</span>
+                                   <span class="token operator">&amp;</span>addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>addr_text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            default_server <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>default_server <span class="token operator">=</span> cscf<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>default_server <span class="token operator">=</span> default_server<span class="token punctuation">;</span>
+        addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>proxy_protocol <span class="token operator">=</span> proxy_protocol<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_SSL)</span>
+        addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>ssl <span class="token operator">=</span> ssl<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_V2)</span>
+        addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>http2 <span class="token operator">=</span> http2<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+        <span class="token keyword">return</span> NGX_OK<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/* add the address to the addresses list that bound to this port */</span>
+
+    <span class="token keyword">return</span> <span class="token function">ngx_http_add_address</span><span class="token punctuation">(</span>cf<span class="token punctuation">,</span> cscf<span class="token punctuation">,</span> port<span class="token punctuation">,</span> lsopt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">static</span> ngx_int_t
+<span class="token function">ngx_http_add_addrs</span><span class="token punctuation">(</span>ngx_conf_t <span class="token operator">*</span>cf<span class="token punctuation">,</span> ngx_http_port_t <span class="token operator">*</span>hport<span class="token punctuation">,</span>
+    ngx_http_conf_addr_t <span class="token operator">*</span>addr<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ngx_uint_t                 i<span class="token punctuation">;</span>
+    ngx_http_in_addr_t        <span class="token operator">*</span>addrs<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">sockaddr_in</span>        <span class="token operator">*</span>sin<span class="token punctuation">;</span>
+    ngx_http_virtual_names_t  <span class="token operator">*</span>vn<span class="token punctuation">;</span>
+
+    hport<span class="token operator">-&gt;</span>addrs <span class="token operator">=</span> <span class="token function">ngx_pcalloc</span><span class="token punctuation">(</span>cf<span class="token operator">-&gt;</span>pool<span class="token punctuation">,</span>
+                               hport<span class="token operator">-&gt;</span>naddrs <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_http_in_addr_t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>hport<span class="token operator">-&gt;</span>addrs <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    addrs <span class="token operator">=</span> hport<span class="token operator">-&gt;</span>addrs<span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> hport<span class="token operator">-&gt;</span>naddrs<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        sin <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">sockaddr_in</span> <span class="token operator">*</span><span class="token punctuation">)</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>sockaddr<span class="token punctuation">;</span>
+        addrs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>addr <span class="token operator">=</span> sin<span class="token operator">-&gt;</span>sin_addr<span class="token punctuation">.</span>s_addr<span class="token punctuation">;</span>
+        addrs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>conf<span class="token punctuation">.</span>default_server <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>default_server<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_SSL)</span>
+        addrs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>conf<span class="token punctuation">.</span>ssl <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>ssl<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_HTTP_V2)</span>
+        addrs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>conf<span class="token punctuation">.</span>http2 <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>http2<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+        addrs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>conf<span class="token punctuation">.</span>proxy_protocol <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opt<span class="token punctuation">.</span>proxy_protocol<span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>hash<span class="token punctuation">.</span>buckets <span class="token operator">==</span> <span class="token constant">NULL</span>
+            <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>wc_head <span class="token operator">==</span> <span class="token constant">NULL</span>
+                <span class="token operator">||</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>wc_head<span class="token operator">-&gt;</span>hash<span class="token punctuation">.</span>buckets <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+            <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>wc_tail <span class="token operator">==</span> <span class="token constant">NULL</span>
+                <span class="token operator">||</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>wc_tail<span class="token operator">-&gt;</span>hash<span class="token punctuation">.</span>buckets <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_PCRE)</span>
+            <span class="token operator">&amp;&amp;</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>nregex <span class="token operator">==</span> <span class="token number">0</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        vn <span class="token operator">=</span> <span class="token function">ngx_palloc</span><span class="token punctuation">(</span>cf<span class="token operator">-&gt;</span>pool<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ngx_http_virtual_names_t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>vn <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> NGX_ERROR<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        addrs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>conf<span class="token punctuation">.</span>virtual_names <span class="token operator">=</span> vn<span class="token punctuation">;</span>
+
+        vn<span class="token operator">-&gt;</span>names<span class="token punctuation">.</span>hash <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>hash<span class="token punctuation">;</span>
+        vn<span class="token operator">-&gt;</span>names<span class="token punctuation">.</span>wc_head <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>wc_head<span class="token punctuation">;</span>
+        vn<span class="token operator">-&gt;</span>names<span class="token punctuation">.</span>wc_tail <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>wc_tail<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> (NGX_PCRE)</span>
+        vn<span class="token operator">-&gt;</span>nregex <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>nregex<span class="token punctuation">;</span>
+        vn<span class="token operator">-&gt;</span>regex <span class="token operator">=</span> addr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>regex<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> NGX_OK<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>对于前端网关而言，不只可以将网关单独独立出来进行分层，也可以采用类SingleSPA的方案利用前端路由进行网关的处理和应用调起，从而实现实现还是单页应用的控制，只是单独拆分出了各个子应用，这样做的好处是各个子应用之间可以通过父应用或者总线进行相互间的通信，以及公共资源的共享和各自私有资源的隔离，对于本项目而言，目前业态更适合使用单独网关层的方式来实现，而使用nginx则可以实现更小的配置来接入各个应用，实现前端入口的收敛，这里后续会为构建ci、cd过程提供脚手架，方便应用开发者接入构建部署，从而实现工程化的效果，对于能够成倍数复制的操作，我们都应该想到利用工程化的手段来进行解决，而不是一味的投入人工，毕竟机器更擅长处理单一不变的批量且稳定产出的工作，共勉！！！</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://segmentfault.com/a/1190000008102599" target="_blank" rel="noopener noreferrer">搞懂nginx的rewrite模块<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://jkchao.cn/article/5d29461a5ad43e4f59a18870" target="_blank" rel="noopener noreferrer">前端网关的思考<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://smilenicky.blog.csdn.net/article/details/111287750" target="_blank" rel="noopener noreferrer">Nginx系列之代理之后无法加载静态资源处理方法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/qq_41315339/article/details/115793180" target="_blank" rel="noopener noreferrer">前端 重定向和转发<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/back/dns20210708.html" class="prev">
+        前端静态服务踩坑实践
+      </a></span> <span class="next"><a href="/tech/back/deploy20220116.html">
+        前端部署脚手架专网项目实践
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/39.eea49bbe.js" defer></script>
+  </body>
+</html>

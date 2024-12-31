@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React Hooks在SD-WAN项目中实践 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/60.4fd77246.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="active sidebar-link">React Hooks在SD-WAN项目中实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/hooks20200826.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/hooks20200826.html#目录" class="sidebar-link">目录</a></li><li class="sidebar-sub-header"><a href="/tech/front/hooks20200826.html#探索案例" class="sidebar-link">探索案例</a></li><li class="sidebar-sub-header"><a href="/tech/front/hooks20200826.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/hooks20200826.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="react-hooks在sd-wan项目中实践"><a href="#react-hooks在sd-wan项目中实践" class="header-anchor">#</a> React Hooks在SD-WAN项目中实践</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>React Hooks是React16新出的基于函数式组件的一组新的api，其不同于之前class组件的内层嵌套方式，利用hooks进行钩子方式的对数据进行了组件间的流向组织，sdwan项目中都是基于函数式组件的封装，本文为sdwan项目中的react hooks的应用实践</p> <h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <ul><li>添加警告规则弹窗组件实践</li> <li>React Hooks源码解读</li> <li>React Fiber数据结构分析</li></ul> <h2 id="探索案例"><a href="#探索案例" class="header-anchor">#</a> 探索案例</h2> <h3 id="添加警告规则弹窗组件实践"><a href="#添加警告规则弹窗组件实践" class="header-anchor">#</a> 添加警告规则弹窗组件实践</h3> <p><img src="/tech/front/hooks20200826/addRule.gif" alt="addRule"></p> <p>[组件目录]</p> <ul><li>components
+<ul><li>addRule.jsx</li> <li>RuleList.jsx</li></ul></li> <li>index.jsx</li> <li>index.less</li></ul> <p>[目录描述] addRule是点击弹窗后弹出的主体组件</p> <p>[源码分析] addRule是添加规则的弹窗，其中在告警规则一栏中，需要对列表中的行进行加减操作，这里最先想到的就是利用useState进行数据的管理，但其实useState是useReducer的语法糖，后续源码中会分析，我们看到使用了useState后可以将所有状态抽离到顶部，后续凡是需要使用trNum或setTrNum的便可以直接使用，这样就省去了在setState中的设置以及对相应this的绑定问题，使得数据的操作更加纯粹而且明晰</p> <div class="language- extra-class"><pre class="language-text"><code>const AddRule = (props) =&gt; {
+  const { children, title } = props;
+  ......
+
+  const [trNum, setTrNum] = useState(1);
+
+  const trLoop = (n) =&gt; {
+    let arr = [];
+    for(let i=0; i&lt; n; i++) {
+      arr.push(
+        &lt;tr&gt;
+          &lt;td&gt;
+            &lt;Select
+              placeholder='请选择'
+              defaultValue='0'
+              style={{width:'120px'}}
+            &gt;
+                {options.params.map((d) =&gt; (
+                    &lt;Select.Option value={d.status} key={d.status}&gt;
+                    {d.text}
+                    &lt;/Select.Option&gt;
+                ))}
+            &lt;/Select&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;Select
+              placeholder='请选择'
+              defaultValue='0'
+            &gt;
+                {options.compare.map((d) =&gt; (
+                    &lt;Select.Option value={d.status} key={d.status}&gt;
+                    {d.text}
+                    &lt;/Select.Option&gt;
+                ))}
+            &lt;/Select&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;Select
+              placeholder='请选择'
+              defaultValue={currentType}
+              onChange={val =&gt; setTypeValue(val)}
+            &gt;
+                {options.type.map((d) =&gt; (
+                    &lt;Select.Option value={d.status} key={d.status}&gt;
+                    {d.text}
+                    &lt;/Select.Option&gt;
+                ))}
+            &lt;/Select&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            { typeValue == options.type[1].status 
+            ? 
+              &lt;span style={{display: 'inline-flex', verticalAlign: 'middle', lineHeight: '32px', width: '120px'}}&gt;
+                &lt;Input placeholder=&quot;&quot;/&gt;dBm
+              &lt;/span&gt;
+            : 
+              &lt;Select
+                placeholder='请选择'
+                defaultValue='0'
+                style={{width:'120px'}}
+              &gt;
+                  {options.params.map((d) =&gt; (
+                      &lt;Select.Option value={d.status} key={d.status}&gt;
+                      {d.text}
+                      &lt;/Select.Option&gt;
+                  ))}
+              &lt;/Select&gt;
+            }
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;PlusOutlined style={{color: '#1890ff'}} onClick={()=&gt;setTrNum(trNum + 1)}/&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;CloseOutlined style={{color: '#ff4d4f'}} onClick={()=&gt; trNum&gt;1 &amp;&amp; setTrNum(trNum - 1)}/&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      )
+    };
+    return arr;
+  };
+
+  ......
+
+  return (
+    &lt;&gt;
+      &lt;span onClick={showModelHandler}&gt;{children}&lt;/span&gt;
+      &lt;Modal
+        title={title}
+        visible={visible}
+        onCancel={hideModelHandler}
+        onOk={handleOk}
+        maskClosable={false}
+        destroyOnClose
+      &gt;
+        &lt;Form form={form} layout=&quot;vertical&quot;&gt;
+          ......
+          &lt;Form.Item name=&quot;告警规则&quot; label=&quot;告警规则&quot;&gt;
+              &lt;div style={{width: '100%', backgroundColor: '#ececec', padding: '10px'}}&gt;
+                &lt;span&gt;
+                  符合以下&amp;nbsp;&lt;Select
+                    placeholder='请选择'
+                    defaultValue='0'
+                    style={{width: '120px'}}
+                  &gt;
+                      {options.rule.map((d) =&gt; (
+                          &lt;Select.Option value={d.status} key={d.status}&gt;
+                          {d.text}
+                          &lt;/Select.Option&gt;
+                      ))}
+                  &lt;/Select&gt;&amp;nbsp;条件：
+                &lt;/span&gt;
+                &lt;div 
+                  style={{
+                    border: '1px solid #ccc',
+                    width: '100%', 
+                    background: '#fff', 
+                    marginTop: '10px', 
+                    padding: '4px'
+                  }}
+                &gt;
+                  &lt;table &gt;
+                    &lt;tbody &gt;
+                      { trLoop(trNum) }
+                    &lt;/tbody&gt;
+                  &lt;/table&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/Form.Item&gt;
+          ......
+        &lt;/Form&gt;
+      &lt;/Modal&gt;
+    &lt;/&gt;
+  );
+};
+</code></pre></div><h3 id="react-hooks源码解读"><a href="#react-hooks源码解读" class="header-anchor">#</a> React Hooks源码解读</h3> <p><img src="/tech/front/hooks20200826/hooks01.png" alt="hooks01"></p> <p>[组件目录]</p> <ul><li>packages
+<ul><li>react
+<ul><li>src
+<ul><li>ReactHooks.js</li></ul></li></ul></li></ul></li></ul> <p>这里仅仅是做了一个名称的导出包括：</p> <ul><li>useContext</li> <li>useState</li> <li>useReducer</li> <li>useRef</li> <li>useEffect</li> <li>useLayoutEffect</li> <li>useCallback</li> <li>useMemo</li> <li>useImperativeHandles</li> <li>useDebugValue</li> <li>useTransition</li> <li>useDeferredValue</li> <li>useOpaqueIdentifier</li> <li>useMutableSource</li></ul> <p>这里真正的源码是放在了packages/react-reconciler/src/ReactFiberHooks.js里，可以看出其利用的仍然是React的核心数据结构Fiber的调度作用</p> <p><img src="/tech/front/hooks20200826/hooks02.png" alt="hooks02"></p> <div class="language- extra-class"><pre class="language-text"><code>export function renderWithHooks&lt;Props, SecondArg&gt;(
+  current: Fiber | null,
+  workInProgress: Fiber,
+  Component: (p: Props, arg: SecondArg) =&gt; any,
+  props: Props,
+  secondArg: SecondArg,
+  nextRenderLanes: Lanes,
+): any {
+  renderLanes = nextRenderLanes;
+  currentlyRenderingFiber = workInProgress;
+
+  if (__DEV__) {
+    hookTypesDev =
+      current !== null
+        ? ((current._debugHookTypes: any): Array&lt;HookType&gt;)
+        : null;
+    hookTypesUpdateIndexDev = -1;
+    // Used for hot reloading:
+    ignorePreviousDependencies =
+      current !== null &amp;&amp; current.type !== workInProgress.type;
+  }
+
+  workInProgress.memoizedState = null;
+  workInProgress.updateQueue = null;
+  workInProgress.lanes = NoLanes;
+
+  // The following should have already been reset
+  // currentHook = null;
+  // workInProgressHook = null;
+
+  // didScheduleRenderPhaseUpdate = false;
+
+  // TODO Warn if no hooks are used at all during mount, then some are used during update.
+  // Currently we will identify the update render as a mount because memoizedState === null.
+  // This is tricky because it's valid for certain types of components (e.g. React.lazy)
+
+  // Using memoizedState to differentiate between mount/update only works if at least one stateful hook is used.
+  // Non-stateful hooks (e.g. context) don't get added to memoizedState,
+  // so memoizedState would be null during updates and mounts.
+  if (__DEV__) {
+    if (current !== null &amp;&amp; current.memoizedState !== null) {
+      ReactCurrentDispatcher.current = HooksDispatcherOnUpdateInDEV;
+    } else if (hookTypesDev !== null) {
+      // This dispatcher handles an edge case where a component is updating,
+      // but no stateful hooks have been used.
+      // We want to match the production code behavior (which will use HooksDispatcherOnMount),
+      // but with the extra DEV validation to ensure hooks ordering hasn't changed.
+      // This dispatcher does that.
+      ReactCurrentDispatcher.current = HooksDispatcherOnMountWithHookTypesInDEV;
+    } else {
+      ReactCurrentDispatcher.current = HooksDispatcherOnMountInDEV;
+    }
+  } else {
+    ReactCurrentDispatcher.current =
+      current === null || current.memoizedState === null
+        ? HooksDispatcherOnMount
+        : HooksDispatcherOnUpdate;
+  }
+
+  let children = Component(props, secondArg);
+
+  // Check if there was a render phase update
+  if (didScheduleRenderPhaseUpdateDuringThisPass) {
+    // Keep rendering in a loop for as long as render phase updates continue to
+    // be scheduled. Use a counter to prevent infinite loops.
+    let numberOfReRenders: number = 0;
+    do {
+      didScheduleRenderPhaseUpdateDuringThisPass = false;
+      invariant(
+        numberOfReRenders &lt; RE_RENDER_LIMIT,
+        'Too many re-renders. React limits the number of renders to prevent ' +
+          'an infinite loop.',
+      );
+
+      numberOfReRenders += 1;
+      if (__DEV__) {
+        // Even when hot reloading, allow dependencies to stabilize
+        // after first render to prevent infinite render phase updates.
+        ignorePreviousDependencies = false;
+      }
+
+      // Start over from the beginning of the list
+      currentHook = null;
+      workInProgressHook = null;
+
+      workInProgress.updateQueue = null;
+
+      if (__DEV__) {
+        // Also validate hook order for cascading updates.
+        hookTypesUpdateIndexDev = -1;
+      }
+
+      ReactCurrentDispatcher.current = __DEV__
+        ? HooksDispatcherOnRerenderInDEV
+        : HooksDispatcherOnRerender;
+
+      children = Component(props, secondArg);
+    } while (didScheduleRenderPhaseUpdateDuringThisPass);
+  }
+
+  // We can assume the previous dispatcher is always this one, since we set it
+  // at the beginning of the render phase and there's no re-entrancy.
+  ReactCurrentDispatcher.current = ContextOnlyDispatcher;
+
+  if (__DEV__) {
+    workInProgress._debugHookTypes = hookTypesDev;
+  }
+
+  // This check uses currentHook so that it works the same in DEV and prod bundles.
+  // hookTypesDev could catch more cases (e.g. context) but only in DEV bundles.
+  const didRenderTooFewHooks =
+    currentHook !== null &amp;&amp; currentHook.next !== null;
+
+  renderLanes = NoLanes;
+  currentlyRenderingFiber = (null: any);
+
+  currentHook = null;
+  workInProgressHook = null;
+
+  if (__DEV__) {
+    currentHookNameInDev = null;
+    hookTypesDev = null;
+    hookTypesUpdateIndexDev = -1;
+  }
+
+  didScheduleRenderPhaseUpdate = false;
+
+  invariant(
+    !didRenderTooFewHooks,
+    'Rendered fewer hooks than expected. This may be caused by an accidental ' +
+      'early return statement.',
+  );
+
+  return children;
+}
+</code></pre></div><p>从中抽离出核心的hooks渲染，其他的具体的use方法可以在其上进行扩展，可以看出其实质是是基于Fiber的workInProgress的全局变量的更改与调度，其中包含记录当前hook状态的memoizedState以及需要更新的队列updateQueue，hooks的队列通过memoizedState及next构成了一个链表，整个hook的核心是基于Dispatcher的切换hook的调用，这里就涉及到Fiber的整个数据结构，在下一节中进行描述</p> <h3 id="react-fiber数据结构分析"><a href="#react-fiber数据结构分析" class="header-anchor">#</a> React Fiber数据结构分析</h3> <p><img src="/tech/front/hooks20200826/hooks03.jpg" alt="hooks03"></p> <p><img src="/tech/front/hooks20200826/hooks04.png" alt="hooks04"></p> <p>[组件目录]</p> <ul><li>packages
+<ul><li>react-reconciler
+<ul><li>src
+<ul><li>ReactFiber.js</li></ul></li></ul></li></ul></li></ul> <p>简单来说React的Fiber数据结构是维护了一个如下的数据格式：</p> <div class="language- extra-class"><pre class="language-text"><code>Fiber = {
+    // 标识 fiber 类型的标签，详情参看下述 WorkTag
+    tag: WorkTag,
+
+    // 指向父节点
+    return: Fiber | null,
+
+    // 指向子节点
+    child: Fiber | null,
+
+    // 指向兄弟节点
+    sibling: Fiber | null,
+
+    // 在开始执行时设置 props 值
+    pendingProps: any,
+
+    // 在结束时设置的 props 值
+    memoizedProps: any,
+
+    // 当前 state
+    memoizedState: any,
+
+    // Effect 类型，详情查看以下 effectTag
+    effectTag: SideEffectTag,
+
+    // effect 节点指针，指向下一个 effect
+    nextEffect: Fiber | null,
+
+    // effect list 是单向链表，第一个 effect
+    firstEffect: Fiber | null,
+
+    // effect list 是单向链表，最后一个 effect
+    lastEffect: Fiber | null,
+
+    // work 的过期时间，可用于标识一个 work 优先级顺序
+    expirationTime: ExpirationTime,
+};
+</code></pre></div><p><img src="/tech/front/hooks20200826/lifecycle.jpg" alt="lifecycle"></p> <p>该数据结构是一个通过链表实现的树的结构，整个React的阶段可分为Render Phase、Pre-Commit Phase以及Commit Phase，Fiber的设计初衷是利用浏览器渲染过程中剩余的时间碎片来进行render，而要达到这个目的需要能够对渲染过程的工作进行暂停、终止以及复用，Fiber便是利用数据结构实现了这样一个虚拟堆栈帧。</p> <p><img src="/tech/front/hooks20200826/hooks05.jpg" alt="hooks05"></p> <p>这里不再对协调(Reconciliation)和调度(Scheduling)的具体过程，如expirationTime的权重设计、Effect lists的DFS算法设计等进行讲述，有兴趣的同学可以参看这篇文章(<a href="https://zhuanlan.zhihu.com/p/179934120" target="_blank" rel="noopener noreferrer">React Fiber 源码解析<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)</p> <p>基于React Hooks涉及到的workInProgress，我们重点看一下这里的设计</p> <div class="language- extra-class"><pre class="language-text"><code>// This is used to create an alternate fiber to do work on.
+export function createWorkInProgress(current: Fiber, pendingProps: any): Fiber {
+  let workInProgress = current.alternate;
+  if (workInProgress === null) {
+    // We use a double buffering pooling technique because we know that we'll
+    // only ever need at most two versions of a tree. We pool the &quot;other&quot; unused
+    // node that we're free to reuse. This is lazily created to avoid allocating
+    // extra objects for things that are never updated. It also allow us to
+    // reclaim the extra memory if needed.
+    workInProgress = createFiber(
+      current.tag,
+      pendingProps,
+      current.key,
+      current.mode,
+    );
+    workInProgress.elementType = current.elementType;
+    workInProgress.type = current.type;
+    workInProgress.stateNode = current.stateNode;
+
+    if (__DEV__) {
+      // DEV-only fields
+      workInProgress._debugID = current._debugID;
+      workInProgress._debugSource = current._debugSource;
+      workInProgress._debugOwner = current._debugOwner;
+      workInProgress._debugHookTypes = current._debugHookTypes;
+    }
+
+    workInProgress.alternate = current;
+    current.alternate = workInProgress;
+  } else {
+    workInProgress.pendingProps = pendingProps;
+    // Needed because Blocks store data on type.
+    workInProgress.type = current.type;
+
+    // We already have an alternate.
+    workInProgress.subtreeTag = NoSubtreeEffect;
+    workInProgress.deletions = null;
+
+    // The effect list is no longer valid.
+    workInProgress.nextEffect = null;
+    workInProgress.firstEffect = null;
+    workInProgress.lastEffect = null;
+
+    if (enableProfilerTimer) {
+      // We intentionally reset, rather than copy, actualDuration &amp; actualStartTime.
+      // This prevents time from endlessly accumulating in new commits.
+      // This has the downside of resetting values for different priority renders,
+      // But works for yielding (the common case) and should support resuming.
+      workInProgress.actualDuration = 0;
+      workInProgress.actualStartTime = -1;
+    }
+  }
+
+  // Reset all effects except static ones.
+  // Static effects are not specific to a render.
+  workInProgress.effectTag = current.effectTag &amp; StaticMask;
+  workInProgress.childLanes = current.childLanes;
+  workInProgress.lanes = current.lanes;
+
+  workInProgress.child = current.child;
+  workInProgress.memoizedProps = current.memoizedProps;
+  workInProgress.memoizedState = current.memoizedState;
+  workInProgress.updateQueue = current.updateQueue;
+
+  // Clone the dependencies object. This is mutated during the render phase, so
+  // it cannot be shared with the current fiber.
+  const currentDependencies = current.dependencies;
+  workInProgress.dependencies =
+    currentDependencies === null
+      ? null
+      : {
+          lanes: currentDependencies.lanes,
+          firstContext: currentDependencies.firstContext,
+        };
+
+  // These will be overridden during the parent's reconciliation
+  workInProgress.sibling = current.sibling;
+  workInProgress.index = current.index;
+  workInProgress.ref = current.ref;
+
+  if (enableProfilerTimer) {
+    workInProgress.selfBaseDuration = current.selfBaseDuration;
+    workInProgress.treeBaseDuration = current.treeBaseDuration;
+  }
+
+  if (__DEV__) {
+    workInProgress._debugNeedsRemount = current._debugNeedsRemount;
+    switch (workInProgress.tag) {
+      case IndeterminateComponent:
+      case FunctionComponent:
+      case SimpleMemoComponent:
+        workInProgress.type = resolveFunctionForHotReloading(current.type);
+        break;
+      case ClassComponent:
+        workInProgress.type = resolveClassForHotReloading(current.type);
+        break;
+      case ForwardRef:
+        workInProgress.type = resolveForwardRefForHotReloading(current.type);
+        break;
+      default:
+        break;
+    }
+  }
+
+  return workInProgress;
+}
+</code></pre></div><p>这里涉及到的workInProgress和current两个树通过alternate这个指针的互相指引操作来实现首次渲染和非首次渲染的对比更新，保证两个队列都更新而不会丢失，并且确保更新始终是workInProgress的一部分，这里还做了一个内存缓冲，奇次更新和偶次更新的循环复用</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>通过学习React16关于Fiber源码及React Hooks的源码，我们发现整个React16的底层核心是基于Fiber的优化与扩展，包括dom-diff的扩展等，相较于Vue3对于Vue2的更新，可以看出React的优化迭代思路更加充满对计算机原理底层的思考与发现，当然这两个框架从出发点设计上也是有所不同，Vue是基于组件级的优化，因而并不需要这样一个Fiber的数据结构去构建，但从真正的设计来看Fiber的架构设计思维方式确实更加符合国外程序员的方法与韵味。(ps: 想要了解Andrew Clark介绍Fiber的同学，可以参看这篇文章<a href="https://github.com/acdlite/react-fiber-architecture" target="_blank" rel="noopener noreferrer">react-fiber-architecure<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://zh-hans.reactjs.org/docs/hooks-intro.html" target="_blank" rel="noopener noreferrer">Hook 简介<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/9Uuy5t-TL9cnCWY_GtQpNQ" target="_blank" rel="noopener noreferrer">【第2044期】React Hooks 设计思想<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/FpksXaQUv2zplOPvgTh_Hw" target="_blank" rel="noopener noreferrer">【第2037期】React Hooks 实践指南<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/8a65fb1bb713" target="_blank" rel="noopener noreferrer">ReactHooks源码解析之useEffect<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/63711e9c0f84" target="_blank" rel="noopener noreferrer">react hooks 源码分析 --- useState<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/72720ec4341f" target="_blank" rel="noopener noreferrer">剖析React Hooks底层源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/lHoLGxJsfNfKXyIFNHMoZQ" target="_blank" rel="noopener noreferrer">React Hook 的体系设计之一 - 分层<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/ZJRsT1ZRZenW2AxvR8eObw" target="_blank" rel="noopener noreferrer">React Hooks 的体系设计之二 - 状态粒度<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/UnX1oe5jOqOjx9i0X-n13Q" target="_blank" rel="noopener noreferrer">React Hooks 的体系设计之三 - 什么是 ref<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/fc31704ad0ee?from=timeline" target="_blank" rel="noopener noreferrer">React Hooks 源码解析（译）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/57346388" target="_blank" rel="noopener noreferrer">[译]深入React fiber架构及源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/179934120" target="_blank" rel="noopener noreferrer">React Fiber 源码解析<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/cli20200703.html" class="prev">
+        vee-cli脚手架实践(下)
+      </a></span> <span class="next"><a href="/tech/front/flexiwan20201218.html">
+        flexiwan项目踩坑实践（前端篇）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/60.4fd77246.js" defer></script>
+  </body>
+</html>

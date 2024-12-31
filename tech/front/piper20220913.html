@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端设计走查平台实践（前端篇） | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/69.445bac8e.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="active sidebar-link">前端设计走查平台实践（前端篇）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/piper20220913.html#项目背景" class="sidebar-link">项目背景</a></li><li class="sidebar-sub-header"><a href="/tech/front/piper20220913.html#方案" class="sidebar-link">方案</a></li><li class="sidebar-sub-header"><a href="/tech/front/piper20220913.html#目录" class="sidebar-link">目录</a></li><li class="sidebar-sub-header"><a href="/tech/front/piper20220913.html#实践" class="sidebar-link">实践</a></li><li class="sidebar-sub-header"><a href="/tech/front/piper20220913.html#源码" class="sidebar-link">源码</a></li><li class="sidebar-sub-header"><a href="/tech/front/piper20220913.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/piper20220913.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="前端设计走查平台实践（前端篇）"><a href="#前端设计走查平台实践（前端篇）" class="header-anchor">#</a> 前端设计走查平台实践（前端篇）</h1> <h2 id="项目背景"><a href="#项目背景" class="header-anchor">#</a> 项目背景</h2> <p><img src="/tech/front/piper20220913/piper.jpg" alt="图片"></p> <p>随着前端业务的不断发展，前端对设计稿的还原程度也成为了影响用户对产品体验的一个关键指标，作为最靠近用户侧的研发，前端工程师通常需要和设计师同学通力配合来提升用户体验。其中，设计走查是设计同学最常见的测试前端同学是否完美还原了自己设计理念的方式，本文旨在通过设计走查平台在前端侧的实践总结下在前端上游研发链路中的一些基础建设，以期能够为其他有相关需要的同学提供一些实践思路。</p> <h2 id="方案"><a href="#方案" class="header-anchor">#</a> 方案</h2> <p><img src="/tech/front/piper20220913/piper01.jpg" alt="图片"></p> <blockquote><p>一个前端工程师的主要目标是寻找一款贴近浏览器原生的框架，svelte 是你不二的选择。</p></blockquote> <p>前端架构选型，从整体的产品业务形态来看，属于较为简单的单一页面形态，并且考虑到要支持浏览器的插件生态，因而前端部分选择使用了<a href="https://www.sveltejs.cn/" target="_blank" rel="noopener noreferrer">svelte<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>的框架方案。选择 <code>svelte</code> 作为本业务的前端技术选型主要考虑到以下两方面原因：一是考虑到业务形态较为简单，只有一个上传图片的页面；二是由于浏览器插件相关的编写还是更加偏向原生js一些，使用大型框架有些大材小用。综合近几年 <code>svelte</code> 的迅猛发展，小型业务还是考虑使用它作为一个框架使用的，其在编译时利用位掩码做的脏值检查的思路其实还是可以作为框架开发者借鉴的一个思路的(ps：对这个感兴趣的同学，可以看一下<a href="https://mp.weixin.qq.com/s/7GTTAYNf28IvIe2bpfVHuQ" target="_blank" rel="noopener noreferrer">新兴前端框架 Svelte 从入门到原理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>这篇文章的介绍)，但是目前发展相对还是比较初期，整个生态相对还不够完善，同时也是给广大开发者提供了很好的蓝海空间，比如：目前还没有出现类似 <code>Element UI</code> 和 <code>Ant Design</code> 这种十分好用的组件库系统，虽然有几个，但是个人感觉很不好用，作者在本项目中对需要用到的几个组件做了简单的封装，有需要的同学可以参考借鉴一下。</p> <h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <ul><li>public
+<ul><li>build</li> <li>bg.jpeg</li> <li>favicon.png</li> <li>global.css</li> <li>index.html</li> <li>manifest.json</li></ul></li> <li>scripts
+<ul><li>setupCrxScript.js</li> <li>setupTypeScript.js</li></ul></li> <li>src
+<ul><li>components
+<ul><li>Button.svelte</li> <li>Dialog.svelte</li> <li>Icon.svelte</li> <li>Input.svelte</li> <li>Message.svelte</li> <li>Tooltip.svelte</li> <li>Upload.svelte</li></ul></li> <li>utils
+<ul><li>function.js</li> <li>image.js</li> <li>index.js</li></ul></li> <li>App.svelte</li> <li>main.js</li></ul></li> <li>rollup.config.js</li></ul> <h2 id="实践"><a href="#实践" class="header-anchor">#</a> 实践</h2> <p><img src="/tech/front/piper20220913/piper02.jpg" alt="图片"></p> <p><img src="/tech/front/piper20220913/piper03.jpg" alt="图片"></p> <p>设计走查平台提供了管理平台及对应的Chrome插件，可提供给测试及UI同学用于图片的比对，提升研发效率</p> <h2 id="源码"><a href="#源码" class="header-anchor">#</a> 源码</h2> <p><img src="/tech/front/piper20220913/rich_harris.jpg" alt="图片"></p> <p><a href="https://www.sveltejs.cn/" target="_blank" rel="noopener noreferrer">svelte<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>作者--前端著名的轮子哥<a href="https://github.com/Rich-Harris" target="_blank" rel="noopener noreferrer">Rich Harris<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，同时也是<a href="https://rollupjs.org/guide/en/" target="_blank" rel="noopener noreferrer">rollup<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>的作者，因而本项目中就选择了 <code>rollup</code> 作为打包构建的工具，同时为了将Chrome插件发布到内网中(ps：本项目主要用于项目内部基建应用，因而未在公有云及Chrome官方平台去发布，服务端涉及到了图片的比对计算)；在scripts目录下内置了两个脚本，一个用于生成ts，一个用于向云平台发送压缩包；由于 <code>svelte</code> 的组件库生态相对不是特别丰富(ps：业界常见已经开源的 <code>svelte</code> 组件库可以参看这篇文章<a href="https://blog.csdn.net/qq_36505993/article/details/123327800" target="_blank" rel="noopener noreferrer">Svelte的UI组件库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)，对比了业界几个相关的组件库后，决定自己实现下业务中需要用到的组件，具体组件放在了components目录下</p> <h3 id="rollup-config-js"><a href="#rollup-config-js" class="header-anchor">#</a> rollup.config.js</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> svelte <span class="token keyword">from</span> <span class="token string">'rollup-plugin-svelte'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> commonjs <span class="token keyword">from</span> <span class="token string">'@rollup/plugin-commonjs'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> resolve <span class="token keyword">from</span> <span class="token string">'@rollup/plugin-node-resolve'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> livereload <span class="token keyword">from</span> <span class="token string">'rollup-plugin-livereload'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> terser <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'rollup-plugin-terser'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> css <span class="token keyword">from</span> <span class="token string">'rollup-plugin-css-only'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> production <span class="token operator">=</span> <span class="token operator">!</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ROLLUP_WATCH</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">serve</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">let</span> server<span class="token punctuation">;</span>
+
+	<span class="token keyword">function</span> <span class="token function">toExit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>server<span class="token punctuation">)</span> server<span class="token punctuation">.</span><span class="token function">kill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">return</span> <span class="token punctuation">{</span>
+		<span class="token function">writeBundle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>server<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+			server <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'npm'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'run'</span><span class="token punctuation">,</span> <span class="token string">'start'</span><span class="token punctuation">,</span> <span class="token string">'--'</span><span class="token punctuation">,</span> <span class="token string">'--dev'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+				stdio<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'ignore'</span><span class="token punctuation">,</span> <span class="token string">'inherit'</span><span class="token punctuation">,</span> <span class="token string">'inherit'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+				shell<span class="token operator">:</span> <span class="token boolean">true</span>
+			<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			process<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'SIGTERM'</span><span class="token punctuation">,</span> toExit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			process<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'exit'</span><span class="token punctuation">,</span> toExit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	input<span class="token operator">:</span> <span class="token string">'src/main.js'</span><span class="token punctuation">,</span>
+	output<span class="token operator">:</span> <span class="token punctuation">{</span>
+		sourcemap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+		format<span class="token operator">:</span> <span class="token string">'iife'</span><span class="token punctuation">,</span>
+		name<span class="token operator">:</span> <span class="token string">'app'</span><span class="token punctuation">,</span>
+		file<span class="token operator">:</span> <span class="token string">'public/build/bundle.js'</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token function">svelte</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+			compilerOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+				<span class="token comment">// enable run-time checks when not in production</span>
+				dev<span class="token operator">:</span> <span class="token operator">!</span>production
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token comment">// we'll extract any component CSS out into</span>
+		<span class="token comment">// a separate file - better for performance</span>
+		<span class="token function">css</span><span class="token punctuation">(</span><span class="token punctuation">{</span> output<span class="token operator">:</span> <span class="token string">'bundle.css'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+		<span class="token comment">// If you have external dependencies installed from</span>
+		<span class="token comment">// npm, you'll most likely need these plugins. In</span>
+		<span class="token comment">// some cases you'll need additional configuration -</span>
+		<span class="token comment">// consult the documentation for details:</span>
+		<span class="token comment">// https://github.com/rollup/plugins/tree/master/packages/commonjs</span>
+		<span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+			browser<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+			dedupe<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'svelte'</span><span class="token punctuation">]</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token function">commonjs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+		<span class="token comment">// In dev mode, call `npm run start` once</span>
+		<span class="token comment">// the bundle has been generated</span>
+		<span class="token operator">!</span>production <span class="token operator">&amp;&amp;</span> <span class="token function">serve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+		<span class="token comment">// Watch the `public` directory and refresh the</span>
+		<span class="token comment">// browser on changes when not in production</span>
+		<span class="token operator">!</span>production <span class="token operator">&amp;&amp;</span> <span class="token function">livereload</span><span class="token punctuation">(</span><span class="token string">'public'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+		<span class="token comment">// If we're building for production (npm run build</span>
+		<span class="token comment">// instead of npm run dev), minify</span>
+		production <span class="token operator">&amp;&amp;</span> <span class="token function">terser</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+	watch<span class="token operator">:</span> <span class="token punctuation">{</span>
+		clearScreen<span class="token operator">:</span> <span class="token boolean">false</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="scripts"><a href="#scripts" class="header-anchor">#</a> scripts</h3> <h4 id="setupcrxscript-js"><a href="#setupcrxscript-js" class="header-anchor">#</a> setupCrxScript.js</h4> <p>通过<a href="https://www.minio.org.cn/" target="_blank" rel="noopener noreferrer">minio<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>这个库来进行私有云平台的对象存储库上传，<a href="https://github.com/archiverjs/node-archiver" target="_blank" rel="noopener noreferrer">archiver<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>这个主要用于压缩</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> archiver <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'archiver'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Minio <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'minio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> minio <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Minio<span class="token punctuation">.</span>Client</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  endPoint<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  port<span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+  useSSL<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  accessKey<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  secretKey<span class="token operator">:</span> <span class="token string">''</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> output <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createWriteStream</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'../pixelpiper.zip'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> archive <span class="token operator">=</span> <span class="token function">archiver</span><span class="token punctuation">(</span><span class="token string">'zip'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  zlib<span class="token operator">:</span> <span class="token punctuation">{</span> level<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+output<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>archive<span class="token punctuation">.</span><span class="token function">pointer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' total bytes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'archiver has been finalized and the output file descriptor has closed.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 压缩完成后向 cdn 中传递压缩包</span>
+  <span class="token keyword">const</span> file <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../pixelpiper.zip'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  fs<span class="token punctuation">.</span><span class="token function">stat</span><span class="token punctuation">(</span>file<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> stats</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    minio<span class="token punctuation">.</span><span class="token function">putObject</span><span class="token punctuation">(</span><span class="token string">'cdn'</span><span class="token punctuation">,</span> <span class="token string">'pixelpiper.zip'</span><span class="token punctuation">,</span> fs<span class="token punctuation">.</span><span class="token function">createReadStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> stats<span class="token punctuation">.</span>size<span class="token punctuation">,</span> <span class="token string">'application/zip'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> etag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> etag<span class="token punctuation">)</span> <span class="token comment">// err should be null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+output<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Data has been drained'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+archive<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'warning'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token string">'ENOENT'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+archive<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+archive<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+archive<span class="token punctuation">.</span><span class="token function">directory</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../public'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+archive<span class="token punctuation">.</span><span class="token function">finalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="setuptypescript-js"><a href="#setuptypescript-js" class="header-anchor">#</a> setupTypeScript.js</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// @ts-check</span>
+
+<span class="token comment">/** This script modifies the project to support TS code in .svelte files like:
+
+  &lt;script lang=&quot;ts&quot;&gt;
+  	export let name: string;
+  &lt;/script&gt;
+ 
+  As well as validating the code for CI.
+  */</span>
+
+<span class="token comment">/**  To work on this script:
+  rm -rf test-template template &amp;&amp; git clone sveltejs/template test-template &amp;&amp; node scripts/setupTypeScript.js test-template
+*/</span>
+
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;fs&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;path&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> argv <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;process&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> projectRoot <span class="token operator">=</span> argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">||</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;..&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Add deps to pkg.json</span>
+<span class="token keyword">const</span> packageJSON <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;package.json&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+packageJSON<span class="token punctuation">.</span>devDependencies <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>packageJSON<span class="token punctuation">.</span>devDependencies<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;svelte-check&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.0.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;svelte-preprocess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.0.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;@rollup/plugin-typescript&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.0.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;typescript&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.0.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tslib&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.0.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;@tsconfig/svelte&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.0.0&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Add script for checking</span>
+packageJSON<span class="token punctuation">.</span>scripts <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>packageJSON<span class="token punctuation">.</span>scripts<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;validate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;svelte-check&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Write the package JSON</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;package.json&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>packageJSON<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">&quot;  &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// mv src/main.js to main.ts - note, we need to edit rollup.config.js for this too</span>
+<span class="token keyword">const</span> beforeMainJSPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;src&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;main.js&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> afterMainTSPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;src&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;main.ts&quot;</span><span class="token punctuation">)</span>
+fs<span class="token punctuation">.</span><span class="token function">renameSync</span><span class="token punctuation">(</span>beforeMainJSPath<span class="token punctuation">,</span> afterMainTSPath<span class="token punctuation">)</span>
+
+<span class="token comment">// Switch the app.svelte file to use TS</span>
+<span class="token keyword">const</span> appSveltePath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;src&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;App.svelte&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> appFile <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>appSveltePath<span class="token punctuation">,</span> <span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span>
+appFile <span class="token operator">=</span> appFile<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;script&gt;&quot;</span><span class="token punctuation">,</span> <span class="token string">'&lt;script lang=&quot;ts&quot;&gt;'</span><span class="token punctuation">)</span>
+appFile <span class="token operator">=</span> appFile<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;export let name;&quot;</span><span class="token punctuation">,</span> <span class="token string">'export let name: string;'</span><span class="token punctuation">)</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>appSveltePath<span class="token punctuation">,</span> appFile<span class="token punctuation">)</span>
+
+<span class="token comment">// Edit rollup config</span>
+<span class="token keyword">const</span> rollupConfigPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;rollup.config.js&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> rollupConfig <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>rollupConfigPath<span class="token punctuation">,</span> <span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Edit imports</span>
+rollupConfig <span class="token operator">=</span> rollupConfig<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">'rollup-plugin-terser';</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">'rollup-plugin-terser';
+import sveltePreprocess from 'svelte-preprocess';
+import typescript from '@rollup/plugin-typescript';</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+
+<span class="token comment">// Replace name of entry point</span>
+rollupConfig <span class="token operator">=</span> rollupConfig<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">'src/main.js'</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">'src/main.ts'</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+
+<span class="token comment">// Add preprocessor</span>
+rollupConfig <span class="token operator">=</span> rollupConfig<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>
+  <span class="token string">'compilerOptions:'</span><span class="token punctuation">,</span>
+  <span class="token string">'preprocess: sveltePreprocess({ sourceMap: !production }),\n\t\t\tcompilerOptions:'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Add TypeScript</span>
+rollupConfig <span class="token operator">=</span> rollupConfig<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>
+  <span class="token string">'commonjs(),'</span><span class="token punctuation">,</span>
+  <span class="token string">'commonjs(),\n\t\ttypescript({\n\t\t\tsourceMap: !production,\n\t\t\tinlineSources: !production\n\t\t}),'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>rollupConfigPath<span class="token punctuation">,</span> rollupConfig<span class="token punctuation">)</span>
+
+<span class="token comment">// Add TSConfig</span>
+<span class="token keyword">const</span> tsconfig <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+  &quot;extends&quot;: &quot;@tsconfig/svelte/tsconfig.json&quot;,
+
+  &quot;include&quot;: [&quot;src/**/*&quot;],
+  &quot;exclude&quot;: [&quot;node_modules/*&quot;, &quot;__sapper__/*&quot;, &quot;public/*&quot;]
+}</span><span class="token template-punctuation string">`</span></span>
+<span class="token keyword">const</span> tsconfigPath <span class="token operator">=</span>  path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;tsconfig.json&quot;</span><span class="token punctuation">)</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>tsconfigPath<span class="token punctuation">,</span> tsconfig<span class="token punctuation">)</span>
+
+<span class="token comment">// Delete this script, but not during testing</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">/</span><span class="token operator">/</span> Remove the script
+  fs<span class="token punctuation">.</span><span class="token function">unlinkSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__filename<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token operator">/</span><span class="token operator">/</span> Check <span class="token keyword">for</span> Mac<span class="token string">'s DS_store file, and if it'</span>s the only one left remove it
+  <span class="token keyword">const</span> remainingFiles <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>remainingFiles<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> remainingFiles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'.DS_store'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fs<span class="token punctuation">.</span><span class="token function">unlinkSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'.DS_store'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token operator">/</span><span class="token operator">/</span> Check <span class="token keyword">if</span> the scripts folder is empty
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">/</span><span class="token operator">/</span> Remove the scripts folder
+    fs<span class="token punctuation">.</span><span class="token function">rmdirSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token operator">/</span><span class="token operator">/</span> Adds the extension recommendation
+fs<span class="token punctuation">.</span><span class="token function">mkdirSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;.vscode&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> recursive<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;.vscode&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;extensions.json&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+  &quot;recommendations&quot;: [&quot;svelte.svelte-vscode&quot;]
+}
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Converted to TypeScript.&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">existsSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>projectRoot<span class="token punctuation">,</span> <span class="token string">&quot;node_modules&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;\nYou will need to re-run your dependency manager to get started.&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="components"><a href="#components" class="header-anchor">#</a> components</h3> <p>项目中用到了一些通用组件，借鉴了下<a href="https://element.eleme.cn/#/zh-CN" target="_blank" rel="noopener noreferrer">Element UI<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>的组件样式和思路，主要封装了 <code>Button(按钮)</code> 、 <code>Dialog(对话框)</code> 、 <code>Icon(图标)</code> 、 <code>Input(输入框)</code> 、 <code>Message(消息)</code> 、 <code>Tooltip(提示工具)</code> 、 <code>Upload(上传)</code> 几个组件</p> <h4 id="button-svelte"><a href="#button-svelte" class="header-anchor">#</a> Button.svelte</h4> <div class="language-svelte extra-class"><pre class="language-text"><code>&lt;script&gt;
+    import Icon from './Icon.svelte';
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+    export let icon, type='default';
+    function handleClick() {
+        dispatch('click')
+    }
+    function computedButtonClass(type) {
+        switch (type) {
+            case 'primary':
+                return 'button button-primary';
+            case 'default':
+                return 'button button-default';
+            case 'text':
+                return 'button button-text';
+            default:
+                return 'button button-default';
+        }
+    }
+&lt;/script&gt;
+
+&lt;style&gt;
+    .button {
+        border: 0;
+        border-radius: 2px;
+    }
+
+    .button:hover {
+        cursor: pointer;
+    }
+
+    .button-primary {
+        background-color: rgb(77, 187, 41, 1);
+        color: white;
+        border: 1px solid rgb(77, 187, 41, 1);
+    }
+
+    .button-primary:hover {
+        background-color: rgba(77, 187, 41,.8);
+    }
+
+    .button-default {
+        background-color: white;
+        color: #999;
+        border: 1px solid #e0e0e0;
+    }
+
+    .button-default:hover {
+        background-color: rgba(77, 187, 41,.1);
+        color: rgba(77, 187, 41,.6);
+        border: 1px solid #e0e0e0;
+    }
+
+    .button-text {
+        background-color: transparent;
+        border: none;
+    }
+&lt;/style&gt;
+
+&lt;button class={computedButtonClass(type)} on:click={handleClick}&gt;
+    {#if icon}
+        &lt;Icon name=&quot;{icon}&quot; /&gt;
+    {/if}
+    &lt;span&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+    &lt;/span&gt;
+&lt;/button&gt;
+</code></pre></div><h4 id="dialog-svelte"><a href="#dialog-svelte" class="header-anchor">#</a> Dialog.svelte</h4> <div class="language-svelte extra-class"><pre class="language-text"><code>&lt;script&gt;
+import Icon from &quot;./Icon.svelte&quot;;
+import Button from &quot;./Button.svelte&quot;;
+import { createEventDispatcher } from 'svelte';
+const dispatch = createEventDispatcher();
+export let title, visible = false;
+function handleClose() {
+ visible = false;
+}
+function handleShade() {
+    visible = false;
+}
+function handleCancel() {
+    visible = false;
+}
+function handleSubmit() {
+    dispatch('submit')
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+.dialog-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.dialog {
+    width: 400px;
+    height: max-content;
+    background-color: white;
+    box-shadow: 0 0 10px #ececec;
+    position: absolute;
+    z-index: 100001;
+    border-radius: 2px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ececec;
+    padding: 10px;
+}
+
+.dialog-header .dialog-title {
+    font-size: 16px;
+}
+
+.dialog-body {
+    padding: 10px;
+}
+
+.dialog-footer {
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+}
+&lt;/style&gt;
+
+{#if visible}
+&lt;div class=&quot;dialog-wrapper&quot; on:click={handleShade}&gt;
+    
+&lt;/div&gt;
+&lt;div class=&quot;dialog&quot;&gt;
+    &lt;div class=&quot;dialog-header&quot;&gt;
+        &lt;slot name=&quot;title&quot;&gt;
+            &lt;span class=&quot;dialog-title&quot;&gt;{ title }&lt;/span&gt;
+        &lt;/slot&gt;
+        &lt;Button type=&quot;text&quot; on:click={handleClose}&gt;
+            &lt;Icon name=&quot;iconclose&quot;  /&gt;
+        &lt;/Button&gt;
+        
+    &lt;/div&gt;
+    &lt;div class=&quot;dialog-body&quot;&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;dialog-footer&quot;&gt;
+        &lt;div class=&quot;dialog-button-group&quot;&gt;
+            &lt;Button on:click={handleCancel}&gt;取消&lt;/Button&gt;
+            &lt;Button type=&quot;primary&quot; on:click={handleSubmit}&gt;确定&lt;/Button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{/if}
+</code></pre></div><h4 id="icon-svelte"><a href="#icon-svelte" class="header-anchor">#</a> Icon.svelte</h4> <p>常用的icon主要通过<a href="https://www.iconfont.cn/" target="_blank" rel="noopener noreferrer">iconfont<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>来引入</p> <div class="language-svelte extra-class"><pre class="language-text"><code>&lt;script&gt;
+ export let name;
+&lt;/script&gt;
+
+&lt;i class=&quot;{`iconfont ${name}`}&quot;&gt;&lt;/i&gt;
+</code></pre></div><h4 id="input-svelte"><a href="#input-svelte" class="header-anchor">#</a> Input.svelte</h4> <div class="language-svelte extra-class"><pre class="language-text"><code>&lt;script&gt;
+    export let value;
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+    function handleChange() {
+        dispatch('input')
+    }
+&lt;/script&gt;
+
+&lt;style&gt;
+    .input {
+        border: 1px solid rgb(77, 187, 41, 1);
+        width: 100px;
+    }
+
+    .input:focus {
+        border: 1px solid rgb(77, 187, 41, .5);
+        outline: none;
+    }
+&lt;/style&gt;
+
+&lt;input class=&quot;input&quot; bind:value={value} on:change={handleChange} /&gt;
+</code></pre></div><h4 id="message-svelte"><a href="#message-svelte" class="header-anchor">#</a> Message.svelte</h4> <div class="language-svelte extra-class"><pre class="language-text"><code>&lt;script&gt;
+import Icon from './Icon.svelte';
+export let type = 'info', show = false;
+
+const computedMessageClass = type =&gt; {
+    switch (type) {
+        case 'success':
+            return 'message message-success';
+        case 'warning':
+            return 'message message-warning';
+        case 'info':
+            return 'message message-info';
+        case 'error':
+            return 'message message-error';
+        default:
+            return 'message message-info';
+    }
+}
+
+const computedIconName = type =&gt; {
+    switch (type) {
+        case 'success':
+            return 'iconsuccess';
+        case 'warning':
+            return 'iconwarning';
+        case 'info':
+            return 'iconinfo';
+        case 'error':
+            return 'iconerror';
+        default:
+            return 'iconinfo';
+    }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+.message {
+    position: absolute;
+    z-index: 100000;
+    width: 200px;
+    height: max-content;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 4px 10px;
+    animation: show 2s ease-in-out forwards;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.message-content {
+    margin-left: 10px;
+}
+
+@keyframes show {
+    from {
+        opacity: 1;
+        top: 0;
+    }
+
+    to {
+        opacity: 0;
+        top: 100px;
+    }
+}
+
+.message-success {
+    background-color: rgba(77, 187, 41, .2);
+    color: rgba(77, 187, 41, 1);
+}
+
+.message-info {
+    background-color: rgb(144, 147, 153, .2);
+    color: rgb(144, 147, 153, 1);
+}
+
+.message-warning {
+    background-color: rgb(230, 162, 60, .2);
+    color: rgb(230, 162, 60, 1);
+}
+
+.message-error {
+    background-color: rgb(245, 108, 108, .2);
+    color: rgb(245, 108, 108, 1);
+}
+&lt;/style&gt;
+
+{#if show}
+&lt;div class={computedMessageClass(type)}&gt;
+    &lt;Icon name={computedIconName(type)} /&gt;
+    &lt;p class=&quot;message-content&quot;&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+{/if}
+</code></pre></div><h4 id="tooltip-svelte"><a href="#tooltip-svelte" class="header-anchor">#</a> Tooltip.svelte</h4> <div class="language-svelte extra-class"><pre class="language-text"><code>&lt;script&gt;
+    export let content, tooltip;
+
+&lt;/script&gt;
+
+&lt;style&gt;
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tip-container {
+    position: absolute;
+    background: #666;
+    padding: 0 10px;
+    border-radius: 4px;
+    right: -180px;
+    top: 50%;
+    margin-top: -24px;
+}
+
+.tip-container .tip-triple {
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-right-color: #666;
+	position: absolute;
+	left: -16px;
+	top: 16px;
+}
+
+.tip-container .tip-content {
+    line-height: 24px;
+    font-size: 12px;
+    color: white;
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;
+    &lt;slot class=&quot;tip-component&quot;&gt;&lt;/slot&gt;
+    {#if tooltip}
+    &lt;div class=&quot;tip-container&quot;&gt;
+        &lt;div class=&quot;tip-triple&quot;&gt;&lt;/div&gt;
+        &lt;p class=&quot;tip-content&quot;&gt;{content}&lt;/p&gt;
+    &lt;/div&gt;
+    {/if}
+&lt;/div&gt;
+</code></pre></div><h4 id="upload-svelte"><a href="#upload-svelte" class="header-anchor">#</a> Upload.svelte</h4> <div class="language-svelte extra-class"><pre class="language-text"><code>&lt;script&gt;
+    export let action, onSuccess, beforeUpload, id;
+    function ajax(options) {
+        const xhr = new XMLHttpRequest();
+        const action = options.action;
+        let fd = new FormData();
+        
+        fd.append(options.filename, options.file);
+
+        xhr.onerror = function (err) {
+            console.error(err)
+        }
+
+        xhr.onload = function() {
+            const text = xhr.responseText || xhr.response;
+            console.log('text', text)
+            text &amp;&amp; options.success(JSON.parse(text))
+        }
+
+        xhr.open('post', action, true);
+        xhr.send(fd);
+
+        return xhr;
+    }
+    function post(rawFile) {
+        const options = {
+            id: id,
+            file: rawFile,
+            filename: 'img',
+            action: action,
+            success: res =&gt; onSuccess(res, rawFile, id)
+        }
+        const req = ajax(options);
+        if(req &amp;&amp; req.then) {
+            req.then(options.onSuccess)
+        }
+    }
+    async function handleChange(e) {
+        const rawFile = e.target.files[0];
+        if(!beforeUpload) {
+            return post(rawFile)
+        }
+        let flag = await beforeUpload(rawFile, id);
+        if(flag) post(rawFile)
+    }
+    function handleClick() {
+        const plus = document.getElementById(id);
+        plus.value = '';
+        plus.click()
+    }
+&lt;/script&gt;
+
+&lt;style&gt;
+    .upload {
+        width: 250px;
+        height: 250px;
+        border: 1px dashed #ececec;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .upload:hover {
+        cursor: pointer;
+    }
+
+    .native-input {
+        display: none;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;upload&quot; on:click={handleClick}&gt;
+    &lt;div class=&quot;upload-slot&quot; &gt;
+        &lt;slot&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+    &lt;input {id} class=&quot;native-input&quot; type=&quot;file&quot; multiple=&quot;false&quot; accept=&quot;image/png&quot; on:change={handleChange} /&gt;
+&lt;/div&gt;
+</code></pre></div><h3 id="utils"><a href="#utils" class="header-anchor">#</a> utils</h3> <p>通用工具库主要封装了图片及函数式编程需要用到的一些工具函数</p> <h4 id="function-js"><a href="#function-js" class="header-anchor">#</a> function.js</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">curry</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token parameter">arg</span> <span class="token operator">=&gt;</span> arg<span class="token punctuation">.</span>length <span class="token operator">===</span> fn<span class="token punctuation">.</span>length <span class="token operator">?</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>arg<span class="token punctuation">)</span> <span class="token operator">:</span>
+    <span class="token function">curry</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span> arg<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>arr<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">compose</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> current</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">prev</span><span class="token punctuation">(</span><span class="token function">current</span><span class="token punctuation">(</span><span class="token operator">...</span>values<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="image-js"><a href="#image-js" class="header-anchor">#</a> image.js</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getBase64</span> <span class="token operator">=</span> <span class="token parameter">file</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    reader<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        reader<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span>reader<span class="token punctuation">.</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getPixel</span> <span class="token operator">=</span> <span class="token parameter">img</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> image <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    image<span class="token punctuation">.</span>src <span class="token operator">=</span> img<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        image<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> width <span class="token operator">=</span> image<span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+            <span class="token keyword">const</span> height <span class="token operator">=</span> image<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span> width<span class="token punctuation">,</span> height <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="app-svelte"><a href="#app-svelte" class="header-anchor">#</a> App.svelte</h3> <div class="language-svelte extra-class"><pre class="language-text"><code>&lt;script&gt;
+    import Icon from './components/Icon.svelte';
+    import Button from './components/Button.svelte';
+    import Upload from './components/Upload.svelte';
+    import Input from './components/Input.svelte';
+    import Message from './components/Message.svelte';
+    import Tooltip from './components/Tooltip.svelte';
+    import axios from 'axios';
+    import { getBase64, getPixel } from './utils';
+
+    const bgUrl = './bg.jpeg',
+          logoUrl = './favicon.png',
+          actionUrl = '',
+          compareUrl = '',
+          downloadUrl = '',
+          crxUrl = '';
+    let width = 0, height = 0, flag, compareName, errorMsg, successMsg, show, tooltip;
+    let uploaders = [
+        {
+            id: 'design',
+            title: '设计图',
+            filename: '',
+            url: ''
+        },
+        {
+            id: 'code',
+            title: '实现图',
+            filename: '',
+            url: ''
+        }
+    ];
+
+    const handleCompare = () =&gt; {
+        show = false;
+        const len = uploaders.filter(f =&gt; !!f.filename).length;
+        if(len == 2) {
+            axios.post(compareUrl, {
+                designName: uploaders[0]['filename'],
+                codeName: uploaders[1]['filename'],
+            }).then(res =&gt; {
+                console.log('compare', res)
+                if(res.data.success) { 
+                    compareName = res.data.data.compareName;
+                    return true
+                } else {
+                    flag = 'error';
+                    show = true;
+                    errorMsg = res.data.data
+                } 
+            }).then(c =&gt; {
+                if(c) {
+                    flag = 'success';
+                    successMsg = '对比成功';
+                    show = true;
+                    handleDownload()
+                    handleDelete()
+                }
+            })
+        } else if(len == 1) {
+            window.alert('设计图或开发图缺少，请确认已全部上传后再进行比较！')
+        } else {
+            window.alert('必须有图片才能进行比较！')
+        }
+    };
+
+    const handleBeforeUpload = async function(rawFile, id) {
+        const fileBase64 = await getBase64(rawFile);
+        const res = await getPixel(fileBase64);
+        // console.log('res', res)
+        if(res.width == width &amp;&amp; res.height == height) {
+            switch (id) {
+                case 'design':
+                    uploaders[0]['url'] = fileBase64
+                    break;
+                case 'code':
+                    uploaders[1]['url'] = fileBase64
+                    break;
+                default:
+                    break;
+            }
+            return true;
+        } else {
+            window.alert('上传图片不符合分比率要求');
+            return false;
+        }
+    }
+
+    const handleSuccess = (response, rawFile, id) =&gt; {
+        console.log('response', response, rawFile, id);
+        if(response.success) {
+            switch (id) {
+                case 'design':
+                    uploaders[0]['filename'] = response.data.filename
+                    break;
+                case 'code':
+                    uploaders[1]['filename'] = response.data.filename
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    function handleDownload() {
+        axios({
+            method: 'POST',
+            url: downloadUrl,
+            responseType: 'blob',
+            data: {
+                compareName: compareName
+            }
+        }).then(res =&gt; {
+            console.log('download', res)
+            if(res.status == 200) {
+                var blob = new Blob([res.data]);
+                // 创建一个URL对象
+                var url = window.URL.createObjectURL(blob);
+                console.log('url', url)
+                // 创建一个a标签
+                var a = document.createElement(&quot;a&quot;);
+                a.href = url;
+                a.download = compareName;// 这里指定下载文件的文件名
+                a.click();
+                // 释放之前创建的URL对象
+                window.URL.revokeObjectURL(url);
+            }
+        })
+    }
+
+    function handleDelete() {
+        uploaders = [
+        {
+            id: 'design',
+            title: '设计图',
+            filename: '',
+            url: ''
+        },
+        {
+            id: 'code',
+            title: '实现图',
+            filename: '',
+            url: ''
+        }
+    ];
+    }
+&lt;/script&gt;
+
+&lt;style&gt;
+    .pixel-piper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main {
+        width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #eee;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 10px #e0e0e0;
+    }
+
+    .main .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-container .logo:hover {
+        opacity: 90%;
+        cursor: pointer;
+    }
+
+    .main .select-container {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        line-height: 40px;
+    }
+
+    .main .upload-container {
+        display: flex;
+        padding: 0 0 10px 0;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .main .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main .info-container {
+        text-align: center;
+        color: red;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;pixel-piper&quot; style=&quot;{`background: url(${bgUrl}) no-repeat; background-size: cover`}&quot;&gt;
+    &lt;section class=&quot;main&quot;&gt;
+        &lt;div class=&quot;logo-container&quot;&gt;
+            &lt;Tooltip content=&quot;点击logo可下载chrome插件&quot; {tooltip}&gt;
+                &lt;a href={crxUrl}&gt;
+                    &lt;img 
+                        class=&quot;logo&quot; 
+                        src={logoUrl} 
+                        alt=&quot;logo&quot; 
+                        width=&quot;100px&quot; 
+                        on:mouseenter={() =&gt; tooltip=true} 
+                        on:mouseleave={() =&gt; tooltip=false}
+                    &gt;
+                &lt;/a&gt;
+            &lt;/Tooltip&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;select-container&quot;&gt;
+            &lt;p class=&quot;select-name&quot;&gt;&lt;Input bind:value={width} /&gt; x &lt;Input bind:value={height} /&gt; &lt;/p&gt; 
+        &lt;/div&gt;
+        &lt;div class=&quot;upload-container&quot;&gt;
+            {#each uploaders as uploader}
+            &lt;div class=&quot;uploader&quot;&gt;
+                &lt;Upload
+                    id={uploader.id}
+                    onSuccess={handleSuccess} 
+                    beforeUpload={handleBeforeUpload} 
+                    action={actionUrl}
+                &gt;
+                    {#if !uploader.url}
+                        &lt;Icon name=&quot;iconplus&quot; /&gt;
+                    {:else}
+                        &lt;img class=&quot;uploader-image&quot; style=&quot;object-fit: contain;&quot; width=&quot;250&quot; height=&quot;250&quot; src={uploader.url} alt={uploader.id} /&gt;
+                    {/if}
+                &lt;/Upload&gt;
+                &lt;span class=&quot;uploader-title&quot;&gt;{uploader.title}&lt;/span&gt;
+            &lt;/div&gt;
+            {/each}
+        &lt;/div&gt;
+        &lt;div class=&quot;info-container&quot;&gt;
+            {#if uploaders.filter(f =&gt; !!f.filename).length == 2}
+                &lt;span class=&quot;info-tips&quot;&gt;注：请在两分钟内进行图片对比！！&lt;/span&gt;
+            {/if}
+        &lt;/div&gt;
+        &lt;div class=&quot;button-container&quot;&gt;
+            &lt;Button icon=&quot;iconposition&quot; on:click={handleCompare} type=&quot;primary&quot;&gt;对比&lt;/Button&gt;
+            {#if uploaders.filter(f =&gt; !!f.filename).length == 2}
+                &lt;div style=&quot;margin-left: 10px&quot;&gt;
+                    &lt;Button  icon=&quot;icondelete&quot; on:click={handleDelete} type=&quot;default&quot;&gt;清除图片&lt;/Button&gt;
+                &lt;/div&gt;
+            {/if}
+        &lt;/div&gt;
+    &lt;/section&gt;
+    {#if flag == 'success'}
+        &lt;Message type=&quot;success&quot; {show} &gt;{successMsg}&lt;/Message&gt;
+    {:else if flag == 'error'}
+        &lt;Message type=&quot;error&quot; {show} &gt;{errorMsg}&lt;/Message&gt;
+    {/if}
+&lt;/div&gt;
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>作为前端工程师，我们是距离用户侧最近的研发同学，不仅仅在于完成业务的代码实现，而且不同于其他研发同学，我们也承担着产品用户体验的重要职责，而这其中页面的还原程度是一项重要的指标，能够让设计同学认可我们完成的工作也是评价大家前端能力的一个维度，毕竟上下游通力合作，才能把产品体验做到最佳，共勉！！！</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://www.sveltejs.cn/" target="_blank" rel="noopener noreferrer">Svelte 中文文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/pUCk75aKfyvCSyT28HpwKQ" target="_blank" rel="noopener noreferrer">一文详解 Svelte<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/QWwb8PXtdJJUKyicHRmBkw" target="_blank" rel="noopener noreferrer">干货 | 携程机票前端Svelte生产实践<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/TiC4FYAS5px5PjUk6hoD4A" target="_blank" rel="noopener noreferrer">Svelte 原理浅析与评测<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/7GTTAYNf28IvIe2bpfVHuQ" target="_blank" rel="noopener noreferrer">新兴前端框架 Svelte 从入门到原理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/5Y822yLWy0Kp-OqgyQx7NQ" target="_blank" rel="noopener noreferrer">被称为“三大框架”替代方案，Svelte如何简化Web开发工作<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/YdLaDBT4Irbur6rjp28AUA" target="_blank" rel="noopener noreferrer">设计小姐姐都说好的视觉还原对比利器<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/rSRrSBlJaSTo7VfdUdz9gg" target="_blank" rel="noopener noreferrer">使用Svelte开发Chrome Extension<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://cloud.tencent.com/developer/article/1993311" target="_blank" rel="noopener noreferrer">Chrome插件manifest.json文件详解<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/r3xGdsCBynaB59QQ0UA57w" target="_blank" rel="noopener noreferrer">30分钟开发一款抓取网站图片资源的浏览器插件<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/28889449" target="_blank" rel="noopener noreferrer">一天学会Chrome插件开发<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/pnw20220608.html" class="prev">
+        浅析专网通信领域的前端架构设计
+      </a></span> <span class="next"><a href="/tech/front/summary2022.html">
+        从2022看2023前端发展趋势
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/69.445bac8e.js" defer></script>
+  </body>
+</html>

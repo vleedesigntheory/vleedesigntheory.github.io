@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NG全家桶全栈项目实践总结 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/42.c5847540.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link router-link-active">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>后端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/back/cicd20200806.html" class="sidebar-link">前端自动化集成部署交付实践</a></li><li><a href="/tech/back/ng20201030.html" class="active sidebar-link">NG全家桶全栈项目实践总结</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/back/ng20201030.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/back/ng20201030.html#目录" class="sidebar-link">目录</a></li><li class="sidebar-sub-header"><a href="/tech/back/ng20201030.html#案例" class="sidebar-link">案例</a></li><li class="sidebar-sub-header"><a href="/tech/back/ng20201030.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/back/ng20201030.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/back/flexiwan20201219.html" class="sidebar-link">flexiwan项目踩坑实践（后端篇）</a></li><li><a href="/tech/back/dns20210708.html" class="sidebar-link">前端静态服务踩坑实践</a></li><li><a href="/tech/back/gateway20211120.html" class="sidebar-link">前端网关踩坑实践</a></li><li><a href="/tech/back/deploy20220116.html" class="sidebar-link">前端部署脚手架专网项目实践</a></li><li><a href="/tech/back/imagepic20220129.html" class="sidebar-link">前端图床搭建实践（后端篇）</a></li><li><a href="/tech/back/log20220718.html" class="sidebar-link">前端日志采集方案浅析</a></li><li><a href="/tech/back/piper20220914.html" class="sidebar-link">前端设计走查平台实践（后端篇）</a></li><li><a href="/tech/back/node20241216.html" class="sidebar-link">Node.js的Web服务在Nacos中的实践</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ng全家桶全栈项目实践总结"><a href="#ng全家桶全栈项目实践总结" class="header-anchor">#</a> NG全家桶全栈项目实践总结</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>Angular在国内使用的人并不像国外那么多，基本都是外企在用，但其框架的思想却仍可以为我们所借鉴，在某些问题没有思路的时候可以参考ng相关的处理，ng处理方式和思维确实比较超前，但也因此而曲高和寡。本文旨在通过ng全家桶项目（前端Angular10 + 后端NestJS7）的实践来总结对于ng架构中一些亮点的关注与思考，Angular和Nest在前后端框架的处理上同出一脉，对比起来更有借鉴意义。</p> <p><img src="/tech/back/ng20201030/ng01.png" alt="图片"></p> <h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <ul><li>前端项目实践</li> <li>后端项目实践</li> <li>源码简析</li></ul> <h2 id="案例"><a href="#案例" class="header-anchor">#</a> 案例</h2> <h3 id="前端项目实践"><a href="#前端项目实践" class="header-anchor">#</a> 前端项目实践</h3> <p><img src="/tech/back/ng20201030/ng02.gif" alt="图片"></p> <p>[目录结构]</p> <ul><li>src
+<ul><li>app
+<ul><li>login
+<ul><li>login.component.html</li> <li>login.component.scss</li> <li>login.component.spec.ts</li> <li>login.component.ts</li></ul></li> <li>main
+<ul><li>main.component.html</li> <li>main.component.scss</li> <li>main.component.spec.ts</li> <li>main.component.ts</li></ul></li> <li>app.component.html</li> <li>app.component.scss</li> <li>app.component.spec.ts</li> <li>app.component.ts</li> <li>app.module.ts</li> <li>app.service.ts</li> <li>user.ts</li></ul></li> <li>main.ts</li> <li>index.html</li></ul></li> <li>angular.json</li></ul> <p>[目录描述]</p> <p>整个前端项目是基于angular脚手架生成的，其基本目录结构是在src的app下进行相关组件和页面的模块开发，main.ts和index.html是整个单页应用的主入口，根目录下angular.json用于配置相关的打包编译等环境配置参数</p> <p><img src="/tech/back/ng20201030/ng03.png" alt="图片"></p> <p>[实践分享]</p> <ul><li><p>脚手架版本问题：对于ng10.1.x以上的版本其脚手架版本与库版本有出入，会导致引入HttpModule及其他部分模块时报错，需要将@angular/compiler这个库进行相关版本的升级 <code>This likely means that the library (@angular/common/http) which declares HttpClientModule has not been processed correctly by ngcc, or is not compatible with Angular Ivy. Check if a newer version of the library is available, and update if so. Also consider checking with the library's authors to see if the library is expected to be compatible with Ivy.</code></p></li> <li><p>输入框双向数据绑定无效问题：对于forms表单的想使用<code>[(ngModal)]</code>指令，必须在module中引入FormsModule</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [
+    FormsModule
+  ]
+})
+</code></pre></div><ul><li><p>组件库使用有问题：目前ng的组件库主要有 <a href="https://material.angular.cn/" target="_blank" rel="noopener noreferrer">官方 MATERIAL 组件库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>、<a href="https://ng.ant.design/docs/introduce/zh" target="_blank" rel="noopener noreferrer">NG-ZORRO 组件库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>、<a href="https://ngnest.com/index/docs/zh_CN/ng-nest" target="_blank" rel="noopener noreferrer">NG-NEST 组件库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，但这几个主要的组件库都在10以下或10.0版本，会有部分bug，因而本次未引入组件库，直接使用html和scss来优化页面</p></li> <li><p>Animation引入问题：同样的跟版本有关系，想使用ng自带的animation动画库需要配合对应的版本，在做提示框消失时本想使用ng的动画，后来改用了animation直接写</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>.app-message {
+    width: 300px;
+    height: 40px;
+    background: #fff;
+    transition: all 2s none;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    position: fixed;
+    left: 50%;
+    top: 10px;
+    margin-left: -150px;
+    text-align: center;
+    
+
+    &amp;-show {
+        animation: a 3s ease-out forwards;
+        animation-direction: alternate;
+        animation-iteration-count: 1;
+        @keyframes a {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+        }
+    }
+
+    &amp;-hide {
+        opacity: 0;
+    }
+}
+</code></pre></div><h3 id="后端项目踩坑实践"><a href="#后端项目踩坑实践" class="header-anchor">#</a> 后端项目踩坑实践</h3> <p><img src="/tech/back/ng20201030/ng04.png" alt="图片"></p> <p>[目录结构]</p> <ul><li>src
+<ul><li>api
+<ul><li>article
+<ul><li>article.controller.ts</li> <li>article.module.ts</li></ul></li> <li>audio
+<ul><li>audio.controller.ts</li> <li>audio.module.ts</li> <li>audio.processor.ts</li></ul></li> <li>user
+<ul><li>dto
+<ul><li>create-user.dto.ts</li> <li>get-user.dto.ts</li> <li>update-user.dto.ts</li></ul></li> <li>user.controller.ts</li> <li>user.entity.ts</li> <li>user.interface.ts</li> <li>user.module.ts</li> <li>user.service.ts</li></ul></li></ul></li> <li>auth
+<ul><li>auth.controller.ts</li> <li>auth.service.ts</li> <li>constants.ts</li> <li>jwt.strategy.ts</li></ul></li> <li>filters
+<ul><li>exception
+<ul><li>http-exception.filter.ts</li></ul></li></ul></li> <li>guard
+<ul><li>roles.guard.ts</li></ul></li> <li>interceptors
+<ul><li>cache.interceptor.ts</li> <li>exception.interceptor.ts</li> <li>logger.interceptor.ts</li> <li>timeout.interceptor.ts</li> <li>transform.interceptor.ts</li></ul></li> <li>middlewares
+<ul><li>logger
+<ul><li>logger.middleware.ts</li> <li>logger.ts</li></ul></li></ul></li> <li>pipes
+<ul><li>parse-int.pipe.ts</li> <li>validate.pipe.ts</li></ul></li> <li>main.ts</li> <li>app.module.ts</li></ul></li> <li>nest-cli.json</li></ul> <p>[目录描述]</p> <p>后端项目是基于nestjs框架的大型后台项目配置，api模块主要是对外输出的接口，auth、filters、guard、interceptors、middlewares、pipes等是对于需要的模块进行统一的收集处理，main.ts是主入口文件，用于启动及相关配置等，app.module.ts是用来收集所有模块的导入，ng基于模块的方式可以起到非常好的隔离效果</p> <p><img src="/tech/back/ng20201030/ng05.png" alt="图片"></p> <p>[实践分享]</p> <ul><li><p>typeorm数据库连接：使用navicat连接需要先创建数据库，否则无法连接</p></li> <li><p>bull消息队列：nestjs的消息队列使用的是bull.js这个库，其实现了一个调度的消息队列机制</p></li> <li><p>微服务：nestjs默认使用的基础的类似java的spring框架，并未采用微服务，如需使用，需要完全重构</p></li></ul> <h3 id="源码简析"><a href="#源码简析" class="header-anchor">#</a> 源码简析</h3> <h4 id="angular"><a href="#angular" class="header-anchor">#</a> Angular</h4> <p><img src="/tech/back/ng20201030/ng06.png" alt="图片"></p> <p><img src="/tech/back/ng20201030/ng07.png" alt="图片"></p> <p>首先，对于没有用过ng的同学科普一下，angular其实分为两个大版本，一个是angular1.x的，也就是ng1，也就是现在还有的angularjs，另一个版本是ng2以后的版本，ng2之后被谷歌收购后，完全重写了框架，唯一和1.x相通的估计也就剩那几个思想还在了：模块化、依赖注入、双向绑定、MVC，对于1.x感兴趣的同学可以去看Vue的1.x的版本，基本算是简化版的ng1.x，Vue2之后就和后来的ng分道扬镳了，vue2主要是以发布订阅来替代依赖注入的思路，扯远了...(ps: 想看ng1版本的可以看这个地址，居然还有更新... <a href="https://github.com/angular/angular.js" target="_blank" rel="noopener noreferrer">angularjs官方仓库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)，这里分析的主要是Ng10，ng8之后除了引入Ivy(<a href="https://github.com/angular/angular/blob/master/packages/compiler/design/architecture.md" target="_blank" rel="noopener noreferrer">Ivy架构官方介绍<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)这个编译渲染器之外，其实改动不大，主要就是在优化以及废除和新建一些api等等。Ng的源码很庞大，goggle自研了一个bazel自动化构建工具，ng自然也是靠这个构建的，对bazel感兴趣的同学，可以看这个<a href="https://www.cnblogs.com/Jack47/p/build-in-the-cloud.html" target="_blank" rel="noopener noreferrer">Google软件构建工具Bazel原理及使用方法介绍<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，我这里就不展开所有的源码，整体的核心大框架如下：</p> <ul><li>packages
+<ul><li>complier (ps: 不展开了，这个编译部分做的很优秀，本篇讲不完，回头写编译器部分专门说吧，尤其是Ivy那个，后续react的fiber以及vue3的最新的compiler部分都有其影响)
+<ul><li>src
+<ul><li>aot</li> <li>css_parser</li> <li>expression_parser</li> <li>jit</li> <li>ml_parser</li> <li>template_parser</li></ul></li></ul></li> <li>core
+<ul><li>src
+<ul><li>di
+<ul><li>injector.ts</li></ul></li> <li>reflection
+<ul><li>reflector.ts</li></ul></li> <li>view
+<ul><li>provider.ts</li></ul></li> <li>render3 (ps: Ivy的渲染部分)</li></ul></li></ul></li></ul></li></ul> <h4 id="nest"><a href="#nest" class="header-anchor">#</a> Nest</h4> <p><img src="/tech/back/ng20201030/ng08.png" alt="图片"></p> <p>nestjs是nodejs的web应用的一个大的集成，它最初是基于express封装的一个后端框架，后来将服务端各种理念都使用js实现了一下，虽然不能和成熟的服务端语言框架如java等进行媲美，但是服务端所需要的东西基本都具备了，对于有需求想要使用js来开发后端的同学是个不错的选择，个人认为简单的bff，比如想自己模拟的开发个后台接收请求，选择node直接写或者使用express、koa就可以，对于有一定的中间层给前端处理，可以选用阿里的egg，对于如何基于egg构建中间层，可以看看这篇文章<a href="https://mp.weixin.qq.com/s/WhqDlckGMwraEeOAs6IfTA" target="_blank" rel="noopener noreferrer">如何为团队定制自己的 Node.js 框架？（基于 EggJS）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，对于大型的服务端，尤其是前端是以ng为主栈的，可以优先考虑使用nestjs；其次对于io较多而计算较少的（js本身的特质），或者服务端需要与c++配合的，大型服务端应用也可以使用nest。nest默认是不采用微服务的形式的，nest将不同的平台封在了不同的platform下，这里只分析普通的以express为platform的形式，对于喜欢微服务的同学，可以对比和java的springcloud的区别，这里就不做表述了，其整体的核心结构大致如下：</p> <ul><li>packages
+<ul><li>core
+<ul><li>injector
+<ul><li>injector.ts</li> <li>module.ts</li></ul></li> <li>services
+<ul><li>reflector.service.ts</li></ul></li></ul></li> <li>platform-express</li></ul></li></ul> <h4 id="源码"><a href="#源码" class="header-anchor">#</a> 源码</h4> <p>这里主要在对依赖注入的实现做一个简单的理解分享，其思路是一脉相承的，对于理解后端理念的依赖注入有很好的理解，这也正是后端前端化的一个体现，也是最早的MVC框架向后来的MVVM框架过度的一个历史过程，依赖注入方式对于最早的前端框架还是有纪念意义的，但是对于ng全家桶来说，这算是其基本哲学的一个基本面</p> <p><b>Angular</b></p> <p>先来看一下ng是如何实现injector的，这里重点在于使用了抽象类来重载不同函数的使用，对于provider循环依赖的处理，利用了一个Map数据结构来区分不同的Provider</p> <div class="language- extra-class"><pre class="language-text"><code>// 抽象类
+export abstract class Injector {
+    // get方法重载的使用
+    abstract get&lt;T&gt;(
+        token: Type&lt;T&gt;|InjectionToken&lt;T&gt;|AbstractType&lt;T&gt;, notFoundValue?: T, flags?: InjectFlags
+    ): T;
+
+    abstract get(
+        token: any, 
+        notFoundValue?: any
+    ): any;
+  
+    // create方法重载的使用
+    static create(
+        providers: StaticProvider[], 
+        parent?: Injector
+    ): Injector;
+  
+    static create(
+        options: {
+            providers: StaticProvider[], 
+            parent?: Injector, 
+            name?: string
+        }
+    ): Injector;
+  
+  
+    static create(
+        options: StaticProvider[]|{providers: StaticProvider[], parent?: Injector, name?: string},
+        parent?: Injector
+    ): Injector {
+      if (Array.isArray(options)) {
+        return INJECTOR_IMPL(options, parent, '');
+      } else {
+        return INJECTOR_IMPL(options.providers, options.parent, options.name || '');
+      }
+    }
+  
+    static __NG_ELEMENT_ID__ = -1;
+  }
+
+  // 记录判断prodiver的数据结构，这里使用interface来承载
+  interface Record {
+    fn: Function;
+    useNew: boolean;
+    deps: DependencyRecord[];
+    value: any;
+  }
+  
+  interface DependencyRecord {
+    token: any;
+    options: number;
+  }
+
+  // 实现抽象类
+  export class StaticInjector implements Injector {
+    readonly parent: Injector;
+    readonly source: string|null;
+    readonly scope: string|null;
+  
+    private _records: Map&lt;any, Record|null&gt;;
+  
+    constructor(
+        providers: StaticProvider[], 
+        parent: Injector = Injector.NULL, 
+        source: string|null = null
+    ) {
+      this.parent = parent;
+      this.source = source;
+      const records = this._records = new Map&lt;any, Record&gt;();
+      records.set(
+          Injector, 
+          &lt;Record&gt;{token: Injector, fn: IDENT, deps: EMPTY, value: this, useNew: false}
+      );
+      records.set(
+          INJECTOR, 
+          &lt;Record&gt;{token: INJECTOR, fn: IDENT, deps: EMPTY, value: this, useNew: false}
+      );
+      this.scope = recursivelyProcessProviders(records, providers);
+    }
+  
+    get&lt;T&gt;(token: Type&lt;T&gt;|InjectionToken&lt;T&gt;, notFoundValue?: T, flags?: InjectFlags): T;
+
+    get(token: any, notFoundValue?: any): any;
+
+    get(token: any, notFoundValue?: any, flags: InjectFlags = InjectFlags.Default): any {
+      const records = this._records;
+      // record的缓存队列
+      let record = records.get(token);
+      // 利用record避免循环提供的问题
+      if (record === undefined) {
+        // This means we have never seen this record, see if it is tree shakable provider.
+        const injectableDef = getInjectableDef(token);
+        if (injectableDef) {
+          const providedIn = injectableDef &amp;&amp; injectableDef.providedIn;
+          if (providedIn === 'any' || providedIn != null &amp;&amp; providedIn === this.scope) {
+            records.set(
+                token,
+                record = resolveProvider(
+                    {provide: token, useFactory: injectableDef.factory, deps: EMPTY}));
+          }
+        }
+        if (record === undefined) {
+          // Set record to null to make sure that we don't go through expensive lookup above again.
+          records.set(token, null);
+        }
+      }
+      let lastInjector = setCurrentInjector(this);
+      try {
+        return tryResolveToken(token, record, records, this.parent, notFoundValue, flags);
+      } catch (e) {
+        return catchInjectorError(e, token, 'StaticInjectorError', this.source);
+      } finally {
+        setCurrentInjector(lastInjector);
+      }
+    }
+  
+    toString() {
+      const tokens = &lt;string[]&gt;[], records = this._records;
+      records.forEach((v, token) =&gt; tokens.push(stringify(token)));
+      return `StaticInjector[${tokens.join(', ')}]`;
+    }
+}
+
+  // 解析Provider的函数
+function resolveProvider(
+    provider: SupportedProvider): Record 
+{
+    const deps = computeDeps(provider);
+    let fn: Function = IDENT;
+    let value: any = EMPTY;
+    let useNew: boolean = false;
+    let provide = resolveForwardRef(provider.provide);
+    // 一些错误处理
+    ...
+    return {deps, fn, useNew, value};
+}
+
+  // 处理循环依赖的问题
+function recursivelyProcessProviders(
+  records: Map&lt;any, Record&gt;, 
+  provider: StaticProvider): string|null 
+{
+    let scope: string|null = null;
+    // 根据不同情况处理一些错误  
+    ...
+    return scope;
+}
+
+// 解析Token的函数
+function resolveToken(
+    token: any, 
+    record: Record|undefined|null, 
+    records: Map&lt;any, Record|null&gt;, parent: Injector,
+    notFoundValue: any, 
+    flags: InjectFlags
+): any {
+  let value;
+  ...
+  return value;
+}
+
+// 计算依赖函数
+function computeDeps(
+    provider: StaticProvider): DependencyRecord[] 
+{
+  let deps: DependencyRecord[] = EMPTY;
+  const providerDeps: any[] =
+      (provider as ExistingProvider &amp; StaticClassProvider &amp; ConstructorProvider).deps;
+  if (providerDeps &amp;&amp; providerDeps.length) {
+    deps = [];
+    for (let i = 0; i &lt; providerDeps.length; i++) {
+      let options = OptionFlags.Default;
+      let token = resolveForwardRef(providerDeps[i]);
+      if (Array.isArray(token)) {
+        for (let j = 0, annotations = token; j &lt; annotations.length; j++) {
+          const annotation = annotations[j];
+          if (annotation instanceof Optional || annotation == Optional) {
+            options = options | OptionFlags.Optional;
+          } else if (annotation instanceof SkipSelf || annotation == SkipSelf) {
+            options = options &amp; ~OptionFlags.CheckSelf;
+          } else if (annotation instanceof Self || annotation == Self) {
+            options = options &amp; ~OptionFlags.CheckParent;
+          } else if (annotation instanceof Inject) {
+            token = (annotation as Inject).token;
+          } else {
+            token = resolveForwardRef(annotation);
+          }
+        }
+      }
+      deps.push({token, options});
+    }
+  }
+  ...
+  return deps;
+}
+</code></pre></div><p><b>Nest</b></p> <p>再来看一下，nest的实现，不同于ng的实现，nest是利用参数和继承父类参数来确定整个的循环依赖关系的，其没有使用重载来实现，但都对循环依赖做了处理，其基本思路是一致的。</p> <div class="language- extra-class"><pre class="language-text"><code>export type InjectorDependency = Type&lt;any&gt; | Function | string | symbol;
+
+export interface PropertyDependency {
+  key: string;
+  name: InjectorDependency;
+  isOptional?: boolean;
+  instance?: any;
+}
+
+export interface InjectorDependencyContext {
+  key?: string | symbol;
+  name?: string | symbol;
+  index?: number;
+  dependencies?: InjectorDependency[];
+}
+
+export class Injector {
+  // 加载中间件 基于express的load方式
+  public async loadMiddleware(
+    wrapper: InstanceWrapper,
+    collection: Map&lt;string, InstanceWrapper&gt;,
+    moduleRef: Module,
+    contextId = STATIC_CONTEXT,
+    inquirer?: InstanceWrapper,
+  ) {
+    ...
+  }
+
+  // 记载控制器
+  public async loadController(
+    wrapper: InstanceWrapper&lt;Controller&gt;,
+    moduleRef: Module,
+    contextId = STATIC_CONTEXT,
+  ) {
+    ...
+  }
+
+  public async loadInjectable&lt;T = any&gt;(
+    wrapper: InstanceWrapper&lt;T&gt;,
+    moduleRef: Module,
+    contextId = STATIC_CONTEXT,
+    inquirer?: InstanceWrapper,
+  ) {
+    const injectables = moduleRef.injectables;
+    await this.loadInstance&lt;T&gt;(
+      wrapper,
+      injectables,
+      moduleRef,
+      contextId,
+      inquirer,
+    );
+  }
+
+  // 加载Provider
+  public async loadProvider(
+    wrapper: InstanceWrapper&lt;Injectable&gt;,
+    moduleRef: Module,
+    contextId = STATIC_CONTEXT,
+    inquirer?: InstanceWrapper,
+  ) {
+    const providers = moduleRef.providers;
+    await this.loadInstance&lt;Injectable&gt;(
+      wrapper,
+      providers,
+      moduleRef,
+      contextId,
+      inquirer,
+    );
+    await this.loadEnhancersPerContext(wrapper, contextId, wrapper);
+  }
+
+  public loadPrototype&lt;T&gt;(
+    { name }: InstanceWrapper&lt;T&gt;,
+    collection: Map&lt;string, InstanceWrapper&lt;T&gt;&gt;,
+    contextId = STATIC_CONTEXT,
+  ) {
+   ...
+  }
+
+  // 解析继承父类的参数
+  public async resolveConstructorParams&lt;T&gt;(
+    wrapper: InstanceWrapper&lt;T&gt;,
+    moduleRef: Module,
+    inject: InjectorDependency[],
+    callback: (args: unknown[]) =&gt; void,
+    contextId = STATIC_CONTEXT,
+    inquirer?: InstanceWrapper,
+    parentInquirer?: InstanceWrapper,
+  ) {
+    ...
+  }
+
+  // 反射继承父类的参数
+  public reflectConstructorParams&lt;T&gt;(
+      type: Type&lt;T&gt;
+    ): any[] 
+  {
+    ...
+  }
+
+  // 反射功能参数
+  public reflectOptionalParams&lt;T&gt;(
+      type: Type&lt;T&gt;
+    ): any[] 
+  {
+    ...
+  }
+
+  // 反射自己的参数
+  public reflectSelfParams&lt;T&gt;(
+      type: Type&lt;T&gt;
+  ): any[] 
+  {
+    ...
+  }
+
+  // 解析单个参数
+  public async resolveSingleParam&lt;T&gt;
+  (
+    wrapper: InstanceWrapper&lt;T&gt;,
+    param: Type&lt;any&gt; | string | symbol | any,
+    dependencyContext: InjectorDependencyContext,
+    moduleRef: Module,
+    contextId = STATIC_CONTEXT,
+    inquirer?: InstanceWrapper,
+    keyOrIndex?: string | number,
+  ) {
+    if (isUndefined(param)) {
+      throw new UndefinedDependencyException(
+        wrapper.name,
+        dependencyContext,
+        moduleRef,
+      );
+    }
+    const token = this.resolveParamToken(wrapper, param);
+    return this.resolveComponentInstance&lt;T&gt;(
+      moduleRef,
+      isFunction(token) ? (token as Type&lt;any&gt;).name : token,
+      dependencyContext,
+      wrapper,
+      contextId,
+      inquirer,
+      keyOrIndex,
+    );
+  }
+
+  // 解析参数的token
+  public resolveParamToken&lt;T&gt;(
+    wrapper: InstanceWrapper&lt;T&gt;,
+    param: Type&lt;any&gt; | string | symbol | any,
+  ) {
+    if (!param.forwardRef) {
+      return param;
+    }
+    wrapper.forwardRef = true;
+    return param.forwardRef();
+  }
+}
+</code></pre></div><p>总结：从nest和ng对injector的实现可以看出，虽然都是注射器的实现，但是由于呈现方式的不同，因而在实现方式上也会有所不同，对于ts而言，选用interface还是抽象类，确实可以借鉴java的模式思路，对于习惯js的我们来说，对于整个数据类型的扩展（如：抽象类、接口）等是需要向后端借鉴的。整体来说，对于依赖注入的实现最关键的就是在于处理provider的整个依赖问题，这两者都是采用token的方式来区分对待到底是属于哪一个provider，然后对于特殊的相关依赖循环的问题做对应的处理</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>ng整个生态体系在国内应用的并不广，但并不妨碍其作为前端理念的扩展先行者的这样一个角色，个人认为其在隔离性以及系统性方面都是要优于vue和react的，因而对于目前比较流行的微前端框架(ps: 对于ng的微前端应用，可以参考这篇文章<a href="https://mp.weixin.qq.com/s/ochbPM5f84u-1BcNRXVOLA%5D" target="_blank" rel="noopener noreferrer">【第1789期】使用 Angular 打造微前端架构的 ToB 企业级应用<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)，个人觉得在沙箱隔离等系统融合方面确实可以借鉴一下ng的某些思路，或许正是由于这个原因，它才是三大框架中最先上ts的，也有可能整个ng的开发者更像是传统的软件工程师，对于整个开发要做到定义数据、定义模型、系统设计等等，对于大型项目而言，这样确实会减少很多因bug而需要重复修改的时间，但是对于小型项目，个人认为还是vue更合适。虽然对于国内，ng基本已经属于明日黄花了，但是它的一些理念及设计思路确实还是值得借鉴的，在这个内卷的时代，各大应用都在向着高级化、大型化发展，说不定哪天ng又在国内重回巅峰了呢，虽然很难~~哈哈哈，各位加油！</p> <p>仓库地址，欢迎star：
+<a href="https://gitee.com/wildwood/nest-angular.git" target="_blank" rel="noopener noreferrer">前端仓库地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <a href="https://gitee.com/wildwood/nest-spring.git" target="_blank" rel="noopener noreferrer">后端仓库地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://github.com/angular/angular" target="_blank" rel="noopener noreferrer">Angular源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://angular.cn/docs" target="_blank" rel="noopener noreferrer">Angular中文文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/nestjs/nest" target="_blank" rel="noopener noreferrer">Nest源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://docs.nestjs.cn/" target="_blank" rel="noopener noreferrer">Nest中文文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/xiaolizh/article/details/82320545" target="_blank" rel="noopener noreferrer">AngularJs和angular的对比<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/hu_zhenghui/article/details/105781355" target="_blank" rel="noopener noreferrer">Angular 9.1.0在项目路径包含软链接时编译某些包时报错，9.1.1已修正<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/web2-developer/category/751303.html" target="_blank" rel="noopener noreferrer">angularjs源码分析<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/WhqDlckGMwraEeOAs6IfTA" target="_blank" rel="noopener noreferrer">如何为团队定制自己的 Node.js 框架？（基于 EggJS）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/ochbPM5f84u-1BcNRXVOLA%5D" target="_blank" rel="noopener noreferrer">【第1789期】使用 Angular 打造微前端架构的 ToB 企业级应用<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/back/cicd20200806.html" class="prev">
+        前端自动化集成部署交付实践
+      </a></span> <span class="next"><a href="/tech/back/flexiwan20201219.html">
+        flexiwan项目踩坑实践（后端篇）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/42.c5847540.js" defer></script>
+  </body>
+</html>

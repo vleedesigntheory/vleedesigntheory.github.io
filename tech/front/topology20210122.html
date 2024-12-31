@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>动态渲染拓扑图方案探究 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/85.e2c40980.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="active sidebar-link">动态渲染拓扑图方案探究</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/topology20210122.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/topology20210122.html#方案选择" class="sidebar-link">方案选择</a></li><li class="sidebar-sub-header"><a href="/tech/front/topology20210122.html#源码解析" class="sidebar-link">源码解析</a></li><li class="sidebar-sub-header"><a href="/tech/front/topology20210122.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/topology20210122.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="动态渲染拓扑图方案探究"><a href="#动态渲染拓扑图方案探究" class="header-anchor">#</a> 动态渲染拓扑图方案探究</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p><img src="/tech/front/topology20210122/topology01.jpg" alt="图片"></p> <p>拓扑图是数据可视化领域一种比较常见的展示类型，目前业界常见的可视化展现的方案有ECharts、HighCharts、D3、AntV等。当前的项目使用的是基于ECharts的静态关系图渲染，为了后续可能扩展成动态的拓扑图渲染，本文探索了ECharts的原理以及G6的原理，也算是对自研一个可视化库的基本实现方法做了一个梳理。</p> <h2 id="方案选择"><a href="#方案选择" class="header-anchor">#</a> 方案选择</h2> <ul><li>ECharts
+<ul><li>关系图</li></ul></li> <li>AntV
+<ul><li>G6
+<ul><li>Graphin</li></ul></li></ul></li></ul> <h2 id="源码解析"><a href="#源码解析" class="header-anchor">#</a> 源码解析</h2> <h3 id="echarts源码"><a href="#echarts源码" class="header-anchor">#</a> ECharts源码</h3> <p><img src="/tech/front/topology20210122/topology02.jpg" alt="图片"></p> <p>整个ECharts核心对外输出是一个大的ECharts类，所有的类型都是基于其进行new出来的实例，而其核心是基于对ZRender这样一个Canvas的封装</p> <h4 id="echarts"><a href="#echarts" class="header-anchor">#</a> ECharts</h4> <p><img src="/tech/front/topology20210122/topology03.jpg" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>class ECharts extends Eventful {
+    // 公共属性
+    group: string;
+    // 私有属性
+    private _zr: zrender.ZRenderType;
+    private _dom: HTMLElement;
+    private _model: GlobalModel;
+    private _throttledZrFlush: zrender.ZRenderType extends {flush: infer R} ? R : never;
+    private _theme: ThemeOption;
+    private _locale: LocaleOption;
+    private _chartsViews: ChartView[] = [];
+    private _chartsMap: {[viewId: string]: ChartView} = {};
+    private _componentsViews: ComponentView[] = [];
+    private _componentsMap: {[viewId: string]: ComponentView} = {};
+    private _coordSysMgr: CoordinateSystemManager;
+    private _api: ExtensionAPI;
+    private _scheduler: Scheduler;
+    private _messageCenter: MessageCenter;
+    private _pendingActions: Payload[] = [];
+    private _disposed: boolean;
+    private _loadingFX: LoadingEffect;
+    private _labelManager: LabelManager;
+    private [OPTION_UPDATED_KEY]: boolean | {silent: boolean};
+    private [IN_MAIN_PROCESS_KEY]: boolean;
+    private [CONNECT_STATUS_KEY]: ConnectStatus;
+    private [STATUS_NEEDS_UPDATE_KEY]: boolean;
+    // 保护属性
+    protected _$eventProcessor: never;
+
+    constructor(
+        dom: HTMLElement,
+        theme?: string | ThemeOption,
+        opts?: {
+            locale?: string | LocaleOption,
+            renderer?: RendererType,
+            devicePixelRatio?: number,
+            useDirtyRect?: boolean,
+            width?: number,
+            height?: number
+        }
+    ) {
+        super(new ECEventProcessor());
+
+        opts = opts || {};
+
+        
+        if (typeof theme === 'string') {
+            theme = themeStorage[theme] as object;
+        }
+
+        this._dom = dom;
+
+        let defaultRenderer = 'canvas';
+
+        const zr = this._zr = zrender.init(dom, {
+            renderer: opts.renderer || defaultRenderer,
+            devicePixelRatio: opts.devicePixelRatio,
+            width: opts.width,
+            height: opts.height,
+            useDirtyRect: opts.useDirtyRect == null ? defaultUseDirtyRect : opts.useDirtyRect
+        });
+
+        this._locale = createLocaleObject(opts.locale || SYSTEM_LANG);
+
+        this._coordSysMgr = new CoordinateSystemManager();
+
+        const api = this._api = createExtensionAPI(this);
+
+        this._scheduler = new Scheduler(this, api, dataProcessorFuncs, visualFuncs);
+
+        this._initEvents();
+
+        zr.animation.on('frame', this._onframe, this);
+
+        bindRenderedEvent(zr, this);
+
+        bindMouseEvent(zr, this);
+
+    }
+
+    private _onframe(): void {}
+
+    getDom(): HTMLElement {
+        return this._dom;
+    }
+
+    getId(): string {
+        return this.id;
+    }
+
+    getZr(): zrender.ZRenderType {
+        return this._zr;
+    }
+
+    setOption&lt;Opt extends ECBasicOption&gt;(option: Opt, notMerge?: boolean | SetOptionOpts, lazyUpdate?: boolean): void {
+        if (lazyUpdate) {
+            this[OPTION_UPDATED_KEY] = {silent: silent};
+            this[IN_MAIN_PROCESS_KEY] = false;
+            this.getZr().wakeUp();
+        }
+        else {
+            prepare(this);
+
+            updateMethods.update.call(this);
+            this._zr.flush();
+
+            this[OPTION_UPDATED_KEY] = false;
+            this[IN_MAIN_PROCESS_KEY] = false;
+
+            flushPendingActions.call(this, silent);
+            triggerUpdatedEvent.call(this, silent);
+        }
+    }
+
+    private getModel(): GlobalModel {
+        return this._model;
+    }
+
+    getRenderedCanvas(opts?: {
+        backgroundColor?: ZRColor
+        pixelRatio?: number
+    }): HTMLCanvasElement {
+        if (!env.canvasSupported) {
+            return;
+        }
+        opts = zrUtil.extend({}, opts || {});
+        opts.pixelRatio = opts.pixelRatio || this.getDevicePixelRatio();
+        opts.backgroundColor = opts.backgroundColor
+            || this._model.get('backgroundColor');
+        const zr = this._zr;
+        return (zr.painter as CanvasPainter).getRenderedCanvas(opts);
+    }
+
+
+    private _initEvents(): void {
+        each(MOUSE_EVENT_NAMES, (eveName) =&gt; {
+            const handler = (e: ElementEvent) =&gt; {
+                const ecModel = this.getModel();
+                const el = e.target;
+                let params: ECEvent;
+                const isGlobalOut = eveName === 'globalout';
+                if (isGlobalOut) {
+                    params = {} as ECEvent;
+                }
+                else {
+                    el &amp;&amp; findEventDispatcher(el, (parent) =&gt; {
+                        const ecData = getECData(parent);
+                        if (ecData &amp;&amp; ecData.dataIndex != null) {
+                            const dataModel = ecData.dataModel || ecModel.getSeriesByIndex(ecData.seriesIndex);
+                            params = (
+                                dataModel &amp;&amp; dataModel.getDataParams(ecData.dataIndex, ecData.dataType) || {}
+                            ) as ECEvent;
+                            return true;
+                        }
+                        // If element has custom eventData of components
+                        else if (ecData.eventData) {
+                            params = zrUtil.extend({}, ecData.eventData) as ECEvent;
+                            return true;
+                        }
+                    }, true);
+                }
+
+
+                if (params) {
+                    let componentType = params.componentType;
+                    let componentIndex = params.componentIndex;
+                    if (componentType === 'markLine'
+                        || componentType === 'markPoint'
+                        || componentType === 'markArea'
+                    ) {
+                        componentType = 'series';
+                        componentIndex = params.seriesIndex;
+                    }
+                    const model = componentType &amp;&amp; componentIndex != null
+                        &amp;&amp; ecModel.getComponent(componentType, componentIndex);
+                    const view = model &amp;&amp; this[
+                        model.mainType === 'series' ? '_chartsMap' : '_componentsMap'
+                    ][model.__viewId];
+
+                    params.event = e;
+                    params.type = eveName;
+
+                    (this._$eventProcessor as ECEventProcessor).eventInfo = {
+                        targetEl: el,
+                        packedEvent: params,
+                        model: model,
+                        view: view
+                    };
+
+                    this.trigger(eveName, params);
+                }
+            };
+            (handler as any).zrEventfulCallAtLast = true;
+            this._zr.on(eveName, handler, this);
+        });
+
+        each(eventActionMap, (actionType, eventType) =&gt; {
+            this._messageCenter.on(eventType, function (event) {
+                this.trigger(eventType, event);
+            }, this);
+        });
+
+        // Extra events
+        // TODO register?
+        each(
+            ['selectchanged'],
+            (eventType) =&gt; {
+                this._messageCenter.on(eventType, function (event) {
+                    this.trigger(eventType, event);
+                }, this);
+            }
+        );
+
+        handleLegacySelectEvents(this._messageCenter, this, this._api);
+    }
+
+    dispatchAction(
+        payload: Payload,
+        opt?: boolean | {
+            silent?: boolean,
+            flush?: boolean | undefined
+        }
+    ): void {
+        const silent = opt.silent;
+        doDispatchAction.call(this, payload, silent);
+
+        const flush = opt.flush;
+        if (flush) {
+            this._zr.flush();
+        }
+        else if (flush !== false &amp;&amp; env.browser.weChat) {
+            this._throttledZrFlush();
+        }
+
+        flushPendingActions.call(this, silent);
+
+        triggerUpdatedEvent.call(this, silent);
+    }
+}
+</code></pre></div><h4 id="zrender"><a href="#zrender" class="header-anchor">#</a> ZRender</h4> <p><img src="/tech/front/topology20210122/topology04.png" alt="图片"></p> <p><img src="/tech/front/topology20210122/topology05.jpg" alt="图片"></p> <p>ZRender是典型的MVC架构，其中M为Storage，主要对数据进行CRUD管理；V为Painter，对Canvas或SVG的生命周期及视图进行管理；C为Handler，负责事件的交互处理，实现dom事件的模拟封装</p> <div class="language- extra-class"><pre class="language-text"><code>class ZRender {
+    // 公共属性
+    dom: HTMLElement
+    id: number
+    storage: Storage
+    painter: PainterBase
+    handler: Handler
+    animation: Animation
+    // 私有属性
+    private _sleepAfterStill = 10;
+    private _stillFrameAccum = 0;
+    private _needsRefresh = true
+    private _needsRefreshHover = true
+    private _darkMode = false;
+    private _backgroundColor: string | GradientObject | PatternObject;
+
+    constructor(id: number, dom: HTMLElement, opts?: ZRenderInitOpt) {
+        opts = opts || {};
+
+        /**
+         * @type {HTMLDomElement}
+         */
+        this.dom = dom;
+
+        this.id = id;
+
+        const storage = new Storage();
+
+        let rendererType = opts.renderer || 'canvas';
+
+        // TODO WebGL
+        if (useVML) {
+            throw new Error('IE8 support has been dropped since 5.0');
+        }
+
+        if (!painterCtors[rendererType]) {
+            // Use the first registered renderer.
+            rendererType = zrUtil.keys(painterCtors)[0];
+        }
+        if (!painterCtors[rendererType]) {
+            throw new Error(`Renderer '${rendererType}' is not imported. Please import it first.`);
+        }
+
+        opts.useDirtyRect = opts.useDirtyRect == null
+            ? false
+            : opts.useDirtyRect;
+
+        const painter = new painterCtors[rendererType](dom, storage, opts, id);
+
+        this.storage = storage;
+        this.painter = painter;
+
+        const handerProxy = (!env.node &amp;&amp; !env.worker)
+            ? new HandlerProxy(painter.getViewportRoot(), painter.root)
+            : null;
+        this.handler = new Handler(storage, painter, handerProxy, painter.root);
+
+        this.animation = new Animation({
+            stage: {
+                update: () =&gt; this._flush(true)
+            }
+        });
+        this.animation.start();
+    }
+
+    /**
+     * 添加元素
+     */
+    add(el: Element) {
+        
+    }
+
+    /**
+     * 删除元素
+     */
+    remove(el: Element) {
+        
+    }
+    
+
+    refresh() {
+        this._needsRefresh = true;
+        // Active the animation again.
+        this.animation.start();
+    }
+
+    private _flush(fromInside?: boolean) {
+        let triggerRendered;
+
+        const start = new Date().getTime();
+        if (this._needsRefresh) {
+            triggerRendered = true;
+            this.refreshImmediately(fromInside);
+        }
+
+        if (this._needsRefreshHover) {
+            triggerRendered = true;
+            this.refreshHoverImmediately();
+        }
+        const end = new Date().getTime();
+
+        if (triggerRendered) {
+            this._stillFrameAccum = 0;
+            this.trigger('rendered', {
+                elapsedTime: end - start
+            });
+        }
+        else if (this._sleepAfterStill &gt; 0) {
+            this._stillFrameAccum++;
+            // Stop the animiation after still for 10 frames.
+            if (this._stillFrameAccum &gt; this._sleepAfterStill) {
+                this.animation.stop();
+            }
+        }
+    }
+
+    on&lt;Ctx&gt;(eventName: string, eventHandler: EventCallback&lt;Ctx, unknown&gt; | EventCallback&lt;Ctx, unknown, ElementEvent&gt;, context?: Ctx): this {
+        this.handler.on(eventName, eventHandler, context);
+        return this;
+    }
+
+    off(eventName?: string, eventHandler?: EventCallback&lt;unknown, unknown&gt; | EventCallback&lt;unknown, unknown, ElementEvent&gt;) {
+        this.handler.off(eventName, eventHandler);
+    }
+
+    trigger(eventName: string, event?: unknown) {
+        this.handler.trigger(eventName, event);
+    }
+
+    clear() {
+        
+    }
+
+    
+    dispose() {
+        
+    }
+}
+</code></pre></div><h3 id="g6源码"><a href="#g6源码" class="header-anchor">#</a> G6源码</h3> <p><img src="/tech/front/topology20210122/topology06.png" alt="图片"></p> <p>G6是AntV专门针对图开源的一个库，其底层通过对边和点的定义，以及对位置的确定，来进行图的绘制，其主要包括五大内容：1、图的元素：点、边、分组等；2、图的算法：DFS、BFS、图检测、最短路径、中心度等；3、图布局：force、circle、grid等；4、图渲染：Canvas及SVG等；5、图交互：框选、点选、拖拽等；而Graphin是基于G6的使用React封装的落地方案</p> <h4 id="g6"><a href="#g6" class="header-anchor">#</a> G6</h4> <p><img src="/tech/front/topology20210122/topology07.jpg" alt="图片"></p> <p>和ECharts的核心思路是一致的，都是基于MVC的模型，但是G6针对图的特点对元素进行了细化，用御术的话说就是“G6是面粉，ECharts是面条”，果然同一个作者开发的思路都是极其的相似</p> <div class="language- extra-class"><pre class="language-text"><code>export default abstract class AbstractGraph extends EventEmitter implements IAbstractGraph {
+  protected animating: boolean;
+  protected cfg: GraphOptions &amp; { [key: string]: any };
+  protected undoStack: Stack;
+  protected redoStack: Stack;
+
+  public destroyed: boolean;
+
+  constructor(cfg: GraphOptions) {
+    super();
+    this.cfg = deepMix(this.getDefaultCfg(), cfg);
+    this.init();
+    this.animating = false;
+    this.destroyed = false;
+
+    if (this.cfg.enabledStack) {
+      this.undoStack = new Stack(this.cfg.maxStep);
+      this.redoStack = new Stack(this.cfg.maxStep);
+    }
+  }
+
+  protected init() {
+    this.initCanvas();
+    const viewController = new ViewController(this);
+    const modeController = new ModeController(this);
+    const itemController = new ItemController(this);
+    const stateController = new StateController(this);
+
+    this.set({
+      viewController,
+      modeController,
+      itemController,
+      stateController,
+    });
+
+    this.initLayoutController();
+
+    this.initEventController();
+
+    this.initGroups();
+
+    this.initPlugins();
+  }
+
+  protected abstract initLayoutController(): void;
+
+  protected abstract initEventController(): void;
+
+  protected abstract initCanvas(): void;
+
+  protected abstract initPlugins(): void;
+
+  protected initGroups(): void {
+    const canvas: ICanvas = this.get('canvas');
+    const el: HTMLElement = this.get('canvas').get('el');
+    const { id } = el;
+
+    const group: IGroup = canvas.addGroup({
+      id: `${id}-root`,
+      className: Global.rootContainerClassName,
+    });
+
+    if (this.get('groupByTypes')) {
+      const edgeGroup: IGroup = group.addGroup({
+        id: `${id}-edge`,
+        className: Global.edgeContainerClassName,
+      });
+
+      const nodeGroup: IGroup = group.addGroup({
+        id: `${id}-node`,
+        className: Global.nodeContainerClassName,
+      });
+
+      const comboGroup: IGroup = group.addGroup({
+        id: `${id}-combo`,
+        className: Global.comboContainerClassName,
+      });
+
+      // 用于存储自定义的群组
+      comboGroup.toBack();
+
+      this.set({ nodeGroup, edgeGroup, comboGroup });
+    }
+    const delegateGroup: IGroup = group.addGroup({
+      id: `${id}-delegate`,
+      className: Global.delegateContainerClassName,
+    });
+    this.set({ delegateGroup });
+    this.set('group', group);
+  }
+
+  public node(nodeFn: (config: NodeConfig) =&gt; Partial&lt;NodeConfig&gt;): void {
+    if (typeof nodeFn === 'function') {
+      this.set('nodeMapper', nodeFn);
+    }
+  }
+
+  public edge(edgeFn: (config: EdgeConfig) =&gt; Partial&lt;EdgeConfig&gt;): void {
+    if (typeof edgeFn === 'function') {
+      this.set('edgeMapper', edgeFn);
+    }
+  }
+
+  public combo(comboFn: (config: ComboConfig) =&gt; Partial&lt;ComboConfig&gt;): void {
+    if (typeof comboFn === 'function') {
+      this.set('comboMapper', comboFn);
+    }
+  }
+
+  public addBehaviors(
+    behaviors: string | ModeOption | ModeType[],
+    modes: string | string[],
+  ): AbstractGraph {
+    const modeController: ModeController = this.get('modeController');
+    modeController.manipulateBehaviors(behaviors, modes, true);
+    return this;
+  }
+
+  public removeBehaviors(
+    behaviors: string | ModeOption | ModeType[],
+    modes: string | string[],
+  ): AbstractGraph {
+    const modeController: ModeController = this.get('modeController');
+    modeController.manipulateBehaviors(behaviors, modes, false);
+    return this;
+  }
+
+  public paint(): void {
+    this.emit('beforepaint');
+    this.get('canvas').draw();
+    this.emit('afterpaint');
+  }
+
+  public render(): void {
+    const self = this;
+    this.set('comboSorted', false);
+    const data: GraphData = this.get('data');
+
+    if (this.get('enabledStack')) {
+      // render 之前清空 redo 和 undo 栈
+      this.clearStack();
+    }
+
+    if (!data) {
+      throw new Error('data must be defined first');
+    }
+
+    const { nodes = [], edges = [], combos = [] } = data;
+
+    this.clear();
+
+    this.emit('beforerender');
+
+    each(nodes, (node: NodeConfig) =&gt; {
+      self.add('node', node, false, false);
+    });
+
+    // process the data to tree structure
+    if (combos &amp;&amp; combos.length !== 0) {
+      const comboTrees = plainCombosToTrees(combos, nodes);
+      this.set('comboTrees', comboTrees);
+      // add combos
+      self.addCombos(combos);
+    }
+
+    each(edges, (edge: EdgeConfig) =&gt; {
+      self.add('edge', edge, false, false);
+    });
+
+    const animate = self.get('animate');
+    if (self.get('fitView') || self.get('fitCenter')) {
+      self.set('animate', false);
+    }
+
+    // layout
+    const layoutController = self.get('layoutController');
+    if (layoutController) {
+      layoutController.layout(success);
+      if (this.destroyed) return;
+    } else {
+      if (self.get('fitView')) {
+        self.fitView();
+      }
+      if (self.get('fitCenter')) {
+        self.fitCenter();
+      }
+      self.emit('afterrender');
+      self.set('animate', animate);
+    }
+    // 将在 onLayoutEnd 中被调用
+    function success() {
+      // fitView 与 fitCenter 共存时，fitView 优先，fitCenter 不再执行
+      if (self.get('fitView')) {
+        self.fitView();
+      } else if (self.get('fitCenter')) {
+        self.fitCenter();
+      }
+      self.autoPaint();
+      self.emit('afterrender');
+      if (self.get('fitView') || self.get('fitCenter')) {
+        self.set('animate', animate);
+      }
+    }
+
+    if (!this.get('groupByTypes')) {
+      if (combos &amp;&amp; combos.length !== 0) {
+        this.sortCombos();
+      } else {
+        // 为提升性能，选择数量少的进行操作
+        if (data.nodes &amp;&amp; data.edges &amp;&amp; data.nodes.length &lt; data.edges.length) {
+          const nodesArr = this.getNodes();
+
+          // 遍历节点实例，将所有节点提前。
+          nodesArr.forEach((node) =&gt; {
+            node.toFront();
+          });
+        } else {
+          const edgesArr = this.getEdges();
+
+          // 遍历节点实例，将所有节点提前。
+          edgesArr.forEach((edge) =&gt; {
+            edge.toBack();
+          });
+        }
+      }
+    }
+
+    if (this.get('enabledStack')) {
+      this.pushStack('render');
+    }
+  }
+}
+</code></pre></div><h4 id="graphin"><a href="#graphin" class="header-anchor">#</a> Graphin</h4> <p><img src="/tech/front/topology20210122/topology08.jpg" alt="图片"></p> <p>Graphin是基于G6封装的React组件，可以直接进行使用</p> <div class="language- extra-class"><pre class="language-text"><code>import React, { ErrorInfo } from 'react';
+import G6, { Graph as IGraph, GraphOptions, GraphData, TreeGraphData } from '@antv/g6';
+
+class Graphin extends React.PureComponent&lt;GraphinProps, GraphinState&gt; {
+  static registerNode: RegisterFunction = (nodeName, options, extendedNodeName) =&gt; {
+    G6.registerNode(nodeName, options, extendedNodeName);
+  };
+
+  static registerEdge: RegisterFunction = (edgeName, options, extendedEdgeName) =&gt; {
+    G6.registerEdge(edgeName, options, extendedEdgeName);
+  };
+
+  static registerCombo: RegisterFunction = (comboName, options, extendedComboName) =&gt; {
+    G6.registerCombo(comboName, options, extendedComboName);
+  };
+
+  static registerBehavior(behaviorName: string, behavior: any) {
+    G6.registerBehavior(behaviorName, behavior);
+  }
+
+  static registerFontFamily(iconLoader: IconLoader): { [icon: string]: any } {
+    /**  注册 font icon */
+    const iconFont = iconLoader();
+    const { glyphs, fontFamily } = iconFont;
+    const icons = glyphs.map((item) =&gt; {
+      return {
+        name: item.name,
+        unicode: String.fromCodePoint(item.unicode_decimal),
+      };
+    });
+
+    return new Proxy(icons, {
+      get: (target, propKey: string) =&gt; {
+        const matchIcon = target.find((icon) =&gt; {
+          return icon.name === propKey;
+        });
+        if (!matchIcon) {
+          console.error(`%c fontFamily:${fontFamily},does not found ${propKey} icon`);
+          return '';
+        }
+        return matchIcon?.unicode;
+      },
+    });
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  static registerLayout(layoutName: string, layout: any) {
+    G6.registerLayout(layoutName, layout);
+  }
+
+  graphDOM: HTMLDivElement | null = null;
+  graph: IGraph;
+  layout: LayoutController;
+  width: number;
+  height: number;
+  isTree: boolean;
+  data: GraphinTreeData | GraphinData | undefined;
+  options: GraphOptions;
+  apis: ApisType;
+  theme: ThemeData;
+
+  constructor(props: GraphinProps) {
+    super(props);
+
+    const {
+      data,
+      layout,
+      width,
+      height,
+
+      ...otherOptions
+    } = props;
+
+    this.data = data;
+    this.isTree =
+      Boolean(props.data &amp;&amp; props.data.children) || TREE_LAYOUTS.indexOf(String(layout &amp;&amp; layout.type)) !== -1;
+    this.graph = {} as IGraph;
+    this.height = Number(height);
+    this.width = Number(width);
+
+    this.theme = {} as ThemeData;
+    this.apis = {} as ApisType;
+
+    this.state = {
+      isReady: false,
+      context: {
+        graph: this.graph,
+        apis: this.apis,
+        theme: this.theme,
+      },
+    };
+
+    this.options = { ...otherOptions } as GraphOptions;
+    this.layout = {} as LayoutController;
+  }
+
+  initData = (data: GraphinProps['data']) =&gt; {
+    if (data.children) {
+      this.isTree = true;
+    }
+    console.time('clone data');
+    this.data = cloneDeep(data);
+    console.timeEnd('clone data');
+  };
+
+  initGraphInstance = () =&gt; {
+    const {
+      theme,
+      data,
+      layout,
+      width,
+      height,
+      defaultCombo,
+      defaultEdge,
+      defaultNode,
+      nodeStateStyles,
+      edgeStateStyles,
+      comboStateStyles,
+      modes = { default: [] },
+      animate,
+      ...otherOptions
+    } = this.props;
+    const { clientWidth, clientHeight } = this.graphDOM as HTMLDivElement;
+    this.initData(data);
+
+    this.width = Number(width) || clientWidth || 500;
+    this.height = Number(height) || clientHeight || 500;
+
+    const themeResult = getDefaultStyleByTheme(theme);
+
+    const {
+      defaultNodeStyle,
+      defaultEdgeStyle,
+      defaultComboStyle,
+      defaultNodeStatusStyle,
+      defaultEdgeStatusStyle,
+      defaultComboStatusStyle,
+    } = themeResult;
+    this.theme = themeResult as ThemeData;
+    this.isTree = Boolean(data.children) || TREE_LAYOUTS.indexOf(String(layout &amp;&amp; layout.type)) !== -1;
+    const isGraphinNodeType = defaultNode?.type === undefined || defaultNode?.type === defaultNodeStyle.type;
+    const isGraphinEdgeType = defaultEdge?.type === undefined || defaultEdge?.type === defaultEdgeStyle.type;
+
+    this.options = {
+      container: this.graphDOM,
+      renderer: 'canvas',
+      width: this.width,
+      height: this.height,
+      animate: animate !== false,
+      /** 默认样式 */
+      defaultNode: isGraphinNodeType ? deepMix({}, defaultNodeStyle, defaultNode) : defaultNode,
+      defaultEdge: isGraphinEdgeType ? deepMix({}, defaultEdgeStyle, defaultEdge) : defaultEdge,
+      defaultCombo: deepMix({}, defaultComboStyle, defaultCombo),
+      /** status 样式 */
+      nodeStateStyles: deepMix({}, defaultNodeStatusStyle, nodeStateStyles),
+      edgeStateStyles: deepMix({}, defaultEdgeStatusStyle, edgeStateStyles),
+      comboStateStyles: deepMix({}, defaultComboStatusStyle, comboStateStyles),
+
+      modes,
+      ...otherOptions,
+    } as GraphOptions;
+
+    if (this.isTree) {
+      this.options.layout = { ...layout };
+
+      this.graph = new G6.TreeGraph(this.options);
+    } else {
+      this.graph = new G6.Graph(this.options);
+    }
+
+    this.graph.data(this.data as GraphData | TreeGraphData);
+    /** 初始化布局 */
+    if (!this.isTree) {
+      this.layout = new LayoutController(this);
+      this.layout.start();
+    }
+    this.graph.get('canvas').set('localRefresh', false);
+    this.graph.render();
+    this.initStatus();
+    this.apis = ApiController(this.graph);
+  };
+
+  updateLayout = () =&gt; {
+    this.layout.changeLayout();
+  };
+
+  componentDidMount() {
+    console.log('did mount...');
+
+    this.initGraphInstance();
+    this.setState({
+      isReady: true,
+      context: {
+        graph: this.graph,
+        apis: this.apis,
+        theme: this.theme,
+      },
+    });
+  }
+
+  updateOptions = () =&gt; {
+    const { layout, data, ...options } = this.props;
+    return options;
+  };
+
+  initStatus = () =&gt; {
+    if (!this.isTree) {
+      const { data } = this.props;
+      const { nodes = [], edges = [] } = data as GraphinData;
+      nodes.forEach((node) =&gt; {
+        const { status } = node;
+        if (status) {
+          Object.keys(status).forEach((k) =&gt; {
+            this.graph.setItemState(node.id, k, Boolean(status[k]));
+          });
+        }
+      });
+      edges.forEach((edge) =&gt; {
+        const { status } = edge;
+        if (status) {
+          Object.keys(status).forEach((k) =&gt; {
+            this.graph.setItemState(edge.id, k, Boolean(status[k]));
+          });
+        }
+      });
+    }
+  };
+
+  componentDidUpdate(prevProps: GraphinProps) {
+    console.time('did-update');
+    const isDataChange = this.shouldUpdate(prevProps, 'data');
+    const isLayoutChange = this.shouldUpdate(prevProps, 'layout');
+    const isOptionsChange = this.shouldUpdate(prevProps, 'options');
+    const isThemeChange = this.shouldUpdate(prevProps, 'theme');
+    console.timeEnd('did-update');
+    const { data } = this.props;
+    const isGraphTypeChange = prevProps.data.children !== data.children;
+
+    /** 图类型变化 */
+    if (isGraphTypeChange) {
+      this.initGraphInstance();
+      console.log('%c isGraphTypeChange', 'color:grey');
+    }
+    /** 配置变化 */
+    if (isOptionsChange) {
+      this.updateOptions();
+      console.log('isOptionsChange');
+    }
+    /** 数据变化 */
+    if (isDataChange) {
+      this.initData(data);
+      this.layout.changeLayout();
+      this.graph.data(this.data as GraphData | TreeGraphData);
+      this.graph.changeData(this.data as GraphData | TreeGraphData);
+      this.initStatus();
+      this.apis = ApiController(this.graph);
+      console.log('%c isDataChange', 'color:grey');
+      this.setState((preState) =&gt; {
+        return {
+          ...preState,
+          context: {
+            graph: this.graph,
+            apis: this.apis,
+            theme: this.theme,
+          },
+        };
+      });
+      return;
+    }
+    /** 布局变化 */
+    if (isLayoutChange) {
+      /**
+       * TODO
+       * 1. preset 前置布局判断问题
+       * 2. enablework 问题
+       * 3. G6 LayoutController 里的逻辑
+       */
+      this.layout.changeLayout();
+      this.layout.refreshPosition();
+
+      /** 走G6的layoutController */
+      // this.graph.updateLayout();
+      console.log('%c isLayoutChange', 'color:grey');
+    }
+  }
+
+  /**
+   * 组件移除的时候
+   */
+  componentWillUnmount() {
+    this.clear();
+  }
+
+  /**
+   * 组件崩溃的时候
+   * @param error
+   * @param info
+   */
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    console.error('Catch component error: ', error, info);
+  }
+
+  clear = () =&gt; {
+    if (this.layout &amp;&amp; this.layout.destroyed) {
+      this.layout.destroy(); // tree graph
+    }
+    this.layout = {} as LayoutController;
+    this.graph!.clear();
+    this.data = { nodes: [], edges: [], combos: [] };
+    this.graph!.destroy();
+  };
+
+  shouldUpdate(prevProps: GraphinProps, key: string) {
+    /* eslint-disable react/destructuring-assignment */
+    const prevVal = prevProps[key];
+    const currentVal = this.props[key] as DiffValue;
+    const isEqual = deepEqual(prevVal, currentVal);
+    return !isEqual;
+  }
+
+  render() {
+    const { isReady } = this.state;
+    const { modes, style } = this.props;
+    return (
+      &lt;GraphinContext.Provider value={this.state.context}&gt;
+        &lt;div id=&quot;graphin-container&quot;&gt;
+          &lt;div
+            data-testid=&quot;custom-element&quot;
+            className=&quot;graphin-core&quot;
+            ref={(node) =&gt; {
+              this.graphDOM = node;
+            }}
+            style={{ background: this.theme?.background, ...style }}
+          /&gt;
+          &lt;div className=&quot;graphin-components&quot;&gt;
+            {isReady &amp;&amp; (
+              &lt;&gt;
+                {
+                  /** modes 不存在的时候，才启动默认的behaviros，否则会覆盖用户自己传入的 */
+                  !modes &amp;&amp; (
+                    &lt;React.Fragment&gt;
+                      {/* 拖拽画布 */}
+                      &lt;DragCanvas /&gt;
+                      {/* 缩放画布 */}
+                      &lt;ZoomCanvas /&gt;
+                      {/* 拖拽节点 */}
+                      &lt;DragNode /&gt;
+                      {/* 点击节点 */}
+                      &lt;DragCombo /&gt;
+                      {/* 点击节点 */}
+                      &lt;ClickSelect /&gt;
+                      {/* 圈选节点 */}
+                      &lt;BrushSelect /&gt;
+                    &lt;/React.Fragment&gt;
+                  )
+                }
+
+                {/** resize 画布 */}
+                &lt;ResizeCanvas graphDOM={this.graphDOM as HTMLDivElement} /&gt;
+                &lt;Hoverable bindType=&quot;node&quot; /&gt;
+                {/* &lt;Hoverable bindType=&quot;edge&quot; /&gt; */}
+                {this.props.children}
+              &lt;/&gt;
+            )}
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/GraphinContext.Provider&gt;
+    );
+  }
+}
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>数据可视化通常是基于Canvas进行渲染的，对于简单的图形渲染，我们常常一个实例一个实例去写，缺少系统性的统筹规划的概念，对于需要解决一类问题的可视化方案，可以借鉴ECharts及G6引擎的做法，基于MVC模型，将展示、行为及数据进行分离，对于特定方案细粒度的把控可以参考G6的方案。本质上，大数据可视化展示是一个兼具大数据、视觉传达、前端等多方交叉的领域，对于怎么进行数据粒度的优美展示，可以借鉴data-ink ratio以及利用力导布局的算法（ps：引入库伦斥力及胡克弹力阻尼衰减进行动效展示，同时配合边线权重进行节点聚合），对于这方面感兴趣的同学，可以参考今年SEE Conf的<a href="https://www.yuque.com/vee/blog/ksqqu2" target="_blank" rel="noopener noreferrer">《图解万物——AntV图可视化分析解决方案》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，数据可视化领域既专业又交叉，对于深挖此道的同学还是需要下一番功夫的。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://echarts.apache.org/examples/zh/index.html#chart-type-graph" target="_blank" rel="noopener noreferrer">ECharts关系图官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/apache/echarts" target="_blank" rel="noopener noreferrer">ECharts官方源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/future_todo/article/details/60956942" target="_blank" rel="noopener noreferrer">ECharts 3.0源码简要分析1-总体架构<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/ecomfe/zrender" target="_blank" rel="noopener noreferrer">ZRender官方源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/hhstuhacker/p/zrender-source-advance-frame.html" target="_blank" rel="noopener noreferrer">ZRender源码分析1：总体结构<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/hhstuhacker/p/zrender-source-storage-advance.html" target="_blank" rel="noopener noreferrer">ZRender源码分析2：Storage(Model层)<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/hhstuhacker/p/zrender-source-painter-part1.html" target="_blank" rel="noopener noreferrer">ZRender源码分析3：Painter(View层)-上<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/hhstuhacker/p/zrender-source-painter-part2.html" target="_blank" rel="noopener noreferrer">ZRender源码分析4：Painter(View层)-中<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/hhstuhacker/p/zrender-source-painter-shape.html" target="_blank" rel="noopener noreferrer">ZRender源码分析5：Shape绘图详解<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/hhstuhacker/p/zrender-source-painter-shape-path.html" target="_blank" rel="noopener noreferrer">ZRender源码分析6：Shape对象详解之路径<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://g6.antv.vision/zh" target="_blank" rel="noopener noreferrer">G6官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/antvis/G6" target="_blank" rel="noopener noreferrer">G6官方源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.yuque.com/antv/g6/gbc3i3" target="_blank" rel="noopener noreferrer">G6源码阅读-part1-运行主流程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.yuque.com/antv/g6/hz2vzh" target="_blank" rel="noopener noreferrer">G6源码阅读-Part2-Item与Shape<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.yuque.com/antv/g6/yb3hmn" target="_blank" rel="noopener noreferrer">G6源码阅读-Part3-绘制Paint<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/antvis/graphin" target="_blank" rel="noopener noreferrer">Graphin官方源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://graphin.antv.vision/zh" target="_blank" rel="noopener noreferrer">Graphin官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/federation20210119.html" class="prev">
+        webpack5模块联邦源码探究
+      </a></span> <span class="next"><a href="/tech/front/micro20210125.html">
+        几种微前端方案探究
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/85.e2c40980.js" defer></script>
+  </body>
+</html>

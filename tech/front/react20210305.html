@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react17源码浅析 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/74.fad5a0c5.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="active sidebar-link">react17源码浅析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/react20210305.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/react20210305.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/tech/front/react20210305.html#源码解析" class="sidebar-link">源码解析</a></li><li class="sidebar-sub-header"><a href="/tech/front/react20210305.html#实践" class="sidebar-link">实践</a></li><li class="sidebar-sub-header"><a href="/tech/front/react20210305.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/react20210305.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="react17源码浅析"><a href="#react17源码浅析" class="header-anchor">#</a> react17源码浅析</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p><img src="/tech/front/react20210305/react01.png" alt="图片"></p> <p>React17自去年十月发布以来，出现了几个比较重要的变化。首先，17作为一个过渡版本，其明确了在react中的定位，即：承上启下，作为渐进式框架的首版本，在后续的18、19等版本中会进行渐进升级而不是强制进行硬切换；其次，17结合最新的浏览器的特性做了一些更改和优化，比如对合成事件系统的优化；最后，自16以来的基于Fiber架构的模式对整个react性能优化在每个小版本中也会不断的进行逐步的微调，每次的微调都透露着react大佬们的一些思路与思考。本文以react17.0.0版本的源码入手，着重从react-reconciler和scheduler这两个模块中的部分源码进行拆解和浅析，希望能够窥一斑而见全豹，揣度各位大佬的一些架构思路和想法，从而拓宽一些个人的眼界，然个人水平有限，难免管窥蠡测，对react的理解也可能有所偏颇，本着想将这样一个庞大的架构简洁分析出来的想法，希望能对各位同学有所启发，对于更为经典的部分，仍需要各位去品读源码，我们仍然应该对源码保持着一颗敬畏之心，随着技术的提升，每每品读都会有不同的感受！</p> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <p><img src="/tech/front/react20210305/react02.png" alt="图片"></p> <p>react目录比较大，涉猎的也比较多，这里只显示可能会涉及部分的目录</p> <ul><li>packages
+<ul><li>react
+<ul><li>src
+<ul><li>jsx
+<ul><li>ReactJSX.js</li> <li>ReactJSXElement.js (定义了jsx)</li> <li>ReactJSXElementValidator.js</li></ul></li> <li>React.js</li> <li>ReactBaseClasses.js （setState及forceState)</li> <li>ReactContext.js (context上下文及Provider和Consumer)</li> <li>ReactElement.js (定义了ReactElement的格式)</li> <li>ReactForwardRef.js (Ref的定义)</li> <li>ReactHooks.js (ReactHooks相关，不是本文重点，可以参看之前的文章)</li> <li>ReactLazy.js</li> <li>ReactMemo.js</li> <li>ReactMutableSource.js</li> <li>ReactStartTransition.js (批量更新的事务的概念)</li></ul></li></ul></li> <li>react-dom
+<ul><li>src
+<ul><li>clients
+<ul><li>ReactDOMHostConfig.js</li> <li>ReactDOMLegacy.js</li> <li>ReactDOMRoot.js (三种模式：legacy模式、blocking模式、concurrent模式)</li></ul></li> <li>events
+<ul><li>EventListeners.js</li> <li>ReactDOMEventListeners.js</li> <li>SyntheticEvent.js</li></ul></li> <li>server (React Sever Component相关，不展开讲了)</li></ul></li></ul></li> <li>react-reconciler
+<ul><li>src
+<ul><li>ReactChildFiber.js</li> <li>ReactFiber.js</li> <li>ReactFiberBeginWork.js</li> <li>ReactFiberCommitWork.js</li> <li>ReactFiberCompleteWork.js</li> <li>ReactFiberLane.js</li> <li>ReactFiberReconciler.js</li> <li>ReactFiberRoot.js</li> <li>ReactFiberWorkLoop.js</li></ul></li></ul></li> <li>scheduler
+<ul><li>src
+<ul><li>Scheduler.js</li> <li>SchedulerMinHeap.js</li> <li>SchedulerPostTask.js</li> <li>SchedulerProfiling.js</li></ul></li></ul></li></ul></li></ul> <h2 id="源码解析"><a href="#源码解析" class="header-anchor">#</a> 源码解析</h2> <p>整个React的Fiber架构的核心在于对浏览器进行了时间分片处理（ps：Firefox新版本自身也实现了时间分片），抹掉了平台的差异，从而使得浏览器处理时候可以将控制权交出去，避免了js线程过多占用而阻塞渲染线程，实现了更细粒度的调度，即为：协程或纤程的调度</p> <h3 id="react"><a href="#react" class="header-anchor">#</a> React</h3> <table><thead><tr><th style="text-align:left;">文件名</th> <th style="text-align:center;">作用</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">jsx-runtime.js</td> <td style="text-align:center;">jsx解释器</td> <td style="text-align:right;">编译jsx</td></tr> <tr><td style="text-align:left;">ReactElement.js</td> <td style="text-align:center;">React元素的格式</td> <td style="text-align:right;">React的结点格式信息</td></tr></tbody></table> <h4 id="jsx-runtime-js"><a href="#jsx-runtime-js" class="header-anchor">#</a> jsx-runtime.js</h4> <p>react17之后不再需要对每个react组件进行react的import，其内置了一个jsx-runtime的运行时，感兴趣的同学可以看一下这个<a href="https://cdn.bootcdn.net/ajax/libs/react/15.7.0/cjs/react-jsx-dev-runtime.development.js" target="_blank" rel="noopener noreferrer">react-jsx-dev-runtime.development.js<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，简单来说就是利用正则对jsx进行了一层浅的转化，本质jsx是对js的一种扩展</p> <h4 id="reactelement-js"><a href="#reactelement-js" class="header-anchor">#</a> ReactElement.js</h4> <div class="language- extra-class"><pre class="language-text"><code>const ReactElement = function(
+  type,
+  key,
+  ref,
+  self,
+  source,
+  owner,
+  props
+) {
+  const element = {
+    $$typeof: REACT_ELEMENT_TYPE,
+    type: type,
+    key: key,
+    ref: ref,
+    props: props
+  }
+}
+</code></pre></div><h3 id="react-dom"><a href="#react-dom" class="header-anchor">#</a> React-DOM</h3> <p>这里主要对合成事件及DOM的一些处理进行了阐述</p> <h2>DOM处理</h2> <table><thead><tr><th style="text-align:left;">文件名</th> <th style="text-align:center;">作用</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">ReactDOMHostConfig.js</td> <td style="text-align:center;">appendChildToContainer等</td> <td style="text-align:right;">原生dom操作</td></tr> <tr><td style="text-align:left;">ReactDOMLegacy.js</td> <td style="text-align:center;">legacyRenderSubtreeIntoContainer</td> <td style="text-align:right;">未启用异步渲染的dom操作</td></tr> <tr><td style="text-align:left;">ReactDOMRoot.js</td> <td style="text-align:center;">createRoot、createLegacyRoot、createBlockingRoot</td> <td style="text-align:right;">三种模式的根组件</td></tr></tbody></table> <p>React17的进行了模式的设置，分别为：Legacy模式、Concurrent模式、Blocking模式，其中Concurrent模式是启用fiber分片的异步渲染方式，而Legacy模式则仍是15的同步渲染模式，Blocking则是介于二者之间的模式，React有意按照这样一种渐进的方式进行过度</p> <h2>合成事件</h2> <table><thead><tr><th style="text-align:left;">文件名</th> <th style="text-align:center;">作用</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">EventListeners.js</td> <td style="text-align:center;">addEventCaptureListener、addEventBubbleListener</td> <td style="text-align:right;">原生事件监听</td></tr> <tr><td style="text-align:left;">ReactDOMEventListeners.js</td> <td style="text-align:center;">dispatchEvent</td> <td style="text-align:right;">React的事件</td></tr> <tr><td style="text-align:left;">SyntheticEvent.js</td> <td style="text-align:center;">createSyntheticEvent</td> <td style="text-align:right;">合成事件</td></tr></tbody></table> <h4 id="reactdomeventlisteners-js"><a href="#reactdomeventlisteners-js" class="header-anchor">#</a> ReactDOMEventListeners.js</h4> <p>核心是dispatchEvent进行事件的分发，17之后不再将事件全部冒泡到document去代理，这和浏览器的改进有关，不再需要代理绑定，浏览器可以对更细粒度的区域进行监听</p> <div class="language- extra-class"><pre class="language-text"><code>function dispatchDiscreateEvent() {
+
+}
+
+function dispatchBlockingEvent() {
+
+}
+
+export function dispatchEvent(
+  domEventName: DOMEventName,
+  eventSystemFlags: EventSystemFlags,
+  targetContainer: EventTarget,
+  nativeEvent: AnyNativeEvent,
+): void {
+  if (
+    allowReplay &amp;&amp;
+    hasQueuedDiscreteEvents() &amp;&amp;
+    isReplayableDiscreteEvent(domEventName)
+  ) {
+    queueDiscreteEvent(
+      null, // Flags that we're not actually blocked on anything as far as we know.
+      domEventName,
+      eventSystemFlags,
+      targetContainer,
+      nativeEvent,
+    );
+    return;
+  }
+
+  const blockedOn = attemptToDispatchEvent(
+    domEventName,
+    eventSystemFlags,
+    targetContainer,
+    nativeEvent,
+  );
+
+  if (blockedOn === null) {
+    // We successfully dispatched this event.
+    if (allowReplay) {
+      clearIfContinuousEvent(domEventName, nativeEvent);
+    }
+    return;
+  }
+
+  if (allowReplay) {
+    if (isReplayableDiscreteEvent(domEventName)) {
+      queueDiscreteEvent(
+        blockedOn,
+        domEventName,
+        eventSystemFlags,
+        targetContainer,
+        nativeEvent,
+      );
+      return;
+    }
+    if (
+      queueIfContinuousEvent(
+        blockedOn,
+        domEventName,
+        eventSystemFlags,
+        targetContainer,
+        nativeEvent,
+      )
+    ) {
+      return;
+    }
+    clearIfContinuousEvent(domEventName, nativeEvent);
+  }
+  dispatchEventForPluginEventSystem(
+    domEventName,
+    eventSystemFlags,
+    nativeEvent,
+    null,
+    targetContainer,
+  );
+}
+</code></pre></div><h3 id="scheduler"><a href="#scheduler" class="header-anchor">#</a> Scheduler</h3> <p>本质是根据任务开始时间和过期时间利用小顶堆的优先队列而进行的时间分片处理及调度</p> <table><thead><tr><th style="text-align:left;">文件名</th> <th style="text-align:center;">作用</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">Scheduler.js</td> <td style="text-align:center;">workLoop</td> <td style="text-align:right;">调度入口</td></tr> <tr><td style="text-align:left;">SchedulerMinHeap.js</td> <td style="text-align:center;">小顶堆</td> <td style="text-align:right;">优先队列的小顶堆</td></tr> <tr><td style="text-align:left;">SchedulerPostTask.js</td> <td style="text-align:center;">unstable_scheduleCallback、unstable_shouldYield</td> <td style="text-align:right;">调度方法</td></tr></tbody></table> <h4 id="schdeuler-js"><a href="#schdeuler-js" class="header-anchor">#</a> Schdeuler.js</h4> <div class="language- extra-class"><pre class="language-text"><code>function advanceTimers(currentTime) {
+  let timer = peek(timerQueue);
+  while (timer !== null) {
+    if (timer.callback === null) {
+      pop(timerQueue);
+    } else if (timer.startTime &lt;= currentTime) {
+      pop(timerQueue);
+      timer.sortIndex = timer.expirationTime;
+      push(taskQueue, timer);
+      if (enableProfiling) {
+        markTaskStart(timer, currentTime);
+        timer.isQueued = true;
+      }
+    } else {
+      return;
+    }
+    timer = peek(timerQueue);
+  }
+}
+
+function handleTimeout(currentTime) {
+  isHostTimeoutScheduled = false;
+  advanceTimers(currentTime);
+
+  if (!isHostCallbackScheduled) {
+    if (peek(taskQueue) !== null) {
+      isHostCallbackScheduled = true;
+      requestHostCallback(flushWork);
+    } else {
+      const firstTimer = peek(timerQueue);
+      if (firstTimer !== null) {
+        requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
+      }
+    }
+  }
+}
+
+function workLoop(hasTimeRemaining, initialTime) {
+  let currentTime = initialTime;
+  advanceTimers(currentTime);
+  currentTask = peek(taskQueue);
+  while (
+    currentTask !== null &amp;&amp;
+    !(enableSchedulerDebugging &amp;&amp; isSchedulerPaused)
+  ) {
+    if (
+      currentTask.expirationTime &gt; currentTime &amp;&amp;
+      (!hasTimeRemaining || shouldYieldToHost())
+    ) {
+      // This currentTask hasn't expired, and we've reached the deadline.
+      break;
+    }
+    const callback = currentTask.callback;
+    if (typeof callback === 'function') {
+      currentTask.callback = null;
+      currentPriorityLevel = currentTask.priorityLevel;
+      const didUserCallbackTimeout = currentTask.expirationTime &lt;= currentTime;
+      markTaskRun(currentTask, currentTime);
+      const continuationCallback = callback(didUserCallbackTimeout);
+      currentTime = getCurrentTime();
+      if (typeof continuationCallback === 'function') {
+        currentTask.callback = continuationCallback;
+        markTaskYield(currentTask, currentTime);
+      } else {
+        if (enableProfiling) {
+          markTaskCompleted(currentTask, currentTime);
+          currentTask.isQueued = false;
+        }
+        if (currentTask === peek(taskQueue)) {
+          pop(taskQueue);
+        }
+      }
+      advanceTimers(currentTime);
+    } else {
+      pop(taskQueue);
+    }
+    currentTask = peek(taskQueue);
+  }
+  // Return whether there's additional work
+  if (currentTask !== null) {
+    return true;
+  } else {
+    const firstTimer = peek(timerQueue);
+    if (firstTimer !== null) {
+      requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
+    }
+    return false;
+  }
+}
+</code></pre></div><h4 id="schedulerminheap-js"><a href="#schedulerminheap-js" class="header-anchor">#</a> SchedulerMinHeap.js</h4> <p>小顶堆的实现，可对比优先队列的考察，具体可以看一下leetcode的这道题 <a href="https://leetcode-cn.com/problems/merge-k-sorted-lists/" target="_blank" rel="noopener noreferrer">23. 合并K个升序链表<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，以及对fiber应用的扩展思考 <a href="https://leetcode-cn.com/problems/partition-list/" target="_blank" rel="noopener noreferrer">86. 分隔链表<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language- extra-class"><pre class="language-text"><code>type Heap = Array&lt;Node&gt;;
+type Node = {|
+  id: number,
+  sortIndex: number,
+|};
+
+export function push(heap: Heap, node: Node): void {
+  const index = heap.length;
+  heap.push(node);
+  siftUp(heap, node, index);
+}
+
+export function peek(heap: Heap): Node | null {
+  const first = heap[0];
+  return first === undefined ? null : first;
+}
+
+export function pop(heap: Heap): Node | null {
+  const first = heap[0];
+  if (first !== undefined) {
+    const last = heap.pop();
+    if (last !== first) {
+      heap[0] = last;
+      siftDown(heap, last, 0);
+    }
+    return first;
+  } else {
+    return null;
+  }
+}
+
+function siftUp(heap, node, i) {
+  let index = i;
+  while (true) {
+    const parentIndex = (index - 1) &gt;&gt;&gt; 1;
+    const parent = heap[parentIndex];
+    if (parent !== undefined &amp;&amp; compare(parent, node) &gt; 0) {
+      // The parent is larger. Swap positions.
+      heap[parentIndex] = node;
+      heap[index] = parent;
+      index = parentIndex;
+    } else {
+      // The parent is smaller. Exit.
+      return;
+    }
+  }
+}
+
+function siftDown(heap, node, i) {
+  let index = i;
+  const length = heap.length;
+  while (index &lt; length) {
+    const leftIndex = (index + 1) * 2 - 1;
+    const left = heap[leftIndex];
+    const rightIndex = leftIndex + 1;
+    const right = heap[rightIndex];
+
+    // If the left or right node is smaller, swap with the smaller of those.
+    if (left !== undefined &amp;&amp; compare(left, node) &lt; 0) {
+      if (right !== undefined &amp;&amp; compare(right, left) &lt; 0) {
+        heap[index] = right;
+        heap[rightIndex] = node;
+        index = rightIndex;
+      } else {
+        heap[index] = left;
+        heap[leftIndex] = node;
+        index = leftIndex;
+      }
+    } else if (right !== undefined &amp;&amp; compare(right, node) &lt; 0) {
+      heap[index] = right;
+      heap[rightIndex] = node;
+      index = rightIndex;
+    } else {
+      // Neither child is smaller. Exit.
+      return;
+    }
+  }
+}
+
+function compare(a, b) {
+  // Compare sort index first, then task id.
+  const diff = a.sortIndex - b.sortIndex;
+  return diff !== 0 ? diff : a.id - b.id;
+}
+</code></pre></div><h4 id="scheduleposttask-js"><a href="#scheduleposttask-js" class="header-anchor">#</a> SchedulePostTask.js</h4> <div class="language- extra-class"><pre class="language-text"><code>const getCurrentTime = perf.now.bind(perf);
+
+export function unstable_shouldYield() {
+  return getCurrentTime() &gt;= deadline;
+}
+
+export function unstable_scheduleCallback&lt;T&gt;(
+  priorityLevel: PriorityLevel,
+  callback: SchedulerCallback&lt;T&gt;,
+  options?: {delay?: number},
+): CallbackNode {
+  let postTaskPriority;
+  switch (priorityLevel) {
+    case ImmediatePriority:
+    case UserBlockingPriority:
+      postTaskPriority = 'user-blocking';
+      break;
+    case LowPriority:
+    case NormalPriority:
+      postTaskPriority = 'user-visible';
+      break;
+    case IdlePriority:
+      postTaskPriority = 'background';
+      break;
+    default:
+      postTaskPriority = 'user-visible';
+      break;
+  }
+
+  const controller = new TaskController();
+  const postTaskOptions = {
+    priority: postTaskPriority,
+    delay: typeof options === 'object' &amp;&amp; options !== null ? options.delay : 0,
+    signal: controller.signal,
+  };
+
+  const node = {
+    _controller: controller,
+  };
+
+  scheduler
+    .postTask(
+      runTask.bind(null, priorityLevel, postTaskPriority, node, callback),
+      postTaskOptions,
+    )
+    .catch(handleAbortError);
+
+  return node;
+}
+
+function runTask&lt;T&gt;(
+  priorityLevel: PriorityLevel,
+  postTaskPriority: PostTaskPriorityLevel,
+  node: CallbackNode,
+  callback: SchedulerCallback&lt;T&gt;,
+) {
+  deadline = getCurrentTime() + yieldInterval;
+  try {
+    currentPriorityLevel_DEPRECATED = priorityLevel;
+    const didTimeout_DEPRECATED = false;
+    const result = callback(didTimeout_DEPRECATED);
+    if (typeof result === 'function') {
+      const continuation: SchedulerCallback&lt;T&gt; = (result: any);
+      const continuationController = new TaskController();
+      const continuationOptions = {
+        priority: postTaskPriority,
+        signal: continuationController.signal,
+      };
+      node._controller = continuationController;
+      scheduler
+        .postTask(
+          runTask.bind(
+            null,
+            priorityLevel,
+            postTaskPriority,
+            node,
+            continuation,
+          ),
+          continuationOptions,
+        )
+        .catch(handleAbortError);
+    }
+  } catch (error) {
+    setTimeout(() =&gt; {
+      throw error;
+    });
+  } finally {
+    currentPriorityLevel_DEPRECATED = NormalPriority;
+  }
+}
+</code></pre></div><h3 id="reconciler-renderer"><a href="#reconciler-renderer" class="header-anchor">#</a> Reconciler &amp; Renderer</h3> <p><img src="/tech/front/react20210305/react03.jpeg" alt="图片"></p> <p>在经过了Scheduler的分片及调度后，将分片后的单元调度进合成器中，Reconciler阶段的主要目的是找寻不同，从而对虚拟dom的不同进行fiber层级的派发和合并；对于浏览器的分片可以利用setTimeout及MessageChannel来实现，具体浏览器是如何实现setTimeout的，可以看一下这个<a href="https://blog.csdn.net/u013448372/article/details/108425124" target="_blank" rel="noopener noreferrer">浏览器工作原理(16) - setTimeout实现原理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，</p> <table><thead><tr><th style="text-align:left;">文件名</th> <th style="text-align:center;">作用</th> <th style="text-align:right;">备注</th></tr></thead> <tbody><tr><td style="text-align:left;">ReactChildFiber.js</td> <td style="text-align:center;">ChildReconciler</td> <td style="text-align:right;">子fiber</td></tr> <tr><td style="text-align:left;">ReactFiber.js</td> <td style="text-align:center;">Fiber</td> <td style="text-align:right;">创建fiber等</td></tr> <tr><td style="text-align:left;">ReactFiberBeginWork.js</td> <td style="text-align:center;">beginwork</td> <td style="text-align:right;">开始任务</td></tr> <tr><td style="text-align:left;">ReactFiberCommitWork.js</td> <td style="text-align:center;">commitwork</td> <td style="text-align:right;">提交任务</td></tr> <tr><td style="text-align:left;">ReactFiberCompleteWork.js</td> <td style="text-align:center;">completework</td> <td style="text-align:right;">完成任务</td></tr> <tr><td style="text-align:left;">ReactFiberLane.js</td> <td style="text-align:center;">lane</td> <td style="text-align:right;">车道模型</td></tr> <tr><td style="text-align:left;">ReactFiberReconciler.js</td> <td style="text-align:center;">createContainer、updateContainer</td> <td style="text-align:right;">容器</td></tr> <tr><td style="text-align:left;">ReactFiberRoot.js</td> <td style="text-align:center;">createFiberRoot</td> <td style="text-align:right;">Fiber根节点</td></tr> <tr><td style="text-align:left;">ReactFiberWorkLoop.js</td> <td style="text-align:center;">all</td> <td style="text-align:right;">循环的各种方法</td></tr></tbody></table> <h4 id="reactchildfiber-js"><a href="#reactchildfiber-js" class="header-anchor">#</a> ReactChildFiber.js</h4> <div class="language- extra-class"><pre class="language-text"><code>function ChildReconciler(shouldTrackSideEffects) {
+	function deleteChild() {}
+	function deleteRemainingChildren() {}
+	function mapRemainingChildren() {}
+	function useFiber() {}
+	function placeChild() {}
+	function placeSingleChild() {}
+	function updateTextNode() {}
+	function updateElement() {}
+	function updatePortal() {}
+	function updateFragment() {}
+	function createChild() {}
+	function updateSlot() {}
+	function updateFromMap() {}
+	function warnOnInvalidKey() {}
+	function reconcileChildrenArray() {}
+	function reconcileChildrenIterator() {}
+	function reconcileSingleElement() {}
+	function reconcileSinglePortal() {}
+	function reconcileChildFibers() {}
+	return reconcileChildFibers;
+}
+</code></pre></div><h4 id="reactfiber-js"><a href="#reactfiber-js" class="header-anchor">#</a> ReactFiber.js</h4> <div class="language- extra-class"><pre class="language-text"><code>function FiberNode(
+  tag: WorkTag,
+  pendingProps: mixed,
+  key: null | string,
+  mode: TypeOfMode,
+) {
+  // Instance
+  this.tag = tag;
+  this.key = key;
+  this.elementType = null;
+  this.type = null;
+  this.stateNode = null;
+
+  // Fiber
+  this.return = null;
+  this.child = null;
+  this.sibling = null;
+  this.index = 0;
+
+  this.ref = null;
+
+  this.pendingProps = pendingProps;
+  this.memoizedProps = null;
+  this.updateQueue = null;
+  this.memoizedState = null;
+  this.dependencies = null;
+
+  this.mode = mode;
+
+  // Effects
+  this.flags = NoFlags;
+  this.subtreeFlags = NoFlags;
+  this.deletions = null;
+
+  this.lanes = NoLanes;
+  this.childLanes = NoLanes;
+
+  this.alternate = null;
+
+  if (enableProfilerTimer) {
+    // Note: The following is done to avoid a v8 performance cliff.
+    //
+    // Initializing the fields below to smis and later updating them with
+    // double values will cause Fibers to end up having separate shapes.
+    // This behavior/bug has something to do with Object.preventExtension().
+    // Fortunately this only impacts DEV builds.
+    // Unfortunately it makes React unusably slow for some applications.
+    // To work around this, initialize the fields below with doubles.
+    //
+    // Learn more about this here:
+    // https://github.com/facebook/react/issues/14365
+    // https://bugs.chromium.org/p/v8/issues/detail?id=8538
+    this.actualDuration = Number.NaN;
+    this.actualStartTime = Number.NaN;
+    this.selfBaseDuration = Number.NaN;
+    this.treeBaseDuration = Number.NaN;
+
+    // It's okay to replace the initial doubles with smis after initialization.
+    // This won't trigger the performance cliff mentioned above,
+    // and it simplifies other profiler code (including DevTools).
+    this.actualDuration = 0;
+    this.actualStartTime = -1;
+    this.selfBaseDuration = 0;
+    this.treeBaseDuration = 0;
+  }
+
+  if (__DEV__) {
+    // This isn't directly used but is handy for debugging internals:
+    this._debugID = debugCounter++;
+    this._debugSource = null;
+    this._debugOwner = null;
+    this._debugNeedsRemount = false;
+    this._debugHookTypes = null;
+    if (!hasBadMapPolyfill &amp;&amp; typeof Object.preventExtensions === 'function') {
+      Object.preventExtensions(this);
+    }
+  }
+}
+
+const createFiber = function() {}
+
+export const createWorkInProgress = function() {}
+export const resetWorkInProgress = function() {}
+
+export const createHostRootFiber = function() {}
+</code></pre></div><h4 id="reactfiberbeginwork-js"><a href="#reactfiberbeginwork-js" class="header-anchor">#</a> ReactFiberBeginWork.js</h4> <div class="language- extra-class"><pre class="language-text"><code>function beginWork(
+  current: Fiber | null,
+  workInProgress: Fiber,
+  renderLanes: Lanes,
+): Fiber | null {
+  const updateLanes = workInProgress.lanes;
+
+  if (__DEV__) {
+    if (workInProgress._debugNeedsRemount &amp;&amp; current !== null) {
+      // This will restart the begin phase with a new fiber.
+      return remountFiber(
+        current,
+        workInProgress,
+        createFiberFromTypeAndProps(
+          workInProgress.type,
+          workInProgress.key,
+          workInProgress.pendingProps,
+          workInProgress._debugOwner || null,
+          workInProgress.mode,
+          workInProgress.lanes,
+        ),
+      );
+    }
+  }
+
+  if (current !== null) {
+    const oldProps = current.memoizedProps;
+    const newProps = workInProgress.pendingProps;
+
+    if (
+      oldProps !== newProps ||
+      hasLegacyContextChanged() ||
+      // Force a re-render if the implementation changed due to hot reload:
+      (__DEV__ ? workInProgress.type !== current.type : false)
+    ) {
+      // If props or context changed, mark the fiber as having performed work.
+      // This may be unset if the props are determined to be equal later (memo).
+      didReceiveUpdate = true;
+    } else if (!includesSomeLane(renderLanes, updateLanes)) {
+      didReceiveUpdate = false;
+      // This fiber does not have any pending work. Bailout without entering
+      // the begin phase. There's still some bookkeeping we that needs to be done
+      // in this optimized path, mostly pushing stuff onto the stack.
+      switch (workInProgress.tag) {
+        case HostRoot:
+          pushHostRootContext(workInProgress);
+          resetHydrationState();
+          break;
+        case HostComponent:
+          pushHostContext(workInProgress);
+          break;
+        case ClassComponent: {
+          const Component = workInProgress.type;
+          if (isLegacyContextProvider(Component)) {
+            pushLegacyContextProvider(workInProgress);
+          }
+          break;
+        }
+        case HostPortal:
+          pushHostContainer(
+            workInProgress,
+            workInProgress.stateNode.containerInfo,
+          );
+          break;
+        case ContextProvider: {
+          const newValue = workInProgress.memoizedProps.value;
+          pushProvider(workInProgress, newValue);
+          break;
+        }
+        case Profiler:
+          if (enableProfilerTimer) {
+            // Reset effect durations for the next eventual effect phase.
+            // These are reset during render to allow the DevTools commit hook a chance to read them,
+            const stateNode = workInProgress.stateNode;
+            stateNode.effectDuration = 0;
+            stateNode.passiveEffectDuration = 0;
+          }
+          break;
+        case SuspenseComponent: {
+          const state: SuspenseState | null = workInProgress.memoizedState;
+          if (state !== null) {
+            if (enableSuspenseServerRenderer) {
+              if (state.dehydrated !== null) {
+                pushSuspenseContext(
+                  workInProgress,
+                  setDefaultShallowSuspenseContext(suspenseStackCursor.current),
+                );
+                // We know that this component will suspend again because if it has
+                // been unsuspended it has committed as a resolved Suspense component.
+                // If it needs to be retried, it should have work scheduled on it.
+                workInProgress.flags |= DidCapture;
+                // We should never render the children of a dehydrated boundary until we
+                // upgrade it. We return null instead of bailoutOnAlreadyFinishedWork.
+                return null;
+              }
+            }
+
+            // If this boundary is currently timed out, we need to decide
+            // whether to retry the primary children, or to skip over it and
+            // go straight to the fallback. Check the priority of the primary
+            // child fragment.
+            const primaryChildFragment: Fiber = (workInProgress.child: any);
+            const primaryChildLanes = primaryChildFragment.childLanes;
+            if (includesSomeLane(renderLanes, primaryChildLanes)) {
+              // The primary children have pending work. Use the normal path
+              // to attempt to render the primary children again.
+              return updateSuspenseComponent(
+                current,
+                workInProgress,
+                renderLanes,
+              );
+            } else {
+              // The primary child fragment does not have pending work marked
+              // on it
+              pushSuspenseContext(
+                workInProgress,
+                setDefaultShallowSuspenseContext(suspenseStackCursor.current),
+              );
+              // The primary children do not have pending work with sufficient
+              // priority. Bailout.
+              const child = bailoutOnAlreadyFinishedWork(
+                current,
+                workInProgress,
+                renderLanes,
+              );
+              if (child !== null) {
+                // The fallback children have pending work. Skip over the
+                // primary children and work on the fallback.
+                return child.sibling;
+              } else {
+                return null;
+              }
+            }
+          } else {
+            pushSuspenseContext(
+              workInProgress,
+              setDefaultShallowSuspenseContext(suspenseStackCursor.current),
+            );
+          }
+          break;
+        }
+        case SuspenseListComponent: {
+          const didSuspendBefore = (current.flags &amp; DidCapture) !== NoFlags;
+
+          const hasChildWork = includesSomeLane(
+            renderLanes,
+            workInProgress.childLanes,
+          );
+
+          if (didSuspendBefore) {
+            if (hasChildWork) {
+              // If something was in fallback state last time, and we have all the
+              // same children then we're still in progressive loading state.
+              // Something might get unblocked by state updates or retries in the
+              // tree which will affect the tail. So we need to use the normal
+              // path to compute the correct tail.
+              return updateSuspenseListComponent(
+                current,
+                workInProgress,
+                renderLanes,
+              );
+            }
+            // If none of the children had any work, that means that none of
+            // them got retried so they'll still be blocked in the same way
+            // as before. We can fast bail out.
+            workInProgress.flags |= DidCapture;
+          }
+
+          // If nothing suspended before and we're rendering the same children,
+          // then the tail doesn't matter. Anything new that suspends will work
+          // in the &quot;together&quot; mode, so we can continue from the state we had.
+          const renderState = workInProgress.memoizedState;
+          if (renderState !== null) {
+            // Reset to the &quot;together&quot; mode in case we've started a different
+            // update in the past but didn't complete it.
+            renderState.rendering = null;
+            renderState.tail = null;
+          }
+          pushSuspenseContext(workInProgress, suspenseStackCursor.current);
+
+          if (hasChildWork) {
+            break;
+          } else {
+            // If none of the children had any work, that means that none of
+            // them got retried so they'll still be blocked in the same way
+            // as before. We can fast bail out.
+            return null;
+          }
+        }
+        case OffscreenComponent:
+        case LegacyHiddenComponent: {
+          // Need to check if the tree still needs to be deferred. This is
+          // almost identical to the logic used in the normal update path,
+          // so we'll just enter that. The only difference is we'll bail out
+          // at the next level instead of this one, because the child props
+          // have not changed. Which is fine.
+          // TODO: Probably should refactor `beginWork` to split the bailout
+          // path from the normal path. I'm tempted to do a labeled break here
+          // but I won't :)
+          workInProgress.lanes = NoLanes;
+          return updateOffscreenComponent(current, workInProgress, renderLanes);
+        }
+      }
+      return bailoutOnAlreadyFinishedWork(current, workInProgress, renderLanes);
+    } else {
+      if ((current.flags &amp; ForceUpdateForLegacySuspense) !== NoFlags) {
+        // This is a special case that only exists for legacy mode.
+        // See https://github.com/facebook/react/pull/19216.
+        didReceiveUpdate = true;
+      } else {
+        // An update was scheduled on this fiber, but there are no new props
+        // nor legacy context. Set this to false. If an update queue or context
+        // consumer produces a changed value, it will set this to true. Otherwise,
+        // the component will assume the children have not changed and bail out.
+        didReceiveUpdate = false;
+      }
+    }
+  } else {
+    didReceiveUpdate = false;
+  }
+
+  // Before entering the begin phase, clear pending update priority.
+  // TODO: This assumes that we're about to evaluate the component and process
+  // the update queue. However, there's an exception: SimpleMemoComponent
+  // sometimes bails out later in the begin phase. This indicates that we should
+  // move this assignment out of the common path and into each branch.
+  workInProgress.lanes = NoLanes;
+
+  switch (workInProgress.tag) {
+    case IndeterminateComponent: {
+      return mountIndeterminateComponent(
+        current,
+        workInProgress,
+        workInProgress.type,
+        renderLanes,
+      );
+    }
+    case LazyComponent: {
+      const elementType = workInProgress.elementType;
+      return mountLazyComponent(
+        current,
+        workInProgress,
+        elementType,
+        updateLanes,
+        renderLanes,
+      );
+    }
+    case FunctionComponent: {
+      const Component = workInProgress.type;
+      const unresolvedProps = workInProgress.pendingProps;
+      const resolvedProps =
+        workInProgress.elementType === Component
+          ? unresolvedProps
+          : resolveDefaultProps(Component, unresolvedProps);
+      return updateFunctionComponent(
+        current,
+        workInProgress,
+        Component,
+        resolvedProps,
+        renderLanes,
+      );
+    }
+    case ClassComponent: {
+      const Component = workInProgress.type;
+      const unresolvedProps = workInProgress.pendingProps;
+      const resolvedProps =
+        workInProgress.elementType === Component
+          ? unresolvedProps
+          : resolveDefaultProps(Component, unresolvedProps);
+      return updateClassComponent(
+        current,
+        workInProgress,
+        Component,
+        resolvedProps,
+        renderLanes,
+      );
+    }
+    case HostRoot:
+      return updateHostRoot(current, workInProgress, renderLanes);
+    case HostComponent:
+      return updateHostComponent(current, workInProgress, renderLanes);
+    case HostText:
+      return updateHostText(current, workInProgress);
+    case SuspenseComponent:
+      return updateSuspenseComponent(current, workInProgress, renderLanes);
+    case HostPortal:
+      return updatePortalComponent(current, workInProgress, renderLanes);
+    case ForwardRef: {
+      const type = workInProgress.type;
+      const unresolvedProps = workInProgress.pendingProps;
+      const resolvedProps =
+        workInProgress.elementType === type
+          ? unresolvedProps
+          : resolveDefaultProps(type, unresolvedProps);
+      return updateForwardRef(
+        current,
+        workInProgress,
+        type,
+        resolvedProps,
+        renderLanes,
+      );
+    }
+    case Fragment:
+      return updateFragment(current, workInProgress, renderLanes);
+    case Mode:
+      return updateMode(current, workInProgress, renderLanes);
+    case Profiler:
+      return updateProfiler(current, workInProgress, renderLanes);
+    case ContextProvider:
+      return updateContextProvider(current, workInProgress, renderLanes);
+    case ContextConsumer:
+      return updateContextConsumer(current, workInProgress, renderLanes);
+    case MemoComponent: {
+      const type = workInProgress.type;
+      const unresolvedProps = workInProgress.pendingProps;
+      // Resolve outer props first, then resolve inner props.
+      let resolvedProps = resolveDefaultProps(type, unresolvedProps);
+      if (__DEV__) {
+        if (workInProgress.type !== workInProgress.elementType) {
+          const outerPropTypes = type.propTypes;
+          if (outerPropTypes) {
+            checkPropTypes(
+              outerPropTypes,
+              resolvedProps, // Resolved for outer only
+              'prop',
+              getComponentName(type),
+            );
+          }
+        }
+      }
+      resolvedProps = resolveDefaultProps(type.type, resolvedProps);
+      return updateMemoComponent(
+        current,
+        workInProgress,
+        type,
+        resolvedProps,
+        updateLanes,
+        renderLanes,
+      );
+    }
+    case SimpleMemoComponent: {
+      return updateSimpleMemoComponent(
+        current,
+        workInProgress,
+        workInProgress.type,
+        workInProgress.pendingProps,
+        updateLanes,
+        renderLanes,
+      );
+    }
+    case IncompleteClassComponent: {
+      const Component = workInProgress.type;
+      const unresolvedProps = workInProgress.pendingProps;
+      const resolvedProps =
+        workInProgress.elementType === Component
+          ? unresolvedProps
+          : resolveDefaultProps(Component, unresolvedProps);
+      return mountIncompleteClassComponent(
+        current,
+        workInProgress,
+        Component,
+        resolvedProps,
+        renderLanes,
+      );
+    }
+    case SuspenseListComponent: {
+      return updateSuspenseListComponent(current, workInProgress, renderLanes);
+    }
+    case FundamentalComponent: {
+      if (enableFundamentalAPI) {
+        return updateFundamentalComponent(current, workInProgress, renderLanes);
+      }
+      break;
+    }
+    case ScopeComponent: {
+      if (enableScopeAPI) {
+        return updateScopeComponent(current, workInProgress, renderLanes);
+      }
+      break;
+    }
+    case Block: {
+      if (enableBlocksAPI) {
+        const block = workInProgress.type;
+        const props = workInProgress.pendingProps;
+        return updateBlock(current, workInProgress, block, props, renderLanes);
+      }
+      break;
+    }
+    case OffscreenComponent: {
+      return updateOffscreenComponent(current, workInProgress, renderLanes);
+    }
+    case LegacyHiddenComponent: {
+      return updateLegacyHiddenComponent(current, workInProgress, renderLanes);
+    }
+  }
+  invariant(
+    false,
+    'Unknown unit of work tag (%s). This error is likely caused by a bug in ' +
+      'React. Please file an issue.',
+    workInProgress.tag,
+  );
+}
+</code></pre></div><h4 id="reactfibercommitwork-js"><a href="#reactfibercommitwork-js" class="header-anchor">#</a> ReactFiberCommitWork.js</h4> <p>对不同的真实dom类型进行对应提交</p> <div class="language- extra-class"><pre class="language-text"><code>function commitWork(current: Fiber | null, finishedWork: Fiber): void {
+  if (!supportsMutation) {
+    switch (finishedWork.tag) {
+      case FunctionComponent:
+      case ForwardRef:
+      case MemoComponent:
+      case SimpleMemoComponent:
+      case Block: {
+        // Layout effects are destroyed during the mutation phase so that all
+        // destroy functions for all fibers are called before any create functions.
+        // This prevents sibling component effects from interfering with each other,
+        // e.g. a destroy function in one component should never override a ref set
+        // by a create function in another component during the same commit.
+        if (
+          enableProfilerTimer &amp;&amp;
+          enableProfilerCommitHooks &amp;&amp;
+          finishedWork.mode &amp; ProfileMode
+        ) {
+          try {
+            startLayoutEffectTimer();
+            commitHookEffectListUnmount(
+              HookLayout | HookHasEffect,
+              finishedWork,
+              finishedWork.return,
+            );
+          } finally {
+            recordLayoutEffectDuration(finishedWork);
+          }
+        } else {
+          commitHookEffectListUnmount(
+            HookLayout | HookHasEffect,
+            finishedWork,
+            finishedWork.return,
+          );
+        }
+        return;
+      }
+      case Profiler: {
+        return;
+      }
+      case SuspenseComponent: {
+        commitSuspenseComponent(finishedWork);
+        attachSuspenseRetryListeners(finishedWork);
+        return;
+      }
+      case SuspenseListComponent: {
+        attachSuspenseRetryListeners(finishedWork);
+        return;
+      }
+      case HostRoot: {
+        if (supportsHydration) {
+          const root: FiberRoot = finishedWork.stateNode;
+          if (root.hydrate) {
+            // We've just hydrated. No need to hydrate again.
+            root.hydrate = false;
+            commitHydratedContainer(root.containerInfo);
+          }
+        }
+        break;
+      }
+      case OffscreenComponent:
+      case LegacyHiddenComponent: {
+        return;
+      }
+    }
+
+    commitContainer(finishedWork);
+    return;
+  }
+
+  switch (finishedWork.tag) {
+    case FunctionComponent:
+    case ForwardRef:
+    case MemoComponent:
+    case SimpleMemoComponent:
+    case Block: {
+      // Layout effects are destroyed during the mutation phase so that all
+      // destroy functions for all fibers are called before any create functions.
+      // This prevents sibling component effects from interfering with each other,
+      // e.g. a destroy function in one component should never override a ref set
+      // by a create function in another component during the same commit.
+      if (
+        enableProfilerTimer &amp;&amp;
+        enableProfilerCommitHooks &amp;&amp;
+        finishedWork.mode &amp; ProfileMode
+      ) {
+        try {
+          startLayoutEffectTimer();
+          commitHookEffectListUnmount(
+            HookLayout | HookHasEffect,
+            finishedWork,
+            finishedWork.return,
+          );
+        } finally {
+          recordLayoutEffectDuration(finishedWork);
+        }
+      } else {
+        commitHookEffectListUnmount(
+          HookLayout | HookHasEffect,
+          finishedWork,
+          finishedWork.return,
+        );
+      }
+      return;
+    }
+    case ClassComponent: {
+      return;
+    }
+    case HostComponent: {
+      const instance: Instance = finishedWork.stateNode;
+      if (instance != null) {
+        // Commit the work prepared earlier.
+        const newProps = finishedWork.memoizedProps;
+        // For hydration we reuse the update path but we treat the oldProps
+        // as the newProps. The updatePayload will contain the real change in
+        // this case.
+        const oldProps = current !== null ? current.memoizedProps : newProps;
+        const type = finishedWork.type;
+        // TODO: Type the updateQueue to be specific to host components.
+        const updatePayload: null | UpdatePayload = (finishedWork.updateQueue: any);
+        finishedWork.updateQueue = null;
+        if (updatePayload !== null) {
+          commitUpdate(
+            instance,
+            updatePayload,
+            type,
+            oldProps,
+            newProps,
+            finishedWork,
+          );
+        }
+      }
+      return;
+    }
+    case HostText: {
+      invariant(
+        finishedWork.stateNode !== null,
+        'This should have a text node initialized. This error is likely ' +
+          'caused by a bug in React. Please file an issue.',
+      );
+      const textInstance: TextInstance = finishedWork.stateNode;
+      const newText: string = finishedWork.memoizedProps;
+      // For hydration we reuse the update path but we treat the oldProps
+      // as the newProps. The updatePayload will contain the real change in
+      // this case.
+      const oldText: string =
+        current !== null ? current.memoizedProps : newText;
+      commitTextUpdate(textInstance, oldText, newText);
+      return;
+    }
+    case HostRoot: {
+      if (supportsHydration) {
+        const root: FiberRoot = finishedWork.stateNode;
+        if (root.hydrate) {
+          // We've just hydrated. No need to hydrate again.
+          root.hydrate = false;
+          commitHydratedContainer(root.containerInfo);
+        }
+      }
+      return;
+    }
+    case Profiler: {
+      return;
+    }
+    case SuspenseComponent: {
+      commitSuspenseComponent(finishedWork);
+      attachSuspenseRetryListeners(finishedWork);
+      return;
+    }
+    case SuspenseListComponent: {
+      attachSuspenseRetryListeners(finishedWork);
+      return;
+    }
+    case IncompleteClassComponent: {
+      return;
+    }
+    case FundamentalComponent: {
+      if (enableFundamentalAPI) {
+        const fundamentalInstance = finishedWork.stateNode;
+        updateFundamentalComponent(fundamentalInstance);
+        return;
+      }
+      break;
+    }
+    case ScopeComponent: {
+      if (enableScopeAPI) {
+        const scopeInstance = finishedWork.stateNode;
+        prepareScopeUpdate(scopeInstance, finishedWork);
+        return;
+      }
+      break;
+    }
+    case OffscreenComponent:
+    case LegacyHiddenComponent: {
+      const newState: OffscreenState | null = finishedWork.memoizedState;
+      const isHidden = newState !== null;
+      hideOrUnhideAllChildren(finishedWork, isHidden);
+      return;
+    }
+  }
+  invariant(
+    false,
+    'This unit of work tag should not have side-effects. This error is ' +
+      'likely caused by a bug in React. Please file an issue.',
+  );
+}
+</code></pre></div><h4 id="reactfibercompletework-js"><a href="#reactfibercompletework-js" class="header-anchor">#</a> ReactFiberCompleteWork.js</h4> <div class="language- extra-class"><pre class="language-text"><code>function completeWork(
+  current: Fiber | null,
+  workInProgress: Fiber,
+  renderLanes: Lanes,
+): Fiber | null {
+  const newProps = workInProgress.pendingProps;
+
+  switch (workInProgress.tag) {
+    case IndeterminateComponent:
+    case LazyComponent:
+    case SimpleMemoComponent:
+    case FunctionComponent:
+    case ForwardRef:
+    case Fragment:
+    case Mode:
+    case ContextConsumer:
+    case MemoComponent:
+      bubbleProperties(workInProgress);
+      return null;
+    case ClassComponent: {
+      const Component = workInProgress.type;
+      if (isLegacyContextProvider(Component)) {
+        popLegacyContext(workInProgress);
+      }
+      bubbleProperties(workInProgress);
+      return null;
+    }
+    case HostRoot: {
+      popHostContainer(workInProgress);
+      popTopLevelLegacyContextObject(workInProgress);
+      resetMutableSourceWorkInProgressVersions();
+      const fiberRoot = (workInProgress.stateNode: FiberRoot);
+      if (fiberRoot.pendingContext) {
+        fiberRoot.context = fiberRoot.pendingContext;
+        fiberRoot.pendingContext = null;
+      }
+      if (current === null || current.child === null) {
+        // If we hydrated, pop so that we can delete any remaining children
+        // that weren't hydrated.
+        const wasHydrated = popHydrationState(workInProgress);
+        if (wasHydrated) {
+          // If we hydrated, then we'll need to schedule an update for
+          // the commit side-effects on the root.
+          markUpdate(workInProgress);
+        } else if (!fiberRoot.hydrate) {
+          // Schedule an effect to clear this container at the start of the next commit.
+          // This handles the case of React rendering into a container with previous children.
+          // It's also safe to do for updates too, because current.child would only be null
+          // if the previous render was null (so the the container would already be empty).
+          workInProgress.flags |= Snapshot;
+        }
+      }
+      updateHostContainer(current, workInProgress);
+      bubbleProperties(workInProgress);
+      return null;
+    }
+    case HostComponent: {
+      popHostContext(workInProgress);
+      const rootContainerInstance = getRootHostContainer();
+      const type = workInProgress.type;
+      if (current !== null &amp;&amp; workInProgress.stateNode != null) {
+        updateHostComponent(
+          current,
+          workInProgress,
+          type,
+          newProps,
+          rootContainerInstance,
+        );
+
+        if (current.ref !== workInProgress.ref) {
+          markRef(workInProgress);
+        }
+      } else {
+        if (!newProps) {
+          invariant(
+            workInProgress.stateNode !== null,
+            'We must have new props for new mounts. This error is likely ' +
+              'caused by a bug in React. Please file an issue.',
+          );
+          // This can happen when we abort work.
+          bubbleProperties(workInProgress);
+          return null;
+        }
+
+        const currentHostContext = getHostContext();
+        // TODO: Move createInstance to beginWork and keep it on a context
+        // &quot;stack&quot; as the parent. Then append children as we go in beginWork
+        // or completeWork depending on whether we want to add them top-&gt;down or
+        // bottom-&gt;up. Top-&gt;down is faster in IE11.
+        const wasHydrated = popHydrationState(workInProgress);
+        if (wasHydrated) {
+          // TODO: Move this and createInstance step into the beginPhase
+          // to consolidate.
+          if (
+            prepareToHydrateHostInstance(
+              workInProgress,
+              rootContainerInstance,
+              currentHostContext,
+            )
+          ) {
+            // If changes to the hydrated node need to be applied at the
+            // commit-phase we mark this as such.
+            markUpdate(workInProgress);
+          }
+        } else {
+          const instance = createInstance(
+            type,
+            newProps,
+            rootContainerInstance,
+            currentHostContext,
+            workInProgress,
+          );
+
+          appendAllChildren(instance, workInProgress, false, false);
+
+          workInProgress.stateNode = instance;
+
+          // Certain renderers require commit-time effects for initial mount.
+          // (eg DOM renderer supports auto-focus for certain elements).
+          // Make sure such renderers get scheduled for later work.
+          if (
+            finalizeInitialChildren(
+              instance,
+              type,
+              newProps,
+              rootContainerInstance,
+              currentHostContext,
+            )
+          ) {
+            markUpdate(workInProgress);
+          }
+        }
+
+        if (workInProgress.ref !== null) {
+          // If there is a ref on a host node we need to schedule a callback
+          markRef(workInProgress);
+        }
+      }
+      bubbleProperties(workInProgress);
+      return null;
+    }
+    case HostText: {
+      const newText = newProps;
+      if (current &amp;&amp; workInProgress.stateNode != null) {
+        const oldText = current.memoizedProps;
+        // If we have an alternate, that means this is an update and we need
+        // to schedule a side-effect to do the updates.
+        updateHostText(current, workInProgress, oldText, newText);
+      } else {
+        if (typeof newText !== 'string') {
+          invariant(
+            workInProgress.stateNode !== null,
+            'We must have new props for new mounts. This error is likely ' +
+              'caused by a bug in React. Please file an issue.',
+          );
+          // This can happen when we abort work.
+        }
+        const rootContainerInstance = getRootHostContainer();
+        const currentHostContext = getHostContext();
+        const wasHydrated = popHydrationState(workInProgress);
+        if (wasHydrated) {
+          if (prepareToHydrateHostTextInstance(workInProgress)) {
+            markUpdate(workInProgress);
+          }
+        } else {
+          workInProgress.stateNode = createTextInstance(
+            newText,
+            rootContainerInstance,
+            currentHostContext,
+            workInProgress,
+          );
+        }
+      }
+      bubbleProperties(workInProgress);
+      return null;
+    }
+    case Profiler: {
+      const didBailout = bubbleProperties(workInProgress);
+      if (!didBailout) {
+        // Use subtreeFlags to determine which commit callbacks should fire.
+        // TODO: Move this logic to the commit phase, since we already check if
+        // a fiber's subtree contains effects. Refactor the commit phase's
+        // depth-first traversal so that we can put work tag-specific logic
+        // before or after committing a subtree's effects.
+        const OnRenderFlag = Update;
+        const OnCommitFlag = Callback;
+        const OnPostCommitFlag = Passive;
+        const subtreeFlags = workInProgress.subtreeFlags;
+        const flags = workInProgress.flags;
+        let newFlags = flags;
+
+        // Call onRender any time this fiber or its subtree are worked on.
+        if (
+          (flags &amp; PerformedWork) !== NoFlags ||
+          (subtreeFlags &amp; PerformedWork) !== NoFlags
+        ) {
+          newFlags |= OnRenderFlag;
+        }
+
+        // Call onCommit only if the subtree contains layout work, or if it
+        // contains deletions, since those might result in unmount work, which
+        // we include in the same measure.
+        // TODO: Can optimize by using a static flag to track whether a tree
+        // contains layout effects, like we do for passive effects.
+        if (
+          (flags &amp; (LayoutMask | Deletion)) !== NoFlags ||
+          (subtreeFlags &amp; (LayoutMask | Deletion)) !== NoFlags
+        ) {
+          newFlags |= OnCommitFlag;
+        }
+
+        // Call onPostCommit only if the subtree contains passive work.
+        // Don't have to check for deletions, because Deletion is already
+        // a passive flag.
+        if (
+          (flags &amp; PassiveMask) !== NoFlags ||
+          (subtreeFlags &amp; PassiveMask) !== NoFlags
+        ) {
+          newFlags |= OnPostCommitFlag;
+        }
+        workInProgress.flags = newFlags;
+      } else {
+        // This fiber and its subtree bailed out, so don't fire any callbacks.
+      }
+
+      return null;
+    }
+    case SuspenseComponent: {
+      popSuspenseContext(workInProgress);
+      const nextState: null | SuspenseState = workInProgress.memoizedState;
+
+      if (enableSuspenseServerRenderer) {
+        if (nextState !== null &amp;&amp; nextState.dehydrated !== null) {
+          if (current === null) {
+            const wasHydrated = popHydrationState(workInProgress);
+            invariant(
+              wasHydrated,
+              'A dehydrated suspense component was completed without a hydrated node. ' +
+                'This is probably a bug in React.',
+            );
+            prepareToHydrateHostSuspenseInstance(workInProgress);
+            if (enableSchedulerTracing) {
+              markSpawnedWork(OffscreenLane);
+            }
+            bubbleProperties(workInProgress);
+            if (enableProfilerTimer) {
+              if ((workInProgress.mode &amp; ProfileMode) !== NoMode) {
+                const isTimedOutSuspense = nextState !== null;
+                if (isTimedOutSuspense) {
+                  // Don't count time spent in a timed out Suspense subtree as part of the base duration.
+                  const primaryChildFragment = workInProgress.child;
+                  if (primaryChildFragment !== null) {
+                    // $FlowFixMe Flow doens't support type casting in combiation with the -= operator
+                    workInProgress.treeBaseDuration -= ((primaryChildFragment.treeBaseDuration: any): number);
+                  }
+                }
+              }
+            }
+            return null;
+          } else {
+            // We should never have been in a hydration state if we didn't have a current.
+            // However, in some of those paths, we might have reentered a hydration state
+            // and then we might be inside a hydration state. In that case, we'll need to exit out of it.
+            resetHydrationState();
+            if ((workInProgress.flags &amp; DidCapture) === NoFlags) {
+              // This boundary did not suspend so it's now hydrated and unsuspended.
+              workInProgress.memoizedState = null;
+            }
+            // If nothing suspended, we need to schedule an effect to mark this boundary
+            // as having hydrated so events know that they're free to be invoked.
+            // It's also a signal to replay events and the suspense callback.
+            // If something suspended, schedule an effect to attach retry listeners.
+            // So we might as well always mark this.
+            workInProgress.flags |= Update;
+            bubbleProperties(workInProgress);
+            if (enableProfilerTimer) {
+              if ((workInProgress.mode &amp; ProfileMode) !== NoMode) {
+                const isTimedOutSuspense = nextState !== null;
+                if (isTimedOutSuspense) {
+                  // Don't count time spent in a timed out Suspense subtree as part of the base duration.
+                  const primaryChildFragment = workInProgress.child;
+                  if (primaryChildFragment !== null) {
+                    // $FlowFixMe Flow doens't support type casting in combiation with the -= operator
+                    workInProgress.treeBaseDuration -= ((primaryChildFragment.treeBaseDuration: any): number);
+                  }
+                }
+              }
+            }
+            return null;
+          }
+        }
+      }
+
+      if ((workInProgress.flags &amp; DidCapture) !== NoFlags) {
+        // Something suspended. Re-render with the fallback children.
+        workInProgress.lanes = renderLanes;
+        // Do not reset the effect list.
+        if (
+          enableProfilerTimer &amp;&amp;
+          (workInProgress.mode &amp; ProfileMode) !== NoMode
+        ) {
+          transferActualDuration(workInProgress);
+        }
+        // Don't bubble properties in this case.
+        return workInProgress;
+      }
+
+      const nextDidTimeout = nextState !== null;
+      let prevDidTimeout = false;
+      if (current === null) {
+        if (workInProgress.memoizedProps.fallback !== undefined) {
+          popHydrationState(workInProgress);
+        }
+      } else {
+        const prevState: null | SuspenseState = current.memoizedState;
+        prevDidTimeout = prevState !== null;
+      }
+
+      if (nextDidTimeout &amp;&amp; !prevDidTimeout) {
+        // If this subtreee is running in blocking mode we can suspend,
+        // otherwise we won't suspend.
+        // TODO: This will still suspend a synchronous tree if anything
+        // in the concurrent tree already suspended during this render.
+        // This is a known bug.
+        if ((workInProgress.mode &amp; BlockingMode) !== NoMode) {
+          // TODO: Move this back to throwException because this is too late
+          // if this is a large tree which is common for initial loads. We
+          // don't know if we should restart a render or not until we get
+          // this marker, and this is too late.
+          // If this render already had a ping or lower pri updates,
+          // and this is the first time we know we're going to suspend we
+          // should be able to immediately restart from within throwException.
+          const hasInvisibleChildContext =
+            current === null &amp;&amp;
+            workInProgress.memoizedProps.unstable_avoidThisFallback !== true;
+          if (
+            hasInvisibleChildContext ||
+            hasSuspenseContext(
+              suspenseStackCursor.current,
+              (InvisibleParentSuspenseContext: SuspenseContext),
+            )
+          ) {
+            // If this was in an invisible tree or a new render, then showing
+            // this boundary is ok.
+            renderDidSuspend();
+          } else {
+            // Otherwise, we're going to have to hide content so we should
+            // suspend for longer if possible.
+            renderDidSuspendDelayIfPossible();
+          }
+        }
+      }
+
+      if (supportsPersistence) {
+        // TODO: Only schedule updates if not prevDidTimeout.
+        if (nextDidTimeout) {
+          // If this boundary just timed out, schedule an effect to attach a
+          // retry listener to the promise. This flag is also used to hide the
+          // primary children.
+          workInProgress.flags |= Update;
+        }
+      }
+      if (supportsMutation) {
+        // TODO: Only schedule updates if these values are non equal, i.e. it changed.
+        if (nextDidTimeout || prevDidTimeout) {
+          // If this boundary just timed out, schedule an effect to attach a
+          // retry listener to the promise. This flag is also used to hide the
+          // primary children. In mutation mode, we also need the flag to
+          // *unhide* children that were previously hidden, so check if this
+          // is currently timed out, too.
+          workInProgress.flags |= Update;
+        }
+      }
+      if (
+        enableSuspenseCallback &amp;&amp;
+        workInProgress.updateQueue !== null &amp;&amp;
+        workInProgress.memoizedProps.suspenseCallback != null
+      ) {
+        // Always notify the callback
+        workInProgress.flags |= Update;
+      }
+      bubbleProperties(workInProgress);
+      if (enableProfilerTimer) {
+        if ((workInProgress.mode &amp; ProfileMode) !== NoMode) {
+          if (nextDidTimeout) {
+            // Don't count time spent in a timed out Suspense subtree as part of the base duration.
+            const primaryChildFragment = workInProgress.child;
+            if (primaryChildFragment !== null) {
+              // $FlowFixMe Flow doens't support type casting in combiation with the -= operator
+              workInProgress.treeBaseDuration -= ((primaryChildFragment.treeBaseDuration: any): number);
+            }
+          }
+        }
+      }
+      return null;
+    }
+    case HostPortal:
+      popHostContainer(workInProgress);
+      updateHostContainer(current, workInProgress);
+      if (current === null) {
+        preparePortalMount(workInProgress.stateNode.containerInfo);
+      }
+      bubbleProperties(workInProgress);
+      return null;
+    case ContextProvider:
+      // Pop provider fiber
+      popProvider(workInProgress);
+      bubbleProperties(workInProgress);
+      return null;
+    case IncompleteClassComponent: {
+      // Same as class component case. I put it down here so that the tags are
+      // sequential to ensure this switch is compiled to a jump table.
+      const Component = workInProgress.type;
+      if (isLegacyContextProvider(Component)) {
+        popLegacyContext(workInProgress);
+      }
+      bubbleProperties(workInProgress);
+      return null;
+    }
+    case SuspenseListComponent: {
+      popSuspenseContext(workInProgress);
+
+      const renderState: null | SuspenseListRenderState =
+        workInProgress.memoizedState;
+
+      if (renderState === null) {
+        // We're running in the default, &quot;independent&quot; mode.
+        // We don't do anything in this mode.
+        bubbleProperties(workInProgress);
+        return null;
+      }
+
+      let didSuspendAlready = (workInProgress.flags &amp; DidCapture) !== NoFlags;
+
+      const renderedTail = renderState.rendering;
+      if (renderedTail === null) {
+        // We just rendered the head.
+        if (!didSuspendAlready) {
+          // This is the first pass. We need to figure out if anything is still
+          // suspended in the rendered set.
+
+          // If new content unsuspended, but there's still some content that
+          // didn't. Then we need to do a second pass that forces everything
+          // to keep showing their fallbacks.
+
+          // We might be suspended if something in this render pass suspended, or
+          // something in the previous committed pass suspended. Otherwise,
+          // there's no chance so we can skip the expensive call to
+          // findFirstSuspended.
+          const cannotBeSuspended =
+            renderHasNotSuspendedYet() &amp;&amp;
+            (current === null || (current.flags &amp; DidCapture) === NoFlags);
+          if (!cannotBeSuspended) {
+            let row = workInProgress.child;
+            while (row !== null) {
+              const suspended = findFirstSuspended(row);
+              if (suspended !== null) {
+                didSuspendAlready = true;
+                workInProgress.flags |= DidCapture;
+                cutOffTailIfNeeded(renderState, false);
+
+                // If this is a newly suspended tree, it might not get committed as
+                // part of the second pass. In that case nothing will subscribe to
+                // its thennables. Instead, we'll transfer its thennables to the
+                // SuspenseList so that it can retry if they resolve.
+                // There might be multiple of these in the list but since we're
+                // going to wait for all of them anyway, it doesn't really matter
+                // which ones gets to ping. In theory we could get clever and keep
+                // track of how many dependencies remain but it gets tricky because
+                // in the meantime, we can add/remove/change items and dependencies.
+                // We might bail out of the loop before finding any but that
+                // doesn't matter since that means that the other boundaries that
+                // we did find already has their listeners attached.
+                const newThennables = suspended.updateQueue;
+                if (newThennables !== null) {
+                  workInProgress.updateQueue = newThennables;
+                  workInProgress.flags |= Update;
+                }
+
+                // Rerender the whole list, but this time, we'll force fallbacks
+                // to stay in place.
+                // Reset the child fibers to their original state.
+                workInProgress.subtreeFlags = NoFlags;
+                resetChildFibers(workInProgress, renderLanes);
+
+                // Set up the Suspense Context to force suspense and immediately
+                // rerender the children.
+                pushSuspenseContext(
+                  workInProgress,
+                  setShallowSuspenseContext(
+                    suspenseStackCursor.current,
+                    ForceSuspenseFallback,
+                  ),
+                );
+                // Don't bubble properties in this case.
+                return workInProgress.child;
+              }
+              row = row.sibling;
+            }
+          }
+
+          if (renderState.tail !== null &amp;&amp; now() &gt; getRenderTargetTime()) {
+            // We have already passed our CPU deadline but we still have rows
+            // left in the tail. We'll just give up further attempts to render
+            // the main content and only render fallbacks.
+            workInProgress.flags |= DidCapture;
+            didSuspendAlready = true;
+
+            cutOffTailIfNeeded(renderState, false);
+
+            // Since nothing actually suspended, there will nothing to ping this
+            // to get it started back up to attempt the next item. While in terms
+            // of priority this work has the same priority as this current render,
+            // it's not part of the same transition once the transition has
+            // committed. If it's sync, we still want to yield so that it can be
+            // painted. Conceptually, this is really the same as pinging.
+            // We can use any RetryLane even if it's the one currently rendering
+            // since we're leaving it behind on this node.
+            workInProgress.lanes = SomeRetryLane;
+            if (enableSchedulerTracing) {
+              markSpawnedWork(SomeRetryLane);
+            }
+          }
+        } else {
+          cutOffTailIfNeeded(renderState, false);
+        }
+        // Next we're going to render the tail.
+      } else {
+        // Append the rendered row to the child list.
+        if (!didSuspendAlready) {
+          const suspended = findFirstSuspended(renderedTail);
+          if (suspended !== null) {
+            workInProgress.flags |= DidCapture;
+            didSuspendAlready = true;
+
+            // Ensure we transfer the update queue to the parent so that it doesn't
+            // get lost if this row ends up dropped during a second pass.
+            const newThennables = suspended.updateQueue;
+            if (newThennables !== null) {
+              workInProgress.updateQueue = newThennables;
+              workInProgress.flags |= Update;
+            }
+
+            cutOffTailIfNeeded(renderState, true);
+            // This might have been modified.
+            if (
+              renderState.tail === null &amp;&amp;
+              renderState.tailMode === 'hidden' &amp;&amp;
+              !renderedTail.alternate &amp;&amp;
+              !getIsHydrating() // We don't cut it if we're hydrating.
+            ) {
+              // We're done.
+              bubbleProperties(workInProgress);
+              return null;
+            }
+          } else if (
+            // The time it took to render last row is greater than the remaining
+            // time we have to render. So rendering one more row would likely
+            // exceed it.
+            now() * 2 - renderState.renderingStartTime &gt;
+              getRenderTargetTime() &amp;&amp;
+            renderLanes !== OffscreenLane
+          ) {
+            // We have now passed our CPU deadline and we'll just give up further
+            // attempts to render the main content and only render fallbacks.
+            // The assumption is that this is usually faster.
+            workInProgress.flags |= DidCapture;
+            didSuspendAlready = true;
+
+            cutOffTailIfNeeded(renderState, false);
+
+            // Since nothing actually suspended, there will nothing to ping this
+            // to get it started back up to attempt the next item. If we can show
+            // them, then they really have the same priority as this render.
+            // So we'll pick it back up the very next render pass once we've had
+            // an opportunity to yield for paint.
+            workInProgress.lanes = SomeRetryLane;
+            if (enableSchedulerTracing) {
+              markSpawnedWork(SomeRetryLane);
+            }
+          }
+        }
+        if (renderState.isBackwards) {
+          // The effect list of the backwards tail will have been added
+          // to the end. This breaks the guarantee that life-cycles fire in
+          // sibling order but that isn't a strong guarantee promised by React.
+          // Especially since these might also just pop in during future commits.
+          // Append to the beginning of the list.
+          renderedTail.sibling = workInProgress.child;
+          workInProgress.child = renderedTail;
+        } else {
+          const previousSibling = renderState.last;
+          if (previousSibling !== null) {
+            previousSibling.sibling = renderedTail;
+          } else {
+            workInProgress.child = renderedTail;
+          }
+          renderState.last = renderedTail;
+        }
+      }
+
+      if (renderState.tail !== null) {
+        // We still have tail rows to render.
+        // Pop a row.
+        const next = renderState.tail;
+        renderState.rendering = next;
+        renderState.tail = next.sibling;
+        renderState.renderingStartTime = now();
+        next.sibling = null;
+
+        // Restore the context.
+        // TODO: We can probably just avoid popping it instead and only
+        // setting it the first time we go from not suspended to suspended.
+        let suspenseContext = suspenseStackCursor.current;
+        if (didSuspendAlready) {
+          suspenseContext = setShallowSuspenseContext(
+            suspenseContext,
+            ForceSuspenseFallback,
+          );
+        } else {
+          suspenseContext = setDefaultShallowSuspenseContext(suspenseContext);
+        }
+        pushSuspenseContext(workInProgress, suspenseContext);
+        // Do a pass over the next row.
+        // Don't bubble properties in this case.
+        return next;
+      }
+      bubbleProperties(workInProgress);
+      return null;
+    }
+    case FundamentalComponent: {
+      if (enableFundamentalAPI) {
+        const fundamentalImpl = workInProgress.type.impl;
+        let fundamentalInstance: ReactFundamentalComponentInstance&lt;
+          any,
+          any,
+        &gt; | null = workInProgress.stateNode;
+
+        if (fundamentalInstance === null) {
+          const getInitialState = fundamentalImpl.getInitialState;
+          let fundamentalState;
+          if (getInitialState !== undefined) {
+            fundamentalState = getInitialState(newProps);
+          }
+          fundamentalInstance = workInProgress.stateNode = createFundamentalStateInstance(
+            workInProgress,
+            newProps,
+            fundamentalImpl,
+            fundamentalState || {},
+          );
+          const instance = ((getFundamentalComponentInstance(
+            fundamentalInstance,
+          ): any): Instance);
+          fundamentalInstance.instance = instance;
+          if (fundamentalImpl.reconcileChildren === false) {
+            bubbleProperties(workInProgress);
+            return null;
+          }
+          appendAllChildren(instance, workInProgress, false, false);
+          mountFundamentalComponent(fundamentalInstance);
+        } else {
+          // We fire update in commit phase
+          const prevProps = fundamentalInstance.props;
+          fundamentalInstance.prevProps = prevProps;
+          fundamentalInstance.props = newProps;
+          fundamentalInstance.currentFiber = workInProgress;
+          if (supportsPersistence) {
+            const instance = cloneFundamentalInstance(fundamentalInstance);
+            fundamentalInstance.instance = instance;
+            appendAllChildren(instance, workInProgress, false, false);
+          }
+          const shouldUpdate = shouldUpdateFundamentalComponent(
+            fundamentalInstance,
+          );
+          if (shouldUpdate) {
+            markUpdate(workInProgress);
+          }
+        }
+        bubbleProperties(workInProgress);
+        return null;
+      }
+      break;
+    }
+    case ScopeComponent: {
+      if (enableScopeAPI) {
+        if (current === null) {
+          const scopeInstance: ReactScopeInstance = createScopeInstance();
+          workInProgress.stateNode = scopeInstance;
+          prepareScopeUpdate(scopeInstance, workInProgress);
+          if (workInProgress.ref !== null) {
+            markRef(workInProgress);
+            markUpdate(workInProgress);
+          }
+        } else {
+          if (workInProgress.ref !== null) {
+            markUpdate(workInProgress);
+          }
+          if (current.ref !== workInProgress.ref) {
+            markRef(workInProgress);
+          }
+        }
+        bubbleProperties(workInProgress);
+        return null;
+      }
+      break;
+    }
+    case Block:
+      if (enableBlocksAPI) {
+        bubbleProperties(workInProgress);
+        return null;
+      }
+      break;
+    case OffscreenComponent:
+    case LegacyHiddenComponent: {
+      popRenderLanes(workInProgress);
+      const nextState: OffscreenState | null = workInProgress.memoizedState;
+      const nextIsHidden = nextState !== null;
+
+      if (current !== null) {
+        const prevState: OffscreenState | null = current.memoizedState;
+
+        const prevIsHidden = prevState !== null;
+        if (
+          prevIsHidden !== nextIsHidden &amp;&amp;
+          newProps.mode !== 'unstable-defer-without-hiding'
+        ) {
+          workInProgress.flags |= Update;
+        }
+      }
+
+      // Don't bubble properties for hidden children.
+      if (
+        !nextIsHidden ||
+        includesSomeLane(subtreeRenderLanes, (OffscreenLane: Lane)) ||
+        (workInProgress.mode &amp; ConcurrentMode) === NoMode
+      ) {
+        bubbleProperties(workInProgress);
+      }
+
+      return null;
+    }
+  }
+  invariant(
+    false,
+    'Unknown unit of work tag (%s). This error is likely caused by a bug in ' +
+      'React. Please file an issue.',
+    workInProgress.tag,
+  );
+}
+</code></pre></div><h2 id="实践"><a href="#实践" class="header-anchor">#</a> 实践</h2> <p><img src="/tech/front/react20210305/react04.png" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>import {useState} from 'react';
+function App() {
+  let [count, setCount] = useState(100);
+  
+  function add() {
+    setCount(count++)
+    console.log('add',count)
+  };
+
+  console.log('render',count);
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{count}&lt;/h1&gt;
+      &lt;p&gt;我是兄弟元素&lt;/p &gt;
+      &lt;button onClick={add}&gt;点我+1&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div><p><img src="/tech/front/react20210305/react05.png" alt="图片"></p> <p><img src="/tech/front/react20210305/react06.png" alt="图片"></p> <p>通过一个cra的实践，看一下整过react的过程，如下：</p> <blockquote><p>createRootFiber =&gt; FiberRootNode =&gt; initialUpdateQueue =&gt; updateContainer =&gt; createUpdate =&gt; scheduleUpdateOnFiber =&gt;  renderRootSync =&gt; workLoopSync =&gt; performUnitOfWork =&gt; beginWork =&gt; updateHostRoot =&gt; processUpdateQueue =&gt; reconcileChildFibers =&gt; reconcileSingleElement =&gt; createFiberFromElement =&gt; completeUnitWork =&gt; completeWork =&gt; createInstance =&gt; createElement =&gt; finalizeInitialChildren</p></blockquote> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>react16之后通过fiber对整个运行时的stack reconciler进行了修改，实现了分片的协程调度，对于层级较深的js调用栈可以实现停止与启动更细粒度的控制，从而避免js线程的长时间占用而导致的渲染线程的卡死，整体的设计体现了react架构人员的计算机素养相当的扎实，对操作系统乃至整体数据结构把控能力之强，可见一斑，从这个层面上看，国外程序员设计者确实在优化性能等方面总是从计算机最底层的思路去着手，值得我们学习与思考。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://github.com/facebook/react/" target="_blank" rel="noopener noreferrer">react17官方源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/GYC4SulbnbnQV6TO01Qk_A" target="_blank" rel="noopener noreferrer">结合 React 源码，五分钟带你掌握优先队列<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/gHPH7Q6HYWbbZ4B6A-yalg" target="_blank" rel="noopener noreferrer">如何看待 React Server Components？（网易云音乐前端团队）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/n3kbCed6zgvuE8GIhRHvuw" target="_blank" rel="noopener noreferrer">漫谈 React Fiber<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/VBg7C-QaYAlcMDTlmysYnA" target="_blank" rel="noopener noreferrer">React17新特性：启发式更新算法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/K8FgJBzJDGhctDcQYJbEpg" target="_blank" rel="noopener noreferrer">React Fiber 源码解析<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://kaiwu.lagou.com/course/courseInfo.htm?sid=&amp;courseId=510&amp;lagoufrom=noapp&amp;sharetype=wx_friend&amp;wxinfo=2" target="_blank" rel="noopener noreferrer">深入浅出搞定 React<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://segmentfault.com/a/1190000020736966" target="_blank" rel="noopener noreferrer">React16源码解析<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://segmentfault.com/a/1190000022606323" target="_blank" rel="noopener noreferrer">彻底搞懂React源码调度原理（Concurrent模式）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.dazhuanlan.com/2019/10/20/5dabc56a750fd/" target="_blank" rel="noopener noreferrer">react中的requestIdleCallback实现<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/zhuanzhuanfe/p/9567081.html" target="_blank" rel="noopener noreferrer">浅谈React16框架 - Fiber<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/110161396" target="_blank" rel="noopener noreferrer">react scheduler 再解析篇<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/48254036" target="_blank" rel="noopener noreferrer">浅谈React Scheduler任务管理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/74344654?utm_source=wechat_timeline" target="_blank" rel="noopener noreferrer">探究 React Work Loop 原理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://zhuanlan.zhihu.com/p/231326282?utm_source=wechat_session" target="_blank" rel="noopener noreferrer">react17 lane 算法：位运算和素数相除<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/858135ecb95c" target="_blank" rel="noopener noreferrer">React 源码解析（V16.8.4）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/18523cdaf893" target="_blank" rel="noopener noreferrer">react源码剖析<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://react.iamkasong.com" target="_blank" rel="noopener noreferrer">React技术揭秘<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/umi20210222.html" class="prev">
+        umi3源码探究简析
+      </a></span> <span class="next"><a href="/tech/front/screen20210402.html">
+        自服务大屏踩坑实践
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/74.fad5a0c5.js" defer></script>
+  </body>
+</html>

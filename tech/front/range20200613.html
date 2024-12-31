@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>基于el-slider自定义range组件封装实践 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/73.8d6b550c.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="active sidebar-link">基于el-slider自定义range组件封装实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/range20200613.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/range20200613.html#问题目录" class="sidebar-link">问题目录</a></li><li class="sidebar-sub-header"><a href="/tech/front/range20200613.html#探索案例" class="sidebar-link">探索案例</a></li><li class="sidebar-sub-header"><a href="/tech/front/range20200613.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/range20200613.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="基于el-slider自定义range组件封装实践"><a href="#基于el-slider自定义range组件封装实践" class="header-anchor">#</a> 基于el-slider自定义range组件封装实践</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>日常工作中经常使用范围选择组件，例如进度条、日期范围选择等组件，常见组件库中经常使用的都是使用的圆形滑块形状，项目中有需要根据自定义去实现一个range组件，以下是基于element的el-slider组件进行改良封装的一个range组件。</p> <p><img src="/tech/front/range20200613/range01.png" alt="图片"></p> <h2 id="问题目录"><a href="#问题目录" class="header-anchor">#</a> 问题目录</h2> <ul><li>el-slider源码解读</li> <li>自定义封装</li> <li>封装range组件常见方法</li></ul> <h2 id="探索案例"><a href="#探索案例" class="header-anchor">#</a> 探索案例</h2> <h3 id="el-slider源码解读"><a href="#el-slider源码解读" class="header-anchor">#</a> el-slider源码解读</h3> <p><img src="/tech/front/range20200613/range02.jpg" alt="图片"></p> <p>[组件目录]</p> <ul><li>src
+<ul><li>button.vue</li> <li>main.vue</li> <li>marker.js</li></ul></li> <li>index.js</li></ul> <p>[目录描述] button主要是滑块的大小、样式，拖拽行为等方法的主体；main主要是进度条的显示</p> <p>[源码分析] el-slider的主体是button和bar，在button上主要需要考虑的是事件相关的处理，其中包括mouseenter、mouseleave、mousemove、mouseup、mousedown、touchstart、touchuend、touchmove、keydown.left/right/down/up；bar上主要考虑的就是值的获取与位置的显示</p> <p>button源码：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div
+    class=&quot;el-slider__button-wrapper&quot;
+    @mouseenter=&quot;handleMouseEnter&quot;
+    @mouseleave=&quot;handleMouseLeave&quot;
+    @mousedown=&quot;onButtonDown&quot;
+    @touchstart=&quot;onButtonDown&quot;
+    :class=&quot;{ 'hover': hovering, 'dragging': dragging }&quot;
+    :style=&quot;wrapperStyle&quot;
+    ref=&quot;button&quot;
+    tabindex=&quot;0&quot;
+    @focus=&quot;handleMouseEnter&quot;
+    @blur=&quot;handleMouseLeave&quot;
+    @keydown.left=&quot;onLeftKeyDown&quot;
+    @keydown.right=&quot;onRightKeyDown&quot;
+    @keydown.down.prevent=&quot;onLeftKeyDown&quot;
+    @keydown.up.prevent=&quot;onRightKeyDown&quot;
+  &gt;
+    &lt;el-tooltip
+      placement=&quot;top&quot;
+      ref=&quot;tooltip&quot;
+      :popper-class=&quot;tooltipClass&quot;
+      :disabled=&quot;!showTooltip&quot;&gt;
+      &lt;span slot=&quot;content&quot;&gt;{{ formatValue }}&lt;/span&gt;
+      &lt;div class=&quot;el-slider__button&quot; :class=&quot;{ 'hover': hovering, 'dragging': dragging }&quot;&gt;&lt;/div&gt;
+    &lt;/el-tooltip&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import ElTooltip from 'element-ui/packages/tooltip';
+
+  export default {
+    name: 'ElSliderButton',
+
+    components: {
+      ElTooltip
+    },
+
+    props: {
+      value: {
+        type: Number,
+        default: 0
+      },
+      vertical: {
+        type: Boolean,
+        default: false
+      },
+      tooltipClass: String
+    },
+
+    data() {
+      return {
+        hovering: false,
+        dragging: false,
+        isClick: false,
+        startX: 0,
+        currentX: 0,
+        startY: 0,
+        currentY: 0,
+        startPosition: 0,
+        newPosition: null,
+        oldValue: this.value
+      };
+    },
+
+    computed: {
+      disabled() {
+        return this.$parent.sliderDisabled;
+      },
+
+      max() {
+        return this.$parent.max;
+      },
+
+      min() {
+        return this.$parent.min;
+      },
+
+      step() {
+        return this.$parent.step;
+      },
+
+      showTooltip() {
+        return this.$parent.showTooltip;
+      },
+
+      precision() {
+        return this.$parent.precision;
+      },
+
+      currentPosition() {
+        return `${ (this.value - this.min) / (this.max - this.min) * 100 }%`;
+      },
+
+      enableFormat() {
+        return this.$parent.formatTooltip instanceof Function;
+      },
+
+      formatValue() {
+        return this.enableFormat &amp;&amp; this.$parent.formatTooltip(this.value) || this.value;
+      },
+
+      wrapperStyle() {
+        return this.vertical ? { bottom: this.currentPosition } : { left: this.currentPosition };
+      }
+    },
+
+    watch: {
+      dragging(val) {
+        this.$parent.dragging = val;
+      }
+    },
+
+    methods: {
+      displayTooltip() {
+        this.$refs.tooltip &amp;&amp; (this.$refs.tooltip.showPopper = true);
+      },
+
+      hideTooltip() {
+        this.$refs.tooltip &amp;&amp; (this.$refs.tooltip.showPopper = false);
+      },
+
+      handleMouseEnter() {
+        this.hovering = true;
+        this.displayTooltip();
+      },
+
+      handleMouseLeave() {
+        this.hovering = false;
+        this.hideTooltip();
+      },
+
+      onButtonDown(event) {
+        if (this.disabled) return;
+        event.preventDefault();
+        this.onDragStart(event);
+        window.addEventListener('mousemove', this.onDragging);
+        window.addEventListener('touchmove', this.onDragging);
+        window.addEventListener('mouseup', this.onDragEnd);
+        window.addEventListener('touchend', this.onDragEnd);
+        window.addEventListener('contextmenu', this.onDragEnd);
+      },
+      onLeftKeyDown() {
+        if (this.disabled) return;
+        this.newPosition = parseFloat(this.currentPosition) - this.step / (this.max - this.min) * 100;
+        this.setPosition(this.newPosition);
+        this.$parent.emitChange();
+      },
+      onRightKeyDown() {
+        if (this.disabled) return;
+        this.newPosition = parseFloat(this.currentPosition) + this.step / (this.max - this.min) * 100;
+        this.setPosition(this.newPosition);
+        this.$parent.emitChange();
+      },
+      onDragStart(event) {
+        this.dragging = true;
+        this.isClick = true;
+        if (event.type === 'touchstart') {
+          event.clientY = event.touches[0].clientY;
+          event.clientX = event.touches[0].clientX;
+        }
+        if (this.vertical) {
+          this.startY = event.clientY;
+        } else {
+          this.startX = event.clientX;
+        }
+        this.startPosition = parseFloat(this.currentPosition);
+        this.newPosition = this.startPosition;
+      },
+
+      onDragging(event) {
+        if (this.dragging) {
+          this.isClick = false;
+          this.displayTooltip();
+          this.$parent.resetSize();
+          let diff = 0;
+          if (event.type === 'touchmove') {
+            event.clientY = event.touches[0].clientY;
+            event.clientX = event.touches[0].clientX;
+          }
+          if (this.vertical) {
+            this.currentY = event.clientY;
+            diff = (this.startY - this.currentY) / this.$parent.sliderSize * 100;
+          } else {
+            this.currentX = event.clientX;
+            diff = (this.currentX - this.startX) / this.$parent.sliderSize * 100;
+          }
+          this.newPosition = this.startPosition + diff;
+          this.setPosition(this.newPosition);
+        }
+      },
+
+      onDragEnd() {
+        if (this.dragging) {
+          /*
+           * 防止在 mouseup 后立即触发 click，导致滑块有几率产生一小段位移
+           * 不使用 preventDefault 是因为 mouseup 和 click 没有注册在同一个 DOM 上
+           */
+          setTimeout(() =&gt; {
+            this.dragging = false;
+            this.hideTooltip();
+            if (!this.isClick) {
+              this.setPosition(this.newPosition);
+              this.$parent.emitChange();
+            }
+          }, 0);
+          window.removeEventListener('mousemove', this.onDragging);
+          window.removeEventListener('touchmove', this.onDragging);
+          window.removeEventListener('mouseup', this.onDragEnd);
+          window.removeEventListener('touchend', this.onDragEnd);
+          window.removeEventListener('contextmenu', this.onDragEnd);
+        }
+      },
+
+      setPosition(newPosition) {
+        if (newPosition === null || isNaN(newPosition)) return;
+        if (newPosition &lt; 0) {
+          newPosition = 0;
+        } else if (newPosition &gt; 100) {
+          newPosition = 100;
+        }
+        const lengthPerStep = 100 / ((this.max - this.min) / this.step);
+        const steps = Math.round(newPosition / lengthPerStep);
+        let value = steps * lengthPerStep * (this.max - this.min) * 0.01 + this.min;
+        value = parseFloat(value.toFixed(this.precision));
+        this.$emit('input', value);
+        this.$nextTick(() =&gt; {
+          this.displayTooltip();
+          this.$refs.tooltip &amp;&amp; this.$refs.tooltip.updatePopper();
+        });
+        if (!this.dragging &amp;&amp; this.value !== this.oldValue) {
+          this.oldValue = this.value;
+        }
+      }
+    }
+  };
+&lt;/script&gt;
+</code></pre></div><p>main源码：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div
+    class=&quot;el-slider&quot;
+    :class=&quot;{ 'is-vertical': vertical, 'el-slider--with-input': showInput }&quot;
+    role=&quot;slider&quot;
+    :aria-valuemin=&quot;min&quot;
+    :aria-valuemax=&quot;max&quot;
+    :aria-orientation=&quot;vertical ? 'vertical': 'horizontal'&quot;
+    :aria-disabled=&quot;sliderDisabled&quot;
+  &gt;
+    &lt;el-input-number
+      v-model=&quot;firstValue&quot;
+      v-if=&quot;showInput &amp;&amp; !range&quot;
+      class=&quot;el-slider__input&quot;
+      ref=&quot;input&quot;
+      @change=&quot;emitChange&quot;
+      :step=&quot;step&quot;
+      :disabled=&quot;sliderDisabled&quot;
+      :controls=&quot;showInputControls&quot;
+      :min=&quot;min&quot;
+      :max=&quot;max&quot;
+      :debounce=&quot;debounce&quot;
+      :size=&quot;inputSize&quot;&gt;
+    &lt;/el-input-number&gt;
+    &lt;div
+      class=&quot;el-slider__runway&quot;
+      :class=&quot;{ 'show-input': showInput, 'disabled': sliderDisabled }&quot;
+      :style=&quot;runwayStyle&quot;
+      @click=&quot;onSliderClick&quot;
+      ref=&quot;slider&quot;&gt;
+      &lt;div
+        class=&quot;el-slider__bar&quot;
+        :style=&quot;barStyle&quot;&gt;
+      &lt;/div&gt;
+      &lt;slider-button
+        :vertical=&quot;vertical&quot;
+        v-model=&quot;firstValue&quot;
+        :tooltip-class=&quot;tooltipClass&quot;
+        ref=&quot;button1&quot;&gt;
+      &lt;/slider-button&gt;
+      &lt;slider-button
+        :vertical=&quot;vertical&quot;
+        v-model=&quot;secondValue&quot;
+        :tooltip-class=&quot;tooltipClass&quot;
+        ref=&quot;button2&quot;
+        v-if=&quot;range&quot;&gt;
+      &lt;/slider-button&gt;
+      &lt;div
+        class=&quot;el-slider__stop&quot;
+        v-for=&quot;(item, key) in stops&quot;
+        :key=&quot;key&quot;
+        :style=&quot;getStopStyle(item)&quot;
+        v-if=&quot;showStops&quot;&gt;
+      &lt;/div&gt;
+      &lt;template v-if=&quot;markList.length &gt; 0&quot;&gt;
+        &lt;div&gt;
+          &lt;div
+            v-for=&quot;(item, key) in markList&quot;
+            :style=&quot;getStopStyle(item.position)&quot;
+            class=&quot;el-slider__stop el-slider__marks-stop&quot;
+            :key=&quot;key&quot;&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;el-slider__marks&quot;&gt;
+          &lt;slider-marker
+            :mark=&quot;item.mark&quot; v-for=&quot;(item, key) in markList&quot;
+            :key=&quot;key&quot;
+            :style=&quot;getStopStyle(item.position)&quot;&gt;
+          &lt;/slider-marker&gt;
+        &lt;/div&gt;
+      &lt;/template&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script type=&quot;text/babel&quot;&gt;
+  import ElInputNumber from 'element-ui/packages/input-number';
+  import SliderButton from './button.vue';
+  import SliderMarker from './marker';
+  import Emitter from 'element-ui/src/mixins/emitter';
+
+  export default {
+    name: 'ElSlider',
+
+    mixins: [Emitter],
+
+    inject: {
+      elForm: {
+        default: ''
+      }
+    },
+
+    props: {
+      min: {
+        type: Number,
+        default: 0
+      },
+      max: {
+        type: Number,
+        default: 100
+      },
+      step: {
+        type: Number,
+        default: 1
+      },
+      value: {
+        type: [Number, Array],
+        default: 0
+      },
+      showInput: {
+        type: Boolean,
+        default: false
+      },
+      showInputControls: {
+        type: Boolean,
+        default: true
+      },
+      inputSize: {
+        type: String,
+        default: 'small'
+      },
+      showStops: {
+        type: Boolean,
+        default: false
+      },
+      showTooltip: {
+        type: Boolean,
+        default: true
+      },
+      formatTooltip: Function,
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      range: {
+        type: Boolean,
+        default: false
+      },
+      vertical: {
+        type: Boolean,
+        default: false
+      },
+      height: {
+        type: String
+      },
+      debounce: {
+        type: Number,
+        default: 300
+      },
+      label: {
+        type: String
+      },
+      tooltipClass: String,
+      marks: Object
+    },
+
+    components: {
+      ElInputNumber,
+      SliderButton,
+      SliderMarker
+    },
+
+    data() {
+      return {
+        firstValue: null,
+        secondValue: null,
+        oldValue: null,
+        dragging: false,
+        sliderSize: 1
+      };
+    },
+
+    watch: {
+      value(val, oldVal) {
+        if (this.dragging ||
+          Array.isArray(val) &amp;&amp;
+          Array.isArray(oldVal) &amp;&amp;
+          val.every((item, index) =&gt; item === oldVal[index])) {
+          return;
+        }
+        this.setValues();
+      },
+
+      dragging(val) {
+        if (!val) {
+          this.setValues();
+        }
+      },
+
+      firstValue(val) {
+        if (this.range) {
+          this.$emit('input', [this.minValue, this.maxValue]);
+        } else {
+          this.$emit('input', val);
+        }
+      },
+
+      secondValue() {
+        if (this.range) {
+          this.$emit('input', [this.minValue, this.maxValue]);
+        }
+      },
+
+      min() {
+        this.setValues();
+      },
+
+      max() {
+        this.setValues();
+      }
+    },
+
+    methods: {
+      valueChanged() {
+        if (this.range) {
+          return ![this.minValue, this.maxValue]
+            .every((item, index) =&gt; item === this.oldValue[index]);
+        } else {
+          return this.value !== this.oldValue;
+        }
+      },
+      setValues() {
+        if (this.min &gt; this.max) {
+          console.error('[Element Error][Slider]min should not be greater than max.');
+          return;
+        }
+        const val = this.value;
+        if (this.range &amp;&amp; Array.isArray(val)) {
+          if (val[1] &lt; this.min) {
+            this.$emit('input', [this.min, this.min]);
+          } else if (val[0] &gt; this.max) {
+            this.$emit('input', [this.max, this.max]);
+          } else if (val[0] &lt; this.min) {
+            this.$emit('input', [this.min, val[1]]);
+          } else if (val[1] &gt; this.max) {
+            this.$emit('input', [val[0], this.max]);
+          } else {
+            this.firstValue = val[0];
+            this.secondValue = val[1];
+            if (this.valueChanged()) {
+              this.dispatch('ElFormItem', 'el.form.change', [this.minValue, this.maxValue]);
+              this.oldValue = val.slice();
+            }
+          }
+        } else if (!this.range &amp;&amp; typeof val === 'number' &amp;&amp; !isNaN(val)) {
+          if (val &lt; this.min) {
+            this.$emit('input', this.min);
+          } else if (val &gt; this.max) {
+            this.$emit('input', this.max);
+          } else {
+            this.firstValue = val;
+            if (this.valueChanged()) {
+              this.dispatch('ElFormItem', 'el.form.change', val);
+              this.oldValue = val;
+            }
+          }
+        }
+      },
+
+      setPosition(percent) {
+        const targetValue = this.min + percent * (this.max - this.min) / 100;
+        if (!this.range) {
+          this.$refs.button1.setPosition(percent);
+          return;
+        }
+        let button;
+        if (Math.abs(this.minValue - targetValue) &lt; Math.abs(this.maxValue - targetValue)) {
+          button = this.firstValue &lt; this.secondValue ? 'button1' : 'button2';
+        } else {
+          button = this.firstValue &gt; this.secondValue ? 'button1' : 'button2';
+        }
+        this.$refs[button].setPosition(percent);
+      },
+
+      onSliderClick(event) {
+        if (this.sliderDisabled || this.dragging) return;
+        this.resetSize();
+        if (this.vertical) {
+          const sliderOffsetBottom = this.$refs.slider.getBoundingClientRect().bottom;
+          this.setPosition((sliderOffsetBottom - event.clientY) / this.sliderSize * 100);
+        } else {
+          const sliderOffsetLeft = this.$refs.slider.getBoundingClientRect().left;
+          this.setPosition((event.clientX - sliderOffsetLeft) / this.sliderSize * 100);
+        }
+        this.emitChange();
+      },
+
+      resetSize() {
+        if (this.$refs.slider) {
+          this.sliderSize = this.$refs.slider[`client${ this.vertical ? 'Height' : 'Width' }`];
+        }
+      },
+
+      emitChange() {
+        this.$nextTick(() =&gt; {
+          this.$emit('change', this.range ? [this.minValue, this.maxValue] : this.value);
+        });
+      },
+
+      getStopStyle(position) {
+        return this.vertical ? { 'bottom': position + '%' } : { 'left': position + '%' };
+      }
+    },
+
+    computed: {
+      stops() {
+        if (!this.showStops || this.min &gt; this.max) return [];
+        if (this.step === 0) {
+          process.env.NODE_ENV !== 'production' &amp;&amp;
+          console.warn('[Element Warn][Slider]step should not be 0.');
+          return [];
+        }
+        const stopCount = (this.max - this.min) / this.step;
+        const stepWidth = 100 * this.step / (this.max - this.min);
+        const result = [];
+        for (let i = 1; i &lt; stopCount; i++) {
+          result.push(i * stepWidth);
+        }
+        if (this.range) {
+          return result.filter(step =&gt; {
+            return step &lt; 100 * (this.minValue - this.min) / (this.max - this.min) ||
+              step &gt; 100 * (this.maxValue - this.min) / (this.max - this.min);
+          });
+        } else {
+          return result.filter(step =&gt; step &gt; 100 * (this.firstValue - this.min) / (this.max - this.min));
+        }
+      },
+
+      markList() {
+        if (!this.marks) {
+          return [];
+        }
+
+        const marksKeys = Object.keys(this.marks);
+        return marksKeys.map(parseFloat)
+          .sort((a, b) =&gt; a - b)
+          .filter(point =&gt; point &lt;= this.max &amp;&amp; point &gt;= this.min)
+          .map(point =&gt; ({
+            point,
+            position: (point - this.min) * 100 / (this.max - this.min),
+            mark: this.marks[point]
+          }));
+      },
+
+      minValue() {
+        return Math.min(this.firstValue, this.secondValue);
+      },
+
+      maxValue() {
+        return Math.max(this.firstValue, this.secondValue);
+      },
+
+      barSize() {
+        return this.range
+          ? `${ 100 * (this.maxValue - this.minValue) / (this.max - this.min) }%`
+          : `${ 100 * (this.firstValue - this.min) / (this.max - this.min) }%`;
+      },
+
+      barStart() {
+        return this.range
+          ? `${ 100 * (this.minValue - this.min) / (this.max - this.min) }%`
+          : '0%';
+      },
+
+      precision() {
+        let precisions = [this.min, this.max, this.step].map(item =&gt; {
+          let decimal = ('' + item).split('.')[1];
+          return decimal ? decimal.length : 0;
+        });
+        return Math.max.apply(null, precisions);
+      },
+
+      runwayStyle() {
+        return this.vertical ? { height: this.height } : {};
+      },
+
+      barStyle() {
+        return this.vertical
+          ? {
+            height: this.barSize,
+            bottom: this.barStart
+          } : {
+            width: this.barSize,
+            left: this.barStart
+          };
+      },
+
+      sliderDisabled() {
+        return this.disabled || (this.elForm || {}).disabled;
+      }
+    },
+
+    mounted() {
+      let valuetext;
+      if (this.range) {
+        if (Array.isArray(this.value)) {
+          this.firstValue = Math.max(this.min, this.value[0]);
+          this.secondValue = Math.min(this.max, this.value[1]);
+        } else {
+          this.firstValue = this.min;
+          this.secondValue = this.max;
+        }
+        this.oldValue = [this.firstValue, this.secondValue];
+        valuetext = `${this.firstValue}-${this.secondValue}`;
+      } else {
+        if (typeof this.value !== 'number' || isNaN(this.value)) {
+          this.firstValue = this.min;
+        } else {
+          this.firstValue = Math.min(this.max, Math.max(this.min, this.value));
+        }
+        this.oldValue = this.firstValue;
+        valuetext = this.firstValue;
+      }
+      this.$el.setAttribute('aria-valuetext', valuetext);
+
+      // label screen reader
+      this.$el.setAttribute('aria-label', this.label ? this.label : `slider between ${this.min} and ${this.max}`);
+
+      this.resetSize();
+      window.addEventListener('resize', this.resetSize);
+    },
+
+    beforeDestroy() {
+      window.removeEventListener('resize', this.resetSize);
+    }
+  };
+&lt;/script&gt;
+</code></pre></div><h3 id="自定义封装"><a href="#自定义封装" class="header-anchor">#</a> 自定义封装</h3> <p><img src="/tech/front/range20200613/range03.jpg" alt="图片"></p> <p>[需求分析] 由于项目中用到的是日期模板的显示，因而主体拖拽事件等可直接使用el-slider，样式方面可以自定义设置；其次就是日期的显示，el-slider的字段设置为数字，因而需要将日期等进行转换，此时用到<a href="http://momentjs.cn" title="JavaScript 日期处理类库" target="_blank" rel="noopener noreferrer">moment.js<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>这个库，方便统一处理</p> <p>[目录分析] 主目录下还是vue的组件，将日期类的方法抽离到了utils下的format.js中</p> <p>[解决方案] 主要还是template、script、style三部分</p> <p>template代码：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div class=&quot;range-container&quot;&gt;
+      &lt;el-slider 
+        v-model=&quot;s&quot; 
+        :format-tooltip=&quot;formatTooltip&quot;
+        :max=&quot;24&quot;
+        :step='1'
+        range
+        @change='handleChange'
+      &gt;
+      &lt;/el-slider&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre></div><p>script代码：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+// 工具函数
+import { formatHoursMinutes } from '@/utils/format';
+
+export default {
+  data() {
+    return {
+      s: [this.start,this.isFullDay(this.end)],
+      formatHoursMinutes: formatHoursMinutes
+    }
+  },
+  props: {
+    start: {
+      default: 0,
+      type: Number
+    },
+    end: {
+      default: 24,
+      type: Number
+    },
+    week: {
+      default: 1,
+      type: String
+    }
+  },
+  methods: {
+
+    isFullDay(val) {
+      if(val === 0) {
+        return 24
+      } else {
+        return Number(val)
+      }
+    },
+
+    formatTooltip(val) {
+        // 进行格式转换
+        let n = parseInt(val / 1);
+        return this.formatHoursMinutes(n)
+    },
+
+    handleChange(val) {
+      const [start,end] = val;
+      const week = this.week;
+      this.$emit('changeTemplate',{start,end,week})
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>style代码：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;style lang='scss'&gt;
+@import '@/styles/element-variables.scss';
+
+.range-container {
+  .el-slider {
+    .el-slider__runway {
+      height: 32px;
+      margin-top: 0;
+      margin-bottom: 0 !important;
+      background-color: #FFFFFF;
+      border: 1px solid #DCDFE6;
+      .el-slider__bar {
+        height: 32px;
+      }
+      .el-slider__button-wrapper {
+        top: 0;
+        height: 32px;
+        .el-slider__button {
+          width: 4px;
+          height: 32px;
+          border-radius: 0;
+          background: #121212;
+          border: none;
+        }
+      }
+      .el-slider__stop {
+        width: 1px;
+        height: 31px;
+        border-radius: 0;
+        background-color: #DCDFE6;
+      }
+      .el-slider__marks-text {
+        color: #717171;
+        margin-top: 0;
+        transform: translateX(-115%);
+      }
+    }
+  }
+}
+&lt;/style&gt;
+</code></pre></div><p>工具函数：</p> <div class="language- extra-class"><pre class="language-text"><code>import moment from 'moment';
+
+// 修改星期对应数值
+export function formatWeek(val) {
+    switch (val) {
+    case '1':
+        return '星期一'
+        break;
+    case '2':
+        return '星期二'
+        break;
+    case '3':
+        return '星期三'
+        break;
+    case '4':
+        return '星期四'
+        break;
+    case '5':
+        return '星期五'
+        break;
+    case '6':
+        return '星期六'
+        break;
+    case '7':
+        return '星期天'
+        break;
+    default:
+        break;
+    }
+};
+
+// 修改数值对应小时格式
+export function formatHours(val) {
+    return moment(val,'H').hours();
+};
+
+// 修改数值对应小时分钟格式
+export function formatHoursMinutes(val) {
+    return moment().hour(val).minute(0).second(0).format(&quot;HH:mm&quot;);
+};
+
+// 修改数值对应小时分钟格式
+export function formatHoursMinutesSeconds(val) {
+    return moment().hour(val).minute(0).second(0).format(&quot;HH:mm:ss&quot;);
+};
+</code></pre></div><h3 id="封装range组件常见方法"><a href="#封装range组件常见方法" class="header-anchor">#</a> 封装range组件常见方法</h3> <p>封装类range组件主要就是三块：
+1、展示：主要就是进度条、滑块、显示，需要考虑行为层的接入及展示；
+2、行为：主要就是mouse、touch、drag行为的封装，一般来说会封成一个函数库，不管是原生封装、jQuery封装还是直接引用别人封装好的库，最后暴露出去都需要考虑展示层接入的范围、类型等；
+3、扩展：封装的组件提供一个很好的扩展性有利于引入及修改</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>在项目中常常需要根据需要进行组件的二次封装，在封装过程中，对组件库的理解以及对场景的扩展把握可以更好的避免组件的更改等其他因素的产生，提高功效，同时借鉴其他思路也是很好的方法，对于有志于从0封装自己一套组件库的同学，还需要掌握库的打包、环境配置、扩展以及社区的考虑，可以参考这篇文章<a href="https://mp.weixin.qq.com/s/yeXdZRh880e1tr5qaYxtfg" target="_blank" rel="noopener noreferrer">从0到1教你搭建前端团队的组件系统（高级进阶必备）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，对于只是业务的二次封装，基于对源码的分析也能很好的提升自身的封装能力。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://www.jianshu.com/p/ec5412df5049" target="_blank" rel="noopener noreferrer">vue-range 滑块组件（1）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/7aafa1b0f85d" target="_blank" rel="noopener noreferrer">vue-range 滑块组件（2）-渐变色<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/tan9374/article/details/77824002" target="_blank" rel="noopener noreferrer">前端插件之原生js写range组件<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/weixin_38930535/article/details/79542130" target="_blank" rel="noopener noreferrer">H5中input中range类型的美化<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/top_xinxin/article/details/82531552" target="_blank" rel="noopener noreferrer">自制简单的range（Vue）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.npmjs.com/package/vue-range-calendar" target="_blank" rel="noopener noreferrer">vue-range-calendar<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/ktsn/vue-range-slider/tree/master/src" target="_blank" rel="noopener noreferrer">vue-range-slider<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/ccforward/cc/blob/master/vue-range/src/index.vue" target="_blank" rel="noopener noreferrer">vue-range<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/tree20200531.html" class="prev">
+        基础视频平台树组件踩坑实践
+      </a></span> <span class="next"><a href="/tech/front/hot20200620.html">
+        Vue脚手架热更新技术探秘
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/73.8d6b550c.js" defer></script>
+  </body>
+</html>

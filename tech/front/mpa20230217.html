@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue脚手架多页自动化生成实践 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/67.9837b758.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/65.96f2df30.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="sidebar-link">几种微前端方案探究</a></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="active sidebar-link">vue脚手架多页自动化生成实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/mpa20230217.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/mpa20230217.html#架构" class="sidebar-link">架构</a></li><li class="sidebar-sub-header"><a href="/tech/front/mpa20230217.html#目录" class="sidebar-link">目录</a></li><li class="sidebar-sub-header"><a href="/tech/front/mpa20230217.html#实践" class="sidebar-link">实践</a></li><li class="sidebar-sub-header"><a href="/tech/front/mpa20230217.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/mpa20230217.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue脚手架多页自动化生成实践"><a href="#vue脚手架多页自动化生成实践" class="header-anchor">#</a> vue脚手架多页自动化生成实践</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>在前端开发过程中，常常面对多种业务场景。到目前为止，前端对于不同场景的处理通常会采用不同的渲染方案来组合处理，常见的渲染方案包括：CSR(Client Side Rendering)、SSR(Server Side Rendering)、SSG(Static Site Generation)、ISR(Incremental Site Rendering)、DPR(Distributed Persistent Rendering)、NSR(Native Side Rendering)以及ESR(Edge Side Rendering)等。在目前项目开发过程中，遇到了需要构建门户类应用的需求，而团队主要技术栈以Vue为主，整个技术方案以Vue全家桶进行构建。因此，本文旨在针对门户类应用的场景下的Vue脚手架构建方案的一些总结和分析，通过自动化的配置脚本来生成模板化的多页应用实践，以期能够给读者提供一个基于Vue全家桶的门户类工程构建方案。</p> <h2 id="架构"><a href="#架构" class="header-anchor">#</a> 架构</h2> <p><img src="/tech/front/mpa20230217/mpa01.png" alt="图片"></p> <p>对于门户类型的应用，由于其大部分内容变动内容较少，而对于部分关键页面却会有动态更新的要求，因而在通常会采用多页形式的处理配合部分单页应用中的优势进行处理。因而，在技术选型方面，团队采用了预渲染配合多页的方式实现门户类SEO及首屏加载快的需求。同时，结合单页应用的优势，在多页中的部分关键页面中采用单页中的优点，如：路由切换快、用户体验好等。综上，架构风格采用ISR的增量渲染方案，由于项目背景的特殊性，无法配合常规CDN等部署方案特点，但可以使用云原生相关的中间件实现类似效果，整体部署仍以“云+端”的形式为主。</p> <h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <div class="language- extra-class"><pre class="language-text"><code>selfService├─portal
+├─ build                                // vue cli打包所需的options中内容一些抽离，对其中做了环境区分
+|   ├─ demo
+|   |    ├─config.json
+|   |    ├─configureWebpack.js
+|   ├─ dev
+|   |    ├─ config.json
+|   |    ├─ configureWebpack.js
+|   ├─ production
+|   |    ├─ config.json
+|   |    ├─ configureWebpack.js
+|   ├─ chainWebpack.js
+|   ├─ configureWebpack.js
+|   ├─ devServer.js
+|   ├─ pages.js
+|   ├─ routes.js
+|   ├─ index.js
+|   ├─ utils.js
+├─ deploy                                 // 不同环境的部署
+|   ├─ demo
+|   |    ├─ default.conf
+|   |    ├─ Dockerfile
+|   |    ├─ env.sh
+|   ├─ dev
+|   |    ├─ default.conf
+|   |    ├─ Dockerfile
+|   |    ├─ env.sh
+|   ├─ production
+|   |    ├─ default.conf
+|   |    ├─ Dockerfile
+|   |    ├─ env.sh
+|   ├─ build.sh
+├─ public
+|   ├─ pageA                              // pageA的html，这里可以存放一些静态资源，非构建状态下的js、css等
+|   |    ├─ index.html
+|   ├─ pageB                              // pageB的html，这里可以存放一些静态资源，非构建状态下的js、css等
+|   |    ├─ index.html
+|   ├─ favicon.ico
+├─ src
+|   ├─ assets                             // 存放小资源，通常为必须，如：logo等，其他静态资源请放入cdn或者public下
+|   |    ├─ logo.png
+|   ├─ components                         // 公共组件，可抽离多个静态页面的公共组件
+|   |    ├─ Header.vue
+|   ├─ router
+|   |    ├─ pageA                         // pageA的router，使用了history模式
+|   |        ├─ index.js
+|   |    ├─ pageB                         // pageB的router，使用了history模式
+|   |        ├─ index.js
+|   ├─ store
+|   |    ├─ pageA                         // pageA的Vuex
+|   |        ├─ index.js
+|   |    ├─ pageB                         // pageB的Vuex
+|   |        ├─ index.js
+|   ├─ views
+|   |    ├─ pageA                         // pageA的页面，写法和之前一个的单页应用一致
+|   |        ├─ main.js                   // 注入了mode，挂载到了vue的原型上，使用this可以获取环境变量
+|   |        ├─ pageA.vue
+|   |    ├─ pageB                         // pageB的页面，写法和之前一个的单页应用一致
+|   |        ├─ main.js                   // 注入了mode，挂载到了vue的原型上，使用this可以获取环境变量
+|   |        ├─ pageB.vue
+├─ scripts                 
+├─ babel.config.js                        // 配置es转化语法
+├─ vue.config.js                          // vue cli打包相关配置
+├─ app.json                               // 存放各个多页应用的public、router、vuex、views入口地址
+</code></pre></div><h2 id="实践"><a href="#实践" class="header-anchor">#</a> 实践</h2> <h3 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h3> <p><img src="/tech/front/mpa20230217/mpa02.gif" alt="图片"></p> <p>Vue脚手架中配置多页主要是使用Webpack中的pages入口配置，这里主要是修改<code>vue.config.js</code>中的pages的设置，代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> PrerenderSPAPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'prerender-spa-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Renderer <span class="token operator">=</span> PrerenderSPAPlugin<span class="token punctuation">.</span>PuppeteerRenderer<span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    pages<span class="token operator">:</span> <span class="token punctuation">{</span>
+        page3<span class="token operator">:</span><span class="token punctuation">{</span>
+            entry<span class="token operator">:</span> <span class="token string">&quot;src/views/page3/main.js&quot;</span><span class="token punctuation">,</span>
+            template<span class="token operator">:</span> <span class="token string">&quot;public/page3/index.html&quot;</span><span class="token punctuation">,</span>
+            filename<span class="token operator">:</span> <span class="token string">&quot;page3.html&quot;</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;page3&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">configureWebpack</span><span class="token operator">:</span> <span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+         config<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+            <span class="token keyword">new</span> <span class="token class-name">PrerenderSPAPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                staticDir<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'../../dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                routes<span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token string">'/page3'</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                renderer<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Renderer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                    less<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+                    <span class="token comment">//renderAfterDocumentEvent: 'render-event',</span>
+                    <span class="token comment">//renderAfterTime: 5000,</span>
+                    <span class="token comment">//renderAfterElementExists: 'my-app-element'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><p>其中，如果配置了pages，@vue/cli-service会先清除原有的entry，如果没有index，则devServer默认入口的根路径'/'仍为index.html；如果有index的key值，则会进行相应的覆盖。在这里，对pages下的key值为对应多页的路径，如：上述代码下的page3，则对应的路径为'/page3.html'；pages下的value可以为字符串，也可以为对象，其中：entry为多页的入口（必选项）、template为模板来源、filename为打包后的输出名称以及title会通过<code>html-webpack-plugin</code>的插件对template中的<code>&lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;</code>进行替换。</p> <p>而对于预渲染的应用，这里使用了<a href="https://github.com/chrisvfritz/prerender-spa-plugin" target="_blank" rel="noopener noreferrer">prerender-spa-plugin<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>和<a href="https://www.npmjs.com/package/vue-meta-info" target="_blank" rel="noopener noreferrer">vue-meta-info<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>来进行SEO及首屏加载优化，代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ...</span>
+<span class="token keyword">import</span> MetaInfo <span class="token keyword">from</span> <span class="token string">'vue-meta-info'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>MetaInfo<span class="token punctuation">)</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    router<span class="token punctuation">,</span>
+    store<span class="token punctuation">,</span>
+    <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token parameter">h</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        document<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token string">'custom-render-trigger'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#page3'</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="脚本"><a href="#脚本" class="header-anchor">#</a> 脚本</h3> <p><img src="/tech/front/mpa20230217/mpa03.png" alt="图片"></p> <p>通过上述的配置，基本就可以实现一个 <code>预渲染+多页</code> 的vue脚手架搭建。但是，除了开发环境的配置，对于生产环境、部署等也需要进行一定的设置，这样频繁的操作就会带来一定的功效降低。因而，在前端工程化领域中，通常会进行一定的脚本化或者说脚手架方案的构建。这里，在目前项目中，团队对多页应用的配置进行了自动化的脚本实现。</p> <p>生成多页的脚本主要通过<code>page.js</code>进行实现，代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> inquirer  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'inquirer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> chalk <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'chalk'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ora <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'ora'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> transform<span class="token punctuation">,</span> compose <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./utils'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> spinner <span class="token operator">=</span> <span class="token function">ora</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token constant">PAGE_REG</span> <span class="token operator">=</span> <span class="token regex">/[a-zA-Z_0-9]/ig</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> rootDir <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 判断dir目录下是否存在name的文件夹</span>
+<span class="token keyword">const</span> <span class="token function-variable function">isExt</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">dir<span class="token punctuation">,</span> name</span><span class="token punctuation">)</span>  <span class="token operator">=&gt;</span> fs<span class="token punctuation">.</span><span class="token function">existsSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>dir<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token constant">APP_JSON_EJS</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+    &quot;pages&quot;: &lt;%= page_name %&gt; 
+}</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token constant">INDEX_HTML_EJS</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;
+    &lt;link rel=&quot;icon&quot; href=&quot;../favicon.ico&quot;&gt;
+    &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;noscript&gt;
+      &lt;strong&gt;We're sorry but &lt;%= htmlWebpackPlugin.options.title %&gt; doesn't work properly without JavaScript enabled. Please enable it to continue.&lt;/strong&gt;
+    &lt;/noscript&gt;
+    &lt;%= page_name %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token keyword">const</span> <span class="token constant">INDEX_VUE_EJS</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;%= page_name %&gt;
+
+&lt;script&gt;
+export default {
+components: {
+},
+data() {
+  return {};
+},
+};
+&lt;/script&gt;
+
+&lt;style lang=&quot;less&quot;&gt;
+&lt;/style&gt;</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token keyword">const</span> <span class="token constant">MAIN_JS_EJS</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;%= page_name %&gt;</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token keyword">const</span> <span class="token constant">INDEX_ROUTER_EJS</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+const routes = [
+    &lt;%= page_name %&gt;
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  routes
+})
+
+export default router</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token keyword">const</span> <span class="token constant">INDEX_STORE_EJS</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+  },
+  mutations: {
+  },
+  actions: {
+  },
+  modules: {
+  }
+})
+</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token comment">// inquirer list</span>
+<span class="token keyword">const</span> promptList <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'page_name'</span><span class="token punctuation">,</span>
+        message<span class="token operator">:</span> <span class="token string">'请输入你想要创建的多页应用名称'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">filter</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> v<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token constant">PAGE_REG</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// nginx的default.conf所需添加内容</span>
+<span class="token keyword">const</span> <span class="token function-variable function">addDefaultConf</span> <span class="token operator">=</span> <span class="token parameter">page_name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">location /</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> {
+    root   /usr/share/nginx/html;
+    index  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.html;
+    try_files $uri $uri/ /</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.html;
+    gzip_static on;
+}</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// page_name下的index.html</span>
+<span class="token keyword">const</span> <span class="token function-variable function">addIndexHtml</span> <span class="token operator">=</span> <span class="token parameter">page_name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;div id=&quot;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&quot; data-server-rendered=&quot;true&quot;&gt;&lt;/div&gt;</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// page_name下的router</span>
+<span class="token keyword">const</span> <span class="token function-variable function">addRouterIndex</span> <span class="token operator">=</span> <span class="token parameter">page_name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+    path: '/',
+    component: () =&gt; import('../../views/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/index.vue')
+},</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// page_name下的views index.vue</span>
+<span class="token keyword">const</span> <span class="token function-variable function">addViewsIndex</span> <span class="token operator">=</span> <span class="token parameter">page_name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;template&gt;
+    &lt;div&gt;
+        </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+    &lt;/div&gt;
+&lt;/template&gt;</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// page_name下的views main.js</span>
+<span class="token keyword">const</span> <span class="token function-variable function">addViewsMain</span> <span class="token operator">=</span> <span class="token parameter">page_name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">import Vue from 'vue'
+import index from './index.vue'
+import router from '../../router/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/index.js'
+import store from '../../store/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/index.js'
+import MetaInfo from 'vue-meta-info'
+
+Vue.use(MetaInfo)
+
+import axios from 'axios'
+
+Vue.prototype.$mode = process.env.VUE_APP_MODE;
+
+Vue.prototype.axios = axios;
+
+Vue.config.productionTip = false
+
+new Vue({
+    router,
+    store,
+    render: h =&gt; h(index),
+    mounted () {
+        document.dispatchEvent(new Event('custom-render-trigger'))
+    }
+}).$mount('#</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">')</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// page_name下的pages.js</span>
+<span class="token keyword">const</span> <span class="token function-variable function">addPages</span> <span class="token operator">=</span> <span class="token parameter">page_name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        entry<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">src/views/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/main.js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">public/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/index.html</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        filename<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.html</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        title<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">updateApp</span> <span class="token operator">=</span> <span class="token parameter">page_name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 获取pages的数组</span>
+    <span class="token keyword">const</span> pages <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../app.json'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'pages'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pages<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    pages<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    spinner<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/app.json</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token function">transform</span><span class="token punctuation">(</span><span class="token regex">/&lt;%= page_name %&gt;/g</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">APP_JSON_EJS</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        spinner<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span>
+        spinner<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'Loading Update app.json'</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            spinner<span class="token punctuation">.</span><span class="token function">fail</span><span class="token punctuation">(</span>chalk<span class="token punctuation">.</span><span class="token function">red</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">更新app.json失败</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            spinner<span class="token punctuation">.</span><span class="token function">succeed</span><span class="token punctuation">(</span>chalk<span class="token punctuation">.</span><span class="token function">green</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">更新app.json成功</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 处理 public 文件夹下的核心逻辑</span>
+<span class="token keyword">const</span> <span class="token function-variable function">processPublic</span> <span class="token operator">=</span> <span class="token parameter">args</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> page_name <span class="token punctuation">}</span> <span class="token operator">=</span> args<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isExt</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/public</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> page_name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        fs<span class="token punctuation">.</span><span class="token function">mkdirSync</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/public/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/public/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/index.html</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        <span class="token function">transform</span><span class="token punctuation">(</span><span class="token regex">/&lt;%= page_name %&gt;/g</span><span class="token punctuation">,</span> <span class="token function">addIndexHtml</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">INDEX_HTML_EJS</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 处理默认页面的跳转</span>
+    <span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../app.json'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'pages'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">page</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;li&gt;
+    &lt;a href=&quot;/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.html&quot;&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/a&gt;
+&lt;/li&gt;</span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> ejs_arr <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/public/index.html</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;body&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/public/index.html</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        ejs_arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;body&gt;
+</span><span class="token template-punctuation string">`</span></span><span class="token operator">+</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;h1&gt;自服务门户&lt;/h1&gt;
+&lt;ul&gt;
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>content<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+&lt;/ul&gt;</span><span class="token template-punctuation string">`</span></span> <span class="token operator">+</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+&lt;/body&gt;
+&lt;/html&gt;</span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 处理 src/views 文件夹下的核心逻辑</span>
+<span class="token keyword">const</span> <span class="token function-variable function">processViews</span> <span class="token operator">=</span> <span class="token parameter">args</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> page_name <span class="token punctuation">}</span> <span class="token operator">=</span> args<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isExt</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/views</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> page_name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        fs<span class="token punctuation">.</span><span class="token function">mkdirSync</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/views/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/views/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/index.vue</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        <span class="token function">transform</span><span class="token punctuation">(</span><span class="token regex">/&lt;%= page_name %&gt;/g</span><span class="token punctuation">,</span> <span class="token function">addViewsIndex</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">INDEX_VUE_EJS</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/views/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/main.js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        <span class="token function">transform</span><span class="token punctuation">(</span><span class="token regex">/&lt;%= page_name %&gt;/g</span><span class="token punctuation">,</span> <span class="token function">addViewsMain</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">MAIN_JS_EJS</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 处理 src/router 文件夹下的核心逻辑</span>
+<span class="token keyword">const</span> <span class="token function-variable function">processRouter</span> <span class="token operator">=</span> <span class="token parameter">args</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> page_name <span class="token punctuation">}</span> <span class="token operator">=</span> args<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isExt</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/router</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> page_name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        fs<span class="token punctuation">.</span><span class="token function">mkdirSync</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/router/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/router/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/index.js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        <span class="token function">transform</span><span class="token punctuation">(</span><span class="token regex">/&lt;%= page_name %&gt;/g</span><span class="token punctuation">,</span> <span class="token function">addRouterIndex</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">INDEX_ROUTER_EJS</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 处理 src/store 文件夹下的核心逻辑</span>
+<span class="token keyword">const</span> <span class="token function-variable function">processStore</span> <span class="token operator">=</span> <span class="token parameter">args</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> page_name <span class="token punctuation">}</span> <span class="token operator">=</span> args<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isExt</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/store</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> page_name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        fs<span class="token punctuation">.</span><span class="token function">mkdirSync</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/store/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/store/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/index.js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        <span class="token constant">INDEX_STORE_EJS</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 处理 build 文件夹下的核心逻辑</span>
+<span class="token keyword">const</span> <span class="token function-variable function">processBuild</span> <span class="token operator">=</span> <span class="token parameter">args</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> page_name <span class="token punctuation">}</span> <span class="token operator">=</span> args<span class="token punctuation">;</span>
+    <span class="token comment">// 处理 build/page.js</span>
+    <span class="token keyword">const</span> pages  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../build/pages.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+    pages<span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token function">addPages</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token constant">PAGES_JS_EJS</span> <span class="token operator">=</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">const pages = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+module.exports = pages;
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/build/pages.js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        <span class="token constant">PAGES_JS_EJS</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 处理 build/routes.js</span>
+    <span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../build/routes.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>routes<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+    routes<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token constant">ROUTES_JS_EJS</span> <span class="token operator">=</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">const pages = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>routes<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+module.exports = pages;
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/build/routes.js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        <span class="token constant">ROUTES_JS_EJS</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 处理 deploy 文件夹下的核心逻辑</span>
+<span class="token keyword">const</span> <span class="token function-variable function">processDeploy</span> <span class="token operator">=</span> <span class="token parameter">args</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> page_name <span class="token punctuation">}</span> <span class="token operator">=</span> args<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">location /</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>page_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">[</span><span class="token string">'demo'</span><span class="token punctuation">,</span> <span class="token string">'dev'</span><span class="token punctuation">,</span> <span class="token string">'production'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> content <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/deploy/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/default.conf</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+        <span class="token keyword">const</span> ejs_arr <span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">location  /api/</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+        fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>
+            <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rootDir<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/deploy/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/default.conf</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+            <span class="token function">transform</span><span class="token punctuation">(</span><span class="token regex">/&lt;%= page_name %&gt;/g</span><span class="token punctuation">,</span> <span class="token function">addDefaultConf</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span><span class="token punctuation">,</span> ejs_arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;%= page_name %&gt;
+location  /api/</span><span class="token template-punctuation string">`</span></span><span class="token operator">+</span> ejs_arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> args<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+inquirer
+    <span class="token punctuation">.</span><span class="token function">prompt</span><span class="token punctuation">(</span>promptList<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">answers</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> page_name <span class="token operator">=</span> answers<span class="token punctuation">.</span>page_name<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">updateApp</span><span class="token punctuation">(</span>page_name<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> pages <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../app.json'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'pages'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        pages<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">page</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'page'</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span>
+            <span class="token function">compose</span><span class="token punctuation">(</span>
+                processDeploy<span class="token punctuation">,</span>
+                processBuild<span class="token punctuation">,</span> 
+                processStore<span class="token punctuation">,</span> 
+                processRouter<span class="token punctuation">,</span> 
+                processViews<span class="token punctuation">,</span> 
+                processPublic
+            <span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                page_name<span class="token operator">:</span> page
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>chalk<span class="token punctuation">.</span><span class="token function">red</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>为了更好的实现代码的优雅性，对代码工具进行了抽离，放入到<code>utils.js</code>中，代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 将内容替换进ejs占位符</span>
+<span class="token keyword">const</span> <span class="token function-variable function">transform</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">$<span class="token punctuation">,</span> content<span class="token punctuation">,</span> ejs</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> ejs<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>$<span class="token punctuation">,</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 将流程串联</span>
+<span class="token keyword">const</span> <span class="token function-variable function">compose</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span>current</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">prev</span><span class="token punctuation">(</span><span class="token function">current</span><span class="token punctuation">(</span><span class="token operator">...</span>values<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    transform<span class="token punctuation">,</span>
+    compose
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>仅管到目前为止，单页应用仍是前端开发中的主流方案。但是，随着各大应用的复杂度提升，多种方案的建设也都有了来自业界不同的声音，诸如：多种渲染方案、Island架构等都是为了能更好的提升Web领域的体验与开发建设。技术方案的选择不只局限于生态的整合，更重要的是对合适场景的合理应用。</p> <p>“形而上者谓之道,形而下者谓之器”，各位前端开发者不仅应该只着眼于眼前的业务实现，同时也需要展望未来，站在更高的视野上来俯视技术的走向与演进，共勉！！！</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://blog.csdn.net/HW0007/article/details/105063564" target="_blank" rel="noopener noreferrer">vue-cli搭建自动化多页面项目（vue高阶）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/qq_25194405/article/details/115084056" target="_blank" rel="noopener noreferrer">Vue-cli配置多页面<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://juejin.cn/post/6844903737031409677" target="_blank" rel="noopener noreferrer">vue预渲染之prerender-spa-plugin插件应用<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/7f5036e7772e" target="_blank" rel="noopener noreferrer">预渲染插件prerender-spa-plugin生成多页面<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/1QPc2EZQs3jjPOK7-K6H7Q" target="_blank" rel="noopener noreferrer">CSR、SSR、NSR、ESR傻傻分不清楚，一文帮你理清前端渲染方案！<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/8d26f3afca52" target="_blank" rel="noopener noreferrer">vue项目改造SSR（服务端渲染）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://juejin.cn/post/7113828131995140132" target="_blank" rel="noopener noreferrer">什么是SSR/SSG/ISR？如何在AWS上托管它们？<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://idc.idea2003.com/idc/tencentcloud/1202.html" target="_blank" rel="noopener noreferrer">卷起来，前端建站SSG，SSR，ISR，Hydration, Island…一网打尽<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/lhb25/p/16223782.html" target="_blank" rel="noopener noreferrer">你知道吗？SSR、SSG、ISR、DPR 有什么区别？<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://devpress.csdn.net/react/632fdf65357a883f870c8c3d.html" target="_blank" rel="noopener noreferrer">SSR、ISR、CSR、SSG有什么区别<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.51cto.com/article/743761.html" target="_blank" rel="noopener noreferrer">一文看懂Next.js渲染方法：CSR、SSR、SSG和ISR<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/summary2022.html" class="prev">
+        从2022看2023前端发展趋势
+      </a></span> <span class="next"><a href="/tech/front/gsix20230624.html">
+        AntV G6新版源码浅析
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/67.9837b758.js" defer></script>
+  </body>
+</html>

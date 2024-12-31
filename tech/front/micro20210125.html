@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>几种微前端方案探究 | VLeeDesignTheory</title>
+    <meta name="description" content="The Intersection of Technology and Liberal Arts">
+    <meta name="generator" content="VuePress 1.3.0">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.ba29e539.css" as="style"><link rel="preload" href="/assets/js/app.8be0e0a6.js" as="script"><link rel="preload" href="/assets/js/2.984c461b.js" as="script"><link rel="preload" href="/assets/js/65.96f2df30.js" as="script"><link rel="prefetch" href="/assets/js/10.5cc39d1d.js"><link rel="prefetch" href="/assets/js/11.15cdb43e.js"><link rel="prefetch" href="/assets/js/12.06485937.js"><link rel="prefetch" href="/assets/js/13.472a2c29.js"><link rel="prefetch" href="/assets/js/14.d79a8704.js"><link rel="prefetch" href="/assets/js/15.61ac7c95.js"><link rel="prefetch" href="/assets/js/16.40e0624d.js"><link rel="prefetch" href="/assets/js/17.6d266b01.js"><link rel="prefetch" href="/assets/js/18.179e71a3.js"><link rel="prefetch" href="/assets/js/19.57b341aa.js"><link rel="prefetch" href="/assets/js/20.e9181ec2.js"><link rel="prefetch" href="/assets/js/21.064d76f4.js"><link rel="prefetch" href="/assets/js/22.03ef9be6.js"><link rel="prefetch" href="/assets/js/23.d8d3a89f.js"><link rel="prefetch" href="/assets/js/24.46d5ce43.js"><link rel="prefetch" href="/assets/js/25.e66d6d88.js"><link rel="prefetch" href="/assets/js/26.ffd8da2f.js"><link rel="prefetch" href="/assets/js/27.20da1fa0.js"><link rel="prefetch" href="/assets/js/28.5517996d.js"><link rel="prefetch" href="/assets/js/29.f6af6fbb.js"><link rel="prefetch" href="/assets/js/3.7b51d13c.js"><link rel="prefetch" href="/assets/js/30.fd905aa4.js"><link rel="prefetch" href="/assets/js/31.4d155fb1.js"><link rel="prefetch" href="/assets/js/32.daa14379.js"><link rel="prefetch" href="/assets/js/33.0c565322.js"><link rel="prefetch" href="/assets/js/34.a2469f4a.js"><link rel="prefetch" href="/assets/js/35.fe1e331d.js"><link rel="prefetch" href="/assets/js/36.acad7212.js"><link rel="prefetch" href="/assets/js/37.4be4688b.js"><link rel="prefetch" href="/assets/js/38.0ce5462f.js"><link rel="prefetch" href="/assets/js/39.eea49bbe.js"><link rel="prefetch" href="/assets/js/4.32c38324.js"><link rel="prefetch" href="/assets/js/40.909ed412.js"><link rel="prefetch" href="/assets/js/41.7b0f5165.js"><link rel="prefetch" href="/assets/js/42.c5847540.js"><link rel="prefetch" href="/assets/js/43.14eedcb7.js"><link rel="prefetch" href="/assets/js/44.40ed4222.js"><link rel="prefetch" href="/assets/js/45.29388d40.js"><link rel="prefetch" href="/assets/js/46.55b8a16d.js"><link rel="prefetch" href="/assets/js/47.668da14a.js"><link rel="prefetch" href="/assets/js/48.7cb06dcc.js"><link rel="prefetch" href="/assets/js/49.491d89f5.js"><link rel="prefetch" href="/assets/js/5.18d31a6e.js"><link rel="prefetch" href="/assets/js/50.1715183e.js"><link rel="prefetch" href="/assets/js/51.eb1ceda0.js"><link rel="prefetch" href="/assets/js/52.ab59a948.js"><link rel="prefetch" href="/assets/js/53.52dd242c.js"><link rel="prefetch" href="/assets/js/54.6a6a6edf.js"><link rel="prefetch" href="/assets/js/55.90a2d17a.js"><link rel="prefetch" href="/assets/js/56.e1281c58.js"><link rel="prefetch" href="/assets/js/57.d900cb38.js"><link rel="prefetch" href="/assets/js/58.4574e3c3.js"><link rel="prefetch" href="/assets/js/59.5f46f092.js"><link rel="prefetch" href="/assets/js/6.886d04e6.js"><link rel="prefetch" href="/assets/js/60.4fd77246.js"><link rel="prefetch" href="/assets/js/61.03c6d11f.js"><link rel="prefetch" href="/assets/js/62.6c4a2003.js"><link rel="prefetch" href="/assets/js/63.0e6902b9.js"><link rel="prefetch" href="/assets/js/64.0b83a931.js"><link rel="prefetch" href="/assets/js/66.744d9ab1.js"><link rel="prefetch" href="/assets/js/67.9837b758.js"><link rel="prefetch" href="/assets/js/68.dc9af8aa.js"><link rel="prefetch" href="/assets/js/69.445bac8e.js"><link rel="prefetch" href="/assets/js/7.fb7fa9c5.js"><link rel="prefetch" href="/assets/js/70.3c680b0e.js"><link rel="prefetch" href="/assets/js/71.4a662baa.js"><link rel="prefetch" href="/assets/js/72.1a286829.js"><link rel="prefetch" href="/assets/js/73.8d6b550c.js"><link rel="prefetch" href="/assets/js/74.fad5a0c5.js"><link rel="prefetch" href="/assets/js/75.0c5864ae.js"><link rel="prefetch" href="/assets/js/76.9a6ec209.js"><link rel="prefetch" href="/assets/js/77.8280bb93.js"><link rel="prefetch" href="/assets/js/78.3a2e4074.js"><link rel="prefetch" href="/assets/js/79.e18eb7f1.js"><link rel="prefetch" href="/assets/js/8.383d22ab.js"><link rel="prefetch" href="/assets/js/80.00c61c8a.js"><link rel="prefetch" href="/assets/js/81.8878bbce.js"><link rel="prefetch" href="/assets/js/82.f32b8403.js"><link rel="prefetch" href="/assets/js/83.c4c68d29.js"><link rel="prefetch" href="/assets/js/84.4edeeb08.js"><link rel="prefetch" href="/assets/js/85.e2c40980.js"><link rel="prefetch" href="/assets/js/86.cbdc4406.js"><link rel="prefetch" href="/assets/js/87.dd59cc6f.js"><link rel="prefetch" href="/assets/js/88.a6b02ad4.js"><link rel="prefetch" href="/assets/js/89.4edca4ad.js"><link rel="prefetch" href="/assets/js/9.842a26fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba29e539.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">VLeeDesignTheory</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计道" class="dropdown-title"><span class="title">设计道</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/design/ui/" class="nav-link">
+  交互
+</a></li><li class="dropdown-item"><!----> <a href="/design/vi/" class="nav-link">
+  视觉
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/front/" class="nav-link router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/back/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cs/" class="nav-link">
+  基础
+</a></li></ul></div></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/essay/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><a href="https://github.com/we452366" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/front/summary.html" class="sidebar-link">从2019看2020前端发展趋势</a></li><li><a href="/tech/front/locales.html" class="sidebar-link">阿里飞冰(ice)框架下国际化实践</a></li><li><a href="/tech/front/tree20200531.html" class="sidebar-link">基础视频平台树组件踩坑实践</a></li><li><a href="/tech/front/range20200613.html" class="sidebar-link">基于el-slider自定义range组件封装实践</a></li><li><a href="/tech/front/hot20200620.html" class="sidebar-link">Vue脚手架热更新技术探秘</a></li><li><a href="/tech/front/tick20200625.html" class="sidebar-link">nextTick在项目中的实践</a></li><li><a href="/tech/front/cli20200701.html" class="sidebar-link">vee-cli脚手架实践(上)</a></li><li><a href="/tech/front/cli20200702.html" class="sidebar-link">vee-cli脚手架实践(中)</a></li><li><a href="/tech/front/cli20200703.html" class="sidebar-link">vee-cli脚手架实践(下)</a></li><li><a href="/tech/front/hooks20200826.html" class="sidebar-link">React Hooks在SD-WAN项目中实践</a></li><li><a href="/tech/front/flexiwan20201218.html" class="sidebar-link">flexiwan项目踩坑实践（前端篇）</a></li><li><a href="/tech/front/summary2020.html" class="sidebar-link">从2020看2021前端发展趋势</a></li><li><a href="/tech/front/federation20210119.html" class="sidebar-link">webpack5模块联邦源码探究</a></li><li><a href="/tech/front/topology20210122.html" class="sidebar-link">动态渲染拓扑图方案探究</a></li><li><a href="/tech/front/micro20210125.html" class="active sidebar-link">几种微前端方案探究</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/front/micro20210125.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/tech/front/micro20210125.html#方案对比" class="sidebar-link">方案对比</a></li><li class="sidebar-sub-header"><a href="/tech/front/micro20210125.html#源码解析" class="sidebar-link">源码解析</a></li><li class="sidebar-sub-header"><a href="/tech/front/micro20210125.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/tech/front/micro20210125.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/tech/front/umi20210222.html" class="sidebar-link">umi3源码探究简析</a></li><li><a href="/tech/front/react20210305.html" class="sidebar-link">react17源码浅析</a></li><li><a href="/tech/front/screen20210402.html" class="sidebar-link">自服务大屏踩坑实践</a></li><li><a href="/tech/front/graph20210419.html" class="sidebar-link">可视化图布局算法浅析</a></li><li><a href="/tech/front/function20210427.html" class="sidebar-link">前端函数式编程浅析</a></li><li><a href="/tech/front/structure20210523.html" class="sidebar-link">数据结构算法在专网项目中的实践</a></li><li><a href="/tech/front/postmessage20210731.html" class="sidebar-link">postMessage踩坑实践</a></li><li><a href="/tech/front/csp20210813.html" class="sidebar-link">Web内容安全策略浅析</a></li><li><a href="/tech/front/pcx20211018.html" class="sidebar-link">PC端高倍屏适配方案实践</a></li><li><a href="/tech/front/summary2021.html" class="sidebar-link">从2021看2022前端发展趋势</a></li><li><a href="/tech/front/imagepic20220128.html" class="sidebar-link">前端图床搭建实践（前端篇）</a></li><li><a href="/tech/front/xsix20220305.html" class="sidebar-link">AntV X6源码简析</a></li><li><a href="/tech/front/testus20220420.html" class="sidebar-link">前端测试套件构建实践</a></li><li><a href="/tech/front/pnw20220608.html" class="sidebar-link">浅析专网通信领域的前端架构设计</a></li><li><a href="/tech/front/piper20220913.html" class="sidebar-link">前端设计走查平台实践（前端篇）</a></li><li><a href="/tech/front/summary2022.html" class="sidebar-link">从2022看2023前端发展趋势</a></li><li><a href="/tech/front/mpa20230217.html" class="sidebar-link">vue脚手架多页自动化生成实践</a></li><li><a href="/tech/front/gsix20230624.html" class="sidebar-link">AntV G6新版源码浅析</a></li><li><a href="/tech/front/pwa20230731.html" class="sidebar-link">面向边缘场景的PWA实践</a></li><li><a href="/tech/front/mock20230924.html" class="sidebar-link">基于 Webpack 插件体系的 Mock 服务</a></li><li><a href="/tech/front/summary2023.html" class="sidebar-link">从2023看2024前端发展趋势</a></li><li><a href="/tech/front/lcd20241024.html" class="sidebar-link">面向垂类场景的智能化低代码引擎</a></li><li><a href="/tech/front/summary2024.html" class="sidebar-link">从2024看2025前端发展趋势</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="几种微前端方案探究"><a href="#几种微前端方案探究" class="header-anchor">#</a> 几种微前端方案探究</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>随着技术的发展，前端应用承载的内容也日益复杂，基于此而产生的各种问题也应运而生，从MPA（Multi-Page Application，多页应用）到SPA（Single-Page Application，单页应用），虽然解决了切换体验的延迟问题，但也带来了首次加载时间长，以及工程爆炸增长后带来的巨石应用（Monolithic）问题；对于MPA来说，其部署简单，各应用之间天然硬隔离，并且具备技术栈无关、独立开发、独立部署等特点。要是能够将这两方的特点结合起来，会不会给用户和开发带来更好的用户体验？至此，在借鉴了微服务理念下，微前端便应运而生。</p> <blockquote><p>An architectural style where independently deliverable frontend applications are composed into a greater whole. [Micro Frontends from martinfowler.com]
+(https://martinfowler.com/articles/micro-frontends.html)</p></blockquote> <p>根据martinfowler对微前端的定义可以看出：微前端是一种由独立交付的多个前端应用组成整体的架构风格，即微前端和微服务一样是一种架构风格，因而其并不是一种框架或者库，而是一种风格或者说是一种思想，所以为了实现微前端的方案就有很多种，最常见的方案有以下几种：</p> <ol><li>路由分发</li></ol> <p><img src="/tech/front/micro20210125/micro01.png" alt="图片"></p> <ol start="2"><li><p>iframe</p></li> <li><p>应用微服务</p></li></ol> <p><img src="/tech/front/micro20210125/micro02.png" alt="图片"></p> <ol start="4"><li>微件化</li></ol> <p><img src="/tech/front/micro20210125/micro03.png" alt="图片"></p> <ol start="5"><li>微应用化</li></ol> <p><img src="/tech/front/micro20210125/micro04.png" alt="图片"></p> <ol start="6"><li>Web Components</li></ol> <p><img src="/tech/front/micro20210125/micro05.png" alt="图片"></p> <p>相关对比：</p> <table><thead><tr><th style="text-align:left;">方案</th> <th style="text-align:center;">开发成本</th> <th style="text-align:center;">维护成本</th> <th style="text-align:center;">可行性</th> <th style="text-align:center;">同一框架要求</th> <th style="text-align:center;">实现难度</th> <th style="text-align:center;">潜在风险</th> <th style="text-align:right;">落地实践</th></tr></thead> <tbody><tr><td style="text-align:left;">路由分发</td> <td style="text-align:center;">低</td> <td style="text-align:center;">低</td> <td style="text-align:center;">高</td> <td style="text-align:center;">否</td> <td style="text-align:center;">easy</td> <td style="text-align:center;">无</td> <td style="text-align:right;">http服务器反向代理，如nginx配置location</td></tr> <tr><td style="text-align:left;">iframe</td> <td style="text-align:center;">低</td> <td style="text-align:center;">低</td> <td style="text-align:center;">高</td> <td style="text-align:center;">否</td> <td style="text-align:center;">easy</td> <td style="text-align:center;">seo不友好、cookie管理、通信机制、弹窗问题、刷新后退、安全问题</td> <td style="text-align:right;">前后端不分离项目常用</td></tr> <tr><td style="text-align:left;">应用微服务</td> <td style="text-align:center;">高</td> <td style="text-align:center;">低</td> <td style="text-align:center;">中</td> <td style="text-align:center;">否</td> <td style="text-align:center;">hard</td> <td style="text-align:center;">共享及隔离粒度不统一</td> <td style="text-align:right;">qiankun、icestark、mooa及类single-spa应用</td></tr> <tr><td style="text-align:left;">微件化</td> <td style="text-align:center;">高</td> <td style="text-align:center;">中</td> <td style="text-align:center;">低</td> <td style="text-align:center;">是</td> <td style="text-align:center;">hard</td> <td style="text-align:center;">实现微件管理机制</td> <td style="text-align:right;">无</td></tr> <tr><td style="text-align:left;">微应用化</td> <td style="text-align:center;">中</td> <td style="text-align:center;">中</td> <td style="text-align:center;">高</td> <td style="text-align:center;">是</td> <td style="text-align:center;">normal</td> <td style="text-align:center;">多个项目组合，需要考虑各个部署升级情况</td> <td style="text-align:right;">emp</td></tr> <tr><td style="text-align:left;">Web Components</td> <td style="text-align:center;">高</td> <td style="text-align:center;">低</td> <td style="text-align:center;">高</td> <td style="text-align:center;">否</td> <td style="text-align:center;">normal</td> <td style="text-align:center;">新api，浏览器兼容性</td> <td style="text-align:right;">无</td></tr></tbody></table> <p>对于微前端方案的选择应该从现有资源及历史积淀中去选择上述一种或几种方案的组合，从不同维度（比如：共享能力、隔离机制、数据方案、路由鉴权等）去考虑，实现工程的平滑迁移，从而实现架构的迭代升级逐步重构，切忌为了架构而架构，不要无谓的炫技，任何技术都是合适的才是最好的，大巧不工，重剑无锋！</p> <h2 id="方案对比"><a href="#方案对比" class="header-anchor">#</a> 方案对比</h2> <p>这里重点分析以应用微服务及微应用化的几种落地方案，对其实现思路做一个简单的探究</p> <ul><li>single-spa</li> <li>qiankun</li> <li>icestark</li> <li>emp</li> <li>piral</li></ul> <h2 id="源码解析"><a href="#源码解析" class="header-anchor">#</a> 源码解析</h2> <h3 id="single-spa源码"><a href="#single-spa源码" class="header-anchor">#</a> single-spa源码</h3> <p><img src="/tech/front/micro20210125/micro06.png" alt="图片"></p> <p>single-spa的整体思路是通过生命周期的钩子函数来对劫持的路由进行应用的加载，核心在于apps及reroute这两个文件</p> <h4 id="apps-js"><a href="#apps-js" class="header-anchor">#</a> apps.js</h4> <p><img src="/tech/front/micro20210125/micro07.png" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>export function getAppChanges() {
+  const appsToUnload = [],
+    appsToUnmount = [],
+    appsToLoad = [],
+    appsToMount = [];
+
+  const currentTime = new Date().getTime();
+
+  apps.forEach((app) =&gt; {
+    const appShouldBeActive =
+      app.status !== SKIP_BECAUSE_BROKEN &amp;&amp; shouldBeActive(app);
+
+    switch (app.status) {
+      case LOAD_ERROR:
+        if (appShouldBeActive &amp;&amp; currentTime - app.loadErrorTime &gt;= 200) {
+          appsToLoad.push(app);
+        }
+        break;
+      case NOT_LOADED:
+      case LOADING_SOURCE_CODE:
+        if (appShouldBeActive) {
+          appsToLoad.push(app);
+        }
+        break;
+      case NOT_BOOTSTRAPPED:
+      case NOT_MOUNTED:
+        if (!appShouldBeActive &amp;&amp; getAppUnloadInfo(toName(app))) {
+          appsToUnload.push(app);
+        } else if (appShouldBeActive) {
+          appsToMount.push(app);
+        }
+        break;
+      case MOUNTED:
+        if (!appShouldBeActive) {
+          appsToUnmount.push(app);
+        }
+        break;
+    }
+  });
+
+  return { appsToUnload, appsToUnmount, appsToLoad, appsToMount };
+}
+
+export function getMountedApps() {
+  return apps.filter(isActive).map(toName);
+}
+
+export function registerApplication(
+  appNameOrConfig,
+  appOrLoadApp,
+  activeWhen,
+  customProps
+) {
+  const registration = sanitizeArguments(
+    appNameOrConfig,
+    appOrLoadApp,
+    activeWhen,
+    customProps
+  );
+
+  if (getAppNames().indexOf(registration.name) !== -1)
+    throw Error(
+      formatErrorMessage(
+        21,
+        __DEV__ &amp;&amp;
+          `There is already an app registered with name ${registration.name}`,
+        registration.name
+      )
+    );
+
+  apps.push(
+    assign(
+      {
+        loadErrorTime: null,
+        status: NOT_LOADED,
+        parcels: {},
+        devtools: {
+          overlays: {
+            options: {},
+            selectors: [],
+          },
+        },
+      },
+      registration
+    )
+  );
+
+  if (isInBrowser) {
+    ensureJQuerySupport();
+    reroute();
+  }
+}
+
+export function unregisterApplication(appName) {
+  if (apps.filter((app) =&gt; toName(app) === appName).length === 0) {
+    throw Error(
+      formatErrorMessage(
+        25,
+        __DEV__ &amp;&amp;
+          `Cannot unregister application '${appName}' because no such application has been registered`,
+        appName
+      )
+    );
+  }
+
+  return unloadApplication(appName).then(() =&gt; {
+    const appIndex = apps.map(toName).indexOf(appName);
+    apps.splice(appIndex, 1);
+  });
+}
+
+export function unloadApplication(appName, opts = { waitForUnmount: false }) {
+  if (typeof appName !== &quot;string&quot;) {
+    throw Error(
+      formatErrorMessage(
+        26,
+        __DEV__ &amp;&amp; `unloadApplication requires a string 'appName'`
+      )
+    );
+  }
+  const app = find(apps, (App) =&gt; toName(App) === appName);
+  if (!app) {
+    throw Error(
+      formatErrorMessage(
+        27,
+        __DEV__ &amp;&amp;
+          `Could not unload application '${appName}' because no such application has been registered`,
+        appName
+      )
+    );
+  }
+
+  const appUnloadInfo = getAppUnloadInfo(toName(app));
+  if (opts &amp;&amp; opts.waitForUnmount) {
+
+    if (appUnloadInfo) {
+      return appUnloadInfo.promise;
+    } else {
+      const promise = new Promise((resolve, reject) =&gt; {
+        addAppToUnload(app, () =&gt; promise, resolve, reject);
+      });
+      return promise;
+    }
+  } else {
+    let resultPromise;
+    if (appUnloadInfo) {
+      resultPromise = appUnloadInfo.promise;
+      immediatelyUnloadApp(app, appUnloadInfo.resolve, appUnloadInfo.reject);
+    } else {
+      resultPromise = new Promise((resolve, reject) =&gt; {
+        addAppToUnload(app, () =&gt; resultPromise, resolve, reject);
+        immediatelyUnloadApp(app, resolve, reject);
+      });
+    }
+
+    return resultPromise;
+  }
+}
+</code></pre></div><h4 id="reroute-js"><a href="#reroute-js" class="header-anchor">#</a> reroute.js</h4> <p><img src="/tech/front/micro20210125/micro08.png" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>export function reroute(pendingPromises = [], eventArguments) {
+  if (appChangeUnderway) {
+    return new Promise((resolve, reject) =&gt; {
+      peopleWaitingOnAppChange.push({
+        resolve,
+        reject,
+        eventArguments,
+      });
+    });
+  }
+
+  const {
+    appsToUnload,
+    appsToUnmount,
+    appsToLoad,
+    appsToMount,
+  } = getAppChanges();
+  let appsThatChanged,
+    navigationIsCanceled = false,
+    oldUrl = currentUrl,
+    newUrl = (currentUrl = window.location.href);
+
+  if (isStarted()) {
+    appChangeUnderway = true;
+    appsThatChanged = appsToUnload.concat(
+      appsToLoad,
+      appsToUnmount,
+      appsToMount
+    );
+    return performAppChanges();
+  } else {
+    appsThatChanged = appsToLoad;
+    return loadApps();
+  }
+
+  function cancelNavigation() {
+    navigationIsCanceled = true;
+  }
+
+  function loadApps() {
+    return Promise.resolve().then(() =&gt; {
+      const loadPromises = appsToLoad.map(toLoadPromise);
+
+      return (
+        Promise.all(loadPromises)
+          .then(callAllEventListeners)
+          .then(() =&gt; [])
+          .catch((err) =&gt; {
+            callAllEventListeners();
+            throw err;
+          })
+      );
+    });
+  }
+
+  function performAppChanges() {
+    return Promise.resolve().then(() =&gt; {
+      window.dispatchEvent(
+        new CustomEvent(
+          appsThatChanged.length === 0
+            ? &quot;single-spa:before-no-app-change&quot;
+            : &quot;single-spa:before-app-change&quot;,
+          getCustomEventDetail(true)
+        )
+      );
+
+      window.dispatchEvent(
+        new CustomEvent(
+          &quot;single-spa:before-routing-event&quot;,
+          getCustomEventDetail(true, { cancelNavigation })
+        )
+      );
+
+      if (navigationIsCanceled) {
+        window.dispatchEvent(
+          new CustomEvent(
+            &quot;single-spa:before-mount-routing-event&quot;,
+            getCustomEventDetail(true)
+          )
+        );
+        finishUpAndReturn();
+        navigateToUrl(oldUrl);
+        return;
+      }
+
+      const unloadPromises = appsToUnload.map(toUnloadPromise);
+
+      const unmountUnloadPromises = appsToUnmount
+        .map(toUnmountPromise)
+        .map((unmountPromise) =&gt; unmountPromise.then(toUnloadPromise));
+
+      const allUnmountPromises = unmountUnloadPromises.concat(unloadPromises);
+
+      const unmountAllPromise = Promise.all(allUnmountPromises);
+
+      unmountAllPromise.then(() =&gt; {
+        window.dispatchEvent(
+          new CustomEvent(
+            &quot;single-spa:before-mount-routing-event&quot;,
+            getCustomEventDetail(true)
+          )
+        );
+      });
+
+      const loadThenMountPromises = appsToLoad.map((app) =&gt; {
+        return toLoadPromise(app).then((app) =&gt;
+          tryToBootstrapAndMount(app, unmountAllPromise)
+        );
+      });
+
+      const mountPromises = appsToMount
+        .filter((appToMount) =&gt; appsToLoad.indexOf(appToMount) &lt; 0)
+        .map((appToMount) =&gt; {
+          return tryToBootstrapAndMount(appToMount, unmountAllPromise);
+        });
+      return unmountAllPromise
+        .catch((err) =&gt; {
+          callAllEventListeners();
+          throw err;
+        })
+        .then(() =&gt; {
+          callAllEventListeners();
+
+          return Promise.all(loadThenMountPromises.concat(mountPromises))
+            .catch((err) =&gt; {
+              pendingPromises.forEach((promise) =&gt; promise.reject(err));
+              throw err;
+            })
+            .then(finishUpAndReturn);
+        });
+    });
+  }
+
+  function finishUpAndReturn() {
+    const returnValue = getMountedApps();
+    pendingPromises.forEach((promise) =&gt; promise.resolve(returnValue));
+
+    try {
+      const appChangeEventName =
+        appsThatChanged.length === 0
+          ? &quot;single-spa:no-app-change&quot;
+          : &quot;single-spa:app-change&quot;;
+      window.dispatchEvent(
+        new CustomEvent(appChangeEventName, getCustomEventDetail())
+      );
+      window.dispatchEvent(
+        new CustomEvent(&quot;single-spa:routing-event&quot;, getCustomEventDetail())
+      );
+    } catch (err) {
+      setTimeout(() =&gt; {
+        throw err;
+      });
+    }
+
+    appChangeUnderway = false;
+
+    if (peopleWaitingOnAppChange.length &gt; 0) {
+      const nextPendingPromises = peopleWaitingOnAppChange;
+      peopleWaitingOnAppChange = [];
+      reroute(nextPendingPromises);
+    }
+
+    return returnValue;
+  }
+
+  function callAllEventListeners() {
+    pendingPromises.forEach((pendingPromise) =&gt; {
+      callCapturedEventListeners(pendingPromise.eventArguments);
+    });
+
+    callCapturedEventListeners(eventArguments);
+  }
+
+  function getCustomEventDetail(isBeforeChanges = false, extraProperties) {
+    const newAppStatuses = {};
+    const appsByNewStatus = {
+      [MOUNTED]: [],
+      [NOT_MOUNTED]: [],
+      [NOT_LOADED]: [],
+      [SKIP_BECAUSE_BROKEN]: [],
+    };
+
+    if (isBeforeChanges) {
+      appsToLoad.concat(appsToMount).forEach((app, index) =&gt; {
+        addApp(app, MOUNTED);
+      });
+      appsToUnload.forEach((app) =&gt; {
+        addApp(app, NOT_LOADED);
+      });
+      appsToUnmount.forEach((app) =&gt; {
+        addApp(app, NOT_MOUNTED);
+      });
+    } else {
+      appsThatChanged.forEach((app) =&gt; {
+        addApp(app);
+      });
+    }
+
+    const result = {
+      detail: {
+        newAppStatuses,
+        appsByNewStatus,
+        totalAppChanges: appsThatChanged.length,
+        originalEvent: eventArguments?.[0],
+        oldUrl,
+        newUrl,
+        navigationIsCanceled,
+      },
+    };
+
+    if (extraProperties) {
+      assign(result.detail, extraProperties);
+    }
+
+    return result;
+
+    function addApp(app, status) {
+      const appName = toName(app);
+      status = status || getAppStatus(appName);
+      newAppStatuses[appName] = status;
+      const statusArr = (appsByNewStatus[status] =
+        appsByNewStatus[status] || []);
+      statusArr.push(appName);
+    }
+  }
+}
+</code></pre></div><h3 id="qiankun源码"><a href="#qiankun源码" class="header-anchor">#</a> qiankun源码</h3> <p><img src="/tech/front/micro20210125/micro09.png" alt="图片"></p> <p>qiankun是基于single-spa而封装了隔离及共享机制的框架，其简化了single-spa的相关生命周期，并且提供了沙箱隔离机制及共享机制</p> <h4 id="sandbox"><a href="#sandbox" class="header-anchor">#</a> sandbox</h4> <div class="language- extra-class"><pre class="language-text"><code>export type SandBox = {
+  /** 沙箱的名字 */
+  name: string;
+  /** 沙箱的类型 */
+  type: SandBoxType;
+  /** 沙箱导出的代理实体 */
+  proxy: WindowProxy;
+  /** 沙箱是否在运行中 */
+  sandboxRunning: boolean;
+  /** latest set property */
+  latestSetProp?: PropertyKey | null;
+  /** 启动沙箱 */
+  active: () =&gt; void;
+  /** 关闭沙箱 */
+  inactive: () =&gt; void;
+};
+
+// Proxy沙箱
+export default class ProxySandbox implements SandBox {
+  /** window 值变更记录 */
+  private updatedValueSet = new Set&lt;PropertyKey&gt;();
+
+  name: string;
+
+  type: SandBoxType;
+
+  proxy: WindowProxy;
+
+  sandboxRunning = true;
+
+  latestSetProp: PropertyKey | null = null;
+
+  active() {
+    if (!this.sandboxRunning) activeSandboxCount++;
+    this.sandboxRunning = true;
+  }
+
+  inactive() {
+    if (process.env.NODE_ENV === 'development') {
+      console.info(`[qiankun:sandbox] ${this.name} modified global properties restore...`, [
+        ...this.updatedValueSet.keys(),
+      ]);
+    }
+
+    if (--activeSandboxCount === 0) {
+      variableWhiteList.forEach((p) =&gt; {
+        if (this.proxy.hasOwnProperty(p)) {
+          // @ts-ignore
+          delete window[p];
+        }
+      });
+    }
+
+    this.sandboxRunning = false;
+  }
+
+  constructor(name: string) {
+    this.name = name;
+    this.type = SandBoxType.Proxy;
+    const { updatedValueSet } = this;
+
+    const rawWindow = window;
+    const { fakeWindow, propertiesWithGetter } = createFakeWindow(rawWindow);
+
+    const descriptorTargetMap = new Map&lt;PropertyKey, SymbolTarget&gt;();
+    const hasOwnProperty = (key: PropertyKey) =&gt; fakeWindow.hasOwnProperty(key) || rawWindow.hasOwnProperty(key);
+
+    const proxy = new Proxy(fakeWindow, {
+      set: (target: FakeWindow, p: PropertyKey, value: any): boolean =&gt; {
+        if (this.sandboxRunning) {
+          // We must kept its description while the property existed in rawWindow before
+          if (!target.hasOwnProperty(p) &amp;&amp; rawWindow.hasOwnProperty(p)) {
+            const descriptor = Object.getOwnPropertyDescriptor(rawWindow, p);
+            const { writable, configurable, enumerable } = descriptor!;
+            if (writable) {
+              Object.defineProperty(target, p, {
+                configurable,
+                enumerable,
+                writable,
+                value,
+              });
+            }
+          } else {
+            // @ts-ignore
+            target[p] = value;
+          }
+
+          if (variableWhiteList.indexOf(p) !== -1) {
+            // @ts-ignore
+            rawWindow[p] = value;
+          }
+
+          updatedValueSet.add(p);
+
+          this.latestSetProp = p;
+
+          return true;
+        }
+
+        if (process.env.NODE_ENV === 'development') {
+          console.warn(`[qiankun] Set window.${p.toString()} while sandbox destroyed or inactive in ${name}!`);
+        }
+
+        // 在 strict-mode 下，Proxy 的 handler.set 返回 false 会抛出 TypeError，在沙箱卸载的情况下应该忽略错误
+        return true;
+      },
+
+      get(target: FakeWindow, p: PropertyKey): any {
+        if (p === Symbol.unscopables) return unscopables;
+
+        // avoid who using window.window or window.self to escape the sandbox environment to touch the really window
+        // see https://github.com/eligrey/FileSaver.js/blob/master/src/FileSaver.js#L13
+        if (p === 'window' || p === 'self') {
+          return proxy;
+        }
+
+        if (
+          p === 'top' ||
+          p === 'parent' ||
+          (process.env.NODE_ENV === 'test' &amp;&amp; (p === 'mockTop' || p === 'mockSafariTop'))
+        ) {
+          // if your master app in an iframe context, allow these props escape the sandbox
+          if (rawWindow === rawWindow.parent) {
+            return proxy;
+          }
+          return (rawWindow as any)[p];
+        }
+
+        // proxy.hasOwnProperty would invoke getter firstly, then its value represented as rawWindow.hasOwnProperty
+        if (p === 'hasOwnProperty') {
+          return hasOwnProperty;
+        }
+
+        // mark the symbol to document while accessing as document.createElement could know is invoked by which sandbox for dynamic append patcher
+        if (p === 'document' || p === 'eval') {
+          setCurrentRunningSandboxProxy(proxy);
+          // FIXME if you have any other good ideas
+          // remove the mark in next tick, thus we can identify whether it in micro app or not
+          // this approach is just a workaround, it could not cover all complex cases, such as the micro app runs in the same task context with master in some case
+          nextTick(() =&gt; setCurrentRunningSandboxProxy(null));
+          switch (p) {
+            case 'document':
+              return document;
+            case 'eval':
+              // eslint-disable-next-line no-eval
+              return eval;
+            // no default
+          }
+        }
+
+        // eslint-disable-next-line no-nested-ternary
+        const value = propertiesWithGetter.has(p)
+          ? (rawWindow as any)[p]
+          : p in target
+          ? (target as any)[p]
+          : (rawWindow as any)[p];
+        return getTargetValue(rawWindow, value);
+      },
+
+      // trap in operator
+      // see https://github.com/styled-components/styled-components/blob/master/packages/styled-components/src/constants.js#L12
+      has(target: FakeWindow, p: string | number | symbol): boolean {
+        return p in unscopables || p in target || p in rawWindow;
+      },
+
+      getOwnPropertyDescriptor(target: FakeWindow, p: string | number | symbol): PropertyDescriptor | undefined {
+        /*
+         as the descriptor of top/self/window/mockTop in raw window are configurable but not in proxy target, we need to get it from target to avoid TypeError
+         see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getOwnPropertyDescriptor
+         &gt; A property cannot be reported as non-configurable, if it does not exists as an own property of the target object or if it exists as a configurable own property of the target object.
+         */
+        if (target.hasOwnProperty(p)) {
+          const descriptor = Object.getOwnPropertyDescriptor(target, p);
+          descriptorTargetMap.set(p, 'target');
+          return descriptor;
+        }
+
+        if (rawWindow.hasOwnProperty(p)) {
+          const descriptor = Object.getOwnPropertyDescriptor(rawWindow, p);
+          descriptorTargetMap.set(p, 'rawWindow');
+          // A property cannot be reported as non-configurable, if it does not exists as an own property of the target object
+          if (descriptor &amp;&amp; !descriptor.configurable) {
+            descriptor.configurable = true;
+          }
+          return descriptor;
+        }
+
+        return undefined;
+      },
+
+      // trap to support iterator with sandbox
+      ownKeys(target: FakeWindow): PropertyKey[] {
+        const keys = uniq(Reflect.ownKeys(rawWindow).concat(Reflect.ownKeys(target)));
+        return keys;
+      },
+
+      defineProperty(target: Window, p: PropertyKey, attributes: PropertyDescriptor): boolean {
+        const from = descriptorTargetMap.get(p);
+        /*
+         Descriptor must be defined to native window while it comes from native window via Object.getOwnPropertyDescriptor(window, p),
+         otherwise it would cause a TypeError with illegal invocation.
+         */
+        switch (from) {
+          case 'rawWindow':
+            return Reflect.defineProperty(rawWindow, p, attributes);
+          default:
+            return Reflect.defineProperty(target, p, attributes);
+        }
+      },
+
+      deleteProperty(target: FakeWindow, p: string | number | symbol): boolean {
+        if (target.hasOwnProperty(p)) {
+          // @ts-ignore
+          delete target[p];
+          updatedValueSet.delete(p);
+
+          return true;
+        }
+
+        return true;
+      },
+    });
+
+    this.proxy = proxy;
+
+    activeSandboxCount++;
+  }
+}
+
+// 快照snapshot沙箱
+export default class SnapshotSandbox implements SandBox {
+  proxy: WindowProxy;
+
+  name: string;
+
+  type: SandBoxType;
+
+  sandboxRunning = true;
+
+  private windowSnapshot!: Window;
+
+  private modifyPropsMap: Record&lt;any, any&gt; = {};
+
+  constructor(name: string) {
+    this.name = name;
+    this.proxy = window;
+    this.type = SandBoxType.Snapshot;
+  }
+
+  active() {
+    // 记录当前快照
+    this.windowSnapshot = {} as Window;
+    iter(window, (prop) =&gt; {
+      this.windowSnapshot[prop] = window[prop];
+    });
+
+    // 恢复之前的变更
+    Object.keys(this.modifyPropsMap).forEach((p: any) =&gt; {
+      window[p] = this.modifyPropsMap[p];
+    });
+
+    this.sandboxRunning = true;
+  }
+
+  inactive() {
+    this.modifyPropsMap = {};
+
+    iter(window, (prop) =&gt; {
+      if (window[prop] !== this.windowSnapshot[prop]) {
+        // 记录变更，恢复环境
+        this.modifyPropsMap[prop] = window[prop];
+        window[prop] = this.windowSnapshot[prop];
+      }
+    });
+
+    if (process.env.NODE_ENV === 'development') {
+      console.info(`[qiankun:sandbox] ${this.name} origin window restore...`, Object.keys(this.modifyPropsMap));
+    }
+
+    this.sandboxRunning = false;
+  }
+}
+</code></pre></div><h4 id="globalstate-js"><a href="#globalstate-js" class="header-anchor">#</a> globalState.js</h4> <div class="language- extra-class"><pre class="language-text"><code>// 触发全局监听
+function emitGlobal(state: Record&lt;string, any&gt;, prevState: Record&lt;string, any&gt;) {
+  Object.keys(deps).forEach((id: string) =&gt; {
+    if (deps[id] instanceof Function) {
+      deps[id](cloneDeep(state), cloneDeep(prevState));
+    }
+  });
+}
+
+export function initGlobalState(state: Record&lt;string, any&gt; = {}) {
+  if (state === globalState) {
+    console.warn('[qiankun] state has not changed！');
+  } else {
+    const prevGlobalState = cloneDeep(globalState);
+    globalState = cloneDeep(state);
+    emitGlobal(globalState, prevGlobalState);
+  }
+  return getMicroAppStateActions(`global-${+new Date()}`, true);
+}
+
+export function getMicroAppStateActions(id: string, isMaster?: boolean): MicroAppStateActions {
+  return {
+    /**
+     * onGlobalStateChange 全局依赖监听
+     *
+     * 收集 setState 时所需要触发的依赖
+     *
+     * 限制条件：每个子应用只有一个激活状态的全局监听，新监听覆盖旧监听，若只是监听部分属性，请使用 onGlobalStateChange
+     *
+     * 这么设计是为了减少全局监听滥用导致的内存爆炸
+     *
+     * 依赖数据结构为：
+     * {
+     *   {id}: callback
+     * }
+     *
+     * @param callback
+     * @param fireImmediately
+     */
+    onGlobalStateChange(callback: OnGlobalStateChangeCallback, fireImmediately?: boolean) {
+      if (!(callback instanceof Function)) {
+        console.error('[qiankun] callback must be function!');
+        return;
+      }
+      if (deps[id]) {
+        console.warn(`[qiankun] '${id}' global listener already exists before this, new listener will overwrite it.`);
+      }
+      deps[id] = callback;
+      const cloneState = cloneDeep(globalState);
+      if (fireImmediately) {
+        callback(cloneState, cloneState);
+      }
+    },
+
+    /**
+     * setGlobalState 更新 store 数据
+     *
+     * 1. 对输入 state 的第一层属性做校验，只有初始化时声明过的第一层（bucket）属性才会被更改
+     * 2. 修改 store 并触发全局监听
+     *
+     * @param state
+     */
+    setGlobalState(state: Record&lt;string, any&gt; = {}) {
+      if (state === globalState) {
+        console.warn('[qiankun] state has not changed！');
+        return false;
+      }
+
+      const changeKeys: string[] = [];
+      const prevGlobalState = cloneDeep(globalState);
+      globalState = cloneDeep(
+        Object.keys(state).reduce((_globalState, changeKey) =&gt; {
+          if (isMaster || _globalState.hasOwnProperty(changeKey)) {
+            changeKeys.push(changeKey);
+            return Object.assign(_globalState, { [changeKey]: state[changeKey] });
+          }
+          console.warn(`[qiankun] '${changeKey}' not declared when init state！`);
+          return _globalState;
+        }, globalState),
+      );
+      if (changeKeys.length === 0) {
+        console.warn('[qiankun] state has not changed！');
+        return false;
+      }
+      emitGlobal(globalState, prevGlobalState);
+      return true;
+    },
+
+    // 注销该应用下的依赖
+    offGlobalStateChange() {
+      delete deps[id];
+      return true;
+    },
+  };
+}
+</code></pre></div><h3 id="icestark源码"><a href="#icestark源码" class="header-anchor">#</a> icestark源码</h3> <p><img src="/tech/front/micro20210125/micro10.png" alt="图片"></p> <p>ice是淘系团队的一个全流程前端框架，其中包含了脚手架、组件库、vscode插件、lowcode生成等相关生态，其中icestark是其中包含的相关微前端的应用，这里不展开ice相关的架构了，简单来说其本质是以微内核形态配合各种插件市场来构成的强大生态系统，本文重点在微前端，因而只讨论微前端相关内容</p> <h4 id="apps-ts"><a href="#apps-ts" class="header-anchor">#</a> apps.ts</h4> <div class="language- extra-class"><pre class="language-text"><code>export function registerMicroApp(appConfig: AppConfig, appLifecyle?: AppLifecylceOptions) {
+  // check appConfig.name
+  if (getAppNames().includes(appConfig.name)) {
+    throw Error(`name ${appConfig.name} already been regsitered`);
+  }
+  // set activeRules
+  const { activePath, hashType = false, exact = false, sensitive = false, strict = false } = appConfig;
+  const activeRules: (ActiveFn | string | MatchOptions)[] = Array.isArray(activePath) ? activePath : [activePath];
+  const checkActive = activePath
+    ? (url: string) =&gt; activeRules.map((activeRule: ActiveFn | string | MatchOptions) =&gt; {
+      if (typeof activeRule === 'function' ) {
+        return activeRule;
+      } else {
+        const pathOptions: MatchOptions = { hashType, exact, sensitive, strict };
+        const pathInfo = Object.prototype.toString.call(activeRule) === '[object Object]'
+          ? { ...pathOptions, ...(activeRule as MatchOptions) }
+          : { path: activeRule as string, ...pathOptions };
+        return (checkUrl: string) =&gt; matchActivePath(checkUrl, pathInfo);
+      }
+    }).some((activeRule: ActiveFn) =&gt; activeRule(url))
+    // active app when activePath is not specified
+    : () =&gt; true;
+  const microApp = {
+    status: NOT_LOADED,
+    ...appConfig,
+    appLifecycle: appLifecyle,
+    checkActive,
+  };
+  microApps.push(microApp);
+}
+
+export function registerMicroApps(appConfigs: AppConfig[], appLifecyle?: AppLifecylceOptions) {
+  appConfigs.forEach(appConfig =&gt; {
+    registerMicroApp(appConfig, appLifecyle);
+  });
+}
+
+// 可以加载module粒度的应用
+export async function loadAppModule(appConfig: AppConfig) {
+  const { onLoadingApp, onFinishLoading, fetch } = getAppConfig(appConfig.name)?.configuration || globalConfiguration;
+
+  let lifecycle: ModuleLifeCycle = {};
+  onLoadingApp(appConfig);
+  const appSandbox = createSandbox(appConfig.sandbox);
+  const { url, container, entry, entryContent, name } = appConfig;
+  const appAssets = url ? getUrlAssets(url) : await getEntryAssets({
+    root: container,
+    entry,
+    href: location.href,
+    entryContent,
+    assetsCacheKey: name,
+    fetch,
+  });
+  updateAppConfig(appConfig.name, { appAssets, appSandbox });
+
+  cacheLoadMode(appConfig);
+
+  if (appConfig.umd) {
+    await loadAndAppendCssAssets(appAssets);
+    lifecycle = await loadUmdModule(appAssets.jsList, appSandbox);
+  } else {
+    await appendAssets(appAssets, appSandbox, fetch);
+    lifecycle = {
+      mount: getCache(AppLifeCycleEnum.AppEnter),
+      unmount: getCache(AppLifeCycleEnum.AppLeave),
+    };
+    setCache(AppLifeCycleEnum.AppEnter, null);
+    setCache(AppLifeCycleEnum.AppLeave, null);
+  }
+  onFinishLoading(appConfig);
+  return combineLifecyle(lifecycle, appConfig);
+}
+
+function capitalize(str: string) {
+  if (typeof str !== 'string') return '';
+  return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+}
+
+async function callAppLifecycle(primaryKey: string, lifecycleKey: string, appConfig: AppConfig) {
+  if (appConfig.appLifecycle &amp;&amp; appConfig.appLifecycle[`${primaryKey}${capitalize(lifecycleKey)}`]) {
+    await appConfig.appLifecycle[`${primaryKey}${capitalize(lifecycleKey)}`](appConfig);
+  }
+}
+
+function combineLifecyle(lifecycle: ModuleLifeCycle, appConfig: AppConfig) {
+  const combinedLifecyle = { ...lifecycle };
+  ['mount', 'unmount', 'update'].forEach((lifecycleKey) =&gt; {
+    if (lifecycle[lifecycleKey]) {
+      combinedLifecyle[lifecycleKey] = async (props) =&gt; {
+        await callAppLifecycle('before', lifecycleKey, appConfig);
+        await lifecycle[lifecycleKey](props);
+        await callAppLifecycle('after', lifecycleKey, appConfig);
+      };
+    }
+  });
+  return combinedLifecyle;
+}
+
+export async function mountMicroApp(appName: string) {
+  const appConfig = getAppConfig(appName);
+  // check current url before mount
+  if (appConfig &amp;&amp; appConfig.checkActive(window.location.href) &amp;&amp; appConfig.status !== MOUNTED) {
+    updateAppConfig(appName, { status: MOUNTED });
+    if (appConfig.mount) {
+      await appConfig.mount({ container: appConfig.container, customProps: appConfig.props });
+    }
+  }
+}
+
+export async function unmountMicroApp(appName: string) {
+  const appConfig = getAppConfig(appName);
+  if (appConfig &amp;&amp; (appConfig.status === MOUNTED || appConfig.status === LOADING_ASSETS || appConfig.status === NOT_MOUNTED)) {
+    // remove assets if app is not cached
+    const { shouldAssetsRemove } = getAppConfig(appName)?.configuration  || globalConfiguration;
+    emptyAssets(shouldAssetsRemove, !appConfig.cached &amp;&amp; appConfig.name);
+    updateAppConfig(appName, { status: UNMOUNTED });
+    if (!appConfig.cached &amp;&amp; appConfig.appSandbox) {
+      appConfig.appSandbox.clear();
+      appConfig.appSandbox = null;
+    }
+    if (appConfig.unmount) {
+      await appConfig.unmount({ container: appConfig.container, customProps: appConfig.props });
+    }
+  }
+}
+
+// unload micro app, load app bundles when create micro app
+export async function unloadMicroApp(appName: string) {
+  const appConfig = getAppConfig(appName);
+  if (appConfig) {
+    unmountMicroApp(appName);
+    delete appConfig.mount;
+    delete appConfig.unmount;
+    delete appConfig.appAssets;
+    updateAppConfig(appName, { status: NOT_LOADED });
+  } else {
+    console.log(`[icestark] can not find app ${appName} when call unloadMicroApp`);
+  }
+}
+
+// remove app config from cache
+export function removeMicroApp(appName: string) {
+  const appIndex = getAppNames().indexOf(appName);
+  if (appIndex &gt; -1) {
+    // unload micro app in case of app is mounted
+    unloadMicroApp(appName);
+    microApps.splice(appIndex, 1);
+  } else {
+    console.log(`[icestark] can not find app ${appName} when call removeMicroApp`);
+  }
+}
+
+export function removeMicroApps(appNames: string[]) {
+  appNames.forEach((appName) =&gt; {
+    removeMicroApp(appName);
+  });
+}
+
+// clear all micro app configs
+export function clearMicroApps () {
+  getAppNames().forEach(name =&gt; {
+    unloadMicroApp(name);
+  });
+  microApps = [];
+}
+</code></pre></div><h4 id="start-ts"><a href="#start-ts" class="header-anchor">#</a> start.ts</h4> <div class="language- extra-class"><pre class="language-text"><code>export function reroute (url: string, type: RouteType | 'init' | 'popstate'| 'hashchange' ) {
+  const { pathname, query, hash } = urlParse(url, true);
+  // trigger onRouteChange when url is changed
+  if (lastUrl !== url) {
+    globalConfiguration.onRouteChange(url, pathname, query, hash, type);
+  
+    const unmountApps = [];
+    const activeApps = [];
+    getMicroApps().forEach((microApp: AppConfig) =&gt; {
+      const shouldBeActive = microApp.checkActive(url);
+      if (shouldBeActive) {
+        activeApps.push(microApp);
+      } else {
+        unmountApps.push(microApp);
+      }
+    });
+    // trigger onActiveApps when url is changed
+    globalConfiguration.onActiveApps(activeApps);
+
+    // call captured event after app mounted
+    Promise.all(
+      // call unmount apps
+      unmountApps.map(async (unmountApp) =&gt; {
+        if (unmountApp.status === MOUNTED || unmountApp.status === LOADING_ASSETS) {
+          globalConfiguration.onAppLeave(unmountApp);
+        }
+        await unmountMicroApp(unmountApp.name);
+      }).concat(activeApps.map(async (activeApp) =&gt; {
+        if (activeApp.status !== MOUNTED) {
+          globalConfiguration.onAppEnter(activeApp);
+        }
+        await createMicroApp(activeApp);
+      }))
+    ).then(() =&gt; {
+      callCapturedEventListeners();
+    });
+  }
+  lastUrl = url;
+};
+
+function start(options?: StartConfiguration) {
+  if (started) {
+    console.log('icestark has been already started');
+    return;
+  }
+  started = true;
+  recordAssets();
+  // update globalConfiguration
+  Object.keys(options || {}).forEach((configKey) =&gt; {
+    globalConfiguration[configKey] = options[configKey];
+  });
+  hijackHistory();
+  hijackEventListener();
+
+  // trigger init router
+  globalConfiguration.reroute(location.href, 'init');
+}
+
+function unload() {
+  unHijackEventListener();
+  unHijackHistory();
+  started = false;
+  // remove all assets added by micro apps
+  emptyAssets(globalConfiguration.shouldAssetsRemove, true);
+  clearMicroApps();
+}
+</code></pre></div><h3 id="emp源码"><a href="#emp源码" class="header-anchor">#</a> emp源码</h3> <p><img src="/tech/front/micro20210125/micro11.jpeg" alt="图片"></p> <p><img src="/tech/front/micro20210125/micro12.jpg" alt="图片"></p> <p>emp实现方式完全不同于类single-spa的方案，其是利用的webpack5的模块联邦机制，实现模块与模块之间的共享调用，YY的大佬们基于ts的xxx.d.ts的共享传递，实现了类似微服务的service mesh的功能，emp提供了完整的脚手架功能</p> <p><img src="/tech/front/micro20210125/micro13.png" alt="图片"></p> <h4 id="emp-cli"><a href="#emp-cli" class="header-anchor">#</a> emp-cli</h4> <div class="language- extra-class"><pre class="language-text"><code>const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+
+module.exports = (env, config, {analyze, empEnv, ts, progress, createName, createPath, hot}) =&gt; {
+  const isDev = env === 'development'
+  const conf = {
+    plugin: {
+      mf: {
+        plugin: ModuleFederationPlugin,
+        args: [{}],
+      },
+    },
+  }
+  if (ts) {
+    createName = createName || 'index.d.ts'
+    createPath = createPath ? resolveApp(createPath) : resolveApp('dist')
+    conf.plugin.tunedts = {
+      plugin: TuneDtsPlugin,
+      args: [
+        {
+          output: path.join(createPath, createName),
+          path: createPath,
+          name: createName,
+          isDefault: true,
+        },
+      ],
+    }
+  }
+  config.merge(conf)
+}
+</code></pre></div><h4 id="emp-tune-dts-plugin"><a href="#emp-tune-dts-plugin" class="header-anchor">#</a> emp-tune-dts-plugin</h4> <div class="language- extra-class"><pre class="language-text"><code>function tuneType(createPath, createName, isDefault, operation = emptyFunc) {
+  // 获取 d.ts 文件
+  const filePath = `${createPath}/${createName}`
+  const fileData = fs.readFileSync(filePath, {encoding: 'utf-8'})
+  let newFileData = ''
+  newFileData = fileData
+  isDefault &amp;&amp; (newFileData = defaultRepalce(fileData))
+  // }
+  newFileData &amp;&amp; (newFileData = operation(newFileData) ? operation(newFileData) : newFileData)
+  // 覆盖原有 index.d.ts
+  fs.writeFileSync(filePath, newFileData, {encoding: 'utf-8'})
+}
+
+class TuneDtsPlugin {
+  constructor(options) {
+    this.options = options || {}
+  }
+
+  apply(compiler) {
+    const _options = this.options
+    console.log('------------TuneDtsPlugin Working----------')
+    if (compiler.options.output.path) {
+      _options.path = compiler.options.output.path
+      _options.output = `${compiler.options.output.path}/${_options.name}`
+    }
+    compiler.hooks.afterEmit.tap(plugin, function () {
+      setTimeout(function () {
+        generateType(_options)
+      })
+    })
+  }
+}
+</code></pre></div><h3 id="piral源码"><a href="#piral源码" class="header-anchor">#</a> piral源码</h3> <p><img src="/tech/front/micro20210125/micro14.png" alt="图片"></p> <p><a href="https://docs.piral.io" target="_blank" rel="noopener noreferrer">piral<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>是一个基于react的微前端框架，其定义了两个概念：一个是Piral，这是给一个应用的壳子（application shell），其承载着各种应用，当然也包括由pilets构建共享的组件，定义这些应用何时被加载以及何时被集成；另一个是Pilet，这是一个特殊的模块（feature modules），其承载着不同的一应用，包含着独立的资源，其决定了组件的加载时机。Piral通过对加了一层pilets而进行资源的隔离，对没有加这一层的则可进行数据的共享</p> <h4 id="piral"><a href="#piral" class="header-anchor">#</a> piral</h4> <div class="language- extra-class"><pre class="language-text"><code>// render.tsx
+export function renderInstance(options?: PiralRenderOptions) {
+  return runInstance((app, selector) =&gt; render(app, getContainer(selector)), options);
+}
+
+// run.tsx
+export function runInstance(runner: PiralRunner, options: PiralRenderOptions = {}) {
+  const { selector = '#app', settings, layout, errors, middleware = noChange, ...config } = options;
+  const { app, instance } = getAppInstance(middleware(config), { settings, layout, errors });
+  runner(app, selector);
+  return instance;
+}
+</code></pre></div><h4 id="piral-base"><a href="#piral-base" class="header-anchor">#</a> piral-base</h4> <div class="language- extra-class"><pre class="language-text"><code>// dependency.ts
+export function compileDependency(
+  name: string,
+  content: string,
+  link = '',
+  dependencies?: AvailableDependencies,
+): Promise&lt;PiletApp&gt; {
+  const app = evalDependency(name, content, link, dependencies);
+  return checkPiletAppAsync(name, app);
+}
+
+// fetch.ts
+export function defaultFetchDependency(url: string) {
+  return fetch(url, {
+    method: 'GET',
+    cache: 'force-cache',
+  }).then((m) =&gt; m.text());
+}
+
+</code></pre></div><h4 id="piral-core"><a href="#piral-core" class="header-anchor">#</a> piral-core</h4> <div class="language- extra-class"><pre class="language-text"><code>// actions
+export function initialize(ctx: GlobalStateContext, loading: boolean, error: Error | undefined, modules: Array&lt;Pilet&gt;) {
+  ctx.dispatch((state) =&gt; ({
+    ...state,
+    app: {
+      ...state.app,
+      error,
+      loading,
+    },
+    modules,
+  }));
+}
+
+export function injectPilet(ctx: GlobalStateContext, pilet: Pilet) {
+  ctx.dispatch((state) =&gt; ({
+    ...state,
+    modules: replaceOrAddItem(state.modules, pilet, (m) =&gt; m.name === pilet.name),
+    registry: removeNested&lt;RegistryState, BaseRegistration&gt;(state.registry, (m) =&gt; m.pilet === pilet.name),
+  }));
+
+  ctx.emit('unload-pilet', {
+    name: pilet.name,
+  });
+}
+
+export function setComponent&lt;TKey extends keyof ComponentsState&gt;(
+  ctx: GlobalStateContext,
+  name: TKey,
+  component: ComponentsState[TKey],
+) {
+  ctx.dispatch((state) =&gt; ({
+    ...state,
+    components: withKey(state.components, name, component),
+  }));
+}
+
+export function setErrorComponent&lt;TKey extends keyof ErrorComponentsState&gt;(
+  ctx: GlobalStateContext,
+  type: TKey,
+  component: ErrorComponentsState[TKey],
+) {
+  ctx.dispatch((state) =&gt; ({
+    ...state,
+    errorComponents: withKey(state.errorComponents, type, component),
+  }));
+}
+
+export function setRoute&lt;T = {}&gt;(
+  ctx: GlobalStateContext,
+  path: string,
+  component: ComponentType&lt;RouteComponentProps&lt;T&gt;&gt;,
+) {
+  ctx.dispatch((state) =&gt; ({
+    ...state,
+    routes: withKey(state.routes, path, component),
+  }));
+}
+
+export function includeProvider(ctx: GlobalStateContext, provider: JSX.Element) {
+  const wrapper: React.FC = (props) =&gt; cloneElement(provider, props);
+
+  ctx.dispatch((state) =&gt; ({
+    ...state,
+    provider: !state.provider ? wrapper : (props) =&gt; createElement(state.provider, undefined, wrapper(props)),
+  }));
+}
+
+// createGlobalState.ts
+export function createGlobalState(customState: NestedPartial&lt;GlobalState&gt; = {}) {
+  const defaultState: GlobalState = {
+    app: {
+      error: undefined,
+      loading: typeof window !== 'undefined',
+      layout: 'desktop',
+    },
+    components: {
+      ErrorInfo: DefaultErrorInfo,
+      LoadingIndicator: DefaultLoadingIndicator,
+      Router: BrowserRouter,
+      Layout: DefaultLayout,
+    },
+    errorComponents: {},
+    registry: {
+      extensions: {},
+      pages: {},
+      wrappers: {},
+    },
+    routes: {},
+    data: {},
+    portals: {},
+    modules: [],
+  };
+
+  return Atom.of(extend(defaultState, customState));
+}
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>微前端落地实践方案很多，想了解更多框架的同学，可以看这篇文章<a href="https://blog.csdn.net/devolperfront/article/details/109233785" target="_blank" rel="noopener noreferrer">2020 非常火的 11 个微前端框架<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。微前端的本质在于资源的隔离与共享，这里的颗粒度既可以是应用，也可以是模块，或者是自己定义的抽象层，这些都是为了更好的“高内聚，低耦合”。正如“软件工程中没有银弹”所说的那样，不存在一种通式通解能够一下解决所有问题，只有结合具体业务，选择合适的技术方案，才能最大限度的发挥架构的作用，切勿为了微而微！</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://mp.weixin.qq.com/s/5qwgZ9aNKFC3naWRUGajmA" target="_blank" rel="noopener noreferrer">【第1917期】微前端在小米 CRM 系统的实践<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/GjAHSvWqy70s50cwlr9udw" target="_blank" rel="noopener noreferrer">基于 qiankun 的微前端最佳实践（万字长文） - 从 0 到 1 篇<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/OEfRPKuPmBKvJdD_zMgFuQ" target="_blank" rel="noopener noreferrer">【PPT】@张克军：微前端架构体系<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/Zq2l0df-YOdpc2zNzTMXng" target="_blank" rel="noopener noreferrer">【第1728期】每日优鲜供应链前端团队微前端改造<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/YuPGW9dosB2zfADASuMeIQ" target="_blank" rel="noopener noreferrer">实施前端微服务化的六七种方式<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/WCAJ49K4mi7tO6teRCs3fA" target="_blank" rel="noopener noreferrer">微前端自检清单<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/l0-uCLFRcBBrs4yTiAvryg" target="_blank" rel="noopener noreferrer">【第2154期】EMP微前端解决方案<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/G0zC5xhDZ-QDLb2t1qCECg" target="_blank" rel="noopener noreferrer">基于 qiankun 的微前端最佳实践（图文并茂） - 应用间通信篇<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/ochbPM5f84u-1BcNRXVOLA" target="_blank" rel="noopener noreferrer">【第1789期】使用 Angular 打造微前端架构的 ToB 企业级应用<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/qMd6k9xSSNjskN3wB5PGgA" target="_blank" rel="noopener noreferrer">【第1709期】可能是你见过最完善的微前端解决方案<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/l17Uo6Q7up44uZI_VojFzw" target="_blank" rel="noopener noreferrer">微前端在美团外卖的实践<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/GgVo5KyZPlEsEeICcPyuLA" target="_blank" rel="noopener noreferrer">Bifrost微前端框架及其在美团闪购中的实践<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/MgZGuthSv49qXWr_YBhyeQ" target="_blank" rel="noopener noreferrer">爱奇艺号微前端架构实践<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/iLdAH9p2-S8pFyZrNzYaNg" target="_blank" rel="noopener noreferrer">前端微服务在字节跳动的打磨与应用<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://mp.weixin.qq.com/s/DpFXTrQ3_kBX4EB6or4Q8Q" target="_blank" rel="noopener noreferrer">用微前端的方式搭建类单页应用<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.infoq.cn/article/YH5mO2bVjmwLNYmXJeEP" target="_blank" rel="noopener noreferrer">基于 React 的微前端：Piral 简析<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/front/topology20210122.html" class="prev">
+        动态渲染拓扑图方案探究
+      </a></span> <span class="next"><a href="/tech/front/umi20210222.html">
+        umi3源码探究简析
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8be0e0a6.js" defer></script><script src="/assets/js/2.984c461b.js" defer></script><script src="/assets/js/65.96f2df30.js" defer></script>
+  </body>
+</html>
